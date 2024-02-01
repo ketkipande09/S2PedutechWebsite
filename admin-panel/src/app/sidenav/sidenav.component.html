@@ -1,0 +1,87 @@
+<mat-nav-list>
+  <div class="logo">
+    <img src="../../assets/img/s2plogo.png" alt="s2p logo" />
+  </div>
+  <mat-divider></mat-divider>
+  <a class="mt-0" mat-list-item routerLink="/user/user-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi-house menu-icon"></i>
+      <span class="ms-1 d-sm-inline">Home</span>
+    </div>
+  </a>
+  <a mat-list-item routerLink="/user/user-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi bi-person-plus menu-icon"></i>
+      <span class="ms-1 d-sm-inline">Users</span>
+    </div>
+  </a>
+  <a mat-list-item routerLink="/services/service-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi bi-mortarboard menu-icon"></i>
+      <span class="ms-1 d-sm-inline">Our Services</span>
+    </div>
+  </a>
+  <a mat-list-item routerLink="/user/home-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi bi-hand-thumbs-up menu-icon"></i>
+      <span class="ms-1 d-none d-sm-inline">Bulletin/Placements</span>
+    </div>
+  </a>
+
+  <a mat-list-item routerLink="/event/event-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="bi bi-calendar-event"></i>
+      <span class="ms-1 d-none d-sm-inline" class="mx-4">Event</span>
+    </div>
+  </a>
+  <a mat-list-item routerLink="/feedback/feedback-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi bi-chat-square-text menu-icon"></i>
+      <span class="ms-1 d-none d-sm-inline">Contact Form</span>
+    </div>
+  </a>
+  <a mat-list-item routerLink="/enquiry/enquiry-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi bi-question-circle menu-icon"></i>
+      <span class="ms-1 d-none d-sm-inline">Enquiry</span>
+    </div>
+  </a>
+  <a mat-list-item routerLink="/transition/transition-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi bi-signpost-2 menu-icon"></i>
+      <span class="ms-1 d-none d-sm-inline">Transition Courses</span>
+    </div>
+  </a>
+
+  <a mat-list-item routerLink="/user/slider-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi-people menu-icon"></i>
+      <!-- <span class="ms-1 d-none d-sm-inline">Slider</span> -->
+      <span class="ms-1 d-none d-sm-inline">Gallery</span>
+    </div>
+  </a>
+
+  <a mat-list-item routerLink="/user/org-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi-people menu-icon"></i>
+      <span class="ms-1 d-none d-sm-inline">Organization List</span>
+    </div>
+  </a>
+
+  <!-- <a mat-list-item routerLink="/user/student-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi-people menu-icon"></i>
+      <span class="ms-1 d-none d-sm-inline">Registered Students</span>
+    </div>
+  </a> -->
+  <a mat-list-item routerLink="/user/client-list" routerLinkActive="list-item-active">
+    <div class="nav-menu">
+      <i class="fs-4 bi-people menu-icon"></i>
+      <span class="ms-1 d-none d-sm-inline">Client</span>
+    </div>
+  </a>
+</mat-nav-list>
+
+<ngx-spinner bdColor="rgba(232,230,228,0.8)" size="large" color="#f28504" type="timer" [fullScreen]="true">
+  <p style="color: rgb(245, 102, 7)"> Loading... </p>
+</ngx-spinner>

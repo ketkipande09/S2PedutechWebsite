@@ -1,0 +1,345 @@
+<div class="container-fluid">
+    <div class="row my-4 ">
+        <div class="d-flex justify-content-center">
+            <div class="card shadow rounded rounded-3" style="width: 40rem;">
+                <div class="card-header justify-content-start  fs-4 fw-bold">
+                 <div class="d-flex align-items-center justify-content-between">
+                    <div class="">
+                        Sign Up
+                    </div>
+                    <div class="">
+                        <a class="btn btn-danger btn-sm float-end" (click)="add()">
+                            <i class="bi bi-arrow-left"></i>Back</a>
+                    </div>
+                </div>
+                   
+                </div>
+                <div class="card-body mt-3 justify-content-center  ">
+                    <form [formGroup]="userForm">
+                        <div class="row">
+                            <div class=" col-md-6 mb-2">
+                                <label class="form-lable fw-bold ">First Name <span class="text-danger">*</span></label>
+                                <input formControlName="firstName" placeholder="First Name" type="text"
+                                    class="form-control  " [ngClass]="{
+                                        'is-invalid':userForm.controls['firstName'].invalid && submitted && (f['firstName'].errors
+                                         || f['firstName'].touched || f['firstName'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['firstName']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class=" col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Last Name <span class="text-danger">*</span></label>
+                                <input formControlName="lastName" placeholder="Last Name" type="text"
+                                    class="form-control" [ngClass]="{
+                                        'is-invalid':userForm.controls['lastName'].invalid && submitted && (f['lastName'].errors
+                                         || f['lastName'].touched || f['lastName'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['lastName']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-6 mb-2">
+                                <label class="form-lable fw-bold">User Name <span class="text-danger">*</span></label>
+                                <input formControlName="userName" placeholder="User Name" type="text"
+                                    class="form-control " [ngClass]="{
+                                            'is-invalid':userForm.controls['userName'].invalid && submitted && (f['userName'].errors
+                                             || f['userName'].touched || f['userName'].dirty)
+                                          }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['userName']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Email <span class="text-danger">*</span></label>
+                                <input formControlName="email" placeholder="Email" type="text" class="form-control "
+                                    [ngClass]="{
+                                        'is-invalid':userForm.controls['email'].invalid && submitted && (f['email'].errors
+                                         || f['email'].touched || f['email'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['email']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Mobile Number <span
+                                        class="text-danger">*</span></label>
+                                <input formControlName="mobileNumber" placeholder="Mobile" type="text"
+                                    class="form-control " [ngClass]="{
+                                        'is-invalid':userForm.controls['mobileNumber'].invalid && submitted && (f['mobileNumber'].errors
+                                         || f['mobileNumber'].touched || f['mobileNumber'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['mobileNumber']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Address</label>
+                                <input formControlName="address" placeholder="Address" type="text"
+                                    class="form-control ">
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Password</label>
+                                <div class="input-group ">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                    </div>
+                                    <input name="password" type="password" class="input form-control input-inner-shadow"
+                                        formControlName="password" placeholder="Password" [type]="show"
+                                        [ngClass]="{'is-invalid':userForm.controls['password'].invalid && submitted }" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" (click)="password_show()"
+                                            *ngIf="show == 'password'">
+                                            <i class="bi bi-eye-slash-fill"></i>
+                                        </span>
+                                        <span class="input-group-text" (click)="password_hide()" *ngIf="show == 'text'">
+                                            <i class="bi bi-eye-fill"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label class="form-lable fw-bold">Confirm Password</label>
+                                <div class="input-group ">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                    </div>
+                                    <input name="confirmPassword" type="password"
+                                        class="input form-control input-inner-shadow" formControlName="confirmPassword"
+                                        placeholder="Confirm Password" (paste)="$event.preventDefault()" [type]="Show"
+                                        [ngClass]="{'is-invalid':userForm.controls['confirmPassword'].invalid && submitted}" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" (click)="password_Show()"
+                                            *ngIf="Show == 'password'">
+                                            <i class="bi bi-eye-slash-fill"></i>
+                                        </span>
+                                        <span class="input-group-text" (click)="password_Hide()" *ngIf="Show == 'text'">
+                                            <i class="bi bi-eye-fill"></i>
+                                        </span>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center pt-3">
+                                <button type="submit" 
+                                    class="btn btn-success   shadow rounded rounded-3"
+                                    (click)="createUser()">Create</button>
+                            </div>
+                            <div class="checkbox  mt-3 " style="position: relative ;  text-align: center; ">
+                                Back to 
+                                <a type="button" class="checkbox"  (click)="loginpage()">login page</a>
+    
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="container-fluid">
+    <div class="row my-4">
+        <div class="d-flex justify-content-center">
+            <div class="card shadow rounded rounded-3" style="width: 60rem; height: 30rem;">
+                <div class="card-header justify-content-start  fs-4 fw-bold">Sign Up  
+                    <a class="btn btn-danger btn-sm float-end" [routerLink]="['/login/']">
+                        <i class="bi bi-arrow-left"></i> Back</a>
+                </div>
+                <div class="card-body mt-3 justify-content-center  ">
+                    <form [formGroup]="userForm">
+                        <div class="row">
+                            <div class=" col-md-4 mb-3">
+                                <label class="form-lable fw-bold ">First Name <span class="text-danger">*</span></label>
+                                <input formControlName="firstName" placeholder="First Name" type="text"
+                                    class="form-control  " [ngClass]="{
+                                        'is-invalid':userForm.controls['firstName'].invalid && submitted && (f['firstName'].errors
+                                         || f['firstName'].touched || f['firstName'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['firstName']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class=" col-md-4 mb-3">
+                                <label class="form-lable fw-bold">Last Name <span class="text-danger">*</span></label>
+                                <input formControlName="lastName" placeholder="Last Name" type="text"
+                                    class="form-control " [ngClass]="{
+                                        'is-invalid':userForm.controls['lastName'].invalid && submitted && (f['lastName'].errors
+                                         || f['lastName'].touched || f['lastName'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['lastName']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class=" col-md-4 mb-3">
+                                <label class="form-lable fw-bold">User Name <span class="text-danger">*</span></label>
+                                <input formControlName="userName" placeholder="User Name" type="text"
+                                    class="form-control " [ngClass]="{
+                                        'is-invalid':userForm.controls['userName'].invalid && submitted && (f['userName'].errors
+                                         || f['userName'].touched || f['userName'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['userName']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-4 mb-3">
+                                <label class="form-lable fw-bold">Email <span class="text-danger">*</span></label>
+                                <input formControlName="email" placeholder="Email" type="text" class="form-control "
+                                    [ngClass]="{
+                                    'is-invalid':userForm.controls['email'].invalid && submitted && (f['email'].errors
+                                     || f['email'].touched || f['email'].dirty)
+                                  }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['email']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-lable fw-bold">Mobile Number <span
+                                        class="text-danger">*</span></label>
+                                <input formControlName="mobileNumber" placeholder="Mobile" type="text"
+                                    class="form-control " [ngClass]="{
+                                        'is-invalid':userForm.controls['mobileNumber'].invalid && submitted && (f['mobileNumber'].errors
+                                         || f['mobileNumber'].touched || f['mobileNumber'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['mobileNumber']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-lable fw-bold">Role <span class="text-danger">*</span></label>
+                                <input formControlName="role" placeholder="Role" type="text" class="form-control "
+                                    [ngClass]="{
+                                    'is-invalid':userForm.controls['role'].invalid && submitted && (f['role'].errors
+                                     || f['role'].touched || f['role'].dirty)
+                                  }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['role']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-lable fw-bold">Address</label>
+                                <input formControlName="address" placeholder="Address" type="text"
+                                    class="form-control ">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-lable fw-bold">Password</label>
+                                <div class="input-group ">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"
+                                        ><i class="bi bi-lock-fill"></i
+                                      ></span>
+                                    </div>
+                                    <input
+                                      name="password"
+                                      type="password"
+                                      class="input form-control input-inner-shadow"
+                                      formControlName="password"
+                                      placeholder="Password"
+                                      [type]="show"
+                                      [ngClass]="{'is-invalid':userForm.controls['password'].invalid && submitted && (f['password'].errors
+                                      || f['password'].touched || f['password'].dirty)}"
+                                    />
+                                    <div class="input-group-append">
+                                      <span
+                                        class="input-group-text"
+                                        (click)="password_show()"
+                                        *ngIf="show == 'password'"
+                                      >
+                                      <i class="bi bi-eye-slash-fill"></i>
+                                      </span>
+                                      <span
+                                        class="input-group-text"
+                                        (click)="password_hide()"
+                                        *ngIf="show == 'text'"
+                                      >
+                                      <i class="bi bi-eye-fill"></i>
+                                      </span>
+                                  </div>
+                        </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-lable fw-bold">Confirm Password</label>
+                                <div class="input-group ">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"
+                                        ><i class="bi bi-lock-fill"></i
+                                      ></span>
+                                    </div>
+                                    <input
+                                      name="password"
+                                      type="password"
+                                      class="input form-control input-inner-shadow"
+                                      formControlName="password"
+                                      placeholder="Password"
+                                      [type]="show"
+                                      [ngClass]="{'is-invalid':userForm.controls['password'].invalid && submitted && (f['password'].errors
+                                      || f['password'].touched || f['password'].dirty)}"
+                                    />
+                                    <div class="input-group-append">
+                                      <span
+                                        class="input-group-text"
+                                        (click)="password_show()"
+                                        *ngIf="show == 'password'"
+                                      >
+                                      <i class="bi bi-eye-slash-fill"></i>
+                                      </span>
+                                      <span
+                                        class="input-group-text"
+                                        (click)="password_hide()"
+                                        *ngIf="show == 'text'"
+                                      >
+                                      <i class="bi bi-eye-fill"></i>
+                                      </span>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3  pt-3">
+                            <button type="submit" class="btn btn-success  shadow rounded rounded-3"
+                                (click)="createUser()">SignUp</button>
+                        </div>
+                        <div class="checkbox  mt-3 " style="position: relative ;  text-align: center; ">
+                            Back to 
+                            <a type="button" class="checkbox"  (click)="loginpage()">login page</a>
+
+                        </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+

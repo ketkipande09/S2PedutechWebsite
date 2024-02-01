@@ -1,0 +1,28 @@
+mat-toolbar{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #eceae9;
+}
+
+ul li{
+    list-style: none;
+}
+
+button{
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+
+.logout:hover{
+    background-color: #8c9aeb !important;
+    border-radius: 10px;
+}
+
+ .nav-img{
+    width: 50px;
+}
+
+

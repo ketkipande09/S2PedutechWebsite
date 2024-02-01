@@ -1,0 +1,80 @@
+
+    <div class="container">
+        <div class="row my-4">
+            <div class="d-flex justify-content-center">
+                <div class="card shadow rounded rounded-3" style="width: 60rem;">
+                    <div class="card-header justify-content-start  fs-4 fw-bold">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="">
+                                Home Page
+                            </div>
+                            <div class="">
+                                <button class="btn btn-danger btn-sm float-end" (click)="add()">
+                                    <i class="bi bi-arrow-left"></i> Back</button>
+                            </div>
+                        </div>
+                        
+                       
+                       
+                    </div>
+                    <div class="card-body  mt-4 justify-content-center ">
+                        <form [formGroup]="homeForm">
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                    <label class="form-lable fs-6 fw-bold "> Bulletin Update 
+                                        <!-- <span class="text-danger">*</span> -->
+                                        </label>
+                                            <textarea formControlName="bulletPoint" placeholder="Bulletin" type="text"
+                                            class="form-control" [ngClass]="{'is-invalid':homeForm.controls['bulletPoint'].invalid
+                                             && submitted && (f['bulletPoint'].errors 
+                                            || f['bulletPoint'].touched || f['bulletPoint'].dirty)}" id="" cols="" rows="">
+
+                                            </textarea>
+                                    
+                                        <validation-messages style="text-align: left" [control]=" f['bulletPoint']">
+                                        </validation-messages>
+                                </div>
+                               
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                    <label class="form-lable fs-6 fw-bold">Placement 
+                                        <!-- <span class="text-danger">*</span> -->
+                                    </label>
+                                    <input formControlName="placementCount" placeholder="Placement" type="number"
+                                        class="form-control" [ngClass]="{'is-invalid':homeForm.controls['placementCount'].invalid
+                                        && submitted && (f['placementCount'].errors 
+                                       || f['placementCount'].touched || f['placementCount'].dirty)}">
+                                       
+                                       <validation-messages style="text-align: left" [control]=" f['placementCount']">
+                                       </validation-messages>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                  <label class="form-lable fw-bold">Upload Image 
+                                    <!-- <span class="text-danger">*</span> -->
+                                </label><br>
+                                  <input (input)="fileChoosen($event)" type="file" class="form-control-file" id="file-multiple-input"
+                                    name="file-multiple-input" multiple
+                                     />
+                                 
+                                 
+                                </div>
+                                <img [src]="fileContent" class="img-fluid img-size" *ngIf="fileContent">
+                              </div>
+
+                            <div class="text-center my-3 pt-4 ">
+                                <button  type="submit" *ngIf="!this.homeId"  class="btn btn-success  shadow rounded rounded-3"
+                                    (click)="createImage()">Create
+                                </button>
+                                <button *ngIf ="this.homeId" type="submit" class="btn btn-success  shadow rounded rounded-3"
+                                    (click)="updateImage()">Update
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

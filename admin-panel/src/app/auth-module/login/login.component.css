@@ -1,0 +1,22 @@
+/* .login-body{
+    width: 50vw;
+} */
+
+.container-fluid{
+    background-image: url('../../../assets/img/parllax.jpg');
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.card-body{
+    background-color: rgb(224, 223, 220);
+}
+.img{
+    border-radius: 50%;
+}
+/* .submit{
+    background-color: rgb(131, 116, 145);
+} */
+
+@import '~ngx-toastr/toastr.css'; 

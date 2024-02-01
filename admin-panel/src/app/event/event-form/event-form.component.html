@@ -1,0 +1,99 @@
+<div class="container-fluid">
+    <div class="row my-4">
+        <div class="d-flex justify-content-center">
+
+            <div class="card shadow rounded rounded-3" style="width: 40rem;">
+
+                <div class="card-header justify-content-start fs-4 fw-bold">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="">
+                            Event Form
+                        </div>
+                        <div class="">
+                            <a class="btn btn-danger btn-sm float-end " type="submit" (click)="add()">
+                                <i class="bi bi-arrow-left"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body mt-3 justify-content-center ">
+                    <form [formGroup]="eventForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold ">Event Name <span class="text-danger">*</span></label>
+                                <input formControlName="eventName" placeholder="Event Name" type="text"
+                                    class="form-control  ">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Speaker <span class="text-danger">*</span></label>
+                                <input formControlName="name" placeholder="speaker" type="text" class="form-control ">
+                            </div>
+                            <!-- <div class="col-md-12 mb-2">
+                                <label class="form-lable fw-bold">Date and Time <span
+                                        class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="datetime-local" formControlName="date_time" class="form-control"
+                                        placeholder="yyyy-mm-dd">
+                                </div>
+                            </div> -->
+                            <div class="col-md-12 mb-2">
+                                <label class="form-lable fw-bold">Start Date <span
+                                        class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="datetime-local" formControlName="startDate" class="form-control"
+                                        placeholder="yyyy-mm-dd">
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label class="form-lable fw-bold">End Date <span
+                                        class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="datetime-local" formControlName="endDate" class="form-control"
+                                        placeholder="yyyy-mm-dd">
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label class="form-lable fw-bold">Description <span class="text-danger">*</span></label>
+                                <textarea formControlName="description" placeholder="Description" type="text"
+                                    class="form-control " id="" cols="" rows=""></textarea>
+
+                            </div>
+
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Upload Image <span
+                                        class="text-danger">*</span></label><br>
+                                <input (input)="fileChoosen($event)" type="file" class="form-control-file"
+                                    id="file-multiple-input" name="file-multiple-input" multiple />
+
+                            </div>
+                            <img [src]="fileContents" class="img-fluid img-size" *ngIf="fileContents">
+
+
+                            <div class="text-center my-3 pt-4">
+                                <button *ngIf="!getid" type="submit" (click)="createImage()"
+                                    class="btn btn-success  shadow rounded rounded-3">Create</button>
+
+                                <button *ngIf="getid" (click)="updateEvent()" type="submit"
+                                    class="btn btn-success  shadow rounded rounded-3">Update</button>
+                                &nbsp;
+                                <button (click)="add()" type="submit"
+                                    class="btn btn-primary  shadow rounded rounded-3">Cancel</button>
+
+                            </div>
+
+                            <div class="alert alert-warning" role="alert" *ngIf="errmsg">
+                                {{errmsg}}
+                            </div>
+
+                            <div class="alert alert-success " role="alert" *ngIf="successmsg">
+                                <strong>{{successmsg}}</strong>
+                            </div>
+
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

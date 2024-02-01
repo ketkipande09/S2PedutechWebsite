@@ -1,0 +1,139 @@
+
+<div class="container-fluid">
+    <div class="row my-4">
+        <div class="d-flex justify-content-center">
+            <div class="card  shadow rounded rounded-3 " style="width: 60rem;">
+                <div class="card-header justify-content-center fs-4  fw-bold">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="">
+                            Transition Form
+                        </div>
+                        <div class="">
+                            <a (click)="add()" type="submit"
+                            class="btn btn-danger btn-sm float-end">
+                            <i class="bi bi-arrow-left"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body mt-3 justify-content-center">
+                    <form [formGroup]="transitionForm">
+                        <div class="row">
+                            <div class="col-md-4 mb-2">
+                                <label class="form-lable fw-bold ">Course <span class="text-danger">*</span></label>
+                                <input formControlName="course" placeholder="Course" type="text" class="form-control"
+                                [ngClass]="{
+                                    'is-invalid':transitionForm.controls['course'].invalid && submitted && (f['course'].errors
+                                     || f['course'].touched || f['course'].dirty)
+                                  }">
+                            <div>
+                                <validation-messages style="text-align: left" [control]=" f['course']">
+                                </validation-messages>
+                            </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label class="form-lable fw-bold">Duration <span class="text-danger">*</span></label>
+                                <input formControlName="duration" placeholder="Duration" type="text"
+                                    class="form-control "
+                                    [ngClass]="{
+                                        'is-invalid':transitionForm.controls['duration'].invalid && submitted && (f['duration'].errors
+                                         || f['duration'].touched || f['duration'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['duration']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label class="form-lable fw-bold ">Mentor <span class="text-danger">*</span></label>
+                                <input formControlName="mentor" placeholder="Mentor" type="text" class="form-control"
+                                [ngClass]="{
+                                    'is-invalid':transitionForm.controls['mentor'].invalid && submitted && (f['mentor'].errors
+                                     || f['mentor'].touched || f['mentor'].dirty)
+                                  }">
+                            <div>
+                                <validation-messages style="text-align: left" [control]=" f['mentor']">
+                                </validation-messages>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold ">Average_Salary <span class="text-danger">*</span></label>
+                                <input formControlName="average_Salary" placeholder="average_Salary" type="text"
+                                    class="form-control"
+                                    [ngClass]="{
+                                        'is-invalid':transitionForm.controls['average_Salary'].invalid && submitted && (f['average_Salary'].errors
+                                         || f['average_Salary'].touched || f['average_Salary'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['average_Salary']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                          
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold ">Average_Salary_Hike <span class="text-danger">*</span></label>
+                                <input formControlName="average_Salary_Hike" placeholder="Average_Salary_Hike"
+                                    type="text" class="form-control"
+                                    [ngClass]="{
+                                        'is-invalid':transitionForm.controls['average_Salary_Hike'].invalid && submitted && (f['average_Salary_Hike'].errors
+                                         || f['average_Salary_Hike'].touched || f['average_Salary_Hike'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['average_Salary_Hike']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-2">
+                                <label class="form-lable fw-bold ">Description <span class="text-danger">*</span></label>
+                                <textarea formControlName="description" placeholder="Description" type="text"
+                                class="form-control"
+                                [ngClass]="{
+                                    'is-invalid':transitionForm.controls['description'].invalid && submitted && (f['description'].errors
+                                     || f['description'].touched || f['description'].dirty)
+                                  }"  id="" cols="" rows=""></textarea>
+                               
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['description']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Upload Image <span class="text-danger">*</span></label><br>
+                                <input (input)="fileChoosen($event, 'img')" type="file" class="form-control-file"
+                                    id="file-multiple-input" name="file-multiple-input" multiple />                                 
+                            </div>
+                            <img [src]="fileContent" class="img-fluid img-size " *ngIf="fileContent">
+                            
+
+                            <!-- <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Upload PDF</label><br>
+                                <input (input)="fileChoosen($event, 'file')" accept=".pdf,.doc,.docx" type="file"
+                                    class="form-control-file" id="file-multiple-input" placeholder="Upload file"
+                                    name="file-multiple-input" multiple />
+                            </div> -->
+                        </div>
+                        <div>
+                        </div>
+                        <div class="text-center my-3 pt-4">
+                            <button  *ngIf="!this.id"  type="submit"
+                                class="btn btn-success shadow rounded rounded-3" (click)="createImage()">Submit</button>
+                        </div>
+                        <div class="text-center my-3">
+                            <button *ngIf="this.id"  type="submit"
+                                class="btn btn-success  shadow rounded rounded-3" (click)=" updateTransition()">Update</button>
+                        </div>
+                        
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

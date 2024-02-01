@@ -1,0 +1,73 @@
+<div class="container my-4">
+    <div class="card my-auto">
+        <div class="card-header text-dark">
+                    <div class="row">
+                        <div class="col-md-8 col-9">
+                            <h2 class="mb-0 fw-bold">Client</h2>
+                        </div>
+                        <div class="col-md-4 col-3" style="text-align: right;">
+                            <button class="btn btn-success btn-md rounded-pill px-4" 
+                            (click)="add()">Add Client</button>
+                        </div>
+                    </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead  ">
+                     <tr class="table-secondary">
+                        <th scope="col">Sr.No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col" class="mx-auto text-center">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody class="tbody mt-3">
+                        <tr *ngFor="let client of clientiterate; let i = index">
+                            <td scope="row">{{ i + 1 }}</td>
+                             <td scope="row">{{client.name}}</td>
+                            <td scope="row"><img src="{{client.image}}" alt="placeholder" height="60" width="120"></td>
+                            <td scope="row" class=" text-center">
+                                <button class="btn btn-outline-warning btn-sm " style="width: 30px;"  ngbTooltip="Update" (click) = "edit(client)"><i class="bi bi-pencil-square"></i></button>
+                               
+                                <button class="btn btn-outline-danger  btn-sm  mx-2" style="width: 30px;"  ngbTooltip="Delete" (click)="open( client.id, deleteModal)"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<ng-template #deleteModal let-modal>
+    <div class="row mt-3 mr-2">
+        <div class="col-md-10 col-sm-10">
+        </div>
+        <div class="col-md-2 col-sm-2 text-right">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+               >
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div class="modal-body text-center px-0">
+        <img src="" class="mb-3" width="100" alt="" />
+        <h4 class="warn-color fs-4 fw-bold">Are you sure you want to Delete ?</h4>
+        <div class="clearfix modal-text">
+            <label>
+                <h3></h3>
+            </label>
+        </div>
+    </div>
+    <div class="model-footer border-0 text-center px-0 pb-4">
+        <div class="clearfix py-2">
+            <button class="btn btn-danger" (click)="deleteClient(this.selectedRow)">YES</button>
+            <button class="btn btn-success mx-2" (click)="modal.dismiss('Cross click')" >NO</button>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,54 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between ">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="row">
+      <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-md btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle><i
+                class="bi bi-person-circle"></i> Profile</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="idpatch()" >Reset Password</button>
+              <button ngbDropdownItem (click)="logout()">Logout</button>
+              <button ngbDropdownItem></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <div ngbDropdown class="d-inline-block">
+
+  <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+      <img src="https://github.com/mdo.png" alt="hugenerd" class="rounded-circle nav-img">
+  </button>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <button ngbDropdownItem>project...</button>
+    <button ngbDropdownItem>Settings</button>
+    <button ngbDropdownItem>Profile</button>
+  </div>
+</div> -->
+
+ <!-- <div class="col logout">
+              <button type="button" [routerLink]="['/login']">
+                  <i class="fs-4 bi bi-box-arrow-in-left logout"></i>
+                  <span>Logout</span>
+              </button>
+              
+              <button type="button" [routerLink]="['auth/reset-pwd']">
+                <i class="fs-4 bi bi-box-arrow-in-left logout"></i>
+                <span>Set Password</span>
+            </button>
+          </div> -->
+
+
+
+
+
+
+
+

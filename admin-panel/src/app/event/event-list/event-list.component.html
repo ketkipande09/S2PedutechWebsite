@@ -1,0 +1,152 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-2">
+      <div class="container input-icons inputshadow">
+        <div class="input-group input-group-sm">
+          <input type="search" class="input form-control input-inner-shadow searchinput" aria-label="Small"
+            placeholder="Search" [(ngModel)]="search" (input)="searchFn()" aria-describedby="inputGroup-sizing-sm" />
+          <div class="input-group-append">
+            <span class="input-group-text" id="inputGroup-sizing-sm">
+              <i class="bi bi-search"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card my-2">
+    <div class="card-header text-dark">
+      <div class="row">
+        <div class="col-md-8 col-9">
+          <h2 class="mb-0 fw-bold">Events</h2>
+        </div>
+        <div class="col-md-4 col-3" style="text-align: right">
+          <button (click)="add()" class="btn btn-success btn-md rounded-pill px-4">
+            Add Event
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <table class="table table-hover table-responsive">
+        <thead class="thead">
+          <tr class="table-secondary">
+            <th scope="col">Sr. No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Speaker</th>
+            <th scope="col">Description</th>
+            <!-- <th scope="col">Date & time</th> -->
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Image</th>
+            <th scope="col" class="text-center">Action</th>
+            <th scope="col" class="mx-auto text-center">Status</th>
+          </tr>
+        </thead>
+        <tbody class="tbody mt-3">
+          <tr *ngFor="let r of readList; let i = index">
+            <th scope="row" class="p-2">{{ i + 1 }}</th>
+            <td scope="row">{{ r.eventName }}</td>
+            <td scope="row">{{ r.name }}</td>
+            <td scope="row">
+              <span class="action-span" placement="left" ngbTooltip="{{ r.description }}">
+                {{ r.description }}
+              </span>
+            </td>
+            <!-- <td scope="row">{{r.description}}</td> -->
+            <!-- <td scope="row">
+              {{ r.date_time | date: "dd/MM/yyyy, HH:mm a" }}
+            </td> -->
+            <td scope="row">
+              {{ r.startDate | date: "dd/MM/yyyy, HH:mm a" }}
+            </td>
+            <td scope="row">
+              {{ r.endDate | date: "dd/MM/yyyy, HH:mm a" }}
+            </td>
+            <td scope="row">
+              <img src="{{ r.image }}" alt="placeholder" height="50" width="75" />
+            </td>
+            <td scope="row" class="text-center">
+              <button class="btn btn-outline-warning btn-sm mx-2" style="width: 30px" (click)="editList(r)"
+                ngbTooltip="Update">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+
+              <button class="btn btn-outline-danger btn-sm" style="width: 30px" (click)="open(r, deleteModal)"
+                ngbTooltip="Delete">
+                <i class="bi bi-trash"></i>
+              </button>
+
+              <button class="btn btn-outline-primary btn-sm mx-2" style="width: 30px" (click)="view(r)"
+                ngbTooltip="View Feedback">
+                <i class="bi bi-eye-fill"></i>
+              </button>
+            </td>
+            <td>
+              <div class="form-check form-switch">
+                <input [(ngModel)]="r.eventStatus" class="form-check-input" type="checkbox" (change)="eventStatus(r)" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row justify-content-between p-2 pagination-sm m-0">
+      <div class="col-md-6 pl-0">
+        <ngb-pagination [collectionSize]="collection" [(page)]="page" [pageSize]="pagesize" [maxSize]="5"
+          [rotate]="true" [boundaryLinks]="true" (pageChange)="onChangePage($event)">
+          <ng-template ngbPaginationFirst>
+            << </ng-template>
+              <ng-template ngbPaginationLast>>></ng-template>
+              <ng-template ngbPaginationPrevious>
+                < </ng-template>
+                  <ng-template ngbPaginationNext>></ng-template>
+                  <ng-template ngbPaginationEllipsis>...</ng-template>
+                  <ng-template ngbPaginationNumber class="custompage" let-page>
+                    {{ page }}
+                  </ng-template>
+        </ngb-pagination>
+      </div>
+      <div class="col-md-6 text-right pr-0">
+        <select class="custom-select" style="width: auto; float: right" [(ngModel)]="pagesize"
+          (change)="onChangePage($event)">
+          <option *ngFor="let option of pageLimitOptions" [value]="option.value"
+            [selected]="option.value == currentPageLimit">
+            {{ option.value }} item per page
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #deleteModal let-modal>
+  <div class="row mt-3 mr-2">
+    <div class="col-md-10 col-sm-10"></div>
+    <div class="col-md-2 col-sm-2 text-right">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+        (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+  <div class="modal-body text-center px-0">
+    <img src="" class="mb-3" width="100" alt="" />
+    <h4 class="warn-color fw-bold fs-5">Are you sure you want to Delete ?</h4>
+    <div class="clearfix modal-text">
+      <label *ngIf="selectedRow.name">
+        <h3>{{ selectedRow.name }}</h3>
+      </label>
+    </div>
+  </div>
+  <div class="model-footer border-0 text-center px-0 pb-4">
+    <div class="clearfix py-2">
+      <button class="btn btn-danger" (click)="delete(this.selectedRow.id)">
+        YES
+      </button>
+      <button class="btn btn-success mx-2" (click)="modal.dismiss('Cross click')">
+        NO
+      </button>
+    </div>
+  </div>
+</ng-template>

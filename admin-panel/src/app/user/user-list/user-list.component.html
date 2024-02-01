@@ -1,0 +1,156 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-2">
+      <div class="container input-icons inputshadow">
+        <div class="input-group input-group-sm">
+          <input
+            type="search"
+            class="input form-control input-inner-shadow searchinput"
+            aria-label="Small"
+            placeholder="Search"
+            [(ngModel)]="search"
+            (input)="searchFn()"
+            aria-describedby="inputGroup-sizing-sm"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" id="inputGroup-sizing-sm">
+              <i class="bi bi-search"></i></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card my-2">
+    <div class="card-header text-dark">
+      <div class="row">
+        <div class="col-md-8 col-9">
+          <h2 class="mb-0 fw-bold">Users</h2>
+        </div>
+        <div class="col-md-4 col-3" style="text-align: right;">
+          <button (click)="add()" class="btn btn-success btn-md rounded-pill float-end"
+          >Add User</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+
+    
+
+      <div class="table-responsoive">
+        <table class="table table-hover ">
+          <thead class="thead ">
+            <tr class="table-secondary">
+              <th scope="col">Sr. No.</th>
+              <th scope="col">Email</th>
+              <th scope="col">UserName</th>
+              <th scope="col">Mobile No.</th>
+              <th scope="col">Role</th>
+              <th scope="col" class="mx-auto text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody class="tbody mt-3">
+            <tr *ngFor="let c of users; let i = index">
+              <td scope="row">{{i+1}}</td>
+              <td scope="row">{{c.email}}</td>
+              <td  scope="row">{{c.userName}}</td>
+              <td  scope="row">{{c.mobileNumber}}</td>
+              <td  scope="row">{{c.role}}</td>
+  
+              <td  scope="row" class="text-center">
+                <button class="btn btn-outline-warning btn-sm mx-2 " style="width: 30px;" (click)="updateUser(c)" ngbTooltip="Update"><i class="bi bi-pencil-square"></i></button>
+     
+                <button class="btn btn-outline-danger btn-sm " style="width: 30px;" (click)="open(c,deleteModal)" [disabled]="userDetails.role == 'Super_Admin'" ngbTooltip="Delete"><i class="bi bi-trash"></i></button>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #deleteModal let-modal>
+  <div class="row mt-3 mr-2">
+      <div class="col-md-10 col-sm-10">
+      </div>
+      <div class="col-md-2 col-sm-2 text-right">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+              (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+  </div>
+  <div class="modal-body text-center px-0">
+      <img src="" class="mb-3" width="100" alt="" />
+      <h4 class="warn-color fs-4 fw-bold">Are you sure you want to Delete ?</h4>
+      <div class="clearfix modal-text">
+          <label *ngIf="selectedRow.userName">
+              <h3>{{ selectedRow.userName }}</h3>
+          </label>
+      </div>
+  </div>
+  <div class="model-footer border-0 text-center px-0 pb-4">
+      <div class="clearfix py-2">
+          <button class="btn btn-danger" (click)="deleteUser(this.selectedRow.id)">YES</button>
+          <button class="btn btn-success mx-2" (click)="modal.dismiss('Cross click')">NO</button>
+      </div>
+  </div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <table>
+<div class="main">
+    <div class="fixed_headers">
+      <h6 class="bg-primary text-white p-2 mb-0">User Details</h6>
+          <div class="table-responsive table-height">
+            <table class="table table-bordered table-striped table-sticky">
+              <thead class="pb-5">
+                <tr class="table-secondary">
+                  <th scope="col">Sr no.</th>
+                  <th scope="col">UserName</th>
+                  <th scope="col">Mobile No.</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Action</th>
+                  
+                </tr>
+              </thead>
+                <tbody>
+                  <tr *ngFor="let c of users; let i = index">
+                      <td>{{i+1}}</td>
+                      <td>{{c.userName}}</td>
+                      <td>{{c.mobileNumber}}</td>
+                      <td>{{c.role}}</td>
+                      <td><button (click)="editUser(c)">Edit</button>
+                        <button class="mx-2" (click)="deleteContact(c.id)">Delete</button></td>
+           
+                      <td><button (click)="updateUser(c)">Edit</button></td>
+                    <td><button (click)="deleteUser(c.id)">Delete</button></td>
+                    <td>{{c.Edit}}</td>
+                    <td>{{c.Delete}}</td>
+                  </tr>
+                  
+              </tbody>
+              
+            </table> -->

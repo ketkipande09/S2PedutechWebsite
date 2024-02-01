@@ -1,0 +1,63 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+
+<section id="contact">
+  <div class="container-fluid ">
+    <div class="row justify-content-center">
+
+      <h2 class="text-center"><strong>Contact Form</strong></h2>
+
+    </div>
+    <div class=" background">
+      <div class="cover">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-6 col-xl-6 col-xxl-6">
+              <div class="contactInfo">
+                <h6>Drop us a message</h6>
+                <p class="brief">got a question ? we'd love to hear from you. <br> send us a message and we'll respond
+                  as
+                  soon as possible. </p>
+                <p><i class="fa fa-phone"></i> : 9096360650 | 8888755259 </p>
+                <p><i class="fa fa-envelope"></i> : sachinnandgirwar@s2pedutech.com </p>
+              </div>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-6 col-xl-6 col-xxl-6">
+              <div class="contactForm">
+                <form [formGroup]="contactForm">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" name="" class="form-control" value="" placeholder="Name"  formControlName="name">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="" value="" placeholder="Email ID"  formControlName="email">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="number" class="form-control" name="" value="" placeholder="Contact"  formControlName="contact">
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea name="" rows="4" class="form-control" placeholder="Message"  formControlName="message"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <button type="button" class="button" (click)="onSubmit()">Send Message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

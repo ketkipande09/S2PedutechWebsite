@@ -1,0 +1,225 @@
+.development {
+	background-color: #fafafad7;
+
+	.card {
+		border-radius: 13px;
+		box-shadow: 0px 4px 4px 0px #FF8A00;
+		padding: 10px;
+		border: 2px solid #FF8A00;
+		width: 206px;
+		height: 240px;
+
+
+		.image {
+			width: 98px;
+			height: 70px;
+		}
+
+		.card-body {
+			// height: 8rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+		}
+	}
+
+	h2 {
+		color: #0078B3;
+	}
+
+	.text {
+		text-align: justify;
+	}
+}
+
+@media (min-width: 769px) {
+	.move {
+		position: relative;
+		margin-top: 100px;
+	}
+}
+
+@media (max-width: 768px) {
+	.content {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 764px) {
+	.mobile {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		align-content: space-between;
+		flex-direction: column;
+	}
+}
+
+// <---Client CSS--->
+
+body {
+	align-items: center;
+	background: #ffffff;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+}
+
+h2 {
+	color: #0078B3;
+}
+
+@mixin white-gradient {
+	background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+$animationSpeed: 15s;
+
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(calc(-250px * 8))
+	}
+}
+
+
+
+.slider {
+	background: rgb(255, 255, 255);
+	// box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	height: 100px;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding-bottom: 20%;
+	animation: linear infinite;
+
+
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: px;
+		z-index: 2;
+	}
+
+	&:hover div {
+		animation-play-state: paused;
+	}
+
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(200deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		width: calc(250px * 80);
+	}
+
+	.slide {
+		height: 100px;
+		width: 250;
+		padding: 20px;
+		border-radius: 2px;
+	}
+}
+
+// Gradients
+.gradient {
+	align-items: stretch;
+	margin: 1em 0;
+	height: 2em;
+	line-height: 2em;
+	color: white;
+	background: rgb(255, 116, 3);
+	font-size: 40px;
+
+	&:before {
+		background: linear-gradient(to right, white, rgb(255, 116, 3));
+	}
+
+	&:after {
+		background: linear-gradient(to left, white, rgb(255, 116, 3));
+	}
+}
+
+
+body {
+	margin: 40px;
+}
+
+
+.divider {
+	display: flex;
+
+	&:before,
+	&:after {
+		content: "";
+		flex: 1;
+	}
+}
+
+@media (max-width: 900px) {
+	.slider {
+		background: white;
+		box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+		height: 190px;
+		margin: auto;
+		overflow: hidden;
+		position: relative;
+		width: 97%;
+		padding-bottom: 15%;
+		animation: linear infinite;
+		border-radius: 0px;
+		padding-top: 0px;
+		margin-bottom: 17%;
+		margin-top: -6%;
+		margin-left: 6px;
+	}
+
+	.gradient {
+		align-items: stretch;
+		margin: 1em 0;
+		height: 62px;
+		line-height: 2em;
+		color: white;
+		background: #ff7403;
+		font-size: 29px;
+		width: 100% !important;
+		margin-top: 37px;
+	}
+
+
+	.slider {
+		background: white;
+		box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+		height: 190px;
+		margin: auto;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		padding-bottom: 15%;
+		animation: linear infinite;
+		border-radius: 0px;
+	}
+
+
+
+}

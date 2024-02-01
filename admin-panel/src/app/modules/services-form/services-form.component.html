@@ -1,0 +1,87 @@
+<div class="container-fluid ">
+  <div class="row my-4">
+    <div class=" d-flex justify-content-center">
+      <div class="card  shadow rounded rounded-3 " style="width: 60rem; ">
+        <div class="card-header justify-content-start  fs-4 fw-bold ">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="">
+              Service Form
+            </div>
+            <div class="">
+              <a (click)="add()" type="submit"
+              class="btn btn-danger btn-sm  float-end">
+              <i class="bi bi-arrow-left"></i> Back</a>
+            </div>
+          </div>
+         
+          
+        </div>
+        <div class="card-body mt-3 justify-content-center">
+          <form [formGroup]="serviceForm">
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label class="form-lable fw-bold ">Name <span class="text-danger">*</span></label>
+                <input formControlName="name" placeholder="Name" type="text" class="form-control" 
+                [ngClass]="{'is-invalid':serviceForm.controls['name'].invalid && submitted && (f['name'].errors
+                   || f['name'].touched || f['name'].dirty)}">
+                <div>
+                  <validation-messages style="text-align: left" [control]=" f['name']">
+                  </validation-messages>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label class="form-lable fw-bold">Description <span class="text-danger">*</span></label>
+                <textarea formControlName="description" placeholder="Description" type="text" class="form-control" 
+                [ngClass]="{
+                'is-invalid': f['description'].invalid && submitted && (f['description'].errors || f['description'].touched ||
+                 f['description'].dirty)
+              }"  id="" cols="" rows="">
+
+                </textarea>
+                <!-- <input formControlName="description" placeholder="Description" type="text" class="form-control" 
+                  [ngClass]="{
+                  'is-invalid': f['description'].invalid && submitted && (f['description'].errors || f['description'].touched ||
+                   f['description'].dirty)
+                }"> -->
+                 <!-- <span class="action-span" placement="left" ngbTooltip="{{description}}">
+                  {{description}}
+              </span> -->
+                <div>
+                  <validation-messages style="text-align: left" [control]=" f['description']">
+                  </validation-messages>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-6">
+                <label class="form-lable fw-bold">Upload Image <span class="text-danger">*</span></label><br>
+                <input (input)="fileChoosen($event)" type="file" class="form-control-file" id="file-multiple-input"
+                  name="file-multiple-input" multiple
+                   />
+               
+               
+              </div>
+              <img [src]="fileContent" class="img-fluid img-size" *ngIf="fileContent">
+            </div>
+            <div>
+            </div>
+            <div class="text-center my-3 pt-4">
+              <button *ngIf="!this.id" type="submit" class="btn btn-success shadow rounded rounded-3"
+                (click)="createImage()">Create</button>
+
+              <button *ngIf="this.id" type="submit"
+                class="btn btn-success  shadow rounded rounded-3" (click)="updateImage()">Update</button>
+
+              &nbsp;
+              <button (click)="add()" type="submit" class="btn btn-primary  shadow rounded rounded-3">Cancle</button>
+            </div>
+
+          </form>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>

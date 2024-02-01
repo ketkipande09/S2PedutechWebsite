@@ -1,0 +1,1966 @@
+{
+	"info": {
+		"_postman_id": "bfe1a616-2736-4c70-873c-df6b32cbc091",
+		"name": "s2pCourses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/getAllUsers?page=1&pagesize=10&search=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"getAllUsers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"superadmin\",\r\n    \"email\":\"superadmin1@gmail.com\",\r\n    \"password\":\"admin@1234\",\r\n    \"role\":\"SUPER_ADMIN\",\r\n    \"mobile\":\"9970627511\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/signUp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"reenapounikar@s2pedutech.com\",\r\n\"password\":\"admin@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"superadmin12\",\r\n    \"email\":\"superadmin@gmail.com\",\r\n    \"password\":\"admin@1234\",\r\n    \"role\":\"SUPER_ADMIN\",\r\n    \"mobile\":\"9970627510\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/updateProfile?id=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"updateProfile"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user/delete/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user/profile?id=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user/profile?id=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":3,\r\n    \"oldPassword\":\"admin@1234\",\r\n    \"newPassword\":\"reena@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/reset-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"reenapounikar@s2pedutech.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/forgot-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":7,\r\n    \"resetPin\":383811,\r\n    \"password\":\"admin@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/set-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"set-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "portalRegistration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"xyz\",\r\n    \"email\": \"aswq@gmail.com\",\r\n    \"mobile\":\"1234321234\",\r\n    \"collegeName\": \"PIET,Nagpur\",\r\n    \"eventId\": 8\r\n  \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/portalRegistration/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"portalRegistration",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllStudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/portalRegistration/getAllUsers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"portalRegistration",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEventRegistration",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/portalRegistration/delete/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"portalRegistration",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRegistration",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n                \"userName\": \"haresh_gahane\",\r\n                \"firstName\":\"haresh\",\r\n                \"lastName\":\"gahane\",\r\n                \"collegeName\": \"pce,Nagpur\",\r\n                \"mobile\": 7083002811,\r\n                \"email\": \"hareshgahane4u@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/portalRegistration/updateRegistration/?id=7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"portalRegistration",
+								"updateRegistration",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStudentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/portalRegistration/studentGetById/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"portalRegistration",
+								"studentGetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service course",
+			"item": [
+				{
+					"name": "getAll courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/courses/getCourseListing?page=1&pagesize=10&search=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"getCourseListing"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create couse",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "angular",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "javadevelopersss",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "image",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Pictures/0ba151d85fc708f26a9f80a7d9c1750e.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/courses/createCourse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"createCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "angualr13",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "xyz",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "image",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Pictures/637966.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/courses/updateCourse/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"updateCourse",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/courses/deleteCourse/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"deleteCourse",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "getAll event",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/event/getEventListing",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"event",
+								"getEventListing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "nainika",
+									"type": "text"
+								},
+								{
+									"key": "eventName",
+									"value": "bussiness..1e",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "xtuibss",
+									"type": "text"
+								},
+								{
+									"key": "date_time",
+									"value": "2022/03/05 ",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "event",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Pictures/0ba151d85fc708f26a9f80a7d9c1750e.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/event/createEvent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"event",
+								"createEvent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sachin sir12",
+									"type": "text"
+								},
+								{
+									"key": "eventName",
+									"value": "abcd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "ghkljkls",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "event",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Pictures/0ba151d85fc708f26a9f80a7d9c1750e.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/event/updateEvent/10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"event",
+								"updateEvent",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/event/deleteEvent/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"event",
+								"deleteEvent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get event Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/event/getEventById/10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"event",
+								"getEventById",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/feedback/getEventsById/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback",
+								"getEventsById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "feedback",
+			"item": [
+				{
+					"name": "getFeedback",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/feedback/getFeedback?page=1&pagesize=10&search=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback",
+								"getFeedback"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create feedback",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"reena\",\r\n    \"eventId\":2,\r\n    \"collegeName\":\"xyz\",\r\n    \"branch\":\"extc\",\r\n    \"yearOfPassing\":2021,\r\n    \"mobile\":9970627510,\r\n    \"email\":\"reena21@gmail.com\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/feedback/createFeedback",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback",
+								"createFeedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update feedback",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"pratik1123\",\r\n    \"eventId\":1,\r\n    \"collegeName\":\"xyz\",\r\n    \"branch\":\"mech\",\r\n    \"yearOfPassing\":2021,\r\n    \"mobile\":9970627511,\r\n    \"email\":\"pratik123@gmail.com\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/feedback/updateFeedback/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback",
+								"updateFeedback",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete feedback",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/feedback/deleteFeedback/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback",
+								"deleteFeedback",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "feedbackById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/feedback/getFeedbackById/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feedback",
+								"getFeedbackById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enquiry",
+			"item": [
+				{
+					"name": "create enquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"reena\",\r\n    \"course\":\"Mean Stack Developer\",\r\n    \"email\":\"reena@gmail.com\",\r\n    \"mobile\":9978686868,\r\n    \"message\":\"xyz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/enquiry/createEnquiry",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enquiry",
+								"createEnquiry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get enquiry",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/enquiry/getEnquiryListing?page=1&pagesize=10&search=Mean Stack Developer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enquiry",
+								"getEnquiryListing"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "Mean Stack Developer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBy Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/enquiry/getEnquiryById/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enquiry",
+								"getEnquiryById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"reena\",\r\n    \"course\":\"Mean Stack Developer\",\r\n    \"email\":\"reena12@gmail.com\",\r\n    \"mobile\":9978686868,\r\n    \"message\":\"xyz,,.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/enquiry/updateEnquiry/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enquiry",
+								"updateEnquiry",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/enquiry/deleteEnquiry/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"enquiry",
+								"deleteEnquiry",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transition course",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/transition/getListing",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transition",
+								"getListing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course",
+									"value": "JAVA Full Stack Developer",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "50 Hrs",
+									"type": "text"
+								},
+								{
+									"key": "mentor",
+									"value": "1-1, 1-Many & Job Support",
+									"type": "text"
+								},
+								{
+									"key": "average_Salary",
+									"value": "5 LPA",
+									"type": "text"
+								},
+								{
+									"key": "average_Salary_Hike",
+									"value": "90%",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "course",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Pictures/mean-stack.png"
+								},
+								{
+									"key": "key",
+									"value": "pdf",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/transition/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transition",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course",
+									"value": "MEAN Stack Developer",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "50 Hrs",
+									"type": "text"
+								},
+								{
+									"key": "mentor",
+									"value": "1-1, 1-Many & Job Support",
+									"type": "text"
+								},
+								{
+									"key": "average_Salary",
+									"value": "5 LPA",
+									"type": "text"
+								},
+								{
+									"key": "average_Salary_Hike",
+									"value": "90%",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "course",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Pictures/mean-stack.png"
+								},
+								{
+									"key": "key",
+									"value": "pdf",
+									"type": "text"
+								},
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Downloads/MEAN_STACK.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/transition/update/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transition",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/transition/getById/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transition",
+								"getById",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/transition/delete/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transition",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload pdf",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "key",
+									"value": "pdf",
+									"type": "text"
+								},
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Downloads/MEAN_STACK.pdf"
+								},
+								{
+									"key": "course",
+									"value": "JAVA Full Stack Developer",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "50 Hrs",
+									"type": "text"
+								},
+								{
+									"key": "mentor",
+									"value": "1-1, 1-Many & Job Support",
+									"type": "text"
+								},
+								{
+									"key": "average_Salary",
+									"value": "5 LPA",
+									"type": "text"
+								},
+								{
+									"key": "average_Salary_Hike",
+									"value": "90%",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "course",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/transition/uploadPdf/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"transition",
+								"uploadPdf",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/home/getListing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home",
+								"getListing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bulletPoint",
+									"value": "S2P Edutech Presenting a Seminar a 'How to get placed in IT sector'",
+									"type": "text"
+								},
+								{
+									"key": "placementCount",
+									"value": "397",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "logo",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/s2p-courses/website/src/assets/img/brand/logo.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/home/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get byId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/home/getById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home",
+								"getById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bulletPoint\":\"S2P Edutech Presenting a Seminar a 'How to get placed in IT sector'\",\r\n    \"placementCount\": 397\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/home/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/home/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "slider",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/slider/getListing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"slider",
+								"getListing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "key",
+									"value": "slider",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Pictures/0ba151d85fc708f26a9f80a7d9c1750e.png"
+								},
+								{
+									"key": "studentName",
+									"value": "Pratik",
+									"type": "text"
+								},
+								{
+									"key": "companyName",
+									"value": "S2p Edutech",
+									"type": "text"
+								},
+								{
+									"key": "collegeName",
+									"value": "Palloti",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/slider/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"slider",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "key",
+									"value": "slider",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Pictures/0ba151d85fc708f26a9f80a7d9c1750e.png"
+								},
+								{
+									"key": "studentName",
+									"value": "Pratik",
+									"type": "text"
+								},
+								{
+									"key": "companyName",
+									"value": "S2p Edutech",
+									"type": "text"
+								},
+								{
+									"key": "collegeName",
+									"value": "XYZ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/slider/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"slider",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get byId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/slider/getById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"slider",
+								"getById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/slider/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"slider",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "organization",
+			"item": [
+				{
+					"name": "org getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/v1/admin/org/getOrgListing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"org",
+								"getOrgListing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "org create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sachinnandgirwar@s2pedutech.com\",\r\n    \"orgName\":\"S2P Edutech\",\r\n    \"address\":\"Meera bhavan, opp. Sony Center, Near Old Dande Hospital, Nagpur-440010.\",\r\n    \"mobile\":9970627510\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/org/createOrg",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"org",
+								"createOrg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update org",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sachinnandgirwar@s2pedutech.com\",\r\n    \"orgName\":\"S2P Edutech\",\r\n    \"address\":\"Meera bhavan, opp. Sony Center, Near Old Dande Hospital, Nagpur-440010.\",\r\n    \"mobile\":9970627510,\r\n    \"alternateMobile\":8888597536\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/org/updateOrg/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"org",
+								"updateOrg",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "org getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/org/getOrgById/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"org",
+								"getOrgById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrg",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "{{A}}",
+								"value": "{{T}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/org/deleteOrg/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"org",
+								"deleteOrg",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5050/api/v1/admin",
+			"type": "string"
+		},
+		{
+			"key": "A",
+			"value": "authorization",
+			"type": "string"
+		},
+		{
+			"key": "T",
+			"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwOTU0MTQwfQ.A7enabIFNxz0Zeq2X94dSp5c_UvmTIcA0-3gkpsUR38",
+			"type": "string"
+		}
+	]
+}

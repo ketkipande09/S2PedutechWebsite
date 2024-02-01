@@ -1,0 +1,163 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4 mb-2">
+            <div class="container input-icons inputshadow">
+                <div class="input-group input-group-sm">
+                    <input type="search" class="input form-control input-inner-shadow searchinput" aria-label="Small"
+                        placeholder="Search" [(ngModel)]="search" (input)="searchFn()"
+                        aria-describedby="inputGroup-sizing-sm" />
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">
+                            <i class="bi bi-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card my-2">
+        <div class="card-header text-dark">
+            <div class="row">
+                <div class="col-md-8 col-9">
+                    <h2 class="mb-0 fw-bold">Transition Course</h2>
+                </div>
+                <div class="col-md-4 col-3" style="text-align: right;">
+                    <button class="btn btn-success btn-md  rounded-pill px-4" (click)="add()">Add Transition </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover ">
+                        <thead class="thead ">
+                            <tr class="table-secondary">
+                                <th scope="col">Sr.No.</th>
+                                <th scope="col">Courses</th>
+                                <th scope="col">Duration</th>
+                                <th scope="col">Mentor</th>
+                                <th scope="col">Average_Salary</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Average_Salary_Hike</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">PDF</th>
+                                <th scope="col" class="mx-auto text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody mt-3">
+                            <tr *ngFor="let t of imageArr; let i=index">
+                                <td scope="row">{{i+1}}</td>
+                                <td scope="row">{{t.course}}</td>
+                                <td scope="row">{{t.duration}}</td>
+                                <td scope="row">{{t.mentor}}</td>
+                                <td scope="row">{{t.average_Salary}}</td>
+                                <td  scope="row">
+                                    <span class="action-span" placement="left" ngbTooltip="{{t.description}}">
+                                        {{t.description}}
+                                    </span>
+                                </td>
+                                <!-- <td scope="row">{{t.description}}</td> -->
+                                <td scope="row">{{t.average_Salary_Hike}}</td>
+                                <td scope="row"><img src="{{t.image}}" alt="placeholder" height="50" width="50"></td>
+                                <td scope="row"> <button class="btn btn-outline-success  btn-sm " (click)="openDocument(t.pdf)"
+                                   ngbTooltip="View Pdf"> <i class="bi bi-eye-fill"></i></button></td>
+                                <td scope="row" class="text-center text-nowrap">
+                                    <button class="btn btn-outline-success btn-sm " style="width: 30px;"
+                                        (click)=" updatedPdf(t)" ngbTooltip="Update"><i
+                                            class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-outline-warning btn-sm mx-2" style="width: 30px;"
+                                        (click)="open(t,fileUpdateModal)" ngbTooltip="Pdf-Upload"><i
+                                            class="bi bi-upload"></i></button>
+                                    <button class="btn btn-outline-danger btn-sm " style="width: 30px;"
+                                        (click)="open(t, deleteModal)" ngbTooltip="Delete"><i
+                                            class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row justify-content-between p-2 pagination-sm m-0">
+                    <div class="col-md-6 pl-0">
+                        <ngb-pagination [collectionSize]="collection" [(page)]="page" [pageSize]="pagesize"
+                            [maxSize]="10" [rotate]="true" [boundaryLinks]="true" (pageChange)="onChangePage($event)">
+                            <ng-template ngbPaginationFirst>
+                                << </ng-template>
+                                    <ng-template ngbPaginationLast>>></ng-template>
+                                    <ng-template ngbPaginationPrevious>
+                                        < </ng-template>
+                                            <ng-template ngbPaginationNext>></ng-template>
+                                            <ng-template ngbPaginationEllipsis>...</ng-template>
+                                            <ng-template ngbPaginationNumber class="custompage" let-page>
+                                                {{ page }}
+                                            </ng-template>
+                        </ngb-pagination>
+                    </div>
+                    <div class="col-md-6 text-right pr-0 ">
+                        <select class="custom-select" style="width: auto; float: right " [(ngModel)]="pagesize"
+                            (change)="onChangePage($event)">
+                            <option *ngFor="let option of pageLimitOptions" [value]="option.value"
+                                [selected]="option.value == currentPageLimit">
+                                {{ option.value }} item per page
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #fileUpdateModal let-modal>
+    <div class="row mt-3 mr-2">
+        <div class="col-md-10 col-sm-10">
+        </div>
+        <div class="col-md-2 col-sm-2 text-right">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div class="modal-body text-center ">
+        <img src="" class="mb-3" width="100" alt="" />
+        <h4 class="warn-color fs-4 fw-bold">Upload PDF</h4>
+        <div class="clearfix modal-text">
+            <label class="fs-5 mx-1">File Upload </label>
+            <!-- <input type="file" placeholder="Upload PDF" class="form-control"> -->
+            <input (input)="fileChoosen($event)" accept=".pdf,.doc,.docx" type="file" class="form-control-file"
+                id="file-multiple-input" placeholder="Upload file" name="file-multiple-input" multiple />
+        </div>
+    </div>
+    <div class="model-footer border-0 text-center px-0 pb-4">
+        <div class=" py-2">
+            <button class="btn btn-danger " (click)="updatePdf(this.selectedRow.id)">Upload</button>
+            <button class="btn btn-success mx-2" (click)="modal.dismiss('Cross click')">Cancel</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #deleteModal let-modal>
+    <div class="row mt-3 mr-2">
+        <div class="col-md-10 col-sm-10">
+        </div>
+        <div class="col-md-2 col-sm-2 text-right">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div class="modal-body text-center px-0">
+        <img src="" class="mb-3" width="100" alt="" />
+        <h4 class="warn-color fs-4 fw-bold">Are you sure you want to Delete ?</h4>
+        <div class="clearfix modal-text">
+            <label *ngIf="selectedRow.course">
+                <h3>{{ selectedRow.course }}</h3>
+            </label>
+        </div>
+    </div>
+    <div class="model-footer border-0 text-center px-0 pb-4">
+        <div class="clearfix py-2">
+            <button class="btn btn-danger" (click)="deleteTransition(this.selectedRow.id)">YES</button>
+            <button class="btn btn-success mx-2" (click)="modal.dismiss('Cross click')">NO</button>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,75 @@
+<div class="container-fluid  ">
+  <div class="row">
+    <div class="d-flex justify-content-center mt-5">
+      <div class="card shadow rounded rounded-3" style="width: 26rem;">
+        <!-- <div class="card-header text-center bg-dark text-white fs-3 fw-bold">Login Page</div> -->
+        <div class="card-body justify-content-center">
+          <div class="">
+            <img class="img mx-auto d-block justify-content-center " src="\assets\img\unnamed.jpg" alt="alternatetext"
+              width="100" height="100">
+          </div>
+          <form [formGroup]="loginForm">
+            <div class="row">
+              <div class="col-md-9 mb-2 mx-auto ">
+                <label class="form-lable fw-bold mb-2"> Email</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                  </div>
+                  <input formControlName="email" placeholder="Email" type="email" class="form-control" [ngClass]="{'is-invalid':loginForm.controls['email'].invalid
+                                  && submitted && (f['email'].errors 
+                                 || f['email'].touched || f['email'].dirty)}">
+                </div>
+
+
+                <validation-messages style="text-align: left" [control]=" f['email']">
+                </validation-messages>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-9 mb-2 mx-auto">
+                <label class="form-lable fw-bold mb-2">Password</label>
+                <div class="input-group ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                  </div>
+                  <input name="password" type="password" class="input form-control input-inner-shadow"
+                    formControlName="password" placeholder="Password" [type]="show" [ngClass]="{'is-invalid':loginForm.controls['password'].invalid && submitted && (f['password'].errors
+                                      || f['password'].touched || f['password'].dirty)}" />
+                  <div class="input-group-append">
+                    <span class="input-group-text" (click)="password_show()" *ngIf="show == 'password'">
+                      <i class="bi bi-eye-slash-fill"></i>
+                    </span>
+                    <span class="input-group-text" (click)="password_hide()" *ngIf="show == 'text'">
+                      <i class="bi bi-eye-fill"></i>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-2 ">
+              <!-- Simple link -->
+
+              <a (click)="forgetpswd()" class="checkbox " style="position:relative; left:13rem; top:3px; "
+                type="button">Forgot password ?</a>
+            </div>
+
+            <div class="text-center mt-3 mb-3 pt-2">
+              <button type="submit" class="btn btn-primary btn-md shadow-md " style="width: 25%;"
+                (click)="login()">Login</button>
+            </div>
+
+            <div class="col-md-12 mb-3 d-flex justify-content-center">
+              <!-- Simple link -->
+              New User?
+              <a class="checkbox mx-1" type="button" (click)="Signup()"> Sign up Now</a>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+

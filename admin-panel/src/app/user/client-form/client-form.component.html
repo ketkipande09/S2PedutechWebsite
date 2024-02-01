@@ -1,0 +1,63 @@
+<div class="container-fluid my-5">
+    <div class="row">
+      <div class="d-flex justify-content-center">
+        <div class="card  shadow rounded rounded-3  " style="width: 60rem;">
+          <div class="card-header justify-content-start fs-4 fw-bold">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="">
+                Client Form
+              </div>
+              <div class="">
+                <a (click)="add()" type="submit" class="btn btn-danger btn-sm float-end">
+                  <i class="bi bi-arrow-left"></i> Back</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body mt-3 justify-content-center">
+            <form [formGroup]="clientForm">
+  
+              <div class="row">
+                <div class="col mb-4">
+                  <label class="form-lable fw-bold ">Client Name<span
+                    class="text-danger">*</span></label>
+                  <input formControlName="name" placeholder="" type="text" class="form-control">
+               </div>
+              </div>
+                
+  
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="form-lable fw-bold">Upload Image <span
+                    class="text-danger">*</span></label><br>
+                  <input (input)="fileChoosen($event)" type="file" class="form-control-file" id="file-multiple-input"
+                    name="file-multiple-input" multiple />
+  
+                </div>
+                <img *ngIf="f['id'].value" class="img-fluid img-size" [src]="fileContent">
+              </div>
+              <div>
+              </div>
+  
+              <div class="text-center my-3 pt-4 ">
+                <button *ngIf="!f['id'].value"  type="submit" class="btn btn-success shadow rounded rounded-3 mx-1"
+                (click)="createClient()">Create</button>
+  
+                <button *ngIf="f['id'].value" type="submit" class="btn btn-success  shadow rounded rounded-3"
+                (click)="updateClient()">Update</button>
+                &nbsp;
+                <button (click)="add()" type="submit" class="btn btn-primary  shadow rounded rounded-3">Cancel</button>
+              </div>
+  
+  
+  
+  
+            </form>
+  
+          </div>
+  
+  
+        </div>
+      </div>
+  
+    </div>
+  </div>

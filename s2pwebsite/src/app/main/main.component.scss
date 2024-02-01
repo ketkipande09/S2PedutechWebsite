@@ -1,0 +1,93 @@
+.top-row {
+    background-image: url("../../assets/landingfinal.png");
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+
+    .top-margin {
+        margin-top: 6rem;
+    }
+
+    h5 {
+        font-weight: bold;
+        font-size: 27px;
+        color: #fff;
+    }
+
+    .count {
+        color: #fff;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 30px;
+        color: #005B75;
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 30px;
+        color: #005B75;
+    }
+
+    .center {
+
+        display: flex;
+        justify-content: center;
+
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #005B75;
+    }
+
+    img{
+
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .mid{
+        margin-top: 1.25rem;
+    }
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+
+    border-radius: 40px;
+}
+
+.blink {
+    color: #005B75;
+}
+
+@media (max-width: 768px) {
+
+    .top-row {
+        .top-margin {
+            margin-top: 75px;
+        }
+
+        h5,h1 {
+          
+            font-size: 25px;
+            
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 25px;
+            color: #005B75;
+        }
+
+        
+    }
+}

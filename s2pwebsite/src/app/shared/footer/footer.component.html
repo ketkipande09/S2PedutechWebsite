@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-sm-11 col-md-8 col-lg-11 col-xl-11 col-xxl-11">
+            <div class="row justify-content-center my-5">
+
+                <h2 class="text-center mt-5"><img src="../../../assets/logo-removebg.png" alt=""></h2>
+
+            </div>
+
+            <div class="row ">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 text-center">
+                    <div class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <p class="my-3">+91 9096360650 | +91 8888755259</p>
+                </div>
+                <div class="col-xs-12 col-sm-12  col-md-12 col-lg-4 col-xl-4 col-xxl-4 text-center">
+                    <div class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-location-dot fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <p class="my-3 text-center ">Meera bhavan, opp. Sony Center,<br>
+                        Near Old Dande Hospital,Nagpur
+                        -440010.</p>
+                </div>
+                <div class="col-xs-12 col-sm-12  col-md-12 col-lg-4 col-xl-4 col-xxl-4 text-center">
+                    <div class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <p class="my-3">sachinnandgirwar@s2pedutech.com</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="social-row py-3">
+            <a href="https://www.facebook.com/FromStudentToProfessional" class="media-icon">
+                <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/s2p_edutech/?igshid=YmMyMTA2M2Y%3D" class="media-icon">
+                <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/s2p-edutech/" class="media-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCG2s3-FDGCNho2ca2Ofe3oQ" class="media-icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+
+
+</div>
+
+<button class="floating-button " (click)="this.isOpen = !this.isOpen"><strong>Enquire Now</strong>
+
+</button>
+<div *ngIf="isOpen==true" class="centering">
+
+    <div class="box mt-3">
+
+        <button type="button" (click)="this.isOpen = !this.isOpen" class="close btn-close" aria-label="Close"></button>
+
+        <h1 class="heading mb-3">Enquiry Form</h1>
+
+        <div class="row pt-3">
+            <form [formGroup]="enquiryForm">
+                <div class="input__wrapper ">
+
+                    <input id="name" type="text" class="input__field" 
+                        formControlName="name" />
+                    <label for="password" class="input__label"> Name </label>
+                </div>
+                <div class="input__wrapper mt-4">
+                    <input id="mobile" type="text" class="input__field" 
+                        formControlName="mobile" />
+                    <label for="password" class="input__label"> Contact No. </label>
+                </div>
+                <div class="input__wrapper mt-4">
+                    <input id="branch" type="text" class="input__field" 
+                        formControlName="college" />
+                    <label for="password" class="input__label"> College </label>
+                </div>
+                <div class="input__wrapper mt-4">
+                    <input id="branch" type="text" class="input__field" 
+                        formControlName="branch" />
+                    <label for="password" class="input__label"> Branch </label>
+                </div>
+                <div class="input__wrapper mt-4">
+                    <input id="passingyear" type="text" class="input__field" 
+                        formControlName="passingyear" />
+                    <label for="password" class="input__label"> Year of Passing </label>
+                </div>
+                <select class="select-dropdown mt-4" formControlName="course">
+                    <option selected>Select your course</option>
+                    <option value="Java Full Stack Developer">Java Full Stack Developer</option>
+                    <option value="Mean Stack Developer">Mean Stack Developer</option>
+                </select>
+            </form>
+        </div>
+        <button (click)=" onSubmit()" class="submit mt-3">
+        Submit
+    </button>
+    </div>
+
+</div>

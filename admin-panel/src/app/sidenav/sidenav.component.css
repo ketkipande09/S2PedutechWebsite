@@ -1,0 +1,51 @@
+.logo{
+    text-align: center;
+    /* padding: 2.6rem 1rem; */
+    
+}
+
+.logo img{
+   /* height: 61px; */
+    width: 110px;
+    padding: 0.6rem 1rem;
+}
+
+.menu-icon{
+    /* text-align: center; */
+    margin-right: 1rem;
+}
+
+.mat-divider{
+    border-top-width: 2px;
+    border-color: white;
+}
+
+.mat-list-item{
+    color: #4D4C7D !important;
+    font-size: 14px;
+    height: 35px !important;
+    margin-top: 6px;  
+    font-weight: 500;
+}
+
+.nav-menu{
+    border-radius: 20px;
+    margin: 0 8px;
+}
+
+.mat-list-item:hover{
+    background-color: #827397 !important;
+    color: #fff !important;
+}
+.list-item-active{
+    color: #06113C !important;
+    background-color: #EEEEEE !important;
+    
+}
+.py-4{
+padding-top: 0.5rem;
+
+}
+
+
+

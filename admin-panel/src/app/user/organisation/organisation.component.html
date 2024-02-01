@@ -1,0 +1,109 @@
+<div class="container-fluid">
+    <div class="row my-4">
+        <div class="d-flex justify-content-center">
+            <div class="card shadow rounded rounded-3" style="width: 40rem;">
+                <div class="card-header justify-content-start  fs-4 fw-bold">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="">
+                            Organisation
+                        </div>
+                        <div class="">
+                            <a class="btn btn-danger btn-sm float-end" (click)="add()">
+                                <i class="bi bi-arrow-left"></i> Back</a>
+                        </div>
+                    </div>                   
+                </div>
+                <div class="card-body mt-3 justify-content-center  ">
+                    <form [formGroup]="orgForm">
+                        <div class="row">
+                            <div class=" col-md-6 mb-2">
+                                <label class="form-lable fw-bold ">Organization Name <span class="text-danger">*</span></label>
+                                <input formControlName="orgName" placeholder="Organization Name" type="text"
+                                    class="form-control  " [ngClass]="{
+                                        'is-invalid':orgForm.controls['orgName'].invalid && submitted && (f['orgName'].errors
+                                         || f['orgName'].touched || f['orgName'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['orgName']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class=" col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Email <span class="text-danger">*</span></label>
+                                <input formControlName="email" placeholder="Email" type="text"
+                                    class="form-control " [ngClass]="{
+                                        'is-invalid':orgForm.controls['email'].invalid && submitted && (f['email'].errors
+                                         || f['email'].touched || f['email'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['email']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Mobile Number <span
+                                        class="text-danger">*</span></label>
+                                <input formControlName="mobile" placeholder="Mobile" type="text"
+                                    class="form-control " [ngClass]="{
+                                        'is-invalid':orgForm.controls['mobile'].invalid && submitted && (f['mobile'].errors
+                                         || f['mobile'].touched || f['mobile'].dirty)
+                                      }">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['mobile']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Alternate Mobile <span class="text-danger">*</span></label>
+                                <input formControlName="alternateMobile" placeholder="AlternateMobile" type="text"
+                                    class="form-control"
+                                    [ngClass]="{
+                                        'is-invalid':orgForm.controls['alternateMobile'].invalid && submitted && (f['alternateMobile'].errors
+                                         || f['alternateMobile'].touched || f['alternateMobile'].dirty)
+                                      }" >
+                                      <div>
+                                        <validation-messages style="text-align: left" [control]=" f['alternateMobile']">
+                                        </validation-messages>
+                                    </div>
+                            </div> 
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-2">
+                                <label class="form-lable fw-bold">Address <span class="text-danger">*</span></label>
+                                <textarea formControlName="address" placeholder="address" type="text" class="form-control "
+                                [ngClass]="{
+                                    'is-invalid':orgForm.controls['address'].invalid && submitted && (f['address'].errors
+                                     || f['address'].touched || f['address'].dirty)
+                                  }" id="" cols="" rows="">
+
+                                </textarea>
+                                
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['address']">
+                                    </validation-messages>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="row">
+                            <div class="text-center mt-3 pt-3">
+                                <button type="submit" *ngIf="!this.orgId"
+                                    class="btn btn-success   shadow rounded rounded-3"
+                                    (click)="createOrg()">Create</button>
+
+                                <button type="submit" *ngIf="this.orgId" class="btn btn-success   shadow rounded rounded-3"
+                                    (click)="updateOrg()">Update</button>
+
+                                <button (click)="add()" type="submit"
+                                    class="btn btn-primary mx-2  shadow rounded rounded-3">Cancle</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
