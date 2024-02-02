@@ -141,6 +141,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      address: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       lastLoginAt: {
         type: DataTypes.DATE,
         allowNull: true,

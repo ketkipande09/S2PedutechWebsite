@@ -235,6 +235,7 @@ const userObj = {
         countryName: req.body.countryName,
         city: req.body.city,
         state: req.body.state,
+        address: req.body.address,
         role: req.body.role,
         pincode: req.body.pincode,
         location: req.body.location,
@@ -461,7 +462,10 @@ const userObj = {
 
       user.firstName = req.body.firstName || user.firstName;
       user.lastName = req.body.lastName || user.lastName;
-
+      user.address = req.body.address || user.address;
+      user.mobileNumber = req.body.mobileNumber || user.mobileNumber;
+      user.userName = req.body.userName || user.userName;
+      user.email = req.body.email || user.email
       let emailChange = false;
 
       if (req.body.email && user.email !== req.body.email) {

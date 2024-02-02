@@ -35,7 +35,7 @@ export class UserFormComponent implements OnInit {
     private actRouter: ActivatedRoute,
     private validationService: ValidationService,
     private toastService: ToastrService,
-    private spinner:NgxSpinnerService,
+    private spinner: NgxSpinnerService,
 
   ) { }
 
@@ -57,32 +57,32 @@ export class UserFormComponent implements OnInit {
 
   userForm = this.formBuilder.group({
     firstName: new FormControl('', [Validators.required,
-                                  this.validationService.alphaValidator,
-                                  this.validationService.noWhitespaceValidator,
-                                  this.validationService.specialCharacter]),
+    this.validationService.alphaValidator,
+    this.validationService.noWhitespaceValidator,
+    this.validationService.specialCharacter]),
 
     lastName: new FormControl('', [Validators.required,
-                                    this.validationService.alphaValidator,
-                                    this.validationService.noWhitespaceValidator,
-                                    this.validationService.specialCharacter]),
+    this.validationService.alphaValidator,
+    this.validationService.noWhitespaceValidator,
+    this.validationService.specialCharacter]),
 
     userName: new FormControl('', [Validators.required,
-                                    this.validationService.noWhitespaceValidator]),
+    this.validationService.noWhitespaceValidator]),
 
     email: new FormControl('', [Validators.required,
-                                   this.validationService.emailValidator,
-                                    this.validationService.noWhitespaceValidator]),
+    this.validationService.emailValidator,
+    this.validationService.noWhitespaceValidator]),
 
     mobileNumber: new FormControl('', [Validators.required,
-                                          this.validationService.noWhitespaceValidator,
-                                          this.validationService.mobileValidator]),
+    this.validationService.noWhitespaceValidator,
+    this.validationService.mobileValidator]),
 
     role: new FormControl('Super_Admin', []),
 
     password: new FormControl('', [Validators.required,
-                                  Validators.minLength(6),Validators.maxLength(10),
-                                this.validationService.noWhitespaceValidator]),
-                                
+    Validators.minLength(6), Validators.maxLength(10),
+    this.validationService.noWhitespaceValidator]),
+
     confirmPassword: new FormControl('', [Validators.required]),
 
     address: new FormControl('', []),
@@ -152,10 +152,10 @@ export class UserFormComponent implements OnInit {
     });
   }
 
-  add(){
+  add() {
     this.router.navigate(['/user/user-list']);
   }
- 
+
   reset() {
     this.userForm.reset();
   }
