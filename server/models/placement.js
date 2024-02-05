@@ -10,11 +10,11 @@ module.exports = (sequelize, DataTypes) => {
                 autoIncrement: true,
                 allowNull: false,
             },
-            name: {
+            studentName: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            college: {
+            collage: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
                         );
                 },
             },
-        
+
         },
         {
             timestamps: true,

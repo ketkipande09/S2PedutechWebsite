@@ -141,6 +141,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      address: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       lastLoginAt: {
         type: DataTypes.DATE,
         allowNull: true,
@@ -208,6 +212,6 @@ module.exports = (sequelize, DataTypes) => {
       await sequelize.sync({ alter: true, logging: false });
     }
   })();
-  //    { force: false, alter: true, logging: true }
+    //  { force: false, alter: true, logging: true }
   return User;
 };

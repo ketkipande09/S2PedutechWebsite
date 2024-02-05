@@ -35,9 +35,6 @@
                 </div>
                 <img *ngIf="f['id'].value" class="img-fluid img-size" [src]="fileContent">
               </div>
-              <div>
-              </div>
-  
               <div class="text-center my-3 pt-4 ">
                 <button *ngIf="!f['id'].value"  type="submit" class="btn btn-success shadow rounded rounded-3 mx-1"
                 (click)="createClient()">Create</button>
@@ -47,17 +44,9 @@
                 &nbsp;
                 <button (click)="add()" type="submit" class="btn btn-primary  shadow rounded rounded-3">Cancel</button>
               </div>
-  
-  
-  
-  
             </form>
-  
           </div>
-  
-  
         </div>
       </div>
-  
     </div>
   </div>

@@ -50,26 +50,12 @@
                                        </validation-messages>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-2">
-                                  <label class="form-lable fw-bold">Upload Image 
-                                    <!-- <span class="text-danger">*</span> -->
-                                </label><br>
-                                  <input (input)="fileChoosen($event)" type="file" class="form-control-file" id="file-multiple-input"
-                                    name="file-multiple-input" multiple
-                                     />
-                                 
-                                 
-                                </div>
-                                <img [src]="fileContent" class="img-fluid img-size" *ngIf="fileContent">
-                              </div>
-
                             <div class="text-center my-3 pt-4 ">
                                 <button  type="submit" *ngIf="!this.homeId"  class="btn btn-success  shadow rounded rounded-3"
-                                    (click)="createImage()">Create
+                                    (click)="createHome()">Create
                                 </button>
                                 <button *ngIf ="this.homeId" type="submit" class="btn btn-success  shadow rounded rounded-3"
-                                    (click)="updateImage()">Update
+                                    (click)="updateHome()">Update
                                 </button>
                             </div>
                         </form>

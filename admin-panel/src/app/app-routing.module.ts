@@ -47,6 +47,12 @@ const routes: Routes = [
           // canActivate: [AuthGuard]
       },
       {
+        path: 'placement',
+        loadChildren: () =>
+          import('./placement/placement.module').then((m) => m.PlacementModule),
+          // canActivate: [AuthGuard]
+      },
+      {
         path: 'feedback',
         loadChildren: () =>
           import('./feedback/feedback.module').then((m) => m.FeedbackModule),
