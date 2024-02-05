@@ -1,12 +1,41 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { PlacementService } from '../services/placement/placement.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-placement',
   templateUrl: './placement.component.html',
   styleUrls: ['./placement.component.scss']
 })
-export class PlacementComponent {
+export class PlacementComponent implements OnInit{
   isAbove1200px = window.innerWidth > 1200;
+  selectedRow: any;
+  search: any = '';
+  page = 1;
+  pagesize = 10;
+  ap: any;
+  readList: any;
+  disabled: boolean = false;
+  collection: any;
 
-  
+  constructor(
+    private PlacementService: PlacementService,
+    private router: Router,
+  ) { }
+
+  ngOnInit(): void {
+    this.getAllPlacements();
+  }
+  getAllPlacements() {
+    let obj = {
+      page: this.page,
+      pagesize: this.pagesize,
+      search: this.search,
+    };
+    this.PlacementService.getLLPlacement(obj).subscribe((res) => {
+      this.readList = res.result.placement;
+      this.collection = res.result.count;
+      console.log(this.readList);
+    });
+  }
 }

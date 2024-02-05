@@ -1,131 +1,40 @@
 <section id="placements">
-    <div class="container-fluid placement">
-        <div class="row justify-content-center">
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-11 col-xl-11 col-xxl-11">
-
-                <!-- <div class="row justify-content-center my-5">
-
-                    <h2 class="text-center"><strong>Our Latest Placements</strong> </h2>
-
-                </div> -->
-
-                <div class="clienthead" style="display: flex; flex-wrap: nowrap;">
-                    <div fxhide.xs="true" fxflex="45" style="flex: 1 1 100%; box-sizing: border-box; max-width: 45%">
-                        <div class="green-line"></div>
-                    </div>
-                    <div fxflex="" style="flex: 1 1 0%; box-sizing: border-box;">
-                        <div class="section-heading1">
-                            Our Latest Placements
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+  <div class="container-fluid placement">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-11 col-xl-11 col-xxl-11">
+        <div class="clienthead" style="display: flex; flex-wrap: nowrap">
+          <div
+            fxhide.xs="true"
+            fxflex="45"
+            style="flex: 1 1 100%; box-sizing: border-box; max-width: 45%"
+          >
+            <div class="green-line"></div>
+          </div>
+          <div fxflex="" style="flex: 1 1 0%; box-sizing: border-box">
+            <div class="section-heading1">Our Latest Placements</div>
+          </div>
         </div>
-        <div class="slider">
-            <div class="slide-track">
-                <div class="slide">
-                    <div class="card">
-                        <img src="../../../../../assets/test1.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="row mt-3">
-                               
-                                    <h5 class="text-center pt-2">ACET</h5>
-                                    <h5 class="text-center">Anushka Kalbande</h5>
-                               
-                            </div>
-                            <div class="row placements">
-                                <div class="col">
-        
-                                    <h5 class="px-3 text-center"> RnR Datalex</h5>
-                                </div>
-                            </div>
-        
-        
-                        </div>
-        
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="card">
-                        <img src="../../../../../assets/test1.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="row mt-3">
-                               
-                                    <h5 class="text-center pt-2">ACET</h5>
-                                    <h5 class="text-center">Anushka Kalbande</h5>
-                               
-                            </div>
-                            <div class="row placements">
-                                <div class="col">
-        
-                                    <h5 class="pt-1 text-center"> RnR Datalex</h5>
-                                </div>
-                            </div>
-        
-        
-                        </div>
-        
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="card">
-                        <img src="../../../../../assets/test1.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="row mt-3">
-                               
-                                    <h5 class="text-center pt-2">ACET</h5>
-                                    <h5 class="text-center">Anushka Kalbande</h5>
-                               
-                            </div>
-                            <div class="row placements">
-                                <div class="col">
-        
-                                    <h5 class="pt-1 text-center"> RnR Datalex</h5>
-                                </div>
-                            </div>
-        
-        
-                        </div>
-        
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="card">
-                        <img src="../../../../../assets/test1.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="row mt-3">
-                               
-                                    <h5 class="text-center pt-2">ACET</h5>
-                                    <h5 class="text-center">Anushka Kalbande</h5>
-                               
-                            </div>
-                            <div class="row placements">
-                                <div class="col">
-        
-                                    <h5 class="pxng -3 text-center"> RnR Datalex</h5>
-                                </div>
-                            </div>
-        
-        
-                        </div>
-        
-                    </div>
-                </div>
-
-            </div>
-        
-        
-        </div>
-    
-
+      </div>
     </div>
+    <div class="slider">
+      <div class="slide-track"  >
+        <div class="slide" *ngFor="let place of readList">
+          <div class="card d-flex">
+            <img src="{{ place.image }}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <div class="row mt-3">
+                <h5 class="text-center pt-2">{{ place.collage }}</h5>
+                <h5 class="text-center">{{ place.studentName }}</h5>
+              </div>
+              <div class="row placements">
+                <div class="col">
+                  <h5 class="px-3 text-center">{{ place.company }}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-
-
-
-
