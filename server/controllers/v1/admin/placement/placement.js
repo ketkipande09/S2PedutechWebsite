@@ -16,25 +16,40 @@ const placementObj = {
 
     createPlacement: async (req, res) => {
         try {
+            console.log("req.body========>", req.body);
             let query = {
                 where: {
-                    [Op.or]: [{ name: req.body.name }],
+                    [Op.or]: [{ studentName: req.body.studentName.toLowerCase() }],
                 },
             };
+            /** check if Course exist or not */
+            let existingCourse = await Placement.findOne(query);
 
-            let existingSlider = await Placement.findOne(query);
-            var createObj = new Placement();
-            var PlacementObj = req.body;
-            if (req.file) {
-                Placement.image = req.file.filename;
+            if (existingCourse) {
+                let errors = MESSAGES.apiErrorStrings.Data_EXISTS(req.body.name);
+                return res
+                    .status(resCode.HTTP_BAD_REQUEST)
+                    .json(
+                        generateResponse(
+                            resCode.HTTP_BAD_REQUEST,
+                            errors,
+                            MESSAGES.errorTypes.OAUTH_EXCEPTION
+                        )
+                    );
             }
-            Object.keys(Placement).forEach((key, index) => {
-                createObj[key] = Placement[key];
+            var createObj = new Placement(req.body);
+            // var courseObj = req.body;
+            if (req.file) {
+                placementObj.image = req.file.filename;
+            }
+            Object.keys(placementObj).forEach((key, index) => {
+                createObj[key] = placementObj[key];
             });
-            let client = await createObj.save();
+            let course = await createObj.save();
+            // let course = await Course.create(createObj);
             return res.status(resCode.HTTP_OK).json(
                 generateResponse(resCode.HTTP_OK, {
-                    message: MESSAGES.apiSuccessStrings.ADDED(`Placement added`),
+                    message: MESSAGES.apiSuccessStrings.ADDED(`The Course is`),
                 })
             );
         } catch (e) {

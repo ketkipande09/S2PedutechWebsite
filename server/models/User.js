@@ -212,6 +212,6 @@ module.exports = (sequelize, DataTypes) => {
       await sequelize.sync({ alter: true, logging: false });
     }
   })();
-  //    { force: false, alter: true, logging: true }
+    //  { force: false, alter: true, logging: true }
   return User;
 };

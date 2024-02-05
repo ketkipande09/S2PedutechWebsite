@@ -18,18 +18,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      image: {
-        type: DataTypes.STRING(1324),
-        allowNull: true,
-        get() {
-          if (this.getDataValue('image'))
-            return (
-              process.env.DOMAIN_URL +
-              'image/' +
-              this.getDataValue('image')
-            );
-        },
-      },
     },
     {
       timestamps: true,

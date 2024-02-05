@@ -17,13 +17,12 @@ const homeObj = {
   //** Create Enquiry */
   createHome: async (req, res) => {
     try {
-      console.log("req.bodey",req.body,req.file);
+      console.log("req.body", req.body);
       let query = {
         where: { placementCount: req.body.placementCount },
       };
-      /** check if Enquiry exist or not */
       let existingHome = await Home.findOne(query);
-console.log("existingHome",existingHome);
+      console.log("existingHome", existingHome);
       if (existingHome) {
         let errors = MESSAGES.apiErrorStrings.Data_EXISTS('This Details');
         return res
@@ -38,9 +37,6 @@ console.log("existingHome",existingHome);
       }
       var createObj = new Home();
       var homeObj = req.body;
-      if (req.file) {
-        homeObj.image = req.file.filename;
-      }
       Object.keys(homeObj).forEach((key, index) => {
         createObj[key] = homeObj[key];
       });
@@ -58,6 +54,7 @@ console.log("existingHome",existingHome);
       throw new Error(e);
     }
   },
+
   //** Enquiry listing */
   getHomeListing: async (req, res) => {
     try {
@@ -216,22 +213,13 @@ console.log("existingHome",existingHome);
           .status(resCode.HTTP_BAD_REQUEST)
           .json(generateResponse(resCode.HTTP_BAD_REQUEST, error));
       }
-
       let query = {
         where: {
           id: req.params.id || req.query.id,
         },
       };
-
       let home = await Home.findOne(query);
-
       if (!home) {
-        if (req.file.filename) {
-          let path = `assets/image/${req.file.filename}`;
-          if (fs.existsSync(path)) {
-            fs.unlinkSync(path);
-          }
-        }
         let errors = MESSAGES.apiSuccessStrings.DATA_NOT_EXISTS('This Detail');
         return res
           .status(resCode.HTTP_BAD_REQUEST)
@@ -244,20 +232,10 @@ console.log("existingHome",existingHome);
           );
       } else {
         var homeObject = req.body;
-        if (req.file) {
-          if (home.image && home.image != 'undefined') {
-            let path = `assets/logo/${home.image.split('logo/')[1]}`;
-            if (fs.existsSync(path)) {
-              fs.unlinkSync(path);
-            }
-          }
-          homeObject.image = req.file.filename;
-        }
         Object.keys(homeObject).forEach((key, index) => {
           home[key] = homeObject[key];
         });
         await home.save();
-
         return res.json(
           generateResponse(resCode.HTTP_OK, {
             message: MESSAGES.apiSuccessStrings.UPDATE('This Detail'),
@@ -272,6 +250,7 @@ console.log("existingHome",existingHome);
       throw new Error(e);
     }
   },
+
 
   //** Topic delete */
   deleteHome: async (req, res) => {

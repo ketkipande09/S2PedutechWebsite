@@ -4,12 +4,12 @@
     <div class="card-header text-dark">
       <div class="row">
         <div class="col-md-8 col-9">
-            <h2 class="mb-0 fw-bold">Home List</h2>
+            <h2 class="mb-0 fw-bold">Bulletin List</h2>
         </div>
         <div class="col-md-4 col-3" style="text-align: right;">
           <button type="button" (click)="add()"
            class="btn btn-success btn-md rounded-pill px-4"
-                >Add Placement</button>
+                >Add Bulletin</button>
         </div>
       </div>
     </div>
@@ -20,7 +20,7 @@
           <thead class="thead">
             <tr class="table-secondary">
               <th scope="col">Sr no</th>
-              <th scope="col">Logo</th>
+              <!-- <th scope="col">Logo</th> -->
               <th scope="col">Placement Count</th>
               <th scope="col">Current Bulletin</th>        
               <th scope="col" class="mx-auto text-center">Action</th>
@@ -29,7 +29,7 @@
           <tbody class="tbody mt-3">
             <tr *ngFor="let h of homeUsers; let i = index">
               <td scope="row">{{i+1}}</td>
-              <td scope="row"><img src="{{h.image}}" alt="placeholder" height="75" width="100"></td>
+              <!-- <td scope="row"><img src="{{h.image}}" alt="placeholder" height="75" width="100"></td> -->
               <td scope="row">{{h.placementCount}}</td>
               <td  scope="row">
                 <span class="action-span" placement="left" ngbTooltip="{{h.bulletPoint}}">

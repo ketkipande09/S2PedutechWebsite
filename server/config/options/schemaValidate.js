@@ -39,6 +39,16 @@ exports.schemaValidation = {
   ],
   updateCourse: [body('name', 'Please enter name').exists()],
 
+  placement: [
+    body('studentName', 'Please enter name').exists(),
+    body('collage', 'Please enter collage').exists(),
+    body('company', 'Please enter company').exists(),
+  ],
+  updatePlacement: [
+    body('studentName', 'Please enter name').exists(),
+    body('collage', 'Please enter collage').exists(),
+    body('company', 'Please enter company').exists(),
+  ],
   event: [
     body('name', 'Please enter event Name').exists(),
     body('description', 'Please enter event Description').exists(),
@@ -105,5 +115,5 @@ exports.schemaValidation = {
     body('mobile', 'Please enter mobile No.').exists(),
     body('alternateMobile', 'Please enter alternate Mobile No.').optional(),
   ],
-  
+
 };

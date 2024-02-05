@@ -19,7 +19,7 @@ app.get(
 
 app.post(
   '/createCourse',
-  authHandler.authenticateJWT([roles.usersRoles.SUPER_ADMIN]),
+  // authHandler.authenticateJWT([roles.usersRoles.SUPER_ADMIN]),
   upload.single('image'),
   validate('course'),
   course.createCourse
@@ -37,20 +37,20 @@ app.get(
 );
 app.delete(
   '/deleteCourse/:id',
-  authHandler.authenticateJWT([
-    roles.usersRoles.SUPER_ADMIN,
-    roles.usersRoles.ADMIN,
-  ]),
+  // authHandler.authenticateJWT([
+  //   roles.usersRoles.SUPER_ADMIN,
+  //   roles.usersRoles.ADMIN,
+  // ]),
   course.deleteCourse
 );
 
 app.put(
   '/updateCourse/:id',
 
-  authHandler.authenticateJWT([
-    roles.usersRoles.SUPER_ADMIN,
-    roles.usersRoles.ADMIN,
-  ]),
+  // authHandler.authenticateJWT([
+  //   roles.usersRoles.SUPER_ADMIN,
+  //   roles.usersRoles.ADMIN,
+  // ]),
   upload.single('image'),
   validate('updateCourse'),
   course.updateCourse
@@ -58,10 +58,10 @@ app.put(
 
 app.delete(
   '/delete-image',
-  authHandler.authenticateJWT([
-    roles.usersRoles.SUPER_ADMIN,
-    roles.usersRoles.ADMIN,
-  ]),
+  // authHandler.authenticateJWT([
+  //   roles.usersRoles.SUPER_ADMIN,
+  //   roles.usersRoles.ADMIN,
+  // ]),
   course.deleteImage
 );
 
