@@ -32,6 +32,18 @@
 		text-align: justify;
 	}
 }
+.green-line {
+	height: 2px;
+	background-color: green;
+  }
+  .section-heading1{
+   font: 50px poppin;
+    color: #333; 
+	margin-bottom: 5px;
+	margin-left: 20px;
+	margin-top: -30px 
+}
+  
 
 @media (min-width: 769px) {
 	.move {
@@ -59,6 +71,9 @@
 
 // <---Client CSS--->
 
+.clienthead{
+	padding-top: 5rem;
+}
 body {
 	align-items: center;
 	background: #ffffff;
@@ -87,8 +102,6 @@ $animationSpeed: 15s;
 		transform: translateX(calc(-250px * 8))
 	}
 }
-
-
 
 .slider {
 	background: rgb(255, 255, 255);
@@ -222,4 +235,59 @@ body {
 
 
 
+}
+
+// step
+.stepcontainer{
+	// background-color: #ffe667;
+    background-color: #1e2c7c;
+	border-radius: 0 250px 0 250px;
+
+
+}
+.heading1 {
+	padding: 10px 150px;
+	font: 50px poppins;
+	color: #669fff;	
+  }
+  
+  .heading2 {
+	font-weight: bold;
+	font: 45px poppins;
+	padding: 0px 150px;
+	color: #ffffff;
+  }
+  .column{
+	padding: 10px 0px 10px 50px;
+  }
+  .card-heading{
+	padding: 10px 0px 20px 20px;
+
+  }
+  .step {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: center;
+	font: 20px poppins;	
+	color: #ffffff;
+  }
+
+.stepcard {
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 8px;
+	width: 140px;
+	height: 170px;
+  }
+.stepimage{
+	width: 6rem;
+	height: 6rem;
+}
+.bottom-text {
+	margin-top: 10px;
+	font-size: 16px;
+	text-align: center;
+	font: 20px poppins;	
+	color:#000000
 }

@@ -1,5 +1,6 @@
 .placement{
-
+padding-top: 50px;
+padding-bottom: 50px;
     // background-color: #FAFAFA;
 
 h2 {
@@ -29,9 +30,6 @@ h2 {
     justify-content: center;
 }
 }
-
-    
-
     body {
         align-items: center;
         background: #ffffff;
@@ -59,6 +57,18 @@ h2 {
         100% {
             transform: translateX(calc(-250px * 8))
         }
+    }
+    .green-line {
+        height: 2px;
+        background-color: green;
+      }
+      .section-heading1{
+       font: 50px poppin;
+        color: #333; 
+        margin-bottom: 5px;
+        margin-left: 20px;
+        margin-top: -30px;
+        padding-bottom: 30px;
     }
     
     

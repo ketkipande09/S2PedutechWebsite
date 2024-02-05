@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./development.component.scss']
 })
 export class DevelopmentComponent {
-
+  active: string = '';
+  
+  setActive(key: any) {
+    this.active = key;
+  }
 }

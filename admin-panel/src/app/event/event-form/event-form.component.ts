@@ -71,7 +71,7 @@ export class EventFormComponent implements OnInit {
     eventName: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
-    // date_time: new FormControl('', Validators.required),
+    date_time: new FormControl('', Validators.required),
     startDate: new FormControl('', Validators.required),
     endDate: new FormControl('', Validators.required),
   });

@@ -1,57 +1,28 @@
-<section id="main" >
-    <marquee class="blink" >
-        <ng-container *ngFor="let item of mainData">
-          <strong>{{ item.bulletPoint }}</strong> &nbsp;
-        </ng-container>
-    </marquee>
-      
-    
-
-    <div class="container-fluid top-row">
-        <div class="row justify-content-center mt-">
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-7 col-xl-7 col-xxl-8 top-margin ">
-
-                <h5>Your Placement </h5>
-                  <h5 class=" mx-5">Our </h5>  
-                   <h5> Responsibilty.</h5>
-                <!-- <h2 class="card-text mt-4 mx-5">- Mr.Gandhar Patwardhan.</h2> -->
-
-            </div>
-
+<section id="main">
+  <div class="container-fluid top-row">
+    <div class="row justify-content-center mt-">
+      <div
+        class="col-xs-12 col-sm-12 col-md-5 col-lg-7 col-xl-7 col-xxl-8 top-margin"
+      >
+        <div class="text" [@textAnimation]="animationState">
+          <h1>Your Placement</h1>
+          <h1 class="mx-5">Our</h1>
+          <h1>Responsibilty.</h1>
         </div>
-
-        <div class="row mid" *ngFor="let item of mainData">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-5 top-margin text-center ">
-
-                <h1 class="count ">{{item.placementCount}}+</h1>
-                <h3 class="ms-5">Placements</h3>
-
-
-
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 col-xl-6 col-xxl-5 ">
-
-                <img src="../../../../../assets/row2.png" class="img-fluid" >
-            </div>
-        </div>
-        <div class="row center mt-3 my-5">
-            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10 text-center ">
-                <h2>Learn to build software with S2P Edutech.</h2>
-            </div>
-
-        </div>
-
+      </div>
     </div>
-
-    <!-- <div class="container-fluid">
-        <div class="row center Learn">
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10 center">
-                <div class="card">
-                    <img src="../../../../../assets/container2.png" class="img-fluid" alt="...">
-
-                </div>
-
-            </div>
-        </div>
-    </div> -->
+    <div
+      class="gif col-xs-12 col-sm-12 col-md-5 col-lg-6 col-xl-6 col-xxl-5 d-flex"
+      style="justify-content: right"
+    >
+      <img src="../../assets/landing22.gif" class="img-fluid" />
+    </div>
+    <div class="row center mt-3 my-5">
+      <div
+        class="bottom col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10 text-center"
+      >
+        <h2><strong>Learn to build software with S2P Edutech.</strong></h2>
+      </div>
+    </div>
+  </div>
 </section>

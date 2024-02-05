@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	
   }
   
 .nav-links ul {
@@ -16,8 +15,7 @@ position: absolute;
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-	background: rgb(255, 255, 255);
-	// opacity: 1.2;
+	background: #ccedf38d;
     width: 100%;
 	
   }
@@ -100,6 +98,12 @@ img{
 	padding: 18px;
 	font-size: 18px;
 	border: none;
+
+	&:hover {
+		transform: scale(1.25);
+		transition: all ease 0.5s;
+		color: rgb(17, 10, 245);
+	}
   }
   
   

@@ -1,11 +1,11 @@
 .container-fluid {
-  background-color: #E6E6E6;
+  // background-color: #E6E6E6;
+	background: #ccedf38d;
 
   h2 {
     text-align: center;
     font-size: 40px;
     color: #34B1D5;
-
   }
 
   .fa-stack {
@@ -30,7 +30,6 @@
   }
 }
 
-
 .social-row {
   display: flex;
   align-items: center;
@@ -46,7 +45,7 @@
 
 
     :hover {
-      color: #333;
+      color: #ffcf57;
     }
 
   }
@@ -151,9 +150,6 @@ a.float:hover+div.label-container {
   background-color: #0056b3;
   
 }
-
-
-
 .box {
   background-color: white;
   padding: 24px;

@@ -14,11 +14,11 @@ import {HttpClientModule  } from "@angular/common/http";
 import { RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    
-   ContactusComponent,
+    ContactusComponent,
     GalleryComponent,
     CareerComponent,
     PlacementComponent,
@@ -26,11 +26,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MainComponent,
     LearningtoolsComponent,
     LandingComponent,
-   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,SharedModule,HttpClientModule,ReactiveFormsModule
+    AppRoutingModule,SharedModule,HttpClientModule,ReactiveFormsModule,BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

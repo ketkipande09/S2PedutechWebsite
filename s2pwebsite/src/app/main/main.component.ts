@@ -1,16 +1,30 @@
 import { Component,OnInit } from '@angular/core';
 import { RestService } from '../services/rest.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  animations: [
+    trigger('textAnimation', [
+      state('void', style({   transform: 'translateX(-100%)' })),
+      transition('void => *', [
+        animate('2000ms ease-in-out', style({transform: 'translateX(0)' })),
+      ]),
+    ]),
+  ],
 })
 export class MainComponent {
   mainData: any = [];
   projectcount:number = 0;
   projectnumber:number=0;
   projectclient:number=0;
+
+
+  animationState: string = 'in';
+
 
   constructor(private restService: RestService, private router: Router) { }
   
@@ -48,6 +62,7 @@ export class MainComponent {
 
   ngOnInit(): void {
     this.getall();
+    this.animationState = 'in';
   }
 
   getall(){

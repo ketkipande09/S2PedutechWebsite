@@ -1,93 +1,107 @@
 .top-row {
-    background-image: url("../../assets/landingfinal.png");
-    background-size: cover;
-    height: 100%;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
+  background-image: url("../../assets/landingfinal.png");
+  background-size: cover;
+  height: 30rem;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
+  .top-margin {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 
-    .top-margin {
-        margin-top: 6rem;
-    }
+  h5 {
+    font-weight: bold;
+    font-size: 27px;
+    color: #fff;
+  }
 
-    h5 {
-        font-weight: bold;
-        font-size: 27px;
-        color: #fff;
-    }
+  .count {
+    color: #fff;
+  }
 
-    .count {
-        color: #fff;
-    }
+  h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+  }
+  h1 {
+    font-weight: bold;
+    color: #fff;
+  }
 
-    h2 {
-        font-weight: bold;
-        font-size: 30px;
-        color: #005B75;
-    }
-    h3 {
-        font-weight: bold;
-        font-size: 30px;
-        color: #005B75;
-    }
+  .center {
+    display: flex;
+    justify-content: center;
+  }
 
-    .center {
+  img {
+    width: 18rem;
+    height: 18rem;
+  }
 
-        display: flex;
-        justify-content: center;
-
-    }
-
-    h1 {
-        font-weight: bold;
-        color: #005B75;
-    }
-
-    img{
-
-        width: 18rem;
-        height: 18rem;
-    }
-
-    .mid{
-        margin-top: 1.25rem;
-    }
+  .mid {
+    margin-top: 1.25rem;
+  }
+}
+section {
+    padding-top: 0px;
 }
 
 .center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
-
-    border-radius: 40px;
+  border-radius: 40px;
 }
 
-.blink {
-    color: #005B75;
+.img-fluid {
+  position: relative;
+  left: 820px;
+  bottom: 28px;
+  padding: 0;
 }
+.bottom {
+  margin-top: -9rem;
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 1s steps(40, end);
+}
+
 
 @media (max-width: 768px) {
-
-    .top-row {
-        .top-margin {
-            margin-top: 75px;
-        }
-
-        h5,h1 {
-          
-            font-size: 25px;
-            
-        }
-
-        h2 {
-            font-weight: bold;
-            font-size: 25px;
-            color: #005B75;
-        }
-
-        
+  .top-row {
+    .top-margin {
+      margin-top: 75px;
     }
+
+    h5,
+    h1 {
+      font-size: 25px;
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 25px;
+      color: #005b75;
+    }
+  }
 }
