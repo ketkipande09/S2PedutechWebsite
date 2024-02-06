@@ -19,7 +19,7 @@ const enquiryObj = {
     try {
       let query = {
         where: {
-          [Op.or]: [{ name: req.body.name}],
+          [Op.or]: [{ name: req.body.name }],
         },
       };
       let existingEnquiry = await Enquiry.findOne(query);
@@ -373,19 +373,21 @@ const enquiryObj = {
     worksheet.getRow(1).values = [
       'Sr.No.',
       'Name',
-      'Email',
       'Mobile',
+      'Collage',
+      'Branch',
+      'Passing Year',
       'Course',
-      'Message',
     ];
 
     worksheet.columns = [
       { key: 'Sr.No.', width: 20 },
       { key: 'Name', width: 34 },
-      { key: 'Email', width: 24 },
       { key: 'Mobile', width: 24 },
+      { key: 'Collage', width: 24 },
+      { key: 'Branch', width: 24 },
+      { key: 'Passing Year', width: 34 },
       { key: 'Course', width: 34 },
-      { key: 'Message', width: 34 },
     ];
     worksheet.getCell('A1').font = {
       size: 12,
@@ -444,10 +446,11 @@ const enquiryObj = {
       worksheet.addRow({
         'Sr.No.': i + 1,
         Name: `${d['name'] ? d['name'] : ''}`,
-        Email: `${d['email'] ? d['email'] : ''}`,
         Mobile: `${d['mobile'] ? d['mobile'] : ''}`,
+        Collage: `${d['college'] ? d['college'] : ''}`,
+        Branch: `${d['branch'] ? d['branch'] : ''}`,
+        'Passing Year': `${d['passingyear'] ? d['passingyear'] : ''}`,
         Course: `${d['course'] ? d['course'] : ''}`,
-        Message: `${d['message'] ? d['message'] : ''}`,
         Status: `${d['status'] ? 'Active' : 'Inactive'}`,
       });
       row.eachCell((cell, rowNumber) => {
