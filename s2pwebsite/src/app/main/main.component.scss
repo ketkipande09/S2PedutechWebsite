@@ -1,73 +1,41 @@
+.bullet{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font: 25px poppins;
+  color: black;
+  background-color:   #ffc107;
+  // background-color: #fedc71;
+  // #ffb45e
+}
 .top-row {
-  background-image: url("../../assets/landingfinal.png");
+  // background-image: url("../../assets/landingfinal.png");
   background-size: cover;
-  height: 30rem;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-
-  .top-margin {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  h5 {
-    font-weight: bold;
-    font-size: 27px;
-    color: #fff;
-  }
-
-  .count {
-    color: #fff;
-  }
-
-  h2 {
-    font-weight: bold;
-    font-size: 30px;
-    color: #fff;
-  }
-  h1 {
-    font-weight: bold;
-    color: #fff;
-  }
-
-  .center {
-    display: flex;
-    justify-content: center;
-  }
-
-  img {
-    width: 18rem;
-    height: 18rem;
-  }
-
-  .mid {
-    margin-top: 1.25rem;
-  }
+  margin-top: -0.4rem;
+  background-color: #fff7ba;
+  // background-color: #fedc71;
+  height: auto;
 }
-section {
-    padding-top: 0px;
+.text{
+  padding-bottom: 2rem;
+  color: red;
+  font: 40px poppin;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-}
-
-.card {
-  border-radius: 40px;
-}
-
-.img-fluid {
-  position: relative;
-  left: 820px;
-  bottom: 28px;
-  padding: 0;
-}
-.bottom {
-  margin-top: -9rem;
+.tophead {
   opacity: 0;
   animation: fadeIn 3s ease-in-out forwards;
+  font: 40px poppin;
+  }
+
+.right{
+  h1{
+    text-align: center;
+    margin-top: -2rem;
+    font: bold;
+  }
 }
 
 @keyframes fadeIn {
@@ -78,7 +46,6 @@ section {
     opacity: 1;
   }
 }
-
 .typing-animation {
   overflow: hidden;
   white-space: nowrap;
@@ -87,21 +54,4 @@ section {
 }
 
 
-@media (max-width: 768px) {
-  .top-row {
-    .top-margin {
-      margin-top: 75px;
-    }
 
-    h5,
-    h1 {
-      font-size: 25px;
-    }
-
-    h2 {
-      font-weight: bold;
-      font-size: 25px;
-      color: #005b75;
-    }
-  }
-}

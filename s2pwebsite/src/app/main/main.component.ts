@@ -3,6 +3,7 @@ import { RestService } from '../services/rest.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -64,9 +65,10 @@ export class MainComponent {
     this.getall();
     this.animationState = 'in';
   }
+  homeUsers: any = [];
 
   getall(){
-    this.restService.getmaincomponent().subscribe((data: any) => {
+    this.restService.getbulletin().subscribe((data: any) => {
       this.mainData = data.result.Home;
       console.log("aara", this.mainData)
     });

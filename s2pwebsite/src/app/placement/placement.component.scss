@@ -1,190 +1,184 @@
-.placement{
-padding-top: 50px;
-padding-bottom: 50px;
-    // background-color: #FAFAFA;
+.placement {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  // background-color: #FAFAFA;
 
-h2 {
-    color: #0078B3;
-}
+  h2 {
+    color: #0078b3;
+  }
 
-.card {
+  .card {
     width: 16rem;
     height: 21rem;
     border-radius: 10px;
-    border: 1px solid #FF8A00;
-    img{
-        border-radius: 10px;
+    border: 1px solid #ff8a00;
+    img {
+      border-radius: 10px;
+    }
+    h5 {
+      font: 20px poppins;
     }
 
     .placements {
-        background-color: #FF8A00;
-        // margin-top: 4px;
-        border-radius: 6px;
-        // padding-bottom: 10px;
-      
+      background-color: #ff8a00;
+      border-radius: 6px;
+      padding: 5px 0px 5px 0px;
     }
-}
-
-.center{
+  }
+ 
+  .center {
     display: flex;
     justify-content: center;
+  }
 }
+body {
+  align-items: center;
+  background: #ffffff;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
 }
-    body {
-        align-items: center;
-        background: #ffffff;
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-    }
-    
-    h2 {
-        color: #0078B3;
-    }
-    
-    @mixin white-gradient {
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    }
-    
-    $animationSpeed: 35s;
-    
-    
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-    
-        100% {
-            transform: translateX(calc(-250px * 8))
-        }
-    }
-    .green-line {
-        height: 2px;
-        background-color: green;
-      }
-      .section-heading1{
-       font: 50px poppin;
-        color: #333; 
-        margin-bottom: 5px;
-        margin-left: 20px;
-        margin-top: -30px;
-        padding-bottom: 30px;
-    }
-    
-    
-    
-    .slider {
-        background: rgb(255, 255, 255);
-        margin: auto;
-        overflow: hidden;
-        position: relative;
-        width: 95%;
-        padding-bottom: 20%;
-        animation: linear infinite;
-    
-    
-        &::before,
-        &::after {
-            @include white-gradient;
-            content: "";
-            height: 100px;
-            position: absolute;
-            width: px;
-            z-index: 2;
-        }
-    
-        &:hover div {
-            animation-play-state: paused;
-        }
-    
-        &::after {
-            right: 0;
-            top: 0;
-            transform: rotateZ(200deg);
-        }
-    
-        &::before {
-            left: 0;
-            top: 0;
-        }
-    
-        .slide-track {
-            animation: scroll $animationSpeed linear infinite;
-            display: flex;
-            width: calc(250px * 80);
-        }
-    
-        .slide {
-            height: 100px;
-            width: 250;
-            padding: 20px;
-            border-radius: 2px;
-        }
-    }
-    
-    // Gradients
-    .gradient {
-        align-items: stretch;
-        margin: 1em 0;
-        height: 2em;
-        line-height: 2em;
-        color: white;
-        background: rgb(255, 116, 3);
-        font-size: 40px;
-    
-        &:before {
-            background: linear-gradient(to right, white, rgb(255, 116, 3));
-        }
-    
-        &:after {
-            background: linear-gradient(to left, white, rgb(255, 116, 3));
-        }
-    }
-    
-    
-    body {
-        margin: 40px;
-    }
-    
-    
-    .divider {
-        display: flex;
-    
-        &:before,
-        &:after {
-            content: "";
-            flex: 1;
-        }
-    }
-    
-    @media (max-width: 900px) {
-    
-        .gradient {
-            align-items: stretch;
-            margin: 1em 0;
-            height: 62px;
-            line-height: 2em;
-            color: white;
-            background: #ff7403;
-            font-size: 29px;
-            width: 70% !important;
-            margin-top: 37px;
-        }
-    
-    
-        .slider {
-            background: white;
-            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-            height: 410px;
-            margin: auto;
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-            padding-bottom: 15%;
-            animation: linear infinite;
-            border-radius: 0px;
-        }
-    
-    
-    
-    }
+
+h2 {
+  color: #0078b3;
+}
+
+@mixin white-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+$animationSpeed: 35s;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 8));
+  }
+}
+.green-line {
+  height: 2px;
+  background-color: green;
+}
+.section-heading1 {
+  font: 50px poppin;
+  color: #333;
+  margin-bottom: 5px;
+  margin-left: 30px;
+  margin-top: -30px;
+  padding-bottom: 30px;
+}
+
+.slider {
+  background: rgb(255, 255, 255);
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 95%;
+  padding-bottom: 20%;
+  animation: linear infinite;
+
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: px;
+    z-index: 2;
+  }
+
+  &:hover div {
+    animation-play-state: paused;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(200deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(250px * 80);
+  }
+
+  .slide {
+    height: 100px;
+    width: 250;
+    padding: 20px;
+    border-radius: 2px;
+  }
+}
+
+// Gradients
+.gradient {
+  align-items: stretch;
+  margin: 1em 0;
+  height: 2em;
+  line-height: 2em;
+  color: white;
+  background: rgb(255, 116, 3);
+  font-size: 40px;
+
+  &:before {
+    background: linear-gradient(to right, white, rgb(255, 116, 3));
+  }
+
+  &:after {
+    background: linear-gradient(to left, white, rgb(255, 116, 3));
+  }
+}
+
+body {
+  margin: 40px;
+}
+
+.divider {
+  display: flex;
+
+  &:before,
+  &:after {
+    content: "";
+    flex: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .gradient {
+    align-items: stretch;
+    margin: 1em 0;
+    height: 62px;
+    line-height: 2em;
+    color: white;
+    background: #ff7403;
+    font-size: 29px;
+    width: 70% !important;
+    margin-top: 37px;
+  }
+
+  .slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 410px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 15%;
+    animation: linear infinite;
+    border-radius: 0px;
+  }
+}

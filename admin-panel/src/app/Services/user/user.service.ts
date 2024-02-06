@@ -70,7 +70,7 @@ export class UserService {
   }
 
   getAllHome() {
-    return this.http.get(environment.apiEndpoint + `/home/getListing`).pipe(
+    return this.http.get(environment.apiEndpoint + `home/getListing`).pipe(
       map((res: any) => res),
       catchError(this.handleErrorObservable)
     );

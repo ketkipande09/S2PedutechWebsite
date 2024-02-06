@@ -1,28 +1,42 @@
-<section id="main">
-  <div class="container-fluid top-row">
-    <div class="row justify-content-center mt-">
-      <div
-        class="col-xs-12 col-sm-12 col-md-5 col-lg-7 col-xl-7 col-xxl-8 top-margin"
-      >
-        <div class="text" [@textAnimation]="animationState">
-          <h1>Your Placement</h1>
-          <h1 class="mx-5">Our</h1>
-          <h1>Responsibilty.</h1>
-        </div>
-      </div>
-    </div>
-    <div
-      class="gif col-xs-12 col-sm-12 col-md-5 col-lg-6 col-xl-6 col-xxl-5 d-flex"
-      style="justify-content: right"
-    >
-      <img src="../../assets/landing22.gif" class="img-fluid" />
-    </div>
-    <div class="row center mt-3 my-5">
-      <div
-        class="bottom col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10 text-center"
-      >
-        <h2><strong>Learn to build software with S2P Edutech.</strong></h2>
-      </div>
+<!-- bullet -->
+
+<marquee
+  onmouseover="this.stop()"
+  onmouseout="this.start()"
+  class="bullet"
+  *ngFor="let data of mainData"
+>
+  {{ data.bulletPoint }}
+</marquee>
+
+<div class="row top-row">
+  <div class="row center mt-3 my-5">
+    <div class="tophead col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+      <h2><strong>Learn to build software with S2P Edutech.</strong></h2>
     </div>
   </div>
-</section>
+
+  <div  class="col-md-4">
+      <div class="text" [@textAnimation]="animationState">
+        <h1 class="text text-center">
+          Your Placement <br/>
+          Our <br/>
+          Responsibility</h1>
+      </div>
+  </div>
+
+  <div class="col-md-4 img">
+    <img
+      src="../../assets/home.png"
+      alt=""
+      class="img-fluid"/>
+  </div>
+
+  <div class="col-md-4 right" *ngFor="let data of mainData">
+    <h2
+      class="text text-center">
+      Our Placement Till Now
+    </h2><br>
+    <h1 > {{ data.placementCount }}</h1>
+  </div>
+</div>

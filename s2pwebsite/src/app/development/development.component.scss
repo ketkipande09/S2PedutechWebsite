@@ -1,293 +1,304 @@
 .development {
-	background-color: #fafafad7;
+  background-color: #fafafad7;
 
-	.card {
-		border-radius: 13px;
-		box-shadow: 0px 4px 4px 0px #FF8A00;
-		padding: 10px;
-		border: 2px solid #FF8A00;
-		width: 206px;
-		height: 240px;
-
-
-		.image {
-			width: 98px;
-			height: 70px;
-		}
-
-		.card-body {
-			// height: 8rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-
-		}
-	}
-
-	h2 {
-		color: #0078B3;
-	}
-
-	.text {
-		text-align: justify;
-	}
-}
-.green-line {
-	height: 2px;
-	background-color: green;
+  .card {
+    border-radius: 13px;
+    box-shadow: 0px 4px 4px 0px #ff8a00;
+    padding: 10px;
+    border: 2px solid #ff8a00;
+    width: 206px;
+    height: 240px;
+    .image {
+      width: 98px;
+      height: 70px;
+    }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
-  .section-heading1{
-   font: 50px poppin;
-    color: #333; 
-	margin-bottom: 5px;
-	margin-left: 20px;
-	margin-top: -30px 
+  .card:hover{
+	background-color: #ff8a00;
 }
-  
+
+  h2 {
+    color: #0078b3;
+  }
+
+  .text {
+    text-align: justify;
+  }
+}
+
+.green-line {
+  height: 2px;
+  background-color: green;
+}
+.section-heading1 {
+  font: 50px poppin;
+  color: #333;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-top: -30px;
+}
+.section-heading2 {
+  font: 50px poppin;
+  color: #333;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -30px;
+}
+.card22{
+	.head{
+		font: 24px poppin;
+		padding: 10px 0px 10px 0px;		
+	}
+	.body{
+		font: 20px poppin;
+		padding: 10px 30px 10px 30px;
+	}
+}
 
 @media (min-width: 769px) {
-	.move {
-		position: relative;
-		margin-top: 100px;
-	}
+  .move {
+    position: relative;
+    margin-top: 100px;
+  }
 }
 
 @media (max-width: 768px) {
-	.content {
-		display: flex;
-		justify-content: center;
-	}
+  .content {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 764px) {
-	.mobile {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		align-content: space-between;
-		flex-direction: column;
-	}
+  .mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    flex-direction: column;
+  }
 }
 
 // <---Client CSS--->
 
-.clienthead{
-	padding-top: 5rem;
+.clienthead {
+  padding-top: 5rem;
 }
 body {
-	align-items: center;
-	background: #ffffff;
-	display: flex;
-	height: 100vh;
-	justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
 }
 
 h2 {
-	color: #0078B3;
+  color: #0078b3;
 }
 
 @mixin white-gradient {
-	background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 $animationSpeed: 15s;
 
-
 @keyframes scroll {
-	0% {
-		transform: translateX(0);
-	}
+  0% {
+    transform: translateX(0);
+  }
 
-	100% {
-		transform: translateX(calc(-250px * 8))
-	}
+  100% {
+    transform: translateX(calc(-250px * 8));
+  }
 }
 
 .slider {
-	background: rgb(255, 255, 255);
-	// box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 100px;
-	margin: auto;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	padding-bottom: 20%;
-	animation: linear infinite;
+  background: rgb(255, 255, 255);
+  // box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-bottom: 20%;
+  animation: linear infinite;
 
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: px;
+    z-index: 2;
+  }
 
-	&::before,
-	&::after {
-		@include white-gradient;
-		content: "";
-		height: 100px;
-		position: absolute;
-		width: px;
-		z-index: 2;
-	}
+  &:hover div {
+    animation-play-state: paused;
+  }
 
-	&:hover div {
-		animation-play-state: paused;
-	}
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(200deg);
+  }
 
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(200deg);
-	}
+  &::before {
+    left: 0;
+    top: 0;
+  }
 
-	&::before {
-		left: 0;
-		top: 0;
-	}
+  .slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(250px * 80);
+  }
 
-	.slide-track {
-		animation: scroll $animationSpeed linear infinite;
-		display: flex;
-		width: calc(250px * 80);
-	}
-
-	.slide {
-		height: 100px;
-		width: 250;
-		padding: 20px;
-		border-radius: 2px;
-	}
+  .slide {
+    height: 100px;
+    width: 250;
+    padding: 20px;
+    border-radius: 2px;
+  }
 }
 
 // Gradients
 .gradient {
-	align-items: stretch;
-	margin: 1em 0;
-	height: 2em;
-	line-height: 2em;
-	color: white;
-	background: rgb(255, 116, 3);
-	font-size: 40px;
+  align-items: stretch;
+  margin: 1em 0;
+  height: 2em;
+  line-height: 2em;
+  color: white;
+  background: rgb(255, 116, 3);
+  font-size: 40px;
 
-	&:before {
-		background: linear-gradient(to right, white, rgb(255, 116, 3));
-	}
+  &:before {
+    background: linear-gradient(to right, white, rgb(255, 116, 3));
+  }
 
-	&:after {
-		background: linear-gradient(to left, white, rgb(255, 116, 3));
-	}
+  &:after {
+    background: linear-gradient(to left, white, rgb(255, 116, 3));
+  }
 }
-
 
 body {
-	margin: 40px;
+  margin: 40px;
 }
 
-
 .divider {
-	display: flex;
+  display: flex;
 
-	&:before,
-	&:after {
-		content: "";
-		flex: 1;
-	}
+  &:before,
+  &:after {
+    content: "";
+    flex: 1;
+  }
 }
 
 @media (max-width: 900px) {
-	.slider {
-		background: white;
-		box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-		height: 190px;
-		margin: auto;
-		overflow: hidden;
-		position: relative;
-		width: 97%;
-		padding-bottom: 15%;
-		animation: linear infinite;
-		border-radius: 0px;
-		padding-top: 0px;
-		margin-bottom: 17%;
-		margin-top: -6%;
-		margin-left: 6px;
-	}
+  .slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 190px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 97%;
+    padding-bottom: 15%;
+    animation: linear infinite;
+    border-radius: 0px;
+    padding-top: 0px;
+    margin-bottom: 17%;
+    margin-top: -6%;
+    margin-left: 6px;
+  }
 
-	.gradient {
-		align-items: stretch;
-		margin: 1em 0;
-		height: 62px;
-		line-height: 2em;
-		color: white;
-		background: #ff7403;
-		font-size: 29px;
-		width: 100% !important;
-		margin-top: 37px;
-	}
+  .gradient {
+    align-items: stretch;
+    margin: 1em 0;
+    height: 62px;
+    line-height: 2em;
+    color: white;
+    background: #ff7403;
+    font-size: 29px;
+    width: 100% !important;
+    margin-top: 37px;
+  }
 
-
-	.slider {
-		background: white;
-		box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-		height: 190px;
-		margin: auto;
-		overflow: hidden;
-		position: relative;
-		width: 100%;
-		padding-bottom: 15%;
-		animation: linear infinite;
-		border-radius: 0px;
-	}
-
-
-
+  .slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 190px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 15%;
+    animation: linear infinite;
+    border-radius: 0px;
+  }
 }
 
 // step
-.stepcontainer{
-	// background-color: #ffe667;
-    background-color: #1e2c7c;
-	border-radius: 0 250px 0 250px;
-margin-top: 7rem;
-margin-bottom: 6rem;
+.stepcontainer {
+  // background-color: #ffe667;
+  background-color: #1e2c7c;
+  border-radius: 0 250px 0 250px;
+  margin-top: 7rem;
+  margin-bottom: 6rem;
 }
 .heading1 {
-	padding: 10px 150px;
-	font: 50px poppins;
-	color: #669fff;	
-  }
-  
-  .heading2 {
-	font-weight: bold;
-	font: 45px poppins;
-	padding: 0px 150px;
-	color: #ffffff;
-  }
-  .column{
-	padding: 10px 0px 10px 50px;
-  }
-  .card-heading{
-	padding: 10px 0px 20px 20px;
+  padding: 10px 150px;
+  font: 50px poppins;
+  color: #669fff;
+}
 
-  }
-  .step {
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 10px;
-	text-align: center;
-	font: 20px poppins;	
-	color: #ffffff;
-  }
+.heading2 {
+  font-weight: bold;
+  font: 45px poppins;
+  padding: 0px 150px;
+  color: #ffffff;
+}
+.column {
+  padding: 10px 0px 10px 50px;
+}
+.card-heading {
+  padding: 10px 0px 20px 20px;
+}
+.step {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  font: 20px poppins;
+  color: #ffffff;
+}
 
 .stepcard {
-	border: 1px solid #ddd;
-	padding: 10px;
-	border-radius: 8px;
-	width: 140px;
-	height: 170px;
-  }
-.stepimage{
-	width: 6rem;
-	height: 6rem;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  width: 140px;
+  height: 170px;
+}
+.stepimage {
+  width: 6rem;
+  height: 6rem;
 }
 .bottom-text {
-	margin-top: 10px;
-	font-size: 16px;
-	text-align: center;
-	font: 20px poppins;	
-	color:#000000
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  font: 20px poppins;
+  color: #000000;
 }

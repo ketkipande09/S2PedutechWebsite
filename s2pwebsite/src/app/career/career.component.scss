@@ -46,6 +46,25 @@
         list-style-type: none;
     }
 }
+.green-line {
+    height: 2px;
+    background-color: green;
+  }
+  .section-heading1 {
+    font: 50px poppin;
+    color: #333;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-top: -30px;
+    padding-bottom: 3rem;
+  }
+
+  .bullet{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font: 30px poppins;
+    color: black;
+  }
 
 @media (max-width: 768px) {
 

@@ -1,20 +1,27 @@
 <section id="development-resources">
   <div class="container-fluid development">
     <div class="row justify-content-center">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div style="display: flex; flex-wrap: nowrap">
+          <div
+            fxhide.xs="true"            
+            style="flex: 1 1 100%; box-sizing: border-box; max-width: 30%"
+          >
+            <div class="green-line"></div>
+          </div>
+          <div style="flex: 1 1 0%; box-sizing: border-box">
+            <div class="section-heading1">Development & Resourcing</div>
+          </div>
+          <div
+            fxhide.xs="true"
+            style="flex: 1 1 100%; box-sizing: border-box; max-width: 30%"
+          >
+            <div class="green-line"></div>
+          </div>
+        </div>
+      </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 col-xxl-11">
        
-
-    <div style="display: flex; flex-wrap: nowrap;">
-      <div fxhide.xs="true" fxflex="45" style="flex: 1 1 100%; box-sizing: border-box; max-width: 45%">
-          <div class="green-line"></div>
-      </div>
-      <div fxflex="" style="flex: 1 1 0%; box-sizing: border-box;">
-          <div class="section-heading1">
-            Development & Resourcing
-          </div>
-      </div>
-  </div>
-  
 
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8 col-xl-6 col-xxl-6">
@@ -84,19 +91,14 @@
           >
             <div class="row justify-content-center my-5">
               <ng-container *ngIf="active == 'WebsiteDevelopment'">
-                <div class="head">WEBSITE DEVELOPMENT</div>
                 <div class="container">
                   <div class="row">
-                    <div class="card22">
-                      <div class="card-body">
-                        <p>
-                          Web development is the work involved in developing a
-                          website for the Internet (World Wide Web) or an
-                          intranet (a private network). Web development can
-                          range from developing a simple single static page of
-                          plain text to complex web applications, electronic
-                          businesses, and social network services.
-                        </p>
+                    <div class="card card22" style="width: auto; height: auto">
+                      <div class="head" style="text-align: center">
+                        <strong>WEBSITE DEVELOPMENT</strong>
+                      </div>
+                      <div class="body">
+                        {{ website }}
                       </div>
                     </div>
                   </div>
@@ -104,18 +106,14 @@
               </ng-container>
 
               <ng-container *ngIf="active == 'WebApplication'">
-                <div class="head">WEB APPLICATION</div>
                 <div class="container">
                   <div class="row">
-                    <div class="card22">
-                      <div class="card-body">
-                        <p>
-                          What is a Web Application? A web application is
-                          software that runs in your web browser. Businesses
-                          have to exchange information and deliver services
-                          remotely. They use web applications to connect with
-                          customers conveniently and securely.
-                        </p>
+                    <div class="card card22" style="width: auto; height: auto">
+                      <div class="head" style="text-align: center">
+                        <strong>WEB APPLICATION</strong>
+                      </div>
+                      <div class="body">
+                        {{ web }}
                       </div>
                     </div>
                   </div>
@@ -123,30 +121,14 @@
               </ng-container>
 
               <ng-container *ngIf="active == 'MobileApp'">
-                <div class="head">MOBILE APP DEVELOPMENT</div>
                 <div class="container">
                   <div class="row">
-                    <div class="card22">
-                      <div class="card-body">
-                        <p>
-                          Mobile app development is the act or process by which
-                          a mobile app is developed for one or more mobile
-                          devices, which can include personal digital assistants
-                          (PDA), enterprise digital assistants (EDA), or mobile
-                          phones.[1] Such software applications are specifically
-                          designed to run on mobile devices, taking numerous
-                          hardware constraints into consideration. Common
-                          constraints include CPU architecture and speeds,
-                          available memory (RAM), limited data storage
-                          capacities, and considerable variation in displays
-                          (technology, size, dimensions, resolution) and input
-                          methods (buttons, keyboard, touch screens with/without
-                          styluses).[2] These applications (or 'apps') can be
-                          pre-installed on phones during manufacturing or
-                          delivered as web applications, using server-side or
-                          client-side processing (e.g., JavaScript) to provide
-                          an "application-like" experience within a web browser.
-                        </p>
+                    <div class="card card22" style="width: auto; height: auto">
+                      <div class="head" style="text-align: center">
+                        <strong>MOBILE APP DEVELOPMENT</strong>
+                      </div>
+                      <div class="body">
+                        {{ mobile }}
                       </div>
                     </div>
                   </div>
@@ -154,17 +136,14 @@
               </ng-container>
 
               <ng-container *ngIf="active == 'Resourcing'">
-                <div class="head">RESOURCING</div>
                 <div class="container">
                   <div class="row">
-                    <div class="card22">
-                      <div class="card-body">
-                        <p>
-                          Resourcing is the process of allocating money,
-                          workers, and skills to a specific job or task. It can
-                          also refer to the process of attracting and recruiting
-                          people for the right role at the right time and cost.
-                        </p>
+                    <div class="card card22" style="width: auto; height: auto">
+                      <div class="head" style="text-align: center">
+                        <strong>RESOURCING</strong>
+                      </div>
+                      <div class="body">
+                        {{ resoucing }}
                       </div>
                     </div>
                   </div>
@@ -177,145 +156,129 @@
     </div>
   </div>
 
-
-<!-- step -->
-<div class="stepcontainer col-sm-4 col-md-4 col-lg-12 col-xl-12 col-xxl-12">
-  <div class="heading1 col-md-12">How We Work</div>
-  <div class="heading2 subheading col-md-12">
-    Roadmap To Your Success
-  </div>
-  <div class="container">
-   <div class="row">
-      <div class="column d-flex">
-
-      <div class="card-heading">
-        <div class="step">Step 1</div>
-        <div class="card stepcard">
-          <div class="stepimage">
-            <img
-              class="img-fluid"
-              src="../../assets/step/registerpng.png"
-            />
+  <!-- step -->
+  <div class="stepcontainer col-sm-4 col-md-4 col-lg-12 col-xl-12 col-xxl-12">
+    <div class="heading1 col-md-12">How We Work</div>
+    <div class="heading2 subheading col-md-12">Roadmap To Your Success</div>
+    <div class="container">
+      <div class="row">
+        <div class="column d-flex">
+          <div class="card-heading">
+            <div class="step">Step 1</div>
+            <div class="card stepcard">
+              <div class="stepimage">
+                <img
+                  class="img-fluid"
+                  src="../../assets/step/registerpng.png"
+                />
+              </div>
+              <div class="bottom-text">Register with S2P</div>
+            </div>
           </div>
-          <div class="bottom-text">Register with S2P</div>
+
+          <div class="card-heading">
+            <div class="step">Step 2</div>
+            <div class="card stepcard">
+              <div class="stepimage">
+                <img class="img-fluid" src="../../assets/step/enroll.png" />
+              </div>
+              <div class="bottom-text">Enroll In A Course</div>
+            </div>
+          </div>
+
+          <div class="card-heading">
+            <div class="step">Step 3</div>
+            <div class="card stepcard">
+              <div class="stepimage">
+                <img class="img-fluid" src="../../assets/step/rating.png" />
+              </div>
+              <div class="bottom-text">Learn From Experts</div>
+            </div>
+          </div>
+
+          <div class="card-heading">
+            <div class="step">Step 4</div>
+            <div class="card stepcard">
+              <div class="stepimage">
+                <img class="img-fluid" src="../../assets/step/assignment.png" />
+              </div>
+              <div class="bottom-text">Complete Assignments</div>
+            </div>
+          </div>
+
+          <div class="card-heading">
+            <div class="step">Step 5</div>
+            <div class="card stepcard">
+              <div class="stepimage">
+                <img
+                  class="img-fluid"
+                  src="../../assets/step/completed-task.png"
+                />
+              </div>
+              <div class="bottom-text">Complete The Course</div>
+            </div>
+          </div>
+
+          <div class="card-heading">
+            <div class="step">Step 6</div>
+            <div class="card stepcard">
+              <div class="stepimage">
+                <img
+                  class="img-fluid"
+                  src="../../assets/step/jobprofilepng.png"
+                />
+              </div>
+              <div class="bottom-text">Create a Job Profile</div>
+            </div>
+          </div>
+
+          <div class="card-heading">
+            <div class="step">Step 7</div>
+            <div class="card stepcard">
+              <div class="stepimage">
+                <img
+                  class="img-fluid"
+                  src="../../assets/step/job-interview.png"
+                />
+              </div>
+              <div class="bottom-text">Appear For Interviews</div>
+            </div>
+          </div>
+
+          <div class="card-heading">
+            <div class="step">Step 8</div>
+            <div class="card stepcard">
+              <div class="stepimage">
+                <img class="img-fluid" src="../../assets/step/placedpng.png" />
+              </div>
+              <div class="bottom-text">Get Placed</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="card-heading">
-        <div class="step">Step 2</div>
-        <div class="card stepcard">
-          <div class="stepimage">
-            <img
-              class="img-fluid"
-              src="../../assets/step/enroll.png"
-            />
-          </div>
-          <div class="bottom-text">Enroll In A Course</div>
-        </div>
-      </div>
-
-      <div class="card-heading">
-        <div class="step">Step 3</div>
-        <div class="card stepcard">
-          <div class="stepimage">
-            <img
-              class="img-fluid"
-              src="../../assets/step/rating.png"
-            />
-          </div>
-          <div class="bottom-text">Learn From Experts</div>
-        </div>
-      </div>
-
-
-      <div class="card-heading">
-        <div class="step">Step 4</div>
-        <div class="card stepcard">
-          <div class="stepimage">
-            <img
-              class="img-fluid"
-              src="../../assets/step/assignment.png"
-            />
-          </div>
-          <div class="bottom-text">Complete Assignments</div>
-        </div>
-      </div>
-
-      <div class="card-heading">
-        <div class="step">Step 5</div>
-        <div class="card stepcard">
-          <div class="stepimage">
-            <img
-              class="img-fluid"
-              src="../../assets/step/completed-task.png"
-            />
-          </div>
-          <div class="bottom-text">Complete The Course</div>
-        </div>
-      </div>
-
-      <div class="card-heading">
-        <div class="step">Step 6</div>
-        <div class="card stepcard">
-          <div class="stepimage">
-            <img
-              class="img-fluid"
-              src="../../assets/step/jobprofilepng.png"
-            />
-          </div>
-          <div class="bottom-text"> Create a Job Profile</div>
-        </div>
-      </div>
-
-      <div class="card-heading">
-        <div class="step">Step 7</div>
-        <div class="card stepcard">
-          <div class="stepimage">
-            <img
-              class="img-fluid"
-              src="../../assets/step/job-interview.png"
-            />
-          </div>
-          <div class="bottom-text">Appear For Interviews</div>
-        </div>
-      </div>
-
-      <div class="card-heading">
-        <div class="step">Step 8</div>
-        <div class="card stepcard">
-          <div class="stepimage">
-            <img
-              class="img-fluid"
-              src="../../assets/step/placedpng.png"
-            />
-          </div>
-          <div class="bottom-text">Get Placed</div>
-        </div>
-      </div>
-    
-
-     
-
     </div>
   </div>
-</div>
-</div>
-
 
   <div class="container-fluid client">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-       
-        <div class="clienthead" style="display: flex; flex-wrap: nowrap;">
-          <div fxhide.xs="true" fxflex="45" style="flex: 1 1 100%; box-sizing: border-box; max-width: 45%">
-              <div class="green-line"></div>
+        <div class="clienthead" style="display: flex; flex-wrap: nowrap">
+          <div
+            fxhide.xs="true"
+            style="flex: 1 1 100%; box-sizing: border-box; max-width: 45%"
+          >
+            <div class="green-line"></div>
           </div>
-          <div fxflex="" style="flex: 1 1 0%; box-sizing: border-box;">
-              <div class="section-heading1">
-                Clients
-              </div>
+          <div fxflex="" style="flex: 1 1 0%; box-sizing: border-box">
+            <div class="section-heading2">Clients</div>
           </div>
-      </div>
+          <div
+            fxhide.xs="true"
+            style="flex: 1 1 100%; box-sizing: border-box; max-width: 45%"
+          >
+            <div class="green-line"></div>
+          </div>
+        </div>
 
         <div class="slider">
           <div class="slide-track">
@@ -503,5 +466,3 @@
     </div>
   </div>
 </section>
-
-

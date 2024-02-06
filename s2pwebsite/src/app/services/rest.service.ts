@@ -21,7 +21,7 @@ export class RestService {
     return this.http.post(environment.apiEndpoint+`contact/createContact`,payload);
   }
 
-  getmaincomponent(){
+  getbulletin(){
     return this.http.get(environment.apiEndpoint + "home/getListing")
   };
 

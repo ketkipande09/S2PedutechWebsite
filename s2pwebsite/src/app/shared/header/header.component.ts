@@ -17,9 +17,7 @@ export class HeaderComponent {
 
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
-  }
-
-  
+  }  
   
   constructor(private router: Router) {}
 
