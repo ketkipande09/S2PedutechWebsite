@@ -73,4 +73,7 @@ export class MainComponent {
       console.log("aara", this.mainData)
     });
   }
+
+
+  
 }
