@@ -35,7 +35,7 @@ export class FooterComponent {
   }
 
   enquiryForm = new FormGroup({
-    name: new FormControl('',[Validators.required]),
+    name: new FormControl('', [Validators.required]),
     branch: new FormControl(),
     college: new FormControl(),
     mobile: new FormControl('', [Validators.required]),
@@ -46,22 +46,24 @@ export class FooterComponent {
   onSubmit(): void {
     console.log('Submit button clicked');
     if (this.enquiryForm.invalid) {
-
       return;
     }
+
     const formValues = this.enquiryForm.value;
     console.log('Form values:', formValues);
+
     this.restService.createEnquiry(formValues).subscribe(
       (successResponse: any) => {
         console.log('Enquiry created successfully:', successResponse);
-        
+        this.enquiryForm.reset();
+        this.enquiryForm.controls['course'].setValue('Select your course');
       },
       (errorResponse: any) => {
         console.error('Error creating enquiry:', errorResponse);
-        
       }
     );
   }
+
 
 
 }
