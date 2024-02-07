@@ -46,8 +46,7 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
+     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
     if (currentScroll > this.lastScrollTop) {
       // Scrolling down
       this.headerVisible = false;
@@ -58,7 +57,6 @@ export class HeaderComponent {
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
   tabChange(key:any){
-
     if (key === 'gallery' || key === 'contact') {
       this.scrollToTop();
     }

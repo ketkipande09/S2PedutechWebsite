@@ -15,6 +15,9 @@ import { RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,SharedModule,HttpClientModule,ReactiveFormsModule,BrowserAnimationsModule
+    AppRoutingModule,SharedModule,HttpClientModule,ReactiveFormsModule,BrowserAnimationsModule,
+    NgbModule,
+    NgbCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

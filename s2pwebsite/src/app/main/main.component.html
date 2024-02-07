@@ -1,45 +1,72 @@
 <!-- bullet -->
 <div class="col-md-12">
-<marquee
-  onmouseover="this.stop()"
-  onmouseout="this.start()"
-  class="bullet"
-  *ngFor="let data of mainData"
->
-  {{ data.bulletPoint }}
-</marquee>
+  <marquee
+    onmouseover="this.stop()"
+    onmouseout="this.start()"
+    class="bullet"
+    *ngFor="let data of mainData"
+  >
+    {{ data.bulletPoint }}
+  </marquee>
 </div>
-
 <div class="row top-row">
   <div class="row center mt-3 my-5">
-    <div class="tophead col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
-      <h2><strong>Learn to build software with S2P Edutech.</strong></h2>
+    <div
+      class="tophead col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center"
+    >
+      <h2>
+        <strong>Learn to build software with S2P Edutech.</strong>
+      </h2>
     </div>
   </div>
 
-  <div  class="col-md-4">
-      <div class="text" [@textAnimation]="animationState">
-        <h1 class="text text-center">
-          Your Placement <br/>
-          Our <br/>
-          Responsibility</h1>
-      </div>
+  <div class="col-md-4">
+    <div class="text" [@textAnimation]="animationState">
+      <h1 class="text text-center">
+        Your Placement <br />
+        Our <br />
+        Responsibility
+      </h1>
+    </div>
   </div>
 
   <div class="col-md-4 img">
-    <img
-      src="../../assets/home.png"
-      alt=""
-      class="img-fluid"/>
+    <img src="../../assets/home.png" alt="" class="img-fluid" />
   </div>
 
-  <div class="col-md-4 right" *ngFor="let data of mainData">
-    <h2
-      class="text text-center">
-      Our Placement Till Now
-    </h2><br>
-    <h1 > {{ data.placementCount }}</h1>
+  <div class="col-md-4 right">
+    <h2 class="text text-center">Our Placement Till Now</h2>
+    <br />
+    <h1 class="placement-counter">{{ currentNumber }}+</h1>
   </div>
-  
-  
 </div>
+
+
+
+
+
+<!-- <div class="container-fluid cursor">
+  <div class="row">
+    <div class="col-12">
+      <ngb-carousel
+      [showNavigationArrows]="showNavigationArrows"
+      [showNavigationIndicators]="showNavigationIndicators"
+      >
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+            <img class="img-fluid" src={{img.img1}} alt="Random slide" />
+          </div>
+        </ng-template>
+        
+        <ng-template ngbSlide>
+          <div class="front">
+            <img src="../../assets/WELCOME TO.gif" alt="" />
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</div> -->
+
+
+          

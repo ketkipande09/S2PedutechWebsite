@@ -18,13 +18,17 @@
     h5 {
       font: 20px poppins;
     }
-
     .placements {
       background-color: #ff8a00;
       border-radius: 6px;
       padding: 5px 0px 5px 0px;
     }
   }
+  .card:hover{
+		transform: scale(1.06);
+		transition: all ease 0.5s;
+    box-shadow: 0px 4px 4px 0px #ff8a00;
+	}
  
   .center {
     display: flex;

@@ -1,8 +1,14 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RestService } from '../services/rest.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -10,70 +16,52 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./main.component.scss'],
   animations: [
     trigger('textAnimation', [
-      state('void', style({   transform: 'translateX(-100%)' })),
+      state('void', style({ transform: 'translateX(-100%)' })),
       transition('void => *', [
-        animate('2000ms ease-in-out', style({transform: 'translateX(0)' })),
+        animate('2000ms ease-in-out', style({ transform: 'translateX(0)' })),
       ]),
     ]),
   ],
 })
-export class MainComponent {
+export class MainComponent implements OnInit, OnDestroy {
   mainData: any = [];
-  projectcount:number = 0;
-  projectnumber:number=0;
-  projectclient:number=0;
-
-
   animationState: string = 'in';
+  currentNumber: number = 0;
+  targetNumber: any;
+  private subscription: Subscription;
+  showNavigationArrows = false;
+  showNavigationIndicators = false;
 
+  constructor(private restService: RestService, private router: Router, ) {
+    this.subscription = new Subscription();
+  } 
 
-  constructor(private restService: RestService, private router: Router) { }
-  
-  projectcountstop:any = setInterval (()=>{
-
-    this.projectcount++;
-    if(this.projectcount==400)
-    {
-      clearInterval(this.projectcountstop);
-    }
-  },10
-
-  )
-
-  projectnumberstop:any = setInterval(()=>{
-
-    this.projectnumber++;
-    if(this.projectnumber == 50)
-    {
-      clearInterval(this.projectnumberstop);
-    }
-  },80
-
-  )
-  projectclientstop:any = setInterval(()=>{
-
-    this.projectclient++;
-    if(this.projectclient == 15)
-    {
-      clearInterval(this.projectclientstop);
-    }
-  },80
-
-  )
+  img = {
+    img1: "../../assets/WELCOME TO.gif"
+  }
 
   ngOnInit(): void {
     this.getall();
     this.animationState = 'in';
+    this.subscription = interval(10).subscribe(() => {
+      this.incrementNumber();
+    });
   }
-  homeUsers: any = [];
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+  incrementNumber() {
+    if (this.currentNumber < this.targetNumber) {
+      this.currentNumber++;
+    }
+  }
 
-  getall(){
+  getall() {
     this.restService.getbulletin().subscribe((data: any) => {
       this.mainData = data.result.Home;
-      console.log("aara", this.mainData)
+      this.targetNumber = this.mainData[0]?.placementCount 
     });
   }
 
-
-  
 }
+
