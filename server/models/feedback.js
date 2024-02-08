@@ -46,36 +46,36 @@ module.exports = (sequelize, DataTypes) => {
       freezeTableName: true,
     }
   );
-  Feedback.associate = (models) => {
-  Feedback.belongsTo(models.Event, {
-    foreignKey: 'eventId',
-    as: 'feedbackDetails',
-    onDelete: 'CASCADE',
-    constrains: false,
-  });
+//   Feedback.associate = (models) => {
+//   Feedback.belongsTo(models.Event, {
+//     foreignKey: 'eventId',
+//     as: 'feedbackDetails',
+//     onDelete: 'CASCADE',
+//     constrains: false,
+//   });
 
-//    models.Event.belongsToMany(Feedback, {
-//      as: 'feedback',
-//      through: 'feedbacks',
-//      foreignKey: 'eventId',
-//      onDelete: 'CASCADE',
-//      hooks: true,
-//    });
-  // models.document_category.belongsTo(models.assets_category, {
-  //   foreignKey: 'ASSEST'
-  // });
-  // };
-  //   Feedback.associate = models => {
-  //     Feedback.belongsTo(models.Event, {
-  //       foreignKey: 'eventId',
-  //       as: 'Feedback',
-  //       onDelete: 'CASCADE',
-  //     });
-    //   models.Event.hasMany(Feedback, {
-    //     as: 'Feedback',
-    //     foreignKey: 'eventId',
-    //     onDelete: 'CASCADE',
-    //   });
-    };
+// //    models.Event.belongsToMany(Feedback, {
+// //      as: 'feedback',
+// //      through: 'feedbacks',
+// //      foreignKey: 'eventId',
+// //      onDelete: 'CASCADE',
+// //      hooks: true,
+// //    });
+//   // models.document_category.belongsTo(models.assets_category, {
+//   //   foreignKey: 'ASSEST'
+//   // });
+//   // };
+//   //   Feedback.associate = models => {
+//   //     Feedback.belongsTo(models.Event, {
+//   //       foreignKey: 'eventId',
+//   //       as: 'Feedback',
+//   //       onDelete: 'CASCADE',
+//   //     });
+//     //   models.Event.hasMany(Feedback, {
+//     //     as: 'Feedback',
+//     //     foreignKey: 'eventId',
+//     //     onDelete: 'CASCADE',
+//     //   });
+//     };
   return Feedback;
 };

@@ -66,28 +66,31 @@
             <form [formGroup]="enquiryForm">
                 <div class="input__wrapper ">
 
-                    <input id="name" type="text" class="input__field" 
-                        formControlName="name" />
+                    <input id="name" type="text" class="input__field" formControlName="name" />
                     <label for="password" class="input__label"> Name </label>
                 </div>
                 <div class="input__wrapper mt-4">
-                    <input id="mobile" type="text" class="input__field" 
-                        formControlName="mobile" />
+                    <input id="mobile" type="text" class="input__field" formControlName="mobile" />
                     <label for="password" class="input__label"> Contact No. </label>
                 </div>
                 <div class="input__wrapper mt-4">
-                    <input id="branch" type="text" class="input__field" 
-                        formControlName="college" />
+                    <input id="branch" type="text" class="input__field" formControlName="college" />
                     <label for="password" class="input__label"> College </label>
                 </div>
                 <div class="input__wrapper mt-4">
-                    <input id="branch" type="text" class="input__field" 
-                        formControlName="branch" />
-                    <label for="password" class="input__label"> Branch </label>
+                    <select id="branch" class="input__field" formControlName="branch">
+                        <option value="Computer Technology">Computer Technology</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electronics And Telecommunication">Electronics And Telecommunication</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <label for="branch" class="input__label">Branch</label>
                 </div>
                 <div class="input__wrapper mt-4">
-                    <input id="passingyear" type="text" class="input__field" 
-                        formControlName="passingyear" />
+                    <input id="passingyear" type="text" class="input__field" formControlName="passingyear" />
                     <label for="password" class="input__label"> Year of Passing </label>
                 </div>
                 <select class="select-dropdown mt-4" formControlName="course">
@@ -98,8 +101,8 @@
             </form>
         </div>
         <button (click)=" onSubmit()" class="submit mt-3">
-        Submit
-    </button>
+            Submit
+        </button>
     </div>
 
 </div>

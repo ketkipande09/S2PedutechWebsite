@@ -13,6 +13,7 @@ export class EnquiryListComponent implements OnInit {
   enquiry: any = [];
   search: any = '';
   course: any = '';
+  branch: any = '';
   page: any = 1;
   pagesize: any = 10;
   collection: any;
@@ -31,7 +32,7 @@ export class EnquiryListComponent implements OnInit {
     private enquiryService: EnquiryService,
     private toastService: ToastrService,
     private modalService: NgbModal
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getAllEnquiry();
@@ -39,6 +40,7 @@ export class EnquiryListComponent implements OnInit {
 
   resetFilter() {
     this.course = '';
+    this.branch = '';
     this.getAllEnquiry();
   }
 
@@ -68,10 +70,12 @@ export class EnquiryListComponent implements OnInit {
       pagesize: this.pagesize,
       search: this.search,
       course: this.course,
+      branch: this.branch,
     };
-    console.log(this.course,"course");
-    
-    
+    console.log(this.course, "course");
+    console.log(this.branch, "branch");
+
+
     this.enquiryService.getAllEnquiry(obj).subscribe(
       (success: any) => {
         console.log(success);
@@ -98,25 +102,26 @@ export class EnquiryListComponent implements OnInit {
     );
   }
 
-  download(title:any) {
+  download(title: any) {
     let obj: any = {
       type: title,
-      course: this.course
+      course: this.course,
+      branch: this.branch
     };
     this.enquiryService.downloadFile(obj).subscribe(
-      (success:any) => {
+      (success: any) => {
         if (title == 'csv') {
           saveAs(success, 'Enquiry-list.csv');
         } else {
           saveAs(success, 'Enquiry-list.xlsx');
         }
         // console.log(success,"success");
-        
+
       },
-      (error:any) => {
-     console.log(error)
+      (error: any) => {
+        console.log(error)
       }
     );
   }
-  
+
 }

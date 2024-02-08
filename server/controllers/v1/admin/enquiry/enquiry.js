@@ -508,11 +508,18 @@ async function getEnquiry(req, title) {
   if (req.query.course && req.query.course != 'undefined') {
     whereQuery[Op.and].push({ course: req.query.course });
   }
+  if (req.query.branch && req.query.branch != 'undefined') {
+    whereQuery[Op.and].push({ branch: req.query.branch });
+  }
   if (req.query.search) {
     whereQuery[Op.and].push({
       [Op.or]: [
         { name: { [Op.substring]: req.query.search } },
         { mobile: { [Op.substring]: req.query.search } },
+        { college: { [Op.substring]: req.query.search } },
+        { branch: { [Op.substring]: req.query.search } },
+        { passingyear: { [Op.substring]: req.query.search } },
+        { course: { [Op.substring]: req.query.search } },
       ],
     });
   }

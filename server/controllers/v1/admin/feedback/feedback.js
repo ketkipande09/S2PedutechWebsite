@@ -79,11 +79,9 @@ const feedbackObj = {
       offset = offset * req.query.pagesize || 0;
       let limit = req.query.pagesize || 10;
       let whereQuery = {};
-
       if (req.query.search) {
         whereQuery = {
           [Op.or]: [
-           
             { contact: { [Op.substring]: req.query.search } },
             { email: { [Op.substring]: req.query.search } },
             { name: { [Op.substring]: req.query.search } },
@@ -330,22 +328,16 @@ const feedbackObj = {
       worksheet.getRow(1).values = [
         'Sr.No.',
         'Name',
-        'College Name',
-        'Branch',
-        'Year Of Passing',
-        'Mobile',
+        'Message',
+        'Contact',
         'Email',
-        'Feedback',
       ];
       worksheet.columns = [
         { key: 'Sr.No.', width: 20 },
         { key: 'name', width: 34 },
-        { key: 'collegeName', width: 24 },
-        { key: 'branch', width: 24 },
-        { key: 'yearOfPassing', width: 34 },
-        { key: 'mobile', width: 34 },
-        { key: 'email', width: 34 },
-        { key: 'feedback', width: 34 },
+        { key: 'message', width: 34 },
+        { key: 'contact', width: 34 },
+        { key: 'email', width: 34 }
       ];
       worksheet.getCell('A1').font = {
         size: 12,
@@ -382,7 +374,7 @@ const feedbackObj = {
         bold: true,
         color: { argb: 'FF000000' },
       };
-    
+
       worksheet.getRow(1).fill = {
         type: 'pattern',
         pattern: 'solid',
@@ -395,13 +387,10 @@ const feedbackObj = {
         console.log("ddddddd", d);
         let detas = worksheet.addRow({
           'Sr.No.': i + 1,
-          'name': `${d['name'] ? d['name'] : 'uyi'}`,
-          'collegeName': `${d['collegeName'] ? d['collegeName'] : ''}`,
-          'branch': `${d['branch'] ? d['branch'] : ''}`,
-          'yearOfPassing': `${d['yearOfPassing'] ? d['yearOfPassing'] : ''}`,
-          'mobile': `${d['mobile'] ? d['mobile'] : ''}`,
+          'name': `${d['name'] ? d['name'] : ''}`,
+          'message': `${d['message'] ? d['message'] : ''}`,
+          'contact': `${d['contact'] ? d['contact'] : ''}`,
           'email': `${d['email'] ? d['email'] : ''}`,
-          'feedback': `${d['feedback'] ? d['feedback'] : ''}`,
           // Status: `${d['status'] ? 'Active' : 'Inactive'}`,
         });
         row.eachCell((cell, rowNumber) => {
@@ -462,14 +451,11 @@ async function getFeedback(req) {
   let row = await Feedback.findAll({
     attributes: [
       `name`,
-      `collegeName`,
-      `branch`,
-      `yearOfPassing`,
-      `mobile`,
+      `message`,
+      `contact`,
       `email`,
-      `feedback`,
     ],
-    
+
   });
 
   let payload = {

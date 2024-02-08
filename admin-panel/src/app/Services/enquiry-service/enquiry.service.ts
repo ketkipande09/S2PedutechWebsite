@@ -5,13 +5,13 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class EnquiryService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAllEnquiry(obj: any) {
     console.log(obj);
     return this.http.get(
       environment.apiEndpoint +
-        `/enquiry/getEnquiryListing?page=${obj.page}&pagesize=${obj.pagesize}&search=${obj.search}&course=${obj.course}`
+      `/enquiry/getEnquiryListing?page=${obj.page}&pagesize=${obj.pagesize}&search=${obj.search}&course=${obj.course}&branch=${obj.branch}`
     );
   }
 
@@ -20,11 +20,11 @@ export class EnquiryService {
       environment.apiEndpoint + `/enquiry/deleteEnquiry/${id}`
     );
   }
-  downloadFile(obj:any) {
-    console.log("obj",obj)
+  downloadFile(obj: any) {
+    console.log("obj", obj)
     return this.http.get(
       environment.apiEndpoint +
-        `/enquiry/downloadFile?type=${obj.type}&course=${obj.course}`,
+      `/enquiry/downloadFile?type=${obj.type}&course=${obj.course}&branch=${obj.branch}`,
       {
         responseType: 'blob',
         headers: new HttpHeaders().append('Content-Type', 'text/csv'),
