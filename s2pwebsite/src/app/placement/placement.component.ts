@@ -1,6 +1,7 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, inject, TemplateRef } from '@angular/core';
 import { PlacementService } from '../services/placement/placement.service';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-placement',
@@ -17,11 +18,17 @@ export class PlacementComponent implements OnInit{
   readList: any;
   disabled: boolean = false;
   collection: any;
+  private modalService =inject(NgbModal)
+
 
   constructor(
     private PlacementService: PlacementService,
     private router: Router,
   ) { }
+
+  openVerticallyCentered(content: TemplateRef<any>) {
+		this.modalService.open(content, { centered: true });
+	}
 
   ngOnInit(): void {
     this.getAllPlacements();

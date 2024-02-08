@@ -10,6 +10,7 @@ import {
 } from '@angular/animations';
 import { interval, Subscription } from 'rxjs';
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -29,17 +30,17 @@ export class MainComponent implements OnInit, OnDestroy {
   currentNumber: number = 0;
   targetNumber: any;
   private subscription: Subscription;
-  showNavigationArrows = false;
-  showNavigationIndicators = false;
-
+  
   constructor(private restService: RestService, private router: Router, ) {
     this.subscription = new Subscription();
   } 
-
-  img = {
-    img1: "../../assets/WELCOME TO.gif"
+  
+  img :any = {
+    img1: "../../assets/WELCOME TO.gif",
+    img2: "../../assets/landing.gif",
+    img3: "../../assets/WELCOME TO.gif"
   }
-
+  
   ngOnInit(): void {
     this.getall();
     this.animationState = 'in';

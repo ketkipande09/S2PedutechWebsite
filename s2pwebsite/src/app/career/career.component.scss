@@ -63,7 +63,15 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     font: 30px poppins;
-    color: black;
+    // color: black;
+    animation: changeColor 5s infinite;
+  }
+  @keyframes changeColor {
+    0% { color: rgb(218, 0, 0); }
+    25% { color: rgb(0, 0, 130); }
+    50% { color: rgb(0, 202, 0); }
+    75% { color: rgb(49, 0, 55); }
+    100% { color: rgb(255, 166, 0); }
   }
 
 @media (max-width: 768px) {
