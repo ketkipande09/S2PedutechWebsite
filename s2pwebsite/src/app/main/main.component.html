@@ -1,5 +1,5 @@
 <!-- bullet -->
-<div class="col-md-12">
+<div class="col-md-12 bulletin">
   <marquee
     onmouseover="this.stop()"
     onmouseout="this.start()"
@@ -9,7 +9,8 @@
     {{ data.bulletPoint }}
   </marquee>
 </div>
-<div class="row top-row">
+
+<!-- <div class="row top-row">
   <div class="row center mt-3 my-5">
     <div
       class="tophead col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center"
@@ -39,34 +40,25 @@
     <br />
     <h1 class="placement-counter">{{ currentNumber }}+</h1>
   </div>
-</div>
-
-
-
-
-
-<!-- <div class="container-fluid cursor">
-  <div class="row">
-    <div class="col-12">
-      <ngb-carousel
-      [showNavigationArrows]="showNavigationArrows"
-      [showNavigationIndicators]="showNavigationIndicators"
-      >
-        <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-            <img class="img-fluid" src={{img.img1}} alt="Random slide" />
-          </div>
-        </ng-template>
-        
-        <ng-template ngbSlide>
-          <div class="front">
-            <img src="../../assets/WELCOME TO.gif" alt="" />
-          </div>
-        </ng-template>
-      </ngb-carousel>
-    </div>
-  </div>
 </div> -->
 
 
-          
+
+
+<ngb-carousel *ngIf="img">
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img [src]="img?.img1" alt="Random first slide" class="img-fluid"/>
+		</div>
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img [src]="img?.img2" alt="Random second slide" class="img-fluid"/>
+		</div>
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img [src]="img?.img3" alt="Random third slide" class="img-fluid"/>
+		</div>
+	</ng-template>
+</ngb-carousel>
