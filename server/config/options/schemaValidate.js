@@ -50,7 +50,7 @@ exports.schemaValidation = {
     body('company', 'Please enter company').exists(),
   ],
   event: [
-    body('name', 'Please enter event Name').exists(),
+    // body('name', 'Please enter event Name').exists(),
     body('description', 'Please enter event Description').exists(),
     body('eventName', 'Please enter event Description').exists(),
     // body('date_time', 'Please enter event date and time').exists(),

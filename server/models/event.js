@@ -21,10 +21,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: true,
       },
-      shortDescription: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       eventLink: {
         type: DataTypes.STRING,
         allowNull: false,
