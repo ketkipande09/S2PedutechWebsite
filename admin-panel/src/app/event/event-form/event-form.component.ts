@@ -46,7 +46,7 @@ export class EventFormComponent implements OnInit {
     private router: Router,
     private modalService: NgbModal,
     private toastService: ToastrService
-  ) {}
+  ) { }
 
   errmsg: any;
   successmsg: any;
@@ -69,9 +69,8 @@ export class EventFormComponent implements OnInit {
   }
   eventForm = new FormGroup({
     eventName: new FormControl('', Validators.required),
-    name: new FormControl('', Validators.required),
+    eventLink: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
-    date_time: new FormControl('', Validators.required),
     startDate: new FormControl('', Validators.required),
     endDate: new FormControl('', Validators.required),
   });
@@ -111,15 +110,17 @@ export class EventFormComponent implements OnInit {
     console.log(this.images);
     this.submitted = true;
     if (this.eventForm.invalid) {
-       this.toastService.warning("Please fill all required field !");
+      this.toastService.warning("Please fill all required field !");
       return;
     }
     const fd = new FormData();
     if (this.images) {
       // this.spinner.show();
+      console.log(" this.images", this.images);
+
       fd.append('key', 'event');
       fd.append('image', this.images, this.images.name);
-      fd.append('name', this.eventForm.value.name);
+      fd.append('eventLink', this.eventForm.value.eventLink);
       // fd.append('date_time', this.eventForm.value.date_time);
       fd.append('startDate', this.eventForm.value.startDate);
       fd.append('endDate', this.eventForm.value.endDate);
@@ -133,7 +134,7 @@ export class EventFormComponent implements OnInit {
         this.router.navigate(['/event/event-list']);
       });
     } else {
-       this.toastService.warning("Please upload images");
+      this.toastService.warning("Please upload images");
     }
   }
 
@@ -165,37 +166,37 @@ export class EventFormComponent implements OnInit {
       return;
     }
     const fd = new FormData();
-    console.log("fd------",fd);
-    
-          fd.append('name', this.eventForm.value.name);
-      // fd.append('date_time', this.eventForm.value.date_time);
-      fd.append('startDate', this.eventForm.value.startDate);
-      fd.append('endDate', this.eventForm.value.endDate);
-      fd.append('eventName', this.eventForm.value.eventName);
-      fd.append('description', this.eventForm.value.description);
+    console.log("fd------", fd);
+
+    fd.append('eventLink', this.eventForm.value.eventLink);
+    // fd.append('date_time', this.eventForm.value.date_time);
+    fd.append('startDate', this.eventForm.value.startDate);
+    fd.append('endDate', this.eventForm.value.endDate);
+    fd.append('eventName', this.eventForm.value.eventName);
+    fd.append('description', this.eventForm.value.description);
     if (this.images) {
       fd.append('key', 'event')
       fd.append('image', this.images, this.images.name);
     }
     this.service
-    .updateEvent(fd, this.getid)
-    .subscribe((success) => {
-      // console.log(success)
-      this.toastService.success("Event Updated Successfully!");
-      this.router.navigate(['/event/event-list']);
-    });
+      .updateEvent(fd, this.getid)
+      .subscribe((success) => {
+        // console.log(success)
+        this.toastService.success("Event Updated Successfully!");
+        this.router.navigate(['/event/event-list']);
+      });
   }
   reset() {
     this.eventForm.reset();
     this.errmsg = '';
     this.successmsg = '';
-    
+
   }
- add(){
-   this.router.navigate(['/event/event-list'])
- }
-  
+  add() {
+    this.router.navigate(['/event/event-list'])
   }
+
+}
 
 
 

@@ -32,8 +32,8 @@
         <thead class="thead">
           <tr class="table-secondary">
             <th scope="col">Sr. No</th>
-            <th scope="col">Name</th>
-            <th scope="col">Speaker</th>
+            <th scope="col">Event Name</th>
+            <th scope="col">Event Link</th>
             <th scope="col">Description</th>
             <!-- <th scope="col">Date & time</th> -->
             <th scope="col">Start Date</th>
@@ -47,7 +47,7 @@
           <tr *ngFor="let r of readList; let i = index">
             <th scope="row" class="p-2">{{ i + 1 }}</th>
             <td scope="row">{{ r.eventName }}</td>
-            <td scope="row">{{ r.name }}</td>
+            <td scope="row">{{ r.eventLink }}</td>
             <td scope="row">
               <span class="action-span" placement="left" ngbTooltip="{{ r.description }}">
                 {{ r.description }}
