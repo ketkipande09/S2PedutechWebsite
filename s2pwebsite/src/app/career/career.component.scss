@@ -1,5 +1,9 @@
+*{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .parts {
-    background-color: #FAFAFA;
+    background-color: #fdf0e0;
 
     .card {
         border-radius: 13px;
@@ -45,6 +49,7 @@
     ul li {
         list-style-type: none;
     }
+
 }
 .green-line {
     height: 2px;
@@ -74,6 +79,7 @@
     100% { color: rgb(255, 166, 0); }
   }
 
+  
 @media (max-width: 768px) {
 
     .content {

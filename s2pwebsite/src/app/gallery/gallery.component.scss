@@ -1,8 +1,7 @@
 .con {
   background-color: #FAFAFA;
 }
-  .mid {
-    
+  .mid {    
     min-height: 100vh;
     font: normal 16px sans-serif;
     // padding: 40px 0;
@@ -124,8 +123,6 @@
 
 
   body {
-
-
     background-repeat: no-repeat;
     font: 400 16px/1.5em "Open Sans", sans-serif;
   }
@@ -149,7 +146,7 @@
   .tabbed {
     overflow-x: hidden;
     /* so we could easily hide the radio inputs */
-    margin: 32px 0;
+    // margin: 32px 0;
     padding-bottom: 16px;
     border-bottom: 1px solid #ccc;
   }
