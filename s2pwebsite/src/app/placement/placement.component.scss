@@ -1,9 +1,9 @@
-.event{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    // background-color: rgb(228, 255, 255);
+.event {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgb(228, 255, 255);
 }
-.eventhead{
+.eventhead {
   .green-line {
     height: 2px;
     background-color: green;
@@ -19,26 +19,33 @@
     padding-bottom: 30px;
   }
 }
-.center{
-  h2{
+.eventcontainer {
+  padding: 0px 20px;
+}
+.center {
+  h2 {
     text-align: center;
     margin-bottom: 1rem;
-    font:30px poppin;
+    font: 30px poppin;
     color: #333;
   }
-  h5{
-    font:20px poppin;
+  h5 {
+    font: 20px poppin;
     padding: 10px;
   }
-  h3{
-    font:24px poppin;
+  h3 {
+    font: 24px poppin;
     padding: 10px;
   }
-
+}
+.eventcard {
+  background-color: rgb(228, 255, 255);
+  border-width: 2px;
+  border-color: #ff8a00;
 }
 
 .modal-content {
-  background-color: #fff; 
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -49,51 +56,56 @@
 
 .modal-img img {
   max-width: 100%;
-  height: 10rem; 
+  height: 10rem;
 }
 
 .modal-text {
-h1 {
-  font-size: 30px;
+  h1 {
+    font-size: 30px;
+  }
+  h5 {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 2rem;
+  }
 }
-h5 {
-  font-size: 16px;
-  margin-top: 10px;
-}
-h3 {
-  font-size: 20px;
-  margin-top: 2rem;
-}
-}
-.knowbutton{
-  margin-top: 9rem;
+.knowbutton {
   font: 30px poppin;
   cursor: pointer;
   animation: changeColor 5s infinite;
 }
 @keyframes changeColor {
-  0% { color: red; }
-  25% { color: blue; }
-  50% { color: green; }
-  75% { color: purple; }
-  100% { color: orange; }
+  0% {
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: purple;
+  }
+  100% {
+    color: orange;
+  }
 }
-.knowbutton:hover{
+.knowbutton:hover {
   transform: scale(1.06);
-		transition: all ease 0.5s;    
+  transition: all ease 0.5s;
 }
 .btn-close {
   cursor: pointer;
   border: none;
 }
-.btn-close:hover{
+.btn-close:hover {
   transform: scale(1.25);
   transition: all ease 0.5s;
 }
-
-
-
-
 
 .placement {
   padding-top: 50px;
@@ -119,14 +131,14 @@ h3 {
       background-color: #ff8a00;
       border-radius: 6px;
       padding: 10px 0px 5px 0px;
-     }
+    }
   }
-  .card:hover{
-		transform: scale(1.06);
-		transition: all ease 0.5s;
+  .card:hover {
+    transform: scale(1.06);
+    transition: all ease 0.5s;
     box-shadow: 0px 4px 4px 0px #ff8a00;
-	}
- 
+  }
+
   .center {
     display: flex;
     justify-content: center;
@@ -163,19 +175,19 @@ $animationSpeed: 35s;
     transform: translateX(calc(-250px * 8));
   }
 }
-.clienthead{
-.green-line {
-  height: 2px;
-  background-color: green;
-}
-.section-heading1 {
-  font: 50px poppin;
-  color: #333;
-  margin-bottom: 5px;
-  margin-left: 30px;
-  margin-top: -30px;
-  padding-bottom: 30px;
-}
+.clienthead {
+  .green-line {
+    height: 2px;
+    background-color: green;
+  }
+  .section-heading1 {
+    font: 50px poppin;
+    color: #333;
+    margin-bottom: 5px;
+    margin-left: 30px;
+    margin-top: -30px;
+    padding-bottom: 30px;
+  }
 }
 
 .slider {
@@ -284,4 +296,9 @@ body {
     animation: linear infinite;
     border-radius: 0px;
   }
+}
+
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
 }
