@@ -21,20 +21,19 @@
 
   <div class="container eventcontainer">
     <div class="card eventcard">
-      <div class="row">
+      <div class="row" *ngFor="let event of readLists">
         <div class="col-md-6">
-          <img src="../../assets/Hackathon.gif" class="img-fluid" alt="" />
+          <img src="{{event.image}}" class="img-fluid" alt="" />
         </div>
         <div class="col-md-6">
           <div class="card-body">
             <div class="center">
-              <h2 class="text">Hackathon</h2>
+              <h2 class="text">{{event.eventName}}</h2>
               <h5>
-                A hackathon, also known as a codefest, is a social coding event
-                that brings computer programmers and other interested people
-                together to improve upon or build a new software program.
+                {{event.description}}
               </h5>
-              <h3 class="text-center">Date: 01-03-2024</h3>
+              <h3 class="text-center">Start Date: {{event.endDate}}</h3>
+              <h3 class="text-center">End Date:{{event.startDate}}</h3>
               <ng-template #content let-modal>
                 <button
                   type="button"
@@ -44,12 +43,12 @@
                 ></button>
                 <div class="modal-body d-flex">
                   <div class="col-md-6 modal-img">
-                    <img src="../../assets/home.png" alt="" class="img-fluid" />
+                    <img src="{{event.eventQr}}" alt="" class="img-fluid" />
                   </div>
                   <div class="col-md-6 modal-text">
                     <h1>Scan Code</h1>
                     <h5>Register yourself by scanning the QR code.</h5>
-                    <h3>Link:-</h3>
+                    <h3>Link:-{{event.eventLink}}</h3>
                   </div>
                 </div>
               </ng-template>
