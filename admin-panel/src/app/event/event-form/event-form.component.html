@@ -67,6 +67,15 @@
                             </div>
                             <img [src]="fileContents" class="img-fluid img-size" *ngIf="fileContents">
 
+                            <div class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">Upload OR <span
+                                        class="text-danger">*</span></label><br>
+                                <input (input)="qrFileChoosen($event)" type="file" class="form-control-file"
+                                    id="file-multiple-input" name="file-multiple-input" multiple />
+
+                            </div>
+                            <img [src]="qrContents" class="img-fluid img-size" *ngIf="qrContents">
+
 
                             <div class="text-center my-3 pt-4">
                                 <button *ngIf="!getid" type="submit" (click)="createImage()"

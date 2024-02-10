@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../services/client-services/client.service';
 
 @Component({
   selector: 'app-development',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class DevelopmentComponent implements OnInit{
   active: string = '';
   
-  constructor() {}
+  constructor( private clientService : ClientService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllClient();
+  }
+
+  clientiterate :any = [];
   website=
   'Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network). Web development can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services.'
  
@@ -26,4 +31,12 @@ resoucing=
   setActive(key: any) {
     this.active = key;
   }
+
+  getAllClient() {
+    this.clientService.getAllClient().subscribe((data: any) => {
+      this.clientiterate  = data.result.client;
+      console.log("aara", this.clientiterate )
+    });
+  }
+
 }

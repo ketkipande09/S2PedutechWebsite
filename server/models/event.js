@@ -2,7 +2,6 @@
 
 const { OPTIONS, generateURl } = require('../config/options/global.options');
 
-
 module.exports = (sequelize, DataTypes) => {
   const Event = sequelize.define(
     "Event",
@@ -20,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       endDate: {
         type: DataTypes.DATE,
         allowNull: true,
+        
       },
       eventLink: {
         type: DataTypes.STRING,
@@ -55,6 +55,18 @@ module.exports = (sequelize, DataTypes) => {
             );
         },
       },
+      eventQr: {
+        type: DataTypes.STRING(1324),
+        allowNull: true,
+        get() {
+          if (this.getDataValue("eventQr"))
+            return (
+              process.env.DOMAIN_URL +
+              "eventImage/" +
+              this.getDataValue("eventQr")
+            );
+        },
+      }
     },
     {
       timestamps: true,

@@ -22,8 +22,9 @@ const eventObj = {
       await Event.findOne();
       var createObj = new Event();
       var eventObj = req.body;
-      if (req.file) {
-        eventObj.image = req.file.filename;
+      if (req.files) {
+        eventObj.image = req.files.image[0].filename;
+        eventObj.eventQr = req.files.eventQr[0].filename;
       }
       Object.keys(eventObj).forEach((key, index) => {
         createObj[key] = eventObj[key];
@@ -49,12 +50,12 @@ const eventObj = {
       offset = offset - 1;
       offset = offset * req.query.pagesize || 0;
       let limit = req.query.pagesize || 10;
-      
+
       // let whereQuery;
       let whereQuery = {
-         endDate: { [Op.gte]: Utils.getDateTime() } 
+        endDate: { [Op.gte]: Utils.getDateTime() }
       }
-     
+
 
       let { count, rows } = await Event.findAndCountAll({
         where: whereQuery,
@@ -95,7 +96,7 @@ const eventObj = {
       offset = offset * req.query.pagesize || 0;
       let limit = req.query.pagesize || 10;
 
-       let whereQuery;
+      let whereQuery;
       // let whereQuery = {
       //   endDate: { [Op.gte]: Utils.getDateTime() }
       // }
@@ -160,12 +161,20 @@ const eventObj = {
       let event = await Event.findOne(query);
 
       if (!event) {
-        if (req.file.filename) {
-          let path = `assets/image/${req.file.filename}`;
-          if (fs.existsSync(path)) {
-            fs.unlinkSync(path);
+        if (req.files && req.files.qrImage && req.files.qrImage[0].filename) {
+          let qrImagePath = `assets/eventImage/${req.files.qrImage[0].filename}`;
+          if (fs.existsSync(qrImagePath)) {
+            fs.unlinkSync(qrImagePath);
           }
         }
+
+        if (req.files && req.files.image && req.files.image[0].filename) {
+          let imagePath = `assets/eventImage/${req.files.image[0].filename}`;
+          if (fs.existsSync(imagePath)) {
+            fs.unlinkSync(imagePath);
+          }
+        }
+
         let errors = MESSAGES.apiSuccessStrings.DATA_NOT_EXISTS('The event');
         return res
           .status(resCode.HTTP_BAD_REQUEST)
@@ -178,17 +187,26 @@ const eventObj = {
           );
       } else {
         var eventObject = req.body;
-
-        if (req.file) {
-          if (event.image && event.image != 'undefined') {
-            let path = `assets/eventImage/${event.image.split('eventImage/')[1]
-              }`;
-            if (fs.existsSync(path)) {
-              fs.unlinkSync(path);
+        if (req.files && req.files.image) {
+          if (event.image && event.image !== 'undefined') {
+            let imagePath = `assets/eventImage/${event.image.split('eventImage/')[1]}`;
+            if (fs.existsSync(imagePath)) {
+              fs.unlinkSync(imagePath);
             }
           }
-          eventObject.image = req.file.filename;
+          eventObject.image = req.files.image[0].filename;
         }
+
+        if (req.files && req.files.eventQr) {
+          if (event.eventQr && event.eventQr !== 'undefined') {
+            let eventQrPath = `assets/eventImage/${event.eventQr.split('eventImage/')[1]}`;
+            if (fs.existsSync(eventQrPath)) {
+              fs.unlinkSync(eventQrPath);
+            }
+          }
+          eventObject.eventQr = req.files.eventQr[0].filename;
+        }
+
 
         Object.keys(eventObject).forEach((key, index) => {
           event[key] = eventObject[key];

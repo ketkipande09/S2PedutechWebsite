@@ -57,7 +57,7 @@ exports.schemaValidation = {
 
     // body('password', 'Please enter the user password').exists(),
   ],
-  updateEvent: [body('name', 'Please enter name').exists()],
+  updateEvent: [body('eventName', 'Please enter eventName').exists()],
   transition_course: [body('course', 'Please enter course').exists()],
 
   //feedback
