@@ -4,7 +4,7 @@ const { OPTIONS, generateURl } = require('../config/options/global.options');
 
 
 module.exports = (sequelize, DataTypes) => {
-	const Event = sequelize.define(
+  const Event = sequelize.define(
     "Event",
     {
       id: {
@@ -13,14 +13,6 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false,
       },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      // date_time: {
-      //   type: DataTypes.DATE,
-      //   allowNull: false,
-      // },
       startDate: {
         type: DataTypes.DATE,
         allowNull: true,
@@ -29,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: true,
       },
-      name: {
+      eventLink: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -70,7 +62,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
   );
-  
 
-	return Event;
+
+  return Event;
 };

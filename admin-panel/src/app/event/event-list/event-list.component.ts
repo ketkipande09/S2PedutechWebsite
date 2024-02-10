@@ -94,15 +94,15 @@ export class EventListComponent implements OnInit {
     this.modalService.open(content, { centered: true });
     // this.getAllServices();
   }
-  view(c: any) {
-    this.router.navigate(['/feedback/feedback-list'], {
-      queryParams: {
-        eventId: c.id,
-        eventName: c.eventName,
-      },
-    });
-    // console.log(c.id, c.eventName)
-  }
+  // view(c: any) {
+  //   this.router.navigate(['/feedback/feedback-list'], {
+  //     queryParams: {
+  //       eventId: c.id,
+  //       eventName: c.eventName,
+  //     },
+  //   });
+  //   // console.log(c.id, c.eventName)
+  // }
 
   add() {
     this.router.navigate(['/event/event-form']);

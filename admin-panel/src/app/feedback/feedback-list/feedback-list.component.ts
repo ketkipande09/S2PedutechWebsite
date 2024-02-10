@@ -47,19 +47,11 @@ export class FeedbackListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllFeedback();
-    this.actRout.queryParams.subscribe((params: any) => {
-      console.log(params.eventId);
-      if (params.eventId) {
-        this.eventId = params.eventId;
-        this.eventName = params.eventName;
-        // console.log(this.eventId, this.eventName,"id and name");
-        this.getEventById();
-      }
-    });
   }
 
   resetFilter() {
-    this.branch = '';
+    this.search = '';
+    this.getAllFeedback();
   }
 
   open(s: any, content: any) {
@@ -74,13 +66,11 @@ export class FeedbackListComponent implements OnInit {
     if (pageNo > 0) {
       this.page = pageNo;
     }
-    this.getEventById();
+    this.getAllFeedback();
   }
   searchFn() {
     // console.log('this.search', this.search);
-    this.search.toString().length >= 3 || this.search.toString().length == 0
-      ? this.getEventById()
-      : null;
+    this.getAllFeedback();
   }
 
   getAllFeedback() {
@@ -90,7 +80,7 @@ export class FeedbackListComponent implements OnInit {
       search: this.search,
     };
 
-    this.feedBackService.getContact().subscribe(
+    this.feedBackService.getContact(obj).subscribe(
       (success: any) => {
         console.log(success);
           this.Feedback= success.result.Feedback;
@@ -101,22 +91,22 @@ export class FeedbackListComponent implements OnInit {
     );
   }
 
-  getEventById() {
-    let obj = {
-      page: this.page,
-      pagesize: this.pagesize,
-      search: this.search,
-    };
-    this.eventService.EventById(this.eventId).subscribe(
-      (success: any) => {
-        this.Feedback = success.result['Feedback'];
-        this.collection = success.result.count;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+  // getEventById() {
+  //   let obj = {
+  //     page: this.page,
+  //     pagesize: this.pagesize,
+  //     search: this.search,
+  //   };
+  //   this.eventService.EventById(this.eventId).subscribe(
+  //     (success: any) => {
+  //       this.Feedback = success.result['Feedback'];
+  //       this.collection = success.result.count;
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
 
   deleteFeedback(id: any) {
     this.feedBackService.deleteFeedback(id).subscribe(
@@ -133,47 +123,47 @@ export class FeedbackListComponent implements OnInit {
     );
   }
 
-  // download(title:any) {
-  //   let obj: any = {
-  //     type: title,
-  //     search: this.search,
-  //   };
-  //   this.feedBackService.downloadFile(obj).subscribe(
-  //     (success:any) => {
-  //       if (title == 'csv') {
-  //         saveAs(success, 'Feedback-list.csv');
-  //       } else {
-  //         saveAs(success, 'Feedback-list.xlsx');
-  //       }
-  //     },
-  //     (error:any) => {
-  //    console.log(error)
-  //     }
-  //   );
-  // }
   download(title:any) {
-    // console.log(title);
     let obj: any = {
-        type: title,
-        id: this.eventId,
-        
+      type: title,
+      search: this.search,
     };
-    // console.log("obj csv", obj);
-    
     this.feedBackService.downloadFile(obj).subscribe(
-        success => {
-          console.log("success", success)
-
-            if (title == "csv") {
-                saveAs(success, "Feedback-list.csv");
-            } else {
-                saveAs(success, "Feedback-list.xlsx");
-            }
-        },
-        error => {
+      (success:any) => {
+        if (title == 'csv') {
+          saveAs(success, 'Feedback-list.csv');
+        } else {
+          saveAs(success, 'Feedback-list.xlsx');
         }
+      },
+      (error:any) => {
+     console.log(error)
+      }
     );
-}
+  }
+//   download(title:any) {
+//     // console.log(title);
+//     let obj: any = {
+//         type: title,
+//         id: this.eventId,
+        
+//     };
+//     // console.log("obj csv", obj);
+    
+//     this.feedBackService.downloadFile(obj).subscribe(
+//         success => {
+//           console.log("success", success)
+
+//             if (title == "csv") {
+//                 saveAs(success, "Feedback-list.csv");
+//             } else {
+//                 saveAs(success, "Feedback-list.xlsx");
+//             }
+//         },
+//         error => {
+//         }
+//     );
+// }
 }
 
 

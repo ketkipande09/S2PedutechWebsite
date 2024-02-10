@@ -3,12 +3,7 @@
     <div class="col-col-6 col-md-4">
       <div class="container input-icons inputshadow">
         <div class="input-group input-group-sm">
-          <select
-            class="form-control"
-            [(ngModel)]="course"
-            placeholder="Course Type"
-            (change)="searchFn()"
-          >
+          <select class="form-control" [(ngModel)]="course" placeholder="Course Type" (change)="searchFn()">
             <option value="" selected disabled>Course Type</option>
             <option value="Mean Stack Developer">Mean Stack Developer</option>
             <option value="Java Full Stack Developer">
@@ -25,23 +20,38 @@
         </div>
       </div>
     </div>
+    <div class="col-col-6 col-md-4">
+      <div class="container input-icons inputshadow">
+        <div class="input-group input-group-sm">
+          <select class="form-control" [(ngModel)]="branch" placeholder="Branch Type" (change)="searchFn()">
+            <option value="" selected disabled>Branch Type</option>
+            <option value="Computer Technology">Computer Technology</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics And Telecommunication">Electronics And Telecommunication</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Others">Others</option>
+          </select>
+          <div class="input-group-append">
+            <span class="input-group-text" id="inputGroup-sizing-sm">
+              <button class="btn btn-sm" (click)="resetFilter()">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="col-col-6 col-md-4 mb-2">
       <div class="container input-icons inputshadow">
         <div class="input-group input-group-sm">
-          <input
-            type="search"
-            class="input form-control input-inner-shadow searchinput"
-            aria-label="Small"
-            placeholder="Search"
-            [(ngModel)]="search"
-            (input)="searchFn()"
-            aria-describedby="inputGroup-sizing-sm"
-          />
+          <input type="search" class="input form-control input-inner-shadow searchinput" aria-label="Small"
+            placeholder="Search" [(ngModel)]="search" (input)="searchFn()" aria-describedby="inputGroup-sizing-sm" />
           <div class="input-group-append">
             <span class="input-group-text" id="inputGroup-sizing-sm">
-              <i class="bi bi-search"></i
-            ></span>
+              <i class="bi bi-search"></i></span>
           </div>
         </div>
       </div>
@@ -92,12 +102,8 @@
                 
               </td> -->
               <td scope="row">
-                <button
-                  class="btn btn-outline-danger btn-sm"
-                  style="width: 30px"
-                  (click)="open(E, deleteModal)"
-                  ngbTooltip="Delete"
-                >
+                <button class="btn btn-outline-danger btn-sm" style="width: 30px" (click)="open(E, deleteModal)"
+                  ngbTooltip="Delete">
                   <i class="bi bi-trash"></i>
                 </button>
               </td>
@@ -107,37 +113,25 @@
       </div>
       <div class="row justify-content-between p-2 pagination-sm m-0">
         <div class="col-md-6 pl-0">
-          <ngb-pagination
-          [collectionSize]="collection"
-          [(page)]="page"
-          [pageSize]="pagesize"
-          [maxSize]="5"
-          [rotate]="true"
-          [boundaryLinks]="true"
-          (pageChange)="onChangePage($event)"
-        >
-          <ng-template ngbPaginationFirst> << </ng-template>
-          <ng-template ngbPaginationLast>>></ng-template>
-          <ng-template ngbPaginationPrevious> < </ng-template>
-          <ng-template ngbPaginationNext>></ng-template>
-          <ng-template ngbPaginationEllipsis>...</ng-template>
-          <ng-template ngbPaginationNumber class="custompage" let-page>
-            {{ page }}
-          </ng-template>
-        </ngb-pagination>
+          <ngb-pagination [collectionSize]="collection" [(page)]="page" [pageSize]="pagesize" [maxSize]="5"
+            [rotate]="true" [boundaryLinks]="true" (pageChange)="onChangePage($event)">
+            <ng-template ngbPaginationFirst>
+              << </ng-template>
+                <ng-template ngbPaginationLast>>></ng-template>
+                <ng-template ngbPaginationPrevious>
+                  < </ng-template>
+                    <ng-template ngbPaginationNext>></ng-template>
+                    <ng-template ngbPaginationEllipsis>...</ng-template>
+                    <ng-template ngbPaginationNumber class="custompage" let-page>
+                      {{ page }}
+                    </ng-template>
+          </ngb-pagination>
         </div>
         <div class="col-md-6 text-right pr-0">
-          <select
-            class="custom-select"
-            style="width: auto; float: right"
-            [(ngModel)]="pagesize"
-            (change)="onChangePage($event)"
-          >
-            <option
-              *ngFor="let option of pageLimitOptions"
-              [value]="option.value"
-              [selected]="option.value == currentPageLimit"
-            >
+          <select class="custom-select" style="width: auto; float: right" [(ngModel)]="pagesize"
+            (change)="onChangePage($event)">
+            <option *ngFor="let option of pageLimitOptions" [value]="option.value"
+              [selected]="option.value == currentPageLimit">
               {{ option.value }} item per page
             </option>
           </select>
@@ -146,17 +140,10 @@
       <div class="row p-2">
         <div class="col-md-12">
           <div class="text-right float-end">
-            <button
-              class="btn btn-sm btn-outline-info mx-2"
-              (click)="download('csv')"
-            >
+            <button class="btn btn-sm btn-outline-info mx-2" (click)="download('csv')">
               <i class="fa fa-download"></i> Download as csv
             </button>
-            <button
-              type="button"
-              class="btn btn-sm btn-outline-secondary"
-              (click)="download('excel')"
-            >
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="download('excel')">
               <i class="fa fa-file-excel-o"></i> Download as excel
             </button>
           </div>
@@ -169,13 +156,8 @@
   <div class="row mt-3 mr-2">
     <div class="col-md-10 col-sm-10"></div>
     <div class="col-md-2 col-sm-2 text-right">
-      <button
-        type="button"
-        class="close"
-        data-dismiss="modal"
-        aria-label="Close"
-        (click)="modal.dismiss('Cross click')"
-      >
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+        (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -191,16 +173,10 @@
   </div>
   <div class="model-footer border-0 text-center px-0 pb-4">
     <div class="clearfix py-2">
-      <button
-        class="btn btn-danger"
-        (click)="deleteEnquiry(this.selectedRow.id)"
-      >
+      <button class="btn btn-danger" (click)="deleteEnquiry(this.selectedRow.id)">
         YES
       </button>
-      <button
-        class="btn btn-success mx-2"
-        (click)="modal.dismiss('Cross click')"
-      >
+      <button class="btn btn-success mx-2" (click)="modal.dismiss('Cross click')">
         NO
       </button>
     </div>

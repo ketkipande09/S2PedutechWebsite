@@ -45,7 +45,7 @@ app.get(
 );
 
 app.get(
-  '/downloadFile/:id',
+  '/downloadFile',
   // authHandler.authenticateJWT([roles.usersRoles.SUPER_ADMIN]),
   feedback.downloadFile
 );
