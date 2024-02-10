@@ -32,8 +32,8 @@
               <h5>
                 {{event.description}}
               </h5>
-              <h3 class="text-center">Start Date: {{event.endDate}}</h3>
-              <h3 class="text-center">End Date:{{event.startDate}}</h3>
+              <h3 class="text-center">Start Date: {{event.startDate | date}}</h3>
+              <h3 class="text-center">End Date:{{event.endDate | date }}</h3>
               <ng-template #content let-modal>
                 <!-- <button type="button" class="btn-close" aria-label="Close"  style="margin-left: 29rem; margin-top: 0.5rem"
                 ></button> -->
@@ -45,7 +45,9 @@
                   <div class="col-md-6 modal-text">
                     <h1>Scan Code</h1>
                     <h5>Register yourself by scanning the QR code.</h5>
-                    <h3>Link:-{{event.eventLink}}</h3>
+                    <a [href]="event.eventLink">
+                      <h3>Click here for now more</h3>
+                    </a>                    
                   </div>
                 </div>
                 </div>
