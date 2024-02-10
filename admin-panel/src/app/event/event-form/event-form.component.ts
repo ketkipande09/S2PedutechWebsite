@@ -18,11 +18,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EventFormComponent implements OnInit {
   readonly DELIMITER = '/';
+  qrImages: any;
   images: any;
   choosen: boolean = false;
   model: NgbDateStruct | any;
   submitted = false;
-
   parse(value: string): NgbDateStruct | null {
     if (value) {
       const date = value.split(this.DELIMITER);
@@ -52,18 +52,13 @@ export class EventFormComponent implements OnInit {
   successmsg: any;
   getid: any;
   fileContents: any;
-
+  qrContents: any;
   ngOnInit(): void {
     this.actrouter.queryParams.subscribe((data: any) => {
       this.getid = data.id;
       if (this.getid) {
         this.getEventusingId();
-        // console.log(this.getid);
-
-        // console.log(data, '<=params');
       }
-      // console.log(this.getid);
-      // console.log(data, '<=params');
       this.eventForm.patchValue(data);
     });
   }
@@ -97,14 +92,29 @@ export class EventFormComponent implements OnInit {
       console.log(this.images, 'images');
     }
   }
-  // createEvent() {
-  //   console.log(this.eventForm.value);
-  //   const stud = this.eventForm.value;
-  //   if (stud.date_time.year && stud.date_time.month && stud.date_time.day) {
-  //     stud.date_time = `${stud.date_time.year}-${stud.date_time.month}-${stud.date_time.day}`;
-  //   }
-  //   console.log('stud', stud);
-  // }
+
+  qrFileChoosen(event: any) {
+    if (event.target.value) {
+      if (event.target.files[0].size > 5000000) {
+        return;
+      }
+      this.qrImages = <File>event.target.files[0];
+      this.qrContents = this.qrImages;
+      console.log(this.qrImages);
+      const reader = new FileReader();
+      reader.readAsDataURL(this.qrImages);
+      reader.onload = () => {
+        this.qrContents = reader.result;
+      };
+      reader.onerror = (error) => {
+        console.log(error);
+      };
+      this.choosen = true;
+      console.log(this.qrContents);
+      console.log(this.qrImages, 'qrImages');
+    }
+  }
+
 
   createImage() {
     console.log(this.images);
@@ -115,19 +125,15 @@ export class EventFormComponent implements OnInit {
     }
     const fd = new FormData();
     if (this.images) {
-      // this.spinner.show();
-      console.log(" this.images", this.images);
-
+      console.log('fd,,,,', fd);
       fd.append('key', 'event');
       fd.append('image', this.images, this.images.name);
+      fd.append("eventQr", this.qrImages, this.qrImages.name);
       fd.append('eventLink', this.eventForm.value.eventLink);
-      // fd.append('date_time', this.eventForm.value.date_time);
       fd.append('startDate', this.eventForm.value.startDate);
       fd.append('endDate', this.eventForm.value.endDate);
       fd.append('eventName', this.eventForm.value.eventName);
       fd.append('description', this.eventForm.value.description);
-      console.log('fd,,,,', fd);
-
       this.service.createImage(fd).subscribe((success: any) => {
         console.log(success);
         this.toastService.success("Event created Successfully!");
@@ -142,21 +148,13 @@ export class EventFormComponent implements OnInit {
     this.service.getEventById(this.getid).subscribe((success: any) => {
       console.log(success);
       this.fileContents = success.result.image;
-      // console.log(this.fileContents)
+      this.qrContents = success.result.eventQr;
       success.result.startDate = success.result.startDate.split('Z')[0];
       success.result.endDate = success.result.endDate.split('Z')[0];
       this.eventForm.patchValue(success.result);
-      // this.eventForm.patchValue(success.result.startDate);
       this.fileContents = success['result'].image;
+      this.qrContents = success['result'].eventQr;
 
-      // this.fileContents = success.result.image;
-
-      // console.log('this.fileContents', this.fileContents);
-
-      // this.fileContents = success['result'].date_time;
-
-      // this.getid = success.id;
-      // console.log('this.fileContents', this.getid);
     });
   }
 
@@ -167,16 +165,15 @@ export class EventFormComponent implements OnInit {
     }
     const fd = new FormData();
     console.log("fd------", fd);
-
     fd.append('eventLink', this.eventForm.value.eventLink);
-    // fd.append('date_time', this.eventForm.value.date_time);
     fd.append('startDate', this.eventForm.value.startDate);
     fd.append('endDate', this.eventForm.value.endDate);
     fd.append('eventName', this.eventForm.value.eventName);
     fd.append('description', this.eventForm.value.description);
-    if (this.images) {
+    if (this.images && this.qrImages) {
       fd.append('key', 'event')
       fd.append('image', this.images, this.images.name);
+      fd.append('eventQr', this.qrImages, this.qrImages.name);
     }
     this.service
       .updateEvent(fd, this.getid)

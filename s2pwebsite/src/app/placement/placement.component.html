@@ -3,40 +3,42 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
       <div class="eventhead" style="display: flex; flex-wrap: nowrap;">
         <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 35%;">
-        <div class="green-line"></div>
+          <div class="green-line"></div>
         </div>
-          <div class="section-heading1">Our Latest Event</div>
+        <div class="section-heading1">Our Latest Event</div>
         <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 38%;">
-        <div class="green-line"></div>
+          <div class="green-line"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row top-row">
-    
+  <div class="row top-row" *ngFor="let event of readLists">
+
     <div class="col-md-4">
       <div class="right">
-      <img src="../../assets/Hackathon.gif" alt="" class="img-fluid" />
+        <img src="{{event.image}}" alt="" class="img-fluid" />
       </div>
     </div>
-    
+
     <div class="col-md-6 center">
-      <h2 class="text ">Hackathon</h2>
-      <h5>A hackathon, also known as a codefest, is a social coding event that brings computer programmers and other interested people together to improve upon or build a new software program.</h5>
-      <h3 class="text-center">Date: 01-03-2024</h3>
+      <h2 class="text ">{{event.eventName}}</h2>
+      <h5>{{event.description}}.</h5>
+      <h3 class="text-center">Start Date:-{{event.startDate | date: 'dd/MM/yyyy'}}</h3>
+      <h3 class="text-center">End End:-{{event.endDate | date: 'dd/MM/yyyy'}}</h3>
     </div>
     <div class="col-md-2 left">
-      <ng-template #content let-modal >       
-          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')" style="margin-left: 29rem; margin-top: 0.5rem;"></button>
+      <ng-template #content let-modal>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"
+          style="margin-left: 29rem; margin-top: 0.5rem;"></button>
         <div class="modal-body d-flex">
           <div class="col-md-6 modal-img">
-            <img src="../../assets/home.png" alt="" class="img-fluid" />
+            <img src="{{event.eventQr}}" alt="" class="img-fluid" />
           </div>
           <div class="col-md-6 modal-text">
             <h1>Scan Code</h1>
             <h5>Register yourself by scanning the QR code.</h5>
-            <h3>Link:-</h3>
+            <h3><a href="">{{event.eventLink}}</a></h3>
           </div>
         </div>
       </ng-template>
@@ -54,36 +56,35 @@
   <div class="container-fluid placement">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-      <div class="clienthead" style="display: flex; flex-wrap: nowrap">
-        <div
-          fxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 32%">
-          <div class="green-line"></div>
+        <div class="clienthead" style="display: flex; flex-wrap: nowrap">
+          <div fxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 32%">
+            <div class="green-line"></div>
+          </div>
+          <div style="flex: 1 1 0%; box-sizing: border-box">
+            <div class="section-heading1">Our Latest Placements</div>
+          </div>
+          <div fxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 32%">
+            <div class="green-line"></div>
+          </div>
         </div>
-        <div style="flex: 1 1 0%; box-sizing: border-box">
-          <div class="section-heading1">Our Latest Placements</div>
-        </div>
-        <div
-          fxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 32%">
-          <div class="green-line"></div>
-        </div>
-      </div>
 
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12 col-xxl-12">
-    <div class="slider">
-      <div class="slide-track"  >
-        <div class="slide" *ngFor="let place of readList">
-          <div class="card d-flex">
-            <img src="{{ place.image }}" class="card-img-top" style="height:10rem; width: 16rem;" alt="..." />
-            <div class="card-body">
-              <div class="row mt-3">
-                <h5 class="text-center">Name:- {{ place.studentName }}</h5>
-                <h5 class="text-center pt-2">College:- {{ place.collage }}</h5>
-              </div>
-              <div class="row placements">
-                <div class="col">
-                  <h5 class="px-3 text-center">Company:- {{ place.company }}</h5>
+      <div class="slider">
+        <div class="slide-track">
+          <div class="slide" *ngFor="let place of readList">
+            <div class="card d-flex">
+              <img src="{{ place.image }}" class="card-img-top" style="height:10rem; width: 16rem;" alt="..." />
+              <div class="card-body">
+                <div class="row mt-3">
+                  <h5 class="text-center">Name:- {{ place.studentName }}</h5>
+                  <h5 class="text-center pt-2">College:- {{ place.collage }}</h5>
+                </div>
+                <div class="row placements">
+                  <div class="col">
+                    <h5 class="px-3 text-center">Company:- {{ place.company }}</h5>
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,6 +92,5 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 </section>

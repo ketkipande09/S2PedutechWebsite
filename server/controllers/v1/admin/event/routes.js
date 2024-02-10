@@ -21,19 +21,21 @@ app.get(
 );
 app.post(
   '/createEvent',
-  authHandler.authenticateJWT([roles.usersRoles.SUPER_ADMIN]),
-  upload.single('image'),
+  upload.fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'eventQr', maxCount: 1 }
+  ]),
   validate('event'),
   event.createEvent
 );
 
+
 app.put(
   '/updateEvent/:id',
-  authHandler.authenticateJWT([
-    roles.usersRoles.SUPER_ADMIN,
-    roles.usersRoles.ADMIN,
+  upload.fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'eventQr', maxCount: 1 }
   ]),
-  upload.single('image'),
   validate('updateEvent'),
   event.updateEvent
 );
