@@ -1,4 +1,5 @@
-<div class="container-fluid event">
+<div *ngFor="let event of readLists">
+<div class="container-fluid event" *ngIf="event.eventStatus">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
       <div class="eventhead" style="display: flex; flex-wrap: nowrap">
@@ -15,11 +16,11 @@
 
   <div class="container eventcontainer">
     <div class="card eventcard">
-      <div class="row" *ngFor="let event of readLists">
+      <div class="row" >
         <div class="col-md-6 eventimage d-flex justify-content-center align-items-center">
           <img src="{{event.image}}" class="img-fluid" alt="" />
         </div>
-        <div class="col-md-6" *ngIf="event.eventStatus">
+        <div class="col-md-6">
           <div class="card-body">
             <div class="center">
               <h2 class="text">{{event.eventName}}</h2>
@@ -29,8 +30,6 @@
               <h3 class="text-center">Start Date: {{event.startDate | date}}</h3>
               <h3 class="text-center">End Date:{{event.endDate | date }}</h3>
               <ng-template #content let-modal>
-                <!-- <button type="button" class="btn-close" aria-label="Close"  style="margin-left: 29rem; margin-top: 0.5rem"
-                ></button> -->
                 <div class="code">
                   <div class="modal-body d-flex">
                     <div class="col-md-6 modal-img">
@@ -55,6 +54,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <section id="placements">
