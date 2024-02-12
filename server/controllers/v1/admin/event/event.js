@@ -161,8 +161,8 @@ const eventObj = {
       let event = await Event.findOne(query);
 
       if (!event) {
-        if (req.files && req.files.qrImage && req.files.qrImage[0].filename) {
-          let qrImagePath = `assets/eventImage/${req.files.qrImage[0].filename}`;
+        if (req.files && req.files.eventQr && req.files.eventQr[0].filename) {
+          let qrImagePath = `assets/eventImage/${req.files.eventQr[0].filename}`;
           if (fs.existsSync(qrImagePath)) {
             fs.unlinkSync(qrImagePath);
           }
