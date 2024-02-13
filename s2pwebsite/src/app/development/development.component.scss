@@ -8,16 +8,19 @@
     border: 2px solid #ff8a00;
     width: 206px;
     height: 240px;
+
     .image {
       width: 98px;
       height: 70px;
     }
+
     .card-body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
   }
+
   .card01:hover {
     // background-color: #ff8a00;
     transform: scale(1.03);
@@ -32,14 +35,16 @@
     text-align: justify;
   }
 }
+
 // .component{
 //   margin-right: 5px;
 // }
 .card22 {
-  border-radius: 13px;
-  box-shadow: 0px 4px 4px 0px #ff8a00;
-  padding: 10px;
-  border: 2px solid #ff8a00;
+
+  // border-radius: 13px;
+  // box-shadow: 0px 4px 4px 0px #ff8a00;
+  // padding: 10px;
+  // border: 2px solid #ff8a00;
   .card-body {
     display: flex;
     flex-direction: column;
@@ -47,10 +52,29 @@
   }
 }
 
+.headingtext {
+  max-width: 800px; 
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #924c06;
+  font-family: 'Times New Roman', Times, serif;
+  padding-right: 100px;
+}
+
+/* Add media query for responsiveness */
+@media only screen and (max-width: 600px) {
+  .headingtext {
+    font-size: 16px;
+  }
+}
+
 .green-line {
   height: 2px;
   background-color: green;
 }
+
 .section-heading1 {
   font: 50px poppin;
   color: #333;
@@ -58,6 +82,7 @@
   margin-left: 20px;
   margin-top: -30px;
 }
+
 .section-heading2 {
   font: 50px poppin;
   color: #333;
@@ -66,11 +91,8 @@
   margin-right: 20px;
   margin-top: -30px;
 }
+
 .card22 {
-  .head {
-    font: 24px poppin;
-    padding: 10px 0px 10px 0px;
-  }
   .body {
     font: 20px poppin;
     padding: 10px 30px 10px 30px;
@@ -101,11 +123,21 @@
   }
 }
 
+.head {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  padding-right: 100px;
+}
+
 // <---Client CSS--->
 
 .clienthead {
   padding-top: 5rem;
 }
+
 body {
   align-items: center;
   background: #ffffff;
@@ -119,11 +151,9 @@ h2 {
 }
 
 @mixin white-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 $animationSpeed: 15s;
@@ -274,25 +304,29 @@ body {
   margin-bottom: 3rem;
   // height: 25rem;
 
-  .slider1{
-  background-color: #1e2c7c;
-  margin-top: 1.5rem;
-  overflow: hidden;
-  position: relative;
-  animation: linear infinite;
+  .slider1 {
+    background-color: #1e2c7c;
+    margin-top: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    animation: linear infinite;
   }
+
   .slide-track {
     animation: scroll $animationSpeed linear infinite;
     display: flex;
     width: calc(250px * 80);
   }
-  .container1{
+
+  .container1 {
     width: 80%;
   }
+
   &:hover div {
     animation-play-state: paused;
   }
 }
+
 .heading1 {
   padding: 10px 150px;
   font: 50px poppins;
@@ -309,6 +343,7 @@ body {
 .card-heading {
   padding: 0px 0px 0px 20px;
 }
+
 .step {
   font-size: 20px;
   font-weight: bold;
@@ -325,10 +360,12 @@ body {
   width: 140px;
   height: 170px;
 }
+
 .stepimage {
   width: 6rem;
   height: 6rem;
 }
+
 .bottom-text {
   margin-top: 10px;
   font-size: 16px;

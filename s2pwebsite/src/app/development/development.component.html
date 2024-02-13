@@ -1,19 +1,13 @@
 <section id="development-resources">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
     <div style="display: flex; flex-wrap: nowrap">
-      <div
-        fxhide.xs="true"
-        style="flex: 1 1 100%; box-sizing: border-box; max-width: 30%"
-      >
+      <div fxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 30%">
         <div class="green-line"></div>
       </div>
       <div style="flex: 1 1 0%; box-sizing: border-box">
         <div class="section-heading1">Development & Resourcing</div>
       </div>
-      <div
-        fxhide.xs="true"
-        style="flex: 1 1 100%; box-sizing: border-box; max-width: 30%"
-      >
+      <div fxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 30%">
         <div class="green-line"></div>
       </div>
     </div>
@@ -22,9 +16,7 @@
     <div class="row justify-content-center">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
         <div class="row justify-content-center">
-          <div
-            class="col-xs-12 col-sm-7 col-md-8 col-lg-8 col-xl-6 col-xxl-6 component"
-          >
+          <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8 col-xl-6 col-xxl-6 component">
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mobile">
                 <div class="card move content card01" (click)="setActive('WebsiteDevelopment')">
@@ -36,15 +28,8 @@
                   </div>
                 </div>
 
-                <div
-                  class="card card01 mt-3"
-                  (click)="setActive('WebApplication')"
-                >
-                  <img
-                    src="../../../../../assets/mobile.png"
-                    class="image mt-4"
-                    alt="..."
-                  />
+                <div class="card card01 mt-3" (click)="setActive('WebApplication')">
+                  <img src="../../../../../assets/mobile.png" class="image mt-4" alt="..." />
                   <div class="card-body mt-4">
                     <h5 class="card-text">
                       <strong>Web Application Development </strong>
@@ -72,87 +57,44 @@
           </div>
           <div class="col-xs-12 col-sm-7 col-md-6 col-lg-8 col-xl-6 col-xxl-6 content">
             <div class="row justify-content-center my-5">
-              <ng-container *ngIf="active == 'WebsiteDevelopment'">
-                <div class="container">
-                  <div class="row">
-                    <div class="card card22" style="width: auto; height: auto">
-                      <div class="head" style="text-align: center">
-                        <strong>WEBSITE DEVELOPMENT</strong>
-                      </div>
-                      <div class="body">
-                        {{ website }}
-                      </div>
+              <div class="container">
+                <div class="row">
+                  <div>
+                    <div class="head">
+                      <strong>WHAT WE DO ?</strong>
+                    </div>
+                    <div class="headingtext">
+                      We are a team of young and talented and energetic developers who are keen on taking up new challenge everytime. 
+                      If you wish to build a simple website, or a Web Application or a Mobile Application for your business, contact us, and we would be happy to help. 
+                      Our Team specializes in creating beautiful UI in Angular and API's in NodeJS supporting MySQL/MongoDB Database. 
+                      We also have good expertise in creating Hybrid/Cross Platform mobile applications using Ionic Framework. 
+                      Also, if you are in search of resources in MEAN Stack/Java Full Stack/ SAP Hybris, you have come to the right place. 
+                      Our teams average experience is 2-3 years and our commitment is no less.
                     </div>
                   </div>
                 </div>
-              </ng-container>
-
-              <ng-container *ngIf="active == 'WebApplication'">
-                <div class="container">
-                  <div class="row">
-                    <div class="card card22" style="width: auto; height: auto">
-                      <div class="head" style="text-align: center">
-                        <strong>WEB APPLICATION</strong>
-                      </div>
-                      <div class="body">
-                        {{ web }}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ng-container>
-
-              <ng-container *ngIf="active == 'MobileApp'">
-                <div class="container">
-                  <div class="row">
-                    <div class="card card22" style="width: auto; height: auto">
-                      <div class="head" style="text-align: center">
-                        <strong>MOBILE APP DEVELOPMENT</strong>
-                      </div>
-                      <div class="body">
-                        {{ mobile }}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ng-container>
-
-              <ng-container *ngIf="active == 'Resourcing'">
-                <div class="container">
-                  <div class="row">
-                    <div class="card card22" style="width: auto; height: auto">
-                      <div class="head" style="text-align: center">
-                        <strong>RESOURCING</strong>
-                      </div>
-                      <div class="body">
-                        {{ resoucing }}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ng-container>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
 
   <!-- step -->
-  <div
-    class="container-fluid stepcontainer col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
-    style="height: max-content"
-  >
+  <div class="container-fluid stepcontainer col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+    style="height: max-content">
     <div class="heading1 row">How We Work</div>
     <div class="heading2 subheading row">Roadmap To Your Success</div>
-<div class="container">
-    <div class="row">
-      <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-12 col-xl-12 col-xxl-12"
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-12 col-xl-12 col-xxl-12"
         style="padding-top: 1.5rem; padding-bottom: 3rem"> -->
         <!-- <div class="d-flex justify-content-center"> -->
 
-          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
-        style="padding-top: 1.5rem; padding-bottom: 3rem">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
+          style="padding-top: 1.5rem; padding-bottom: 3rem">
           <div class="card-heading">
             <div class="step">Step 1</div>
             <div class="card stepcard justify-content-center">
@@ -177,8 +119,8 @@
           </div>
         </div> -->
 
-          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
-        style="padding-top: 1.5rem; padding-bottom: 3rem">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
+          style="padding-top: 1.5rem; padding-bottom: 3rem">
           <div class="card-heading">
             <div class="step">Step 2</div>
             <div class="card stepcard justify-content-center">
@@ -190,7 +132,7 @@
           </div>
         </div>
 
-          <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-auto col-xl-1 col-xxl-auto"
+        <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-auto col-xl-1 col-xxl-auto"
         style="padding-top: 1.5rem; padding-bottom: 3rem">
           <div class="card-heading">
             <div class="step">Step 4</div>
@@ -203,8 +145,8 @@
           </div>
         </div> -->
 
-          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
-        style="padding-top: 1.5rem; padding-bottom: 3rem">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
+          style="padding-top: 1.5rem; padding-bottom: 3rem">
           <div class="card-heading">
             <div class="step">Step 3</div>
             <div class="card stepcard justify-content-center">
@@ -216,8 +158,8 @@
           </div>
         </div>
 
-          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
-        style="padding-top: 1.5rem; padding-bottom: 3rem">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
+          style="padding-top: 1.5rem; padding-bottom: 3rem">
           <div class="card-heading">
             <div class="step">Step 4</div>
             <div class="card stepcard justify-content-center">
@@ -229,8 +171,8 @@
           </div>
         </div>
 
-          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
-        style="padding-top: 1.5rem; padding-bottom: 3rem">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
+          style="padding-top: 1.5rem; padding-bottom: 3rem">
           <div class="card-heading">
             <div class="step">Step 5</div>
             <div class="card stepcard justify-content-center">
@@ -242,8 +184,8 @@
           </div>
         </div>
 
-          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
-        style="padding-top: 1.5rem; padding-bottom: 3rem">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2"
+          style="padding-top: 1.5rem; padding-bottom: 3rem">
           <div class="card-heading">
             <div class="step">Step 6</div>
             <div class="card stepcard justify-content-center">
@@ -256,9 +198,9 @@
         </div>
 
         <!-- </div> -->
-      <!-- </div> -->
+        <!-- </div> -->
+      </div>
     </div>
-  </div>
 
   </div>
 
