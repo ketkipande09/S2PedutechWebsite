@@ -3,12 +3,14 @@
   padding-bottom: 2rem;
   background-color: rgb(228, 255, 255);
 }
+
 .eventhead {
   .green-line {
     height: 2px;
     background-color: green;
     margin-top: 3rem;
   }
+
   .section-heading1 {
     font: 50px poppin;
     color: #333;
@@ -19,9 +21,11 @@
     padding-bottom: 30px;
   }
 }
+
 .eventcontainer {
   padding: 0px 20px;
 }
+
 .center {
   h2 {
     text-align: center;
@@ -29,19 +33,22 @@
     font: 30px poppin;
     color: #333;
   }
+
   h5 {
     font: 20px poppin;
     padding: 10px;
   }
+
   h3 {
     font: 24px poppin;
     padding: 10px;
   }
 }
+
 .eventcard {
   background-color: rgb(228, 255, 255);
   border-width: 2px;
-  border-color: #ff8a00;
+  // border-color: #ff8a00;
 }
 
 .modal-content {
@@ -64,16 +71,19 @@
     font: 30px poppin;
     text-align: center;
   }
+
   h5 {
     font: 20px poppin;
     margin-top: 10px;
   }
+
   h3 {
     font: 25px poppin;
     margin-top: 2rem;
   }
 }
-.code{
+
+.code {
   background-color: rgb(228, 255, 255);
 }
 
@@ -82,31 +92,39 @@
   cursor: pointer;
   animation: changeColor 5s infinite;
 }
+
 @keyframes changeColor {
   0% {
     color: red;
   }
+
   25% {
     color: blue;
   }
+
   50% {
     color: green;
   }
+
   75% {
     color: purple;
   }
+
   100% {
     color: orange;
   }
 }
+
 .knowbutton:hover {
   transform: scale(1.06);
   transition: all ease 0.5s;
 }
+
 .btn-close {
   cursor: pointer;
   border: none;
 }
+
 .btn-close:hover {
   transform: scale(1.25);
   transition: all ease 0.5s;
@@ -125,23 +143,39 @@
     width: 16rem;
     height: 21rem;
     border-radius: 10px;
-    border: 1px solid #ff8a00;
+    // border: 1px solid #ff8a00;
+    align-items: center;
+    padding-top: 20px;
+
     img {
       border-radius: 10px;
     }
+
     h5 {
       font: 20px poppins;
     }
+
     .placements {
-      background-color: #ff8a00;
+      // background-color: #837e79;
       border-radius: 6px;
       padding: 10px 0px 5px 0px;
     }
+
+    &.blue-background {
+      background-color: #f1c431;
+      color: #333;
+    }
+
+    &.green-background {
+      background-color: #ff8a00;
+      color: #fff;
+    }
   }
+
   .card:hover {
     transform: scale(1.06);
     transition: all ease 0.5s;
-    box-shadow: 0px 4px 4px 0px #ff8a00;
+    // box-shadow: 0px 4px 4px 0px #ff8a00;
   }
 
   .center {
@@ -149,6 +183,7 @@
     justify-content: center;
   }
 }
+
 body {
   align-items: center;
   background: #ffffff;
@@ -162,11 +197,9 @@ h2 {
 }
 
 @mixin white-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 $animationSpeed: 35s;
@@ -180,11 +213,13 @@ $animationSpeed: 35s;
     transform: translateX(calc(-250px * 8));
   }
 }
+
 .clienthead {
   .green-line {
     height: 2px;
     background-color: green;
   }
+
   .section-heading1 {
     font: 50px poppin;
     color: #333;
@@ -230,7 +265,7 @@ $animationSpeed: 35s;
   }
 
   .slide-track {
-    animation: scroll $animationSpeed linear infinite;
+    // animation: scroll $animationSpeed linear infinite;
     display: flex;
     width: calc(250px * 80);
   }
@@ -241,6 +276,31 @@ $animationSpeed: 35s;
     padding: 20px;
     border-radius: 2px;
   }
+
+  .circle-container {
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 2px;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+
+  .circular-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  // .card-text-color {
+  //   color: white;
+  // }
+
 }
 
 // Gradients
@@ -253,13 +313,13 @@ $animationSpeed: 35s;
   background: rgb(255, 116, 3);
   font-size: 40px;
 
-  &:before {
-    background: linear-gradient(to right, white, rgb(255, 116, 3));
-  }
+  // &:before {
+  //   background: linear-gradient(to right, white, rgb(255, 116, 3));
+  // }
 
-  &:after {
-    background: linear-gradient(to left, white, rgb(255, 116, 3));
-  }
+  // &:after {
+  //   background: linear-gradient(to left, white, rgb(255, 116, 3));
+  // }
 }
 
 body {
