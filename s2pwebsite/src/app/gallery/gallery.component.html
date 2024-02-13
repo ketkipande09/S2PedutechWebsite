@@ -1,153 +1,67 @@
 <section id="gallery">
   <div class="container-fluid ">
+    <div class="col-12">
+      <div class="col-12 heading">
+      <p class="text-center"><strong>Gallery</strong></p>
+      </div>
 
-    <div class="row justify-content-center my-5">
-
-      <h2 class="text-center"><strong>Gallery</strong></h2>
-
-    </div>
-    <div class="mid">
       <div class="page-content">
 
-
-        <div class="tabbed">
-          <input type="radio" id="tab1" name="css-tabs" checked>
-          <input type="radio" id="tab2" name="css-tabs">
-          <input type="radio" id="tab3" name="css-tabs">
-
-          <ul class="tabs">
-            <li class="tab"><label for="tab1">photo</label></li>
-            <li class="tab"><label for="tab2">video</label></li>
-
+        <div class="tab">
+          <ul class="gallery justify-content-center">
+            <li 
+            [ngClass]="{ active: selectedTab == 'photo' }"
+            (click)="showPhoto()">
+            Photo
+          </li>
+          <li 
+            [ngClass]="{ active: selectedTab == 'video' }"
+            (click)="showVideo()">
+            Video
+          </li>
           </ul>
 
-          <div class="tab-content">
+          <div class="card p-3 my-2" *ngIf="selectedTab == 'photo'">
+            <Strong style="text-align: center">OUR PHOTOS</Strong>
+          </div>
+          <div class="card p-3 my-2" *ngIf="selectedTab == 'video'">
+            <Strong style="text-align: center">OUR VIDEOS</Strong>
+          </div>
 
+
+
+          <div class="tab-content" *ngIf="selectedTab == 'photo'">
             <div class="container gallery-container">
-
-
-
-
               <div class="tz-gallery">
-
                 <div class="row">
-
-                  <div class="col-sm-12 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IMG20230121143005.jpg">
-                      <img src="../../assets/gallery/IMG20230121143005.jpg" alt="Bridge">
+                  <div class="col-sm-12 col-md-4" *ngFor="let item of maindata">
+                    <a class="lightbox" >
+                      <img src= {{item.image}} alt="">
                     </a>
                   </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IDMS Team_2.jpg">
-                      <img src="../../assets/gallery/IDMS Team_2.jpg" alt="Park">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/3.jpg">
-                      <img src="../../assets/gallery/3.jpg" alt="Tunnel">
-                    </a>
-                  </div>
-
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/2.jpg">
-                      <img src="../../assets/gallery/2.jpg" alt="Coast">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IMG20230323170530.jpg">
-                      <img src="../../assets/gallery/IMG20230323170530.jpg" alt="Coast">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/4.jpg">
-                      <img src="../../assets/gallery/4.jpg" alt="Coast">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IMG20230330140257.jpg">
-                      <img src="../../assets/gallery/IMG20230330140257.jpg" alt="Coast">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/img/gallery/1.jpg">
-                      <img src="../../assets/gallery/1.jpg" alt="Rails">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IMG20230408141048.jpg">
-                      <img src="../../assets/gallery/IMG20230408141048.jpg" alt="Rails">
-                    </a>
-                  </div>
-
                 </div>
-
-              </div>
-              
+              </div>              
             </div>
           </div>
 
-          <div class="tab-content">
-
+          <div class="tab-content" *ngIf="selectedTab == 'video'">
+            <div class="container gallery-container">
             <div class="tz-gallery">
-
               <div class="row">
-
                 <div class="col-sm-12 col-md-4">
                   <a class="lightbox" href="https://youtu.be/dED71u5oH9M">
                     <img src="../../assets/gallery/Screenshot 2023-05-17 113220.png" alt="Bridge">
                   </a>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                  <a class="lightbox" href="https://www.youtube.com/watch?v=qMMjR3f0g4k">
-                    <img src="../../assets/gallery/Screenshot 2023-05-17 113220.png" alt="Park">
-                  </a>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <a class="lightbox" href="">
-                    <img src="" alt="Tunnel">
-                  </a>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                  <a class="lightbox" href="">
-                    <img src="" alt="Coast">
-                  </a>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <a class="lightbox" href="">
-                    <img src="" alt="Coast">
-                  </a>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <a class="lightbox" href="">
-                    <img src="" alt="Coast">
-                  </a>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <a class="lightbox" href="">
-                    <img src="" alt="Coast">
-                  </a>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <a class="lightbox" href="">
-                    <img src="" alt="Rails">
-                  </a>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <a class="lightbox" href="">
-                    <img src="" alt="Rails">
-                  </a>
-                </div>
-
               </div>
-
             </div>
+          </div>
           </div>
 
 
         </div>
       </div>
-    </div>
+  </div>
   </div>
 </section>
 
