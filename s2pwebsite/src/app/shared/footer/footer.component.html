@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row justify-content-center">
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -32,6 +32,7 @@
             </div>
 
         </div>
+       
         <div class="social-row py-3">
             <a href="https://www.facebook.com/FromStudentToProfessional" class="media-icon">
                 <i class="fa-brands fa-square-facebook"></i>
@@ -49,60 +50,177 @@
     </div>
 
 
-</div>
+</div> -->
 
-<button class="floating-button " (click)="this.isOpen = !this.isOpen"><strong>Enquire Now</strong>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex">
 
-</button>
-<div *ngIf="isOpen==true" class="centering">
+          <div class="col-md-3">
+            <h3 class="head">Services</h3>
+            <h5 class="subhead">Training</h5>
+            <h5 class="subhead">Coaching</h5>
+            <h5 class="subhead">Consulting</h5>
+          </div>
 
-    <div class="box mt-3">
+          <!-- <div class="col-md-1 vertical-line" style="height: 100%"></div> -->
 
-        <button type="button" (click)="this.isOpen = !this.isOpen" class="close btn-close" aria-label="Close"></button>
+          <div class="col-md-3 middle">
+            <h3 class="head">Contacts</h3>
+            <h5 class="subhead">Phone</h5>
+            <p class="midhead">
+              <i class="fa-solid fa-phone"></i> +91 9096360650 | +91 8888755259
+            </p>
+            <h5 class="subhead">E-mail</h5>
+            <p class="midhead">
+              <i class="fa-solid fa-envelope"></i>
+              sachinnandgirwar@s2pedutech.com
+            </p>
+          </div>
 
-        <h1 class="heading mb-3">Enquiry Form</h1>
+          <!-- <div class="col-md-1 vertical-line" style="height: 100%"></div> -->
 
-        <div class="row pt-3">
-            <form [formGroup]="enquiryForm">
-                <div class="input__wrapper ">
-
-                    <input id="name" type="text" class="input__field" formControlName="name" />
-                    <label for="password" class="input__label"> Name </label>
-                </div>
-                <div class="input__wrapper mt-4">
-                    <input id="mobile" type="text" class="input__field" formControlName="mobile" />
-                    <label for="password" class="input__label"> Contact No. </label>
-                </div>
-                <div class="input__wrapper mt-4">
-                    <input id="branch" type="text" class="input__field" formControlName="college" />
-                    <label for="password" class="input__label"> College </label>
-                </div>
-                <div class="input__wrapper mt-4">
-                    <select id="branch" class="input__field" formControlName="branch">
-                        <option value="Computer Technology">Computer Technology</option>
-                        <option value="Information Technology">Information Technology</option>
-                        <option value="Electronics And Telecommunication">Electronics And Telecommunication</option>
-                        <option value="Mechanical Engineering">Mechanical Engineering</option>
-                        <option value="Civil Engineering">Civil Engineering</option>
-                        <option value="Electrical Engineering">Electrical Engineering</option>
-                        <option value="Others">Others</option>
-                    </select>
-                    <label for="branch" class="input__label">Branch</label>
-                </div>
-                <div class="input__wrapper mt-4">
-                    <input id="passingyear" type="text" class="input__field" formControlName="passingyear" />
-                    <label for="password" class="input__label"> Year of Passing </label>
-                </div>
-                <select class="select-dropdown mt-4" formControlName="course">
-                    <option selected>Select your course</option>
-                    <option value="Java Full Stack Developer">Java Full Stack Developer</option>
-                    <option value="Mean Stack Developer">Mean Stack Developer</option>
-                </select>
-            </form>
+          <div class="col-3 middle">
+            <h3 class="head">Address</h3>
+            <p class="midhead"> <i class="fa-solid fa-location-dot fa-lg"></i>
+               Meera bhavan, opp. Sony Center,<br />
+              Near Old Dande Hospital,<br />
+              Nagpur -440010.
+            </p>
+          </div>
+          <div class="col-3">
+            <ul>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.170803763473!2d79.05370937401278!3d21.14559988375766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c06816ae14cf%3A0x16bece4149d8d45e!2sS2P%20EDUTECH!5e0!3m2!1sen!2sin!4v1707816704924!5m2!1sen!2sin"
+                width="300"
+                height="180"
+              ></iframe>
+            </ul>
+          </div>
         </div>
-        <button (click)=" onSubmit()" class="submit mt-3">
-            Submit
-        </button>
+      </div>
     </div>
 
+    <div class="horizontal-line" style="width: 100%"></div>
+
+    <div class="row py-3">
+      <div class="col-12 bottom">
+        <h6>Connect with us</h6>
+        <!-- <div class="social-row py-3"> -->
+        <a
+          href="https://www.facebook.com/FromStudentToProfessional"
+          class="media-icon"
+        >
+          <i class="fa-brands fa-square-facebook"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/s2p_edutech/?igshid=YmMyMTA2M2Y%3D"
+          class="media-icon"
+        >
+          <i class="fa-brands fa-square-instagram"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/s2p-edutech/"
+          class="media-icon"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCG2s3-FDGCNho2ca2Ofe3oQ"
+          class="media-icon"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- floating-button -->
+<button class="floating-button" (click)="this.isOpen = !this.isOpen">
+  <strong>Enquire Now</strong>
+</button>
+<div *ngIf="isOpen == true" class="centering">
+  <div class="box mt-3">
+    <button
+      type="button"
+      (click)="this.isOpen = !this.isOpen"
+      class="close btn-close"
+      aria-label="Close"
+    ></button>
+
+    <h1 class="heading mb-3">Enquiry Form</h1>
+
+    <div class="row pt-3">
+      <form [formGroup]="enquiryForm">
+        <div class="input__wrapper">
+          <input
+            id="name"
+            type="text"
+            class="input__field"
+            formControlName="name"
+          />
+          <label for="password" class="input__label"> Name </label>
+        </div>
+        <div class="input__wrapper mt-4">
+          <input
+            id="mobile"
+            type="text"
+            class="input__field"
+            formControlName="mobile"
+          />
+          <label for="password" class="input__label"> Contact No. </label>
+        </div>
+        <div class="input__wrapper mt-4">
+          <input
+            id="branch"
+            type="text"
+            class="input__field"
+            formControlName="college"
+          />
+          <label for="password" class="input__label"> College </label>
+        </div>
+        <div class="input__wrapper mt-4">
+          <select id="branch" class="input__field" formControlName="branch">
+            <option value="Computer Technology">Computer Technology</option>
+            <option value="Information Technology">
+              Information Technology
+            </option>
+            <option value="Electronics And Telecommunication">
+              Electronics And Telecommunication
+            </option>
+            <option value="Mechanical Engineering">
+              Mechanical Engineering
+            </option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Electrical Engineering">
+              Electrical Engineering
+            </option>
+            <option value="Others">Others</option>
+          </select>
+          <label for="branch" class="input__label">Branch</label>
+        </div>
+        <div class="input__wrapper mt-4">
+          <input
+            id="passingyear"
+            type="text"
+            class="input__field"
+            formControlName="passingyear"
+          />
+          <label for="password" class="input__label"> Year of Passing </label>
+        </div>
+        <select class="select-dropdown mt-4" formControlName="course">
+          <option selected>Select your course</option>
+          <option value="Java Full Stack Developer">
+            Java Full Stack Developer
+          </option>
+          <option value="Mean Stack Developer">Mean Stack Developer</option>
+        </select>
+      </form>
+    </div>
+    <button (click)="onSubmit()" class="submit mt-3">Submit</button>
+  </div>
 </div>

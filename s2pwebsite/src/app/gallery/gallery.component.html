@@ -34,50 +34,9 @@
             <div class="container gallery-container">
               <div class="tz-gallery">
                 <div class="row">
-                  <div class="col-sm-12 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IMG20230121143005.jpg">
-                      <img src="../../assets/gallery/IMG20230121143005.jpg" alt="Bridge">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IDMS Team_2.jpg">
-                      <img src="../../assets/gallery/IDMS Team_2.jpg" alt="Park">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/3.jpg">
-                      <img src="../../assets/gallery/3.jpg" alt="Tunnel">
-                    </a>
-                  </div>
-
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/2.jpg">
-                      <img src="../../assets/gallery/2.jpg" alt="Coast">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IMG20230323170530.jpg">
-                      <img src="../../assets/gallery/IMG20230323170530.jpg" alt="Coast">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/4.jpg">
-                      <img src="../../assets/gallery/4.jpg" alt="Coast">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IMG20230330140257.jpg">
-                      <img src="../../assets/gallery/IMG20230330140257.jpg" alt="Coast">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/img/gallery/1.jpg">
-                      <img src="../../assets/gallery/1.jpg" alt="Rails">
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="../../assets/gallery/IMG20230408141048.jpg">
-                      <img src="../../assets/gallery/IMG20230408141048.jpg" alt="Rails">
+                  <div class="col-sm-12 col-md-4" *ngFor="let item of maindata">
+                    <a class="lightbox" >
+                      <img src= {{item.image}} alt="">
                     </a>
                   </div>
                 </div>
@@ -86,6 +45,7 @@
           </div>
 
           <div class="tab-content" *ngIf="selectedTab == 'video'">
+            <div class="container gallery-container">
             <div class="tz-gallery">
               <div class="row">
                 <div class="col-sm-12 col-md-4">
@@ -95,6 +55,7 @@
                 </div>
               </div>
             </div>
+          </div>
           </div>
 
 
