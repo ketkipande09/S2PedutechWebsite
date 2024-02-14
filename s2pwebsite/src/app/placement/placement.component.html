@@ -1,84 +1,84 @@
 <div *ngFor="let event of readLists">
-<div class="container-fluid event" *ngIf="event.eventStatus">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-      <div class="eventhead" style="display: flex; flex-wrap: nowrap">
-        <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 35%">
-          <div class="green-line"></div>
-        </div>
-        <div class="section-heading1">Our Latest Event</div>
-        <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 38%">
-          <div class="green-line"></div>
+  <div class="container-fluid event" *ngIf="event.eventStatus">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="eventhead" style="display: flex; flex-wrap: nowrap">
+          <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 35%">
+            <div class="green-line"></div>
+          </div>
+          <div class="section-heading1">Our Latest Event</div>
+          <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 38%">
+            <div class="green-line"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="container eventcontainer">
-    <div class="card eventcard">
-      <div class="row" >
-        <div class="col-md-6 d-flex justify-content-center align-items-center">
-          <img src="{{event.image}}" class="eventimage" alt="" />
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <div class="center">
-              <h2 class="text">{{event.eventName}}</h2>
-              <h5>
-                {{event.description}}
-              </h5>
-              <h3 class="text-center">Start Date: {{event.startDate | date}}</h3>
-              <h3 class="text-center">End Date:{{event.endDate | date }}</h3>
-              <ng-template #content let-modal>
-                <div class="code">
-                  <div class="modal-body d-flex">
-                    <div class="col-md-6 modal-img justify-content-center">
-                      <img src="{{event.eventQr}}" alt="" class="qrimage" />
-                    </div>
-                    <div class="col-md-6 modal-text">
-                      <h1>Scan Code</h1>
-                      <h5>Register yourself by scanning the QR code.</h5>
-                      <a [href]="event.eventLink">
-                        <h3>Click here</h3>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </ng-template>
-              <h3 class="text-center knowbutton" (click)="openVerticallyCentered(content)">
-                Register Here...
-              </h3>
-
-
-              <ng-template #feedback let-modal>
-                <div class="code">
-                  <div class="modal-body d-flex">
-                    <div class="col-md-6 modal-img justify-content-center">
-                      <img src="{{event.FeedbackQr}}" alt="" class="qrimage" />
-                    </div>
-                    <div class="col-md-6 modal-text">
-                      <h1>Scan Code</h1>
-                      <h5>Please Share your valuable Feedback.</h5>
-                      <a [href]="event.feedbackLink">
-                        <h3>Click here</h3>
-                      </a>
+    <div class="container eventcontainer">
+      <div class="card eventcard">
+        <div class="row">
+          <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img src="{{event.image}}" class="eventimage" alt="" />
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <div class="center">
+                <h2 class="text">{{event.eventName}}</h2>
+                <h5>
+                  {{event.description}}
+                </h5>
+                <h3 class="text-center">Start Date: {{event.startDate | date}}</h3>
+                <h3 class="text-center">End Date:{{event.endDate | date }}</h3>
+                <ng-template #content let-modal>
+                  <div class="code">
+                    <div class="modal-body d-flex">
+                      <div class="col-md-6 modal-img justify-content-center">
+                        <img src="{{event.eventQr}}" alt="" class="qrimage" />
+                      </div>
+                      <div class="col-md-6 modal-text">
+                        <h1>Scan Code</h1>
+                        <h5>Register yourself by scanning the QR code.</h5>
+                        <a [href]="event.eventLink">
+                          <h3>Click here</h3>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ng-template>
-              <h3 class="text-center" (click)="openVerticallyCentered(feedback)">
-                Send Feedback
-              </h3>
+                </ng-template>
+                <h3 class="text-center knowbutton" (click)="openVerticallyCentered(content)">
+                  Register Here...
+                </h3>
 
 
+                <ng-template #feedback let-modal>
+                  <div class="code">
+                    <div class="modal-body d-flex">
+                      <div class="col-md-6 modal-img justify-content-center">
+                        <img *ngIf="event.FeedbackQr" src="{{event.FeedbackQr}}" alt="" class="qrimage" />
+                      </div>
+                      <div class="col-md-6 modal-text">
+                        <h1>Scan Code</h1>
+                        <h5>Please Share your valuable Feedback.</h5>
+                        <a *ngIf="event.feedbackLink" [href]="event.feedbackLink">
+                          <h3>Click here</h3>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
 
+                <h3 class="text-center" *ngIf="event.FeedbackQr && event.feedbackLink"
+                  (click)="openVerticallyCentered(feedback)">
+                  Send Feedback
+                </h3>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <section id="placements">
@@ -98,38 +98,34 @@
         </div>
       </div>
     </div>
-  
+
 
     <div class="row mt-5">
-      <marquee
-        onmouseover="this.stop()"
-        onmouseout="this.start()"
-        [scrollAmount]="12"
-        >
+      <marquee onmouseover="this.stop()" onmouseout="this.start()" [scrollAmount]="12">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12 col-xxl-12">
           <div class="palcement d-flex">
-              <div class="slide" *ngFor="let place of readList;let i = index">
-                <div class="card d-flex" [ngClass]="{'blue-background': i % 2 === 0, 'green-background': i % 2 !== 0}">
-                  <div class="circle-container">
-                    <img src="{{ place.image }}" class="card-img-top circular-img" alt="..." />
+            <div class="slide" *ngFor="let place of readList;let i = index">
+              <div class="card d-flex" [ngClass]="{'blue-background': i % 2 === 0, 'green-background': i % 2 !== 0}">
+                <div class="circle-container">
+                  <img src="{{ place.image }}" class="card-img-top circular-img" alt="..." />
+                </div>
+                <div class="card-body card-text-color">
+                  <div class="row mt-3">
+                    <h5 class="text-center">Name:- {{ place.studentName }}</h5>
+                    <h5 class="text-center pt-2">
+                      College:- {{ place.collage }}
+                    </h5>
                   </div>
-                  <div class="card-body card-text-color">
-                    <div class="row mt-3">
-                      <h5 class="text-center">Name:- {{ place.studentName }}</h5>
-                      <h5 class="text-center pt-2">
-                        College:- {{ place.collage }}
+                  <div class="row placements">
+                    <div class="col">
+                      <h5 class="px-3 text-center">
+                        Company:- {{ place.company }}
                       </h5>
-                    </div>
-                    <div class="row placements">
-                      <div class="col">
-                        <h5 class="px-3 text-center">
-                          Company:- {{ place.company }}
-                        </h5>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </marquee>
