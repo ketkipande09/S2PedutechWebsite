@@ -19,11 +19,15 @@ module.exports = (sequelize, DataTypes) => {
       endDate: {
         type: DataTypes.DATE,
         allowNull: true,
-        
+
       },
       eventLink: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      feedbackLink: {
+        type: DataTypes.STRING,
+        allowNull: true,
       },
       eventName: {
         type: DataTypes.STRING,
@@ -64,6 +68,18 @@ module.exports = (sequelize, DataTypes) => {
               process.env.DOMAIN_URL +
               "eventImage/" +
               this.getDataValue("eventQr")
+            );
+        },
+      },
+      FeedbackQr: {
+        type: DataTypes.STRING(1324),
+        allowNull: true,
+        get() {
+          if (this.getDataValue("FeedbackQr"))
+            return (
+              process.env.DOMAIN_URL +
+              "eventImage/" +
+              this.getDataValue("FeedbackQr")
             );
         },
       }

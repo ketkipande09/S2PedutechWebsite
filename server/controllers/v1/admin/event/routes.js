@@ -23,7 +23,7 @@ app.post(
   '/createEvent',
   upload.fields([
     { name: 'image', maxCount: 1 },
-    { name: 'eventQr', maxCount: 1 }
+    { name: 'eventQr', maxCount: 1 },
   ]),
   validate('event'),
   event.createEvent
@@ -34,7 +34,8 @@ app.put(
   '/updateEvent/:id',
   upload.fields([
     { name: 'image', maxCount: 1 },
-    { name: 'eventQr', maxCount: 1 }
+    { name: 'eventQr', maxCount: 1 },
+    { name: 'FeedbackQr', maxCount: 1 },
   ]),
   validate('updateEvent'),
   event.updateEvent

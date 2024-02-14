@@ -25,7 +25,8 @@
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label class="form-lable fw-bold">Event Link <span class="text-danger">*</span></label>
-                                <input formControlName="eventLink" placeholder="Event Link" type="text" class="form-control ">
+                                <input formControlName="eventLink" placeholder="Event Link" type="text"
+                                    class="form-control ">
                             </div>
                             <!-- <div class="col-md-12 mb-2">
                                 <label class="form-lable fw-bold">Date and Time <span
@@ -36,16 +37,14 @@
                                 </div>
                             </div> -->
                             <div class="col-md-12 mb-2">
-                                <label class="form-lable fw-bold">Start Date <span
-                                        class="text-danger">*</span></label>
+                                <label class="form-lable fw-bold">Start Date <span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <input type="datetime-local" formControlName="startDate" class="form-control"
                                         placeholder="yyyy-mm-dd">
                                 </div>
                             </div>
                             <div class="col-md-12 mb-2">
-                                <label class="form-lable fw-bold">End Date <span
-                                        class="text-danger">*</span></label>
+                                <label class="form-lable fw-bold">End Date <span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <input type="datetime-local" formControlName="endDate" class="form-control"
                                         placeholder="yyyy-mm-dd">
@@ -56,6 +55,13 @@
                                 <textarea formControlName="description" placeholder="Description" type="text"
                                     class="form-control " id="" cols="" rows=""></textarea>
 
+                            </div>
+
+                            <div *ngIf="getid" class="col-md-12 mb-2">
+                                <label class="form-lable fw-bold">Feedback Link<span
+                                        class="text-danger"></span></label>
+                                <textarea formControlName="feedbackLink" placeholder="Feedback Link" type="text"
+                                    class="form-control " id="" cols="" rows=""></textarea>
                             </div>
 
                             <div class="col-md-6 mb-2">
@@ -75,6 +81,16 @@
 
                             </div>
                             <img [src]="qrContents" class="img-fluid img-size" *ngIf="qrContents">
+
+
+                            <div *ngIf="getid" class="col-md-6 mb-2">
+                                <label class="form-lable fw-bold">FeedBack Qr<span
+                                        class="text-danger"></span></label><br>
+                                <input (input)="FeedbackFileChoosen($event)" type="file" class="form-control-file"
+                                    id="file-multiple-input" name="file-multiple-input" multiple />
+
+                            </div>
+                            <img [src]="feedbackContents" class="img-fluid img-size" *ngIf="feedbackContents">
 
 
                             <div class="text-center my-3 pt-4">
