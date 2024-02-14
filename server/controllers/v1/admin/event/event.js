@@ -103,8 +103,8 @@ const eventObj = {
       if (req.query.search) {
         whereQuery = {
           [Op.or]: [
-            { name: { [Op.substring]: req.query.search } },
-            { description: { [Op.substring]: req.query.search } },
+            // { name: { [Op.substring]: req.query.search } },
+            // { description: { [Op.substring]: req.query.search } },
             // { date_time: { [Op.substring]: req.query.search } },
             { eventName: { [Op.substring]: req.query.search } },
           ],

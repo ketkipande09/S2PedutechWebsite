@@ -54,19 +54,19 @@
                 <div class="code">
                   <div class="modal-body d-flex">
                     <div class="col-md-6 modal-img justify-content-center">
-                      <img src="{{event.eventQr}}" alt="" class="qrimage" />
+                      <img src="{{event.FeedbackQr}}" alt="" class="qrimage" />
                     </div>
                     <div class="col-md-6 modal-text">
                       <h1>Scan Code</h1>
                       <h5>Please Share your valuable Feedback.</h5>
-                      <a [href]="event.eventLink">
+                      <a [href]="event.feedbackLink">
                         <h3>Click here</h3>
                       </a>
                     </div>
                   </div>
                 </div>
               </ng-template>
-              <h3 class="text-center" (click)="openVerticallyCentered(content)">
+              <h3 class="text-center" (click)="openVerticallyCentered(feedback)">
                 Send Feedback
               </h3>
 
