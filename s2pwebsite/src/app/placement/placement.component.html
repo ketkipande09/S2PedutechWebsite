@@ -17,8 +17,8 @@
   <div class="container eventcontainer">
     <div class="card eventcard">
       <div class="row" >
-        <div class="col-md-6 eventimage d-flex justify-content-center align-items-center">
-          <img src="{{event.image}}" class="img-fluid" alt="" />
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <img src="{{event.image}}" class="eventimage" alt="" />
         </div>
         <div class="col-md-6">
           <div class="card-body">
@@ -32,22 +32,46 @@
               <ng-template #content let-modal>
                 <div class="code">
                   <div class="modal-body d-flex">
-                    <div class="col-md-6 modal-img">
-                      <img src="{{event.eventQr}}" alt="" class="img-fluid" />
+                    <div class="col-md-6 modal-img justify-content-center">
+                      <img src="{{event.eventQr}}" alt="" class="qrimage" />
                     </div>
                     <div class="col-md-6 modal-text">
                       <h1>Scan Code</h1>
                       <h5>Register yourself by scanning the QR code.</h5>
                       <a [href]="event.eventLink">
-                        <h3>Click here for now more</h3>
+                        <h3>Click here</h3>
                       </a>
                     </div>
                   </div>
                 </div>
               </ng-template>
               <h3 class="text-center knowbutton" (click)="openVerticallyCentered(content)">
-                Know More....
+                Register Here...
               </h3>
+
+
+              <ng-template #feedback let-modal>
+                <div class="code">
+                  <div class="modal-body d-flex">
+                    <div class="col-md-6 modal-img justify-content-center">
+                      <img src="{{event.eventQr}}" alt="" class="qrimage" />
+                    </div>
+                    <div class="col-md-6 modal-text">
+                      <h1>Scan Code</h1>
+                      <h5>Please Share your valuable Feedback.</h5>
+                      <a [href]="event.eventLink">
+                        <h3>Click here</h3>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+              <h3 class="text-center" (click)="openVerticallyCentered(content)">
+                Send Feedback
+              </h3>
+
+
+
             </div>
           </div>
         </div>
@@ -74,7 +98,46 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12 col-xxl-12">
+  
+
+    <div class="row mt-5">
+      <marquee
+        onmouseover="this.stop()"
+        onmouseout="this.start()"
+        [scrollAmount]="12"
+        >
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12 col-xxl-12">
+          <div class="palcement d-flex">
+              <div class="slide" *ngFor="let place of readList;let i = index">
+                <div class="card d-flex" [ngClass]="{'blue-background': i % 2 === 0, 'green-background': i % 2 !== 0}">
+                  <div class="circle-container">
+                    <img src="{{ place.image }}" class="card-img-top circular-img" alt="..." />
+                  </div>
+                  <div class="card-body card-text-color">
+                    <div class="row mt-3">
+                      <h5 class="text-center">Name:- {{ place.studentName }}</h5>
+                      <h5 class="text-center pt-2">
+                        College:- {{ place.collage }}
+                      </h5>
+                    </div>
+                    <div class="row placements">
+                      <div class="col">
+                        <h5 class="px-3 text-center">
+                          Company:- {{ place.company }}
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </marquee>
+    </div>
+
+
+
+    <!-- <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12 col-xxl-12">
       <div class="slider">
         <div class="slide-track">
           <div class="slide" *ngFor="let place of readList;let i = index">
@@ -101,6 +164,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+
   </div>
 </section>
