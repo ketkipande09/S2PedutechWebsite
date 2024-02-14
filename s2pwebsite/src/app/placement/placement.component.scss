@@ -100,47 +100,70 @@
 
 }
 
-.knowbutton {
-  font: 30px poppin;
-  cursor: pointer;
-  animation: changeColor 5s infinite;
+// .knowbutton {
+//   font: 30px poppin;
+//   cursor: pointer;
+//   animation: changeColor 5s infinite;
+// }
+
+
+// @keyframes changeColor {
+//   0% {
+//     color: red;
+//   }
+
+//   25% {
+//     color: blue;
+//   }
+
+//   50% {
+//     color: green;
+//   }
+
+//   75% {
+//     color: purple;
+//   }
+
+//   100% {
+//     color: orange;
+//   }
+// }
+
+// .knowbutton:hover {
+//   transform: scale(1.06);
+//   transition: all ease 0.5s;
+// }
+
+// .btn-close {
+//   cursor: pointer;
+//   border: none;
+// }
+
+// .btn-close:hover {
+//   transform: scale(1.25);
+//   transition: all ease 0.5s;
+// }
+.button{
+padding-left: 10rem;
+padding-top: 20px;
 }
-
-@keyframes changeColor {
-  0% {
-    color: red;
-  }
-
-  25% {
-    color: blue;
-  }
-
-  50% {
-    color: green;
-  }
-
-  75% {
-    color: purple;
-  }
-
-  100% {
-    color: orange;
-  }
+.knowbutton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #ff8a00;
+  color: #ff8a00;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .knowbutton:hover {
-  transform: scale(1.06);
-  transition: all ease 0.5s;
-}
-
-.btn-close {
-  cursor: pointer;
-  border: none;
-}
-
-.btn-close:hover {
-  transform: scale(1.25);
-  transition: all ease 0.5s;
+  background-color: #ff8a00;
+  color: #fff;
 }
 
 .placement {
