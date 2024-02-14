@@ -175,6 +175,14 @@ const eventObj = {
           }
         }
 
+        if (req.files && req.files.FeedbackQr && req.files.FeedbackQr[0].filename) {
+          let feedbackPath = `assets/eventImage/${req.files.FeedbackQr[0].filename}`;
+          if (fs.existsSync(feedbackPath)) {
+            fs.unlinkSync(feedbackPath);
+          }
+
+        }
+
         let errors = MESSAGES.apiSuccessStrings.DATA_NOT_EXISTS('The event');
         return res
           .status(resCode.HTTP_BAD_REQUEST)
@@ -205,6 +213,16 @@ const eventObj = {
             }
           }
           eventObject.eventQr = req.files.eventQr[0].filename;
+        }
+
+        if (req.files && req.files.FeedbackQr) {
+          if (event.FeedbackQr && event.FeedbackQr !== 'undefined') {
+            let feedbackPath = `assets/eventImage/${event.FeedbackQr.split('eventImage/')[1]}`;
+            if (fs.existsSync(feedbackPath)) {
+              fs.unlinkSync(feedbackPath);
+            }
+          }
+          eventObject.FeedbackQr = req.files.FeedbackQr[0].filename;
         }
 
 

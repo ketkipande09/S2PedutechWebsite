@@ -18,6 +18,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EventFormComponent implements OnInit {
   readonly DELIMITER = '/';
+  feedbackImages: any;
   qrImages: any;
   images: any;
   choosen: boolean = false;
@@ -53,6 +54,7 @@ export class EventFormComponent implements OnInit {
   getid: any;
   fileContents: any;
   qrContents: any;
+  feedbackContents: any;
   ngOnInit(): void {
     this.actrouter.queryParams.subscribe((data: any) => {
       this.getid = data.id;
@@ -65,6 +67,7 @@ export class EventFormComponent implements OnInit {
   eventForm = new FormGroup({
     eventName: new FormControl('', Validators.required),
     eventLink: new FormControl('', Validators.required),
+    feedbackLink: new FormControl('',),
     description: new FormControl('', Validators.required),
     startDate: new FormControl('', Validators.required),
     endDate: new FormControl('', Validators.required),
@@ -73,7 +76,6 @@ export class EventFormComponent implements OnInit {
   fileChoosen(event: any) {
     if (event.target.value) {
       if (event.target.files[0].size > 5000000) {
-        // this.toastService.warning("Unable to upload image/Video of size more than 5MB");
         return;
       }
       this.images = <File>event.target.files[0];
@@ -115,6 +117,27 @@ export class EventFormComponent implements OnInit {
     }
   }
 
+  FeedbackFileChoosen(event: any) {
+    if (event.target.value) {
+      if (event.target.files[0].size > 5000000) {
+        return;
+      }
+      this.feedbackImages = <File>event.target.files[0];
+      this.feedbackContents = this.feedbackImages;
+      console.log(this.feedbackImages);
+      const reader = new FileReader();
+      reader.readAsDataURL(this.feedbackImages);
+      reader.onload = () => {
+        this.feedbackContents = reader.result;
+      };
+      reader.onerror = (error) => {
+        console.log(error);
+      };
+      this.choosen = true;
+      console.log(this.feedbackContents);
+      console.log(this.feedbackImages, 'FeedbackQr');
+    }
+  }
 
   createImage() {
     console.log(this.images);
@@ -149,11 +172,13 @@ export class EventFormComponent implements OnInit {
       console.log(success);
       this.fileContents = success.result.image;
       this.qrContents = success.result.eventQr;
+      this.feedbackContents = success.result.FeedbackQr;
       success.result.startDate = success.result.startDate.split('Z')[0];
       success.result.endDate = success.result.endDate.split('Z')[0];
       this.eventForm.patchValue(success.result);
       this.fileContents = success['result'].image;
       this.qrContents = success['result'].eventQr;
+      this.feedbackContents = success['result'].FeedbackQr;
 
     });
   }
@@ -169,11 +194,16 @@ export class EventFormComponent implements OnInit {
     fd.append('startDate', this.eventForm.value.startDate);
     fd.append('endDate', this.eventForm.value.endDate);
     fd.append('eventName', this.eventForm.value.eventName);
+    fd.append('feedbackLink', this.eventForm.value.feedbackLink)
     fd.append('description', this.eventForm.value.description);
     if (this.images && this.qrImages) {
       fd.append('key', 'event')
       fd.append('image', this.images, this.images.name);
       fd.append('eventQr', this.qrImages, this.qrImages.name);
+    }
+    if (this.feedbackImages) {
+      fd.append('key', 'event')
+      fd.append('FeedbackQr', this.feedbackImages, this.feedbackImages.name);
     }
     this.service
       .updateEvent(fd, this.getid)
