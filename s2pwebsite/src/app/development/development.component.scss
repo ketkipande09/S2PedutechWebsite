@@ -35,23 +35,52 @@
     text-align: justify;
   }
 }
-.modal-body{
+
+.modal-body {
   padding: 20px;
   background-color: #fdf0e0;
+  height: max-content;
+  width: 32rem;
 
-  p{
-    font-family: Montserrat,sans-serif;
+  p {
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+  }
+  .modal-header {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+  }
+  .modal-title {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+  }
+  .subheading {
+    text-align: center;
+    color: #502400;
+    font-size: 20px;
+    padding-bottom: 5px;
+    font-family: Montserrat, sans-serif;
+  }
+  .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1050; 
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  
+  .btn-close:focus {
+    outline: none;
   }
 }
-.modal-title{
-  padding-bottom: 10px;
-  text-align: center;
-  font-family: Montserrat,sans-serif;
-  font-size: 20px;
-}
+
 
 .card22 {
-
   .card-body {
     display: flex;
     flex-direction: column;
@@ -60,13 +89,13 @@
 }
 
 .headingtext {
-  max-width: 800px; 
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   font-size: 20px;
   line-height: 1.6;
   color: #924c06;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   padding-right: 100px;
 }
 
@@ -158,9 +187,11 @@ h2 {
 }
 
 @mixin white-gradient {
-  background: linear-gradient(to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 $animationSpeed: 15s;
@@ -379,4 +410,9 @@ body {
   text-align: center;
   font: 20px poppins;
   color: #000000;
+}
+
+
+@media(max-width: 576px){
+
 }

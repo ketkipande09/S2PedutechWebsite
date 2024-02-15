@@ -18,8 +18,8 @@ export class DevelopmentComponent implements OnInit {
     this.getAllClient();
   }
 
-  openScrollableContent(longContent: any) {
-    this.modalService.open(longContent, { scrollable: true });
+  openVerticallyCentered(longContent: any) {
+    this.modalService.open(longContent, { centered: true });
   }
 
   clientiterate: any = [];

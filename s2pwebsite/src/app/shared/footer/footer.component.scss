@@ -41,8 +41,8 @@
 //   width: 2.5em;
 // }
 
-.container-fluid{
-  font-family: Montserrat,sans-serif;
+.container-fluid {
+  font-family: Montserrat, sans-serif;
   // padding-top: 2rem;
   color: #ccc;
   background-color: #002b51;
@@ -51,27 +51,27 @@
   background-color: #3f638b;
   width: 2px;
 }
-.horizontal-line{
+.horizontal-line {
   background-color: #3f638b;
   height: 2px;
 }
-.container{
- padding: 20px;
+.container {
+  padding: 20px;
 }
-.middle{
+.middle {
   padding-left: 20px;
 }
-.head{
+.head {
   padding-bottom: 20px;
 }
-.subhead{
+.subhead {
   padding-bottom: 10px;
 }
-.midhead{
+.midhead {
   padding-bottom: 10px;
 }
-.bottom{
-text-align: center;
+.bottom {
+  text-align: center;
 }
 .media-icon {
   text-decoration: none;
@@ -88,10 +88,9 @@ text-align: center;
   margin: 0;
 }
 
-
 body {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: #CCC;
+  background-color: #ccc;
   font-size: 12px;
 }
 .label-container {
@@ -102,7 +101,7 @@ body {
   visibility: hidden;
 }
 .label-text {
-  color: #FFF;
+  color: #fff;
   background: rgba(51, 51, 51, 0.5);
   display: table-cell;
   vertical-align: middle;
@@ -121,8 +120,8 @@ body {
   height: 60px;
   bottom: 40px;
   right: 40px;
-  background-color: #06C;
-  color: #FFF;
+  background-color: #06c;
+  color: #fff;
   border-radius: 50px;
   text-align: center;
   box-shadow: 2px 2px 3px #999;
@@ -131,12 +130,12 @@ body {
   font-size: 24px;
   margin-top: 18px;
 }
-a.float+div.label-container {
+a.float + div.label-container {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s ease;
 }
-a.float:hover+div.label-container {
+a.float:hover + div.label-container {
   visibility: visible;
   opacity: 1;
 }
@@ -144,7 +143,7 @@ a.float:hover+div.label-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #0078B3;
+  background-color: #0078b3;
   color: #fff;
   border: none;
   border-radius: 10%;
@@ -152,7 +151,7 @@ a.float:hover+div.label-container {
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
- }
+}
 .floating-button:hover {
   background-color: #0056b3;
 }
@@ -161,7 +160,7 @@ a.float:hover+div.label-container {
   padding: 24px;
   padding-top: 12px;
   border-radius: 16px;
-  box-shadow: 1px 1px 4px 2px #FF8A00 ;
+  box-shadow: 1px 1px 4px 2px #ff8a00;
   width: 30rem;
 }
 .box h2 {
@@ -170,9 +169,9 @@ a.float:hover+div.label-container {
   font-weight: 400;
   font-size: 1.5rem;
   display: flex;
-  justify-content: center!important;
+  justify-content: center !important;
 }
-h1{
+h1 {
   display: flex;
   justify-content: center;
 }
@@ -195,7 +194,7 @@ h1{
 
 .input__field {
   border: 0;
-  border-bottom: 2px solid #6F7E8C;
+  border-bottom: 2px solid #6f7e8c;
   outline: 0;
   font-size: 16px;
   color: #212121;
@@ -210,30 +209,29 @@ h1{
   color: transparent;
 }
 
-.input_field:placeholder-shown~.input_label {
+.input_field:placeholder-shown ~ .input_label {
   font-size: 16px;
   cursor: text;
-  color: #6F7E8C;
+  color: #6f7e8c;
   top: 20px;
 }
 
 label,
-.input_field:focus~.input_label {
+.input_field:focus ~ .input_label {
   position: absolute;
   top: 0;
   display: block;
   font-size: 14px;
-  color: #6F7E8C;
+  color: #6f7e8c;
   transition: 0.3s;
-  
 }
 
-.input_field:focus~.input_label {
-  color: #007FFF;
+.input_field:focus ~ .input_label {
+  color: #007fff;
 }
 
 .input__field:focus {
-  border-bottom: 2px solid #007FFF;
+  border-bottom: 2px solid #007fff;
 }
 
 .input__icon {
@@ -250,15 +248,15 @@ label,
 
 .input__icon:hover {
   border-radius: 50%;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
-.submit{
+.submit {
   display: block;
   margin-left: 40px;
   width: 75%;
   height: 5vh;
-  background-color: #FF8A00;
+  background-color: #ff8a00;
   color: white;
   border-radius: 10px;
   cursor: pointer;
@@ -266,7 +264,7 @@ label,
 
 .heading {
   text-decoration: underline;
-  text-decoration-color: #FF8A00;
+  text-decoration-color: #ff8a00;
   text-underline-offset: 15px;
   display: flex;
   justify-content: center;
@@ -281,7 +279,6 @@ label,
   padding-top: 10px;
 }
 
-
 .select-dropdown {
   width: 80%;
   padding: 10px;
@@ -293,40 +290,34 @@ label,
   color: #212121;
 }
 
-
 .select-dropdown:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  
 }
-
 
 .select-dropdown option {
   background-color: #fff;
   color: #212121;
 }
 
-
 .select-dropdown option:hover {
   background-color: #007bff;
   color: #fff;
 }
 
-
-@media(max-width: 768px) {
-
+@media (max-width: 768px) {
   .box {
     background-color: white;
     padding: 24px;
     padding-top: 75px;
     border-radius: 16px;
-    width: 90vw;  
+    width: 90vw;
   }
 
   .input__field {
     border: 0;
-    border-bottom: 2px solid #6F7E8C;
+    border-bottom: 2px solid #6f7e8c;
     outline: 0;
     font-size: 16px;
     color: #212121;
@@ -335,5 +326,30 @@ label,
     background: transparent;
     transition: border-color 0.2s;
     width: 285px;
+  }
+}
+
+ul {
+  .ifarme {
+    width: "300";
+    height: "180";
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    .row {
+      .col-sm-12 {
+        .head {
+          font-size: 20px;
+        }
+        .subhead {
+          font-size: 16px;
+        }
+        .midhead {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

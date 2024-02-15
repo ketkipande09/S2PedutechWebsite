@@ -21,30 +21,33 @@
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mobile">
 
                 
-                <div class="card move content card01" (click)="openScrollableContent(longContent)">
+                <div class="card move content card01" (click)="openVerticallyCentered(longContent)">
                   <img src="../../../../../assets/website.png" class="image mt-4" alt="..." />
                   <div class="card-body mt-4">
                     <h5 class="card-text">
                       <strong>Website Development</strong>
                     </h5>
                   </div>
-                  <ng-template #longContent let-modal>
-                    <div class="modal-body">
-                    <h4 class="modal-title">Website Development</h4>
-                      <p>
-                        •	Reshimbandh - Matrimonial website<br>
-                        •	Adarsh Vidya Mandir - A Dynamic website for Group of College<br>
-                        •	Nagpur Tahelka - A local news portal<br>
-                        •	Famocop - Website of e-com platform<br>
-                        •	Steelteq - A Website for Structural engineering company<br>
-                        •	Riovik -  A Website for Structural engineering company<br>
+                  <ng-template class="modal" #longContent let-modal>
+                    <div class="modal-body justify-content-center" >
+                      <div class="d-flex justify-content-center">                        
+                      <h4 class="modal-title">Website Development</h4>
+                      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                    </div>
+                    <h5 class="subheading">Our Notable Works</h5>
 
-                      </p>
+                    <p><b>Reshimbandh - </b>Matrimonial website</p>
+                    <p><b>Adarsh Vidya Mandir - </b>A Dynamic website for Group of College</p>
+                    <p><b>Nagpur Tahelka - </b>A local news portal</p>
+                    <p><b>Famocop - </b>Website of e-com platform</p>
+                    <p><b>Steelteq - </b>A Website for Structural engineering company</p>
+                    <p><b>Riovik - </b>A Website for Structural engineering company</p>
+                    
                     </div>
                   </ng-template>
                 </div>
 
-                <div class="card card01 mt-3" (click)="openScrollableContent(longContent1)">
+                <div class="card card01 mt-3" (click)="openVerticallyCentered(longContent1)">
                   <img src="../../../../../assets/mobile.png" class="image mt-4" alt="..." />
                   <div class="card-body mt-4">
                     <h5 class="card-text">
@@ -53,24 +56,28 @@
                   </div>
                   <ng-template #longContent1 let-modal>
                     <div class="modal-body">
-                      <h4 class="modal-title">Web Application Development</h4>
-                      <p>
-                        •	IDMS - An SAAS based ERP for SSI & MSSI’s<br>
-                        •	Femi9world - An E-Commerce apparel shopping Website<br>
-                        •	Rapid Proposal - A multi user platform for creating, editing, sharing proposals<br>
-                        •	GPF - A Platform for an NGO to connect the Mentors & Mentees<br>
-                        •	Call Analytics - a SASS based platform for getting run time analytics for Call center data.<br>
-                        •	Legaci - A Web app for preparing Legal Wills<br>
-                        •	Mapple Provision - A Web App for Bank Card Management<br>
-                        •	Emerge - A Platform for Colleges, Companies and students for hiring skilled resources Reshimbandh - Web portal for marriage agency<br>
-                        •	Find my Money - A web app to Find clients lost money in Shares and Debentures in quick steps.<br>
-                      </p>
+                      <div class="d-flex justify-content-center">                        
+                        <h4 class="modal-title">Web Application Development</h4>
+                        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                      </div>
+                      <h5 class="subheading">Our Notable Works</h5>
+
+                    <p><b>IDMS - </b>An SAAS based ERP for SSI & MSSI's</p>
+                    <p><b>Femi9world - </b>An E-Commerce apparel shopping Website</p>
+                    <p><b>Rapid Proposal - </b>A multi user platform for creating, editing, sharing proposals</p>
+                    <p><b>GPF - </b>A Platform for an NGO to connect the Mentors & Mentees</p>
+                    <p><b>Call Analytics - </b>A SASS based platform for getting run time analytics for Call center data.</p>
+                    <p><b>Legaci - </b>A Web app for preparing Legal Wills</p>
+                    <p><b>Emerge - </b>A Web App for Bank Card Management</p>
+                    <p><b>Mapple Provision - </b>A Platform for Colleges, Companies and students for hiring skilled resources</p>
+                    <p><b>Find my Money - </b>A web app to Find clients lost money in Shares and Debentures in quick steps.</p>
                     </div>
                   </ng-template>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mobile">
-                <div class="card card01 mt-3" (click)="openScrollableContent(longContent2)" >
+                
+                <div class="card card01 mt-3" (click)="openVerticallyCentered(longContent2)" >
                   <img src="../../../../../assets/webs app development.png" class="image mt-4" alt="..." />
                   <div class="card-body mt-4">
                     <h5 class="card-text">
@@ -79,17 +86,21 @@
                   </div>
                   <ng-template #longContent2 let-modal>
                     <div class="modal-body">
-                      <h4 class="modal-title">Web Application Development</h4>
-                      <p>
-                        •	Famocop -  A super application for online shopping<br>
-                        •	Bharat Online -  A super application for online shopping<br>
-                        •	Kanak Mart - An app for online Fruits & Veetables shopping<br>
-                        •	The Shredded Farmer - An app for online fitness coaching (Mudgal)<br>
-                        •	Emerge - An app for seaching jobs<br>
-                        •	Enerty - An app for energy audit<br>
-                        •	OHO Radio - A radio application<br>
+                      <div class="d-flex justify-content-center">                        
+                        <h4 class="modal-title">Mobile App Development</h4>
+                        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                      </div>
+                      <h5 class="subheading">Our Notable Works</h5>
+                     
+                        <p><b>	Famocop -</b>  A super application for online shopping</p>
+                        <p><b>	Bharat Online -</b>  A super application for online shopping</p>
+                        <p><b>	Kanak Mart -</b> An app for online Fruits & Veetables shopping</p>
+                        <p><b>	The Shredded Farmer -</b> An app for online fitness coaching (Mudgal)</p>
+                        <p><b>	Emerge -</b> An app for seaching jobs</p>
+                        <p><b>	Enerty -</b> An app for energy audit</p>
+                        <p><b>	OHO Radio -</b> A radio application</p>
                         
-                      </p>
+                      
                     </div>
                   </ng-template>
                 </div>

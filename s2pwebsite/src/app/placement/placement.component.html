@@ -47,6 +47,7 @@
                   </div>
                 </div>
               </ng-template>
+              
               <button class="knowbutton" (click)="openVerticallyCentered(content)">
                 Register Here
               </button>
@@ -68,15 +69,10 @@
                   </div>
                 </div>
               </ng-template>
-              <button class="knowbutton" (click)="openVerticallyCentered(feedback)">
+              <button class="knowbutton" (click)="openVerticallyCentered(feedback)" *ngIf="event.FeedbackQr && event.feedbackLink">
                 Send Feedback
               </button>
             </div>
-
-                <h3 class="text-center" *ngIf="event.FeedbackQr && event.feedbackLink"
-                  (click)="openVerticallyCentered(feedback)">
-                  Send Feedback
-                </h3>
 
               </div>
             </div>
