@@ -17,9 +17,9 @@ const sliderObj = {
   createSlider: async (req, res) => {
     try {
       let query = {
-        where: {
-          [Op.or]: [{ name: req.body.name }],
-        },
+        // where: {
+        //   [Op.or]: [{ name: req.body.name }],
+        // },
       };
     
       let existingSlider = await Slider.findOne(query);
