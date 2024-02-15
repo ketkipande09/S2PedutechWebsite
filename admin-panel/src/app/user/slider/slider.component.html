@@ -18,24 +18,27 @@
 
             <div class="row">
               <div class="col mb-4">
-                <label class="form-lable fw-bold ">Image Name<span
-                  class="text-danger">*</span></label>
+                <label class="form-lable fw-bold ">Image Name<span class="text-danger">*</span></label>
                 <input formControlName="name" placeholder="Image Name" type="text" class="form-control">
-             </div>
+              </div>
             </div>
             <div class="row">
               <div class="col-md-6 mb-2">
-                <label class="form-lable fw-bold">Upload Image <span
-                  class="text-danger">*</span></label><br>
+                <label class="form-lable fw-bold">Upload Image <span class="text-danger">*</span></label><br>
                 <input (input)="fileChoosen($event)" type="file" class="form-control-file" id="file-multiple-input"
                   name="file-multiple-input" multiple />
 
               </div>
               <img [src]="fileContent" class="img-fluid img-size" *ngIf="fileContent">
             </div>
-            <div>
-            </div>
 
+            <div class="row">
+              <div class="col mb-4">
+                <label class="form-lable fw-bold ">VIDEO URL<span class="text-danger">*</span></label>
+                <input formControlName="videoUrl" placeholder="video Url" type="text" class="form-control">
+              </div>
+            </div>
+         
             <div class="text-center my-3 pt-4 ">
               <button *ngIf="!this.id" type="submit" class="btn btn-success shadow rounded rounded-3"
                 (click)="createImage()">Create</button>
