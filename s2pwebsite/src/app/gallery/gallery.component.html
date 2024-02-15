@@ -2,23 +2,19 @@
   <div class="container-fluid ">
     <div class="col-12">
       <div class="col-12 heading">
-      <p class="text-center"><strong>Gallery</strong></p>
+        <p class="text-center"><strong>Gallery</strong></p>
       </div>
 
       <div class="page-content">
 
         <div class="tab">
           <ul class="gallery justify-content-center">
-            <li 
-            [ngClass]="{ active: selectedTab == 'photo' }"
-            (click)="showPhoto()">
-            Photo
-          </li>
-          <li 
-            [ngClass]="{ active: selectedTab == 'video' }"
-            (click)="showVideo()">
-            Video
-          </li>
+            <li [ngClass]="{ active: selectedTab == 'photo' }" (click)="showPhoto()">
+              Photo
+            </li>
+            <li [ngClass]="{ active: selectedTab == 'video' }" (click)="showVideo()">
+              Video
+            </li>
           </ul>
 
           <div class="card p-3 my-2" *ngIf="selectedTab == 'photo'">
@@ -35,33 +31,31 @@
               <div class="tz-gallery">
                 <div class="row">
                   <div class="col-sm-12 col-md-4" *ngFor="let item of maindata">
-                    <a class="lightbox" >
-                      <img src= {{item.image}} alt="">
+                    <a class="lightbox">
+                      <img src={{item.image}} alt="">
                     </a>
                   </div>
                 </div>
-              </div>              
+              </div>
             </div>
           </div>
 
           <div class="tab-content" *ngIf="selectedTab == 'video'">
             <div class="container gallery-container">
-            <div class="tz-gallery">
-              <div class="row">
-                <div class="col-sm-12 col-md-4">
-                  <a class="lightbox" href="https://youtu.be/dED71u5oH9M">
-                    <img src="../../assets/gallery/Screenshot 2023-05-17 113220.png" alt="Bridge">
-                  </a>
+              <div class="tz-gallery">
+                <div class="row">
+                  <div class="col-sm-12 col-md-4">
+                    <!-- <a class="lightbox" href="https://youtu.be/dED71u5oH9M">
+                      <img src="../../assets/gallery/Screenshot 2023-05-17 113220.png" alt="Bridge">
+                    </a> -->
+                    <script src="https://www.instagram.com/reel/CzbqFhgidLy/?igsh=MTQxY3ByZjNnNDhlNA"></script>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-
-
         </div>
       </div>
-  </div>
+    </div>
   </div>
 </section>
-

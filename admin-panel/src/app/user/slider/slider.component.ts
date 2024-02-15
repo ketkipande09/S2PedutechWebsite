@@ -19,10 +19,13 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class SliderComponent implements OnInit {
   images: any;
   submitted = false;
+  showImageAndName: boolean = false;
   fileContent: any;
+  showVideoUrlSection: boolean = false;
   choosen: boolean = false;
   params: any;
   id: any;
+  isVideoUrlChecked: boolean = true;
   course: any;
   constructor(
     private validationService: ValidationService,
@@ -34,7 +37,7 @@ export class SliderComponent implements OnInit {
     private actRoutes: ActivatedRoute,
     private toastService: ToastrService,
     private spinner: NgxSpinnerService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.sliderForm;
@@ -59,6 +62,7 @@ export class SliderComponent implements OnInit {
     id: new FormControl(),
     image: new FormControl(''),
     name: new FormControl(''),
+    videoUrl: new FormControl(''),
   });
 
   fileChoosen(event: any) {
@@ -84,36 +88,73 @@ export class SliderComponent implements OnInit {
     }
   }
 
-  createImage() {
-    console.log(this.images);
-    this.submitted = true;
-    if (this.sliderForm.invalid) {
-      this.toastService.warning('Please fill all required field !');
-      return;
-    } else {
-      const fd = new FormData();
-      if (this.images) {
-        this.spinner.show();
-        fd.append('key', 'slider');
-        fd.append('image', this.images, this.images.name);
-        fd.append('name', this.sliderForm.value.name);
 
-        // fd.append('studentName', this.sliderForm.value.studentName);
-        // fd.append('companyName', this.sliderForm.value.companyName);
-        // fd.append('collegeName', this.sliderForm.value.collegeName);
-        console.log('fd,,,,', fd);
-        this.userSer.createImage(fd).subscribe((data) => {
-          console.log(data);
-          this.router.navigate(['/user/slider-list']);
-          this.toastService.success('Gallery Created Successfully!');
-          //  this.modalService.dismissAll();
-          this.spinner.hide();
-        });
-      } else {
-        this.toastService.warning('Please upload images');
-      }
-    }
+
+  // Function to handle the click event
+  showVideoUrl() {
+    this.showVideoUrlSection = !this.showVideoUrlSection;
   }
+
+
+
+
+
+
+  // createImage() {
+  //   console.log(this.images);
+  //   this.submitted = true;
+  //   if (this.sliderForm.invalid) {
+  //     this.toastService.warning('Please fill all required field !');
+  //     return;
+  //   } else {
+  //     const fd = new FormData();
+  //     if (this.images) {
+  //       this.spinner.show();
+  //       fd.append('key', 'slider');
+  //       fd.append('image', this.images, this.images.name);
+  //       fd.append('name', this.sliderForm.value.name);
+  //       console.log('fd,,,,', fd);
+  //       this.userSer.createImage(fd).subscribe((data) => {
+  //         console.log(data);
+  //         this.router.navigate(['/user/slider-list']);
+  //         this.toastService.success('Gallery Created Successfully!');
+  //         //  this.modalService.dismissAll();
+  //         this.spinner.hide();
+  //       });
+  //     } else {
+  //       this.toastService.warning('Please upload images');
+  //     }
+  //   }
+  // }
+  createImage() {
+    this.submitted = true;
+    const fd = new FormData();
+    if (this.showVideoUrlSection) {
+      fd.append('key', 'slider');
+      fd.append('videoUrl', this.sliderForm?.value?.videoUrl);
+    } else {
+      fd.append('key', 'slider');
+      fd.append('image', this.images, this.images?.name);
+      fd.append('name', this.sliderForm?.value?.name);
+    }
+    this.spinner.show();
+    this.userSer.createImage(fd).subscribe(
+      (data) => {
+        console.log(data);
+        this.router.navigate(['/user/slider-list']);
+        this.toastService.success('Gallery Created Successfully!');
+        this.spinner.hide();
+      },
+      (error) => {
+        console.error(error);
+        this.toastService.error('Error creating gallery');
+        this.spinner.hide();
+      }
+    );
+  }
+
+
+
 
   updateImage() {
     this.spinner.show();
@@ -149,7 +190,7 @@ export class SliderComponent implements OnInit {
       }
     );
   }
-  
+
   reset() {
     this.sliderForm.reset();
   }

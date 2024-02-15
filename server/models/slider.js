@@ -10,22 +10,10 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false,
       },
-        name: {
+      name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
-      // studentName: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false,
-      // },
-      // companyName: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false,
-      // },
-      // collegeName: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false,
-      // },
       image: {
         type: DataTypes.STRING(1324),
         allowNull: true,
@@ -38,6 +26,11 @@ module.exports = (sequelize, DataTypes) => {
             );
         },
       },
+      videoUrl: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
       status: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -49,28 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       freezeTableName: true,
     }
   );
-  // Test.associate = (models) => {
-  // 	Test.belongsTo(models.ShopInventory, {
-  // 		foreignKey: 'shopInventoryId',
-  // 		as: 'shopInventory',
-  // 		onDelete: 'CASCADE',
-  // 	});
-  // 	Test.belongsTo(models.Order, {
-  // 		foreignKey: 'orderId',
-  // 		as: 'order',
-  // 		onDelete: 'CASCADE',
-  // 	});
-  // };
-  // (async () => {
-  // 	if (process.env.ENVIRONMENT !== 'prod') {
-  // 		await sequelize.sync();
-  // 	}
-  // })();
-  // (async () => {
-  // 	if (process.env.ENVIRONMENT !== 'prod') {
-  // 		await sequelize.sync({ force: false, alter: true, logging: true });
-  // 	}
-  // })();
+
 
   return Slider;
 };
