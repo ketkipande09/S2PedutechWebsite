@@ -3,7 +3,6 @@
   padding-bottom: 2rem;
   // background-color: rgb(228, 255, 255);
   background-color: #fdf0e0;
-
 }
 
 .eventhead {
@@ -45,11 +44,11 @@
     padding: 10px;
   }
 }
-.eventimage{
+.eventimage {
   height: 20rem;
   width: 30rem;
 }
-.qrimage{
+.qrimage {
   height: 10rem;
   width: 12rem;
 }
@@ -95,57 +94,12 @@
 }
 
 .code {
-  // background-color: rgb(228, 255, 255);
   background-color: #fdf0e0;
-
 }
 
-// .knowbutton {
-//   font: 30px poppin;
-//   cursor: pointer;
-//   animation: changeColor 5s infinite;
-// }
-
-
-// @keyframes changeColor {
-//   0% {
-//     color: red;
-//   }
-
-//   25% {
-//     color: blue;
-//   }
-
-//   50% {
-//     color: green;
-//   }
-
-//   75% {
-//     color: purple;
-//   }
-
-//   100% {
-//     color: orange;
-//   }
-// }
-
-// .knowbutton:hover {
-//   transform: scale(1.06);
-//   transition: all ease 0.5s;
-// }
-
-// .btn-close {
-//   cursor: pointer;
-//   border: none;
-// }
-
-// .btn-close:hover {
-//   transform: scale(1.25);
-//   transition: all ease 0.5s;
-// }
-.button{
-padding-left: 10rem;
-padding-top: 20px;
+.button {
+  padding-left: 10rem;
+  padding-top: 20px;
 }
 .knowbutton {
   display: inline-block;
@@ -165,25 +119,17 @@ padding-top: 20px;
   background-color: #ff8a00;
   color: #fff;
 }
-// .center-button{
-//   display: flex;
-//   justify-content: center;
-// }
 
 .placement {
   padding-top: 50px;
   padding-bottom: 50px;
-  // background-color: rgb(228, 255, 255);
-
   h2 {
     color: #0078b3;
   }
-
   .card {
     width: 16rem;
     height: 21rem;
     border-radius: 10px;
-    // border: 1px solid #ff8a00;
     align-items: center;
     padding-top: 20px;
 
@@ -196,7 +142,6 @@ padding-top: 20px;
     }
 
     .placements {
-      // background-color: #837e79;
       border-radius: 6px;
       padding: 10px 0px 5px 0px;
     }
@@ -215,9 +160,7 @@ padding-top: 20px;
   .card:hover {
     transform: scale(1.06);
     transition: all ease 0.5s;
-    // box-shadow: 0px 4px 4px 0px #ff8a00;
   }
-
   .center {
     display: flex;
     justify-content: center;
@@ -228,20 +171,19 @@ body {
   align-items: center;
   background: #ffffff;
   display: flex;
-  height: 100vh;
   justify-content: center;
 }
-
 h2 {
   color: #0078b3;
 }
 
 @mixin white-gradient {
-  background: linear-gradient(to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
-
 
 @keyframes scroll {
   0% {
@@ -301,13 +243,6 @@ h2 {
     left: 0;
     top: 0;
   }
-
-  // .slide-track {
-  //   animation: scroll $animationSpeed linear infinite;
-  //   display: flex;
-  //   width: calc(250px * 80);
-  // }
-
   .slide {
     height: 100px;
     width: 250;
@@ -334,14 +269,11 @@ h2 {
     object-fit: cover;
     border-radius: 50%;
   }
-
-  // .card-text-color {
-  //   color: white;
-  // }
-
+}
+.bodyrow{
+  padding-top: 5px;
 }
 
-// Gradients
 .gradient {
   align-items: stretch;
   margin: 1em 0;
@@ -350,14 +282,6 @@ h2 {
   color: white;
   background: rgb(255, 116, 3);
   font-size: 40px;
-
-  // &:before {
-  //   background: linear-gradient(to right, white, rgb(255, 116, 3));
-  // }
-
-  // &:after {
-  //   background: linear-gradient(to left, white, rgb(255, 116, 3));
-  // }
 }
 
 body {
@@ -374,34 +298,77 @@ body {
   }
 }
 
-@media (max-width: 900px) {
-  .gradient {
-    align-items: stretch;
-    margin: 1em 0;
-    height: 62px;
-    line-height: 2em;
-    color: white;
-    background: #ff7403;
-    font-size: 29px;
-    width: 70% !important;
-    margin-top: 37px;
-  }
+// @media (max-width: 900px) {
+//   .gradient {
+//     align-items: stretch;
+//     margin: 1em 0;
+//     height: 62px;
+//     line-height: 2em;
+//     color: white;
+//     background: #ff7403;
+//     font-size: 29px;
+//     width: 70% !important;
+//     margin-top: 37px;
+//   }
 
-  .slider {
-    background: white;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-    height: 410px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    padding-bottom: 15%;
-    animation: linear infinite;
-    border-radius: 0px;
-  }
-}
+//   .slider {
+//     background: white;
+//     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+//     height: 410px;
+//     margin: auto;
+//     overflow: hidden;
+//     position: relative;
+//     width: 100%;
+//     padding-bottom: 15%;
+//     animation: linear infinite;
+//     border-radius: 0px;
+//   }
+// }
 
 .mx-auto {
   margin-right: auto !important;
   margin-left: auto !important;
 }
+
+@media (max-width: 1298px) {
+  .placement {
+    .placementcard {
+      height: 18rem;
+      .circle-container {
+        width: 7rem;
+        height: 7rem;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-left: 2px;
+      }
+      .card-text-color {
+        height: 8rem;
+      }
+    }
+  }
+}
+@media (max-width: 1063px) {
+  .placement {
+    .placementcard {
+      height: 10rem;
+      width: 9rem;
+      .circle-container {
+        width: 5rem;
+        height: 4rem;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-left: 2px;
+      }
+      .card-text-color {
+        height: 5rem;
+        .placements{
+          padding: 2px;
+        }
+        .text-center{
+          font-size: 8px;
+        }
+      }
+    }
+  }
+}
+

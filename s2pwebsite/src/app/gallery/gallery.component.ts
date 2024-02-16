@@ -54,4 +54,8 @@ export class GalleryComponent implements OnInit {
 
     });
   }
+  openImage(imageUrl: string) {
+    console.log('Opening image:', imageUrl);
+    window.open(imageUrl, '_blank');
+  }
 }

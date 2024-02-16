@@ -31,7 +31,7 @@
               <div class="tz-gallery">
                 <div class="row">
                   <div class="col-sm-12 col-md-4" *ngFor="let item of imageArr">
-                    <a class="lightbox">
+                    <a class="lightbox" (click)="openImage(item.image)">
                       <img *ngIf="item.image" src={{item.image}} alt="placeholder">
                     </a>
                   </div>
