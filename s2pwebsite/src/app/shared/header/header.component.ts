@@ -6,7 +6,7 @@ import { Router,RouterModule } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  
+  headerVisible = true;
   text: any = '';
   active: any = '';
 
@@ -33,6 +33,8 @@ export class HeaderComponent {
       inline : 'nearest'
     });
   }
+
+  
   ngOnInit(): void {
     
     this.navigate.emit('Home')
@@ -42,7 +44,7 @@ export class HeaderComponent {
     window.scrollTo(0, 0);
   }
   lastScrollTop = 0;
-  headerVisible = true;
+  // headerVisible = true;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

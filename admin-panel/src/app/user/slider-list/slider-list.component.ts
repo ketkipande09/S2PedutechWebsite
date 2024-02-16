@@ -63,14 +63,14 @@ export class SliderListComponent implements OnInit {
     );
   }
 
-  updateSlider(s:any){
+  // updateSlider(s:any){
 
-    this.router.navigate(['/user/slider'],{
-      queryParams:{
-          id:s.id 
-      }
-    });
-  }
+  //   this.router.navigate(['/user/slider'],{
+  //     queryParams:{
+  //         id:s.id 
+  //     }
+  //   });
+  // }
 
   open(s: any, content: any){
     this.selectedRow = s;

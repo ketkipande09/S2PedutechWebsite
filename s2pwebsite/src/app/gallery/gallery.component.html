@@ -32,7 +32,7 @@
                 <div class="row">
                   <div class="col-sm-12 col-md-4" *ngFor="let item of maindata">
                     <a class="lightbox">
-                      <img src={{item.image}} alt="">
+                      <img *ngIf="item.image" src={{item.image}} alt="placeholder">
                     </a>
                   </div>
                 </div>
@@ -45,9 +45,9 @@
               <div class="tz-gallery">
                 <div class="row">
                   <div class="col-sm-12 col-md-4" *ngFor="let item of maindata">
-                    <a class="lightbox">
-                      <iframe src={{item.videoUrl}} frameborder="0"></iframe>
-                    </a>
+                    <iframe *ngIf="item.videoUrl" width="100%" height="315" [src]="sanitizeVideoUrl(item.videoUrl)"
+                      frameborder="0" allowfullscreen>
+                    </iframe>
                   </div>
                 </div>
               </div>
