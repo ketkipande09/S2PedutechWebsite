@@ -45,16 +45,14 @@
               <div class="tz-gallery">
                 <div class="row">
                   <div class="col-sm-12 col-md-4" *ngFor="let item of maindata">
-                    <iframe *ngIf="item.videoUrl" width="100%" height="315" [src]="item.videoUrl" frameborder="0"
-                      allowfullscreen>
+                    <iframe *ngIf="item.videoUrl" width="100%" height="315" [src]="sanitizeVideoUrl(item.videoUrl)"
+                      frameborder="0" allowfullscreen>
                     </iframe>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
