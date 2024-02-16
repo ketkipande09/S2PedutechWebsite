@@ -44,11 +44,10 @@
             <div class="container gallery-container">
               <div class="tz-gallery">
                 <div class="row">
-                  <div class="col-sm-12 col-md-4">
-                    <!-- <a class="lightbox" href="https://youtu.be/dED71u5oH9M">
-                      <img src="../../assets/gallery/Screenshot 2023-05-17 113220.png" alt="Bridge">
-                    </a> -->
-                    <script src="https://www.instagram.com/reel/CzbqFhgidLy/?igsh=MTQxY3ByZjNnNDhlNA"></script>
+                  <div class="col-sm-12 col-md-4" *ngFor="let item of maindata">
+                    <a class="lightbox">
+                      <iframe src={{item.videoUrl}} frameborder="0"></iframe>
+                    </a>
                   </div>
                 </div>
               </div>

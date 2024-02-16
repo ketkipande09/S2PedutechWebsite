@@ -29,7 +29,7 @@ export class GalleryComponent implements OnInit{
   getAll() {
     this.user.getAllSliders().subscribe((data: any) => {
        this.maindata = data.result.slider;
-       console.log('maindata', this.maindata);
+       console.log('maindata---->', this.maindata);
        
     });
   }

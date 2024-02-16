@@ -414,5 +414,10 @@ body {
 
 
 @media(max-width: 576px){
-
+.ng-template{
+  width: 50%;
+}
+.modal-content{
+  width: 30%;
+}
 }
