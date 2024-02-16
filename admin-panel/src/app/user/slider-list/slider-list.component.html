@@ -24,8 +24,9 @@
                     <tbody class="tbody mt-3">
                         <tr *ngFor="let s of imageArr; let i=index">
                             <td scope="row">{{i+1}}</td>
-                            <td scope="row"><img *ngIf="s.image" src="{{s.image}}" alt="placeholder" height="50" width="50"></td>
-                            <td scope="row">{{s.videoUrl}}</td>
+                            <td scope="row"><img *ngIf="s.image" src="{{s.image}}" alt="placeholder" height="50"
+                                    width="50"></td>
+                            <td scope="row"><span *ngIf="s.videoUrl">{{s.videoUrl}}</span></td>
                             <td scope="row" class=" text-center">
                                 <!-- <button class="btn btn-outline-warning btn-sm " style="width: 30px;"
                                     (click)="updateSlider(s)" ngbTooltip="Update"><i

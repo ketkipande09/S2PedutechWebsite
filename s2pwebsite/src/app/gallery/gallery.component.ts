@@ -11,6 +11,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class GalleryComponent implements OnInit {
   selectedTab: any;
   maindata: any = [];
+  imageArr: any = []
+  videoArr: any = []
 
   constructor(private user: UserService, private router: Router, private sanitizer: DomSanitizer) {
   }
@@ -33,7 +35,23 @@ export class GalleryComponent implements OnInit {
   }
   getAll() {
     this.user.getAllSliders().subscribe((data: any) => {
-      this.maindata = data.result.slider.filter((x: any) => x.image || x.videoUrl);
+      this.maindata = data.result.slider
+      this.imageArr = this.maindata.map((x: any) => {
+        return {
+          image: x.image
+        }
+        return
+      }).filter((y: any) => y.image)
+
+
+      this.videoArr = this.maindata.map((x: any) => {
+        return {
+          videoUrl: x.videoUrl
+        }
+        return
+      }).filter((y: any) => y.videoUrl)
+
+
     });
   }
 }
