@@ -256,82 +256,7 @@ $animationSpeed: 15s;
   }
 }
 
-// Gradients
-.gradient {
-  align-items: stretch;
-  margin: 1em 0;
-  height: 2em;
-  line-height: 2em;
-  color: white;
-  background: rgb(255, 116, 3);
-  font-size: 40px;
 
-  &:before {
-    background: linear-gradient(to right, white, rgb(255, 116, 3));
-  }
-
-  &:after {
-    background: linear-gradient(to left, white, rgb(255, 116, 3));
-  }
-}
-
-body {
-  margin: 40px;
-}
-
-.divider {
-  display: flex;
-
-  &:before,
-  &:after {
-    content: "";
-    flex: 1;
-  }
-}
-
-@media (max-width: 900px) {
-  .slider2 {
-    background: white;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-    height: 190px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 97%;
-    padding-bottom: 15%;
-    animation: linear infinite;
-    border-radius: 0px;
-    padding-top: 0px;
-    margin-bottom: 17%;
-    margin-top: -6%;
-    margin-left: 6px;
-  }
-
-  .gradient {
-    align-items: stretch;
-    margin: 1em 0;
-    height: 62px;
-    line-height: 2em;
-    color: white;
-    background: #ff7403;
-    font-size: 29px;
-    width: 100% !important;
-    margin-top: 37px;
-  }
-
-  .slider2 {
-    background: white;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-    height: 190px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    padding-bottom: 15%;
-    animation: linear infinite;
-    border-radius: 0px;
-  }
-}
 
 // step
 .stepcontainer {
@@ -342,28 +267,29 @@ body {
   margin-bottom: 3rem;
   // height: 25rem;
 
-  .slider1 {
-    background-color: #1e2c7c;
-    margin-top: 1.5rem;
-    overflow: hidden;
-    position: relative;
-    animation: linear infinite;
-  }
+  // .slider1 {
+  //   background-color: #1e2c7c;
+  //   margin-top: 1.5rem;
+  //   overflow: hidden;
+  //   position: relative;
+  //   animation: linear infinite;
+  // }
 
-  .slide-track {
-    animation: scroll $animationSpeed linear infinite;
-    display: flex;
-    width: calc(250px * 80);
-  }
+  // .slide-track {
+  //   animation: scroll $animationSpeed linear infinite;
+  //   display: flex;
+  //   width: calc(250px * 80);
+  // }
 
-  .container1 {
-    width: 80%;
-  }
+  // .container1 {
+  //   width: 80%;
+  // }
 
-  &:hover div {
-    animation-play-state: paused;
-  }
+  // &:hover div {
+  //   animation-play-state: paused;
+  // }
 }
+
 
 .heading1 {
   padding: 10px 150px;

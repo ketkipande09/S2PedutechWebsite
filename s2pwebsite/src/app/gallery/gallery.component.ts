@@ -36,4 +36,8 @@ export class GalleryComponent implements OnInit {
       this.maindata = data.result.slider.filter((x: any) => x.image || x.videoUrl);
     });
   }
+  openImage(imageUrl: string) {
+    console.log('Opening image:', imageUrl);
+    window.open(imageUrl, '_blank');
+  }
 }

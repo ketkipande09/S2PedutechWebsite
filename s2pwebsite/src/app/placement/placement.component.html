@@ -104,27 +104,24 @@
 
     <div class="row mt-5">
       <marquee onmouseover="this.stop()" onmouseout="this.start()" [scrollAmount]="12">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
           <div class="palcement d-flex">
             <div class="slide" *ngFor="let place of readList;let i = index">
-              <div class="card d-flex" [ngClass]="{'blue-background': i % 2 === 0, 'green-background': i % 2 !== 0}">
+              <div class="card placementcard d-flex" [ngClass]="{'blue-background': i % 2 === 0, 'green-background': i % 2 !== 0}">
                 <div class="circle-container">
                   <img src="{{ place.image }}" class="card-img-top circular-img" alt="..." />
                 </div>
                 <div class="card-body card-text-color">
-                  <div class="row mt-3">
+                  <div class="row bodyrow">
                     <h5 class="text-center">Name:- {{ place.studentName }}</h5>
-                    <h5 class="text-center pt-2">
+                    <h5 class="text-center">
                       College:- {{ place.collage }}
                     </h5>
+                    <h5 class="text-center">
+                      Company:- {{ place.company }}
+                    </h5>
                   </div>
-                  <div class="row placements">
-                    <div class="col">
-                      <h5 class="px-3 text-center">
-                        Company:- {{ place.company }}
-                      </h5>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -132,6 +129,10 @@
         </div>
       </marquee>
     </div>
+
+
+
+
 
 
 

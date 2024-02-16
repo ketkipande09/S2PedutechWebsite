@@ -22,7 +22,8 @@
   color: black;
 }
 .gallery-container {
-  background-color: #fafafa;
+  // background-color: #fafafa;
+  background-image: url('../../assets/gallery.jpg');
   color: #ffffff;
   padding: 30px 50px;
   width: 100%;
@@ -32,6 +33,8 @@
   border-radius: 0;
   position: relative;
   height: 15rem;
+  padding-bottom: 24px;
+  cursor: pointer;
 }
 
 
