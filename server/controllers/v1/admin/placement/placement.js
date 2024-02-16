@@ -71,11 +71,11 @@ const placementObj = {
             if (req.query.search) {
                 whereQuery = {
                     [Op.and]: [
-                        { status: OPTIONS.defaultStatus.ACTIVE },
                         {
                             [Op.or]: [
                                 { studentName: { [Op.substring]: req.query.search } },
-                                { collegeName: { [Op.substring]: req.query.search } },
+                                { collage: { [Op.substring]: req.query.search } },
+                                { company: { [Op.substring]: req.query.search } },
                             ],
                         },
                     ],
