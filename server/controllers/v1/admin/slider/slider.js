@@ -16,22 +16,27 @@ const sliderObj = {
   //** Create event */
   createSlider: async (req, res) => {
     try {
-      let query = {
-        // where: {
-        //   [Op.or]: [{ name: req.body.name }],
-        // },
-      };
-    
+      let query = {};
       let existingSlider = await Slider.findOne(query);
       var createObj = new Slider();
       var sliderObj = req.body;
+
       if (req.file) {
         sliderObj.image = req.file.filename;
       }
+      if (sliderObj.image == undefined || sliderObj.image == null) {
+        sliderObj.image = null;
+      }
+      if (sliderObj.videoUrl == undefined || sliderObj.videoUrl == null) {
+        sliderObj.videoUrl = null;
+      }
+
       Object.keys(sliderObj).forEach((key, index) => {
         createObj[key] = sliderObj[key];
       });
+
       let slider = await createObj.save();
+
       return res.status(resCode.HTTP_OK).json(
         generateResponse(resCode.HTTP_OK, {
           message: MESSAGES.apiSuccessStrings.ADDED(`This Detail is`),
@@ -45,6 +50,8 @@ const sliderObj = {
       throw new Error(e);
     }
   },
+
+
   //** Event listing */
   getSliderListing: async (req, res) => {
     try {
@@ -133,9 +140,8 @@ const sliderObj = {
         var sliderObject = req.body;
         if (req.file) {
           if (slider.image && slider.image != 'undefined') {
-            let path = `assets/sliderImage/${
-              slider.image.split('sliderImage/')[1]
-            }`;
+            let path = `assets/sliderImage/${slider.image.split('sliderImage/')[1]
+              }`;
             if (fs.existsSync(path)) {
               fs.unlinkSync(path);
             }
@@ -223,7 +229,7 @@ const sliderObj = {
       let slider = await Slider.destroy(query);
       if (slider) {
         if (imagePath) {
-          let path = `assets/image/${imagePath.split('image/')[1]}`;
+          let path = `assets/sliderImage/${imagePath.split('image/')[1]}`;
 
           if (fs.existsSync(path)) {
             fs.unlinkSync(path);

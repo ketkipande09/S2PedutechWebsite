@@ -19,13 +19,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class SliderComponent implements OnInit {
   images: any;
   submitted = false;
-  showImageAndName: boolean = false;
   fileContent: any;
-  showVideoUrlSection: boolean = false;
   choosen: boolean = false;
   params: any;
   id: any;
-  isVideoUrlChecked: boolean = true;
   course: any;
   constructor(
     private validationService: ValidationService,
@@ -62,7 +59,7 @@ export class SliderComponent implements OnInit {
     id: new FormControl(),
     image: new FormControl(''),
     name: new FormControl(''),
-    videoUrl: new FormControl(''),
+    videoUrl: new FormControl('')
   });
 
   fileChoosen(event: any) {
@@ -88,66 +85,62 @@ export class SliderComponent implements OnInit {
     }
   }
 
-
-
-  // Function to handle the click event
-  showVideoUrl() {
-    this.showVideoUrlSection = !this.showVideoUrlSection;
-  }
-
-
-
-
-
-
   // createImage() {
   //   console.log(this.images);
   //   this.submitted = true;
-  //   if (this.sliderForm.invalid) {
-  //     this.toastService.warning('Please fill all required field !');
-  //     return;
+
+  //   const fd = new FormData();
+  //   if (this.images) {
+  //     this.spinner.show();
+  //     fd.append('key', 'slider');
+  //     fd.append('image', this.images, this.images.name);
+  //     fd.append('videoUrl', this.sliderForm.value.videoUrl);
+
+  //     // fd.append('studentName', this.sliderForm.value.studentName);
+  //     // fd.append('companyName', this.sliderForm.value.companyName);
+  //     // fd.append('collegeName', this.sliderForm.value.collegeName);
+  //     console.log('fd,,,,', fd);
+
+  //     this.userSer.createImage(fd).subscribe((data) => {
+  //       console.log(data);
+  //       this.router.navigate(['/user/slider-list']);
+  //       this.toastService.success('Gallery Created Successfully!');
+  //       this.spinner.hide();
+  //     });
   //   } else {
-  //     const fd = new FormData();
-  //     if (this.images) {
-  //       this.spinner.show();
-  //       fd.append('key', 'slider');
-  //       fd.append('image', this.images, this.images.name);
-  //       fd.append('name', this.sliderForm.value.name);
-  //       console.log('fd,,,,', fd);
-  //       this.userSer.createImage(fd).subscribe((data) => {
-  //         console.log(data);
-  //         this.router.navigate(['/user/slider-list']);
-  //         this.toastService.success('Gallery Created Successfully!');
-  //         //  this.modalService.dismissAll();
-  //         this.spinner.hide();
-  //       });
-  //     } else {
-  //       this.toastService.warning('Please upload images');
-  //     }
+  //     this.toastService.warning('Please upload images');
   //   }
   // }
+
   createImage() {
     this.submitted = true;
-    const fd = new FormData();
-    if (this.showVideoUrlSection) {
-      fd.append('key', 'slider');
-      fd.append('videoUrl', this.sliderForm?.value?.videoUrl);
-    } else {
-      fd.append('key', 'slider');
-      fd.append('image', this.images, this.images?.name);
-      fd.append('name', this.sliderForm?.value?.name);
-    }
     this.spinner.show();
+
+    const fd = new FormData();
+    fd.append('key', 'slider');
+
+    if (typeof this.images == 'object') {
+      fd.append('image', this.images, this.images.name);
+    } else {
+      const videoUrl = this.sliderForm.value.videoUrl;
+      if (videoUrl) {
+        fd.append('videoUrl', videoUrl);
+      } else {
+        this.toastService.error('Please provide either a image or videoUrl');
+        this.spinner.hide();
+        return;
+      }
+    }
     this.userSer.createImage(fd).subscribe(
       (data) => {
-        console.log(data);
+        console.log('API Response:', data);
         this.router.navigate(['/user/slider-list']);
         this.toastService.success('Gallery Created Successfully!');
         this.spinner.hide();
       },
       (error) => {
-        console.error(error);
-        this.toastService.error('Error creating gallery');
+        console.error('API Error:', error);
+        this.toastService.error('Failed to create gallery');
         this.spinner.hide();
       }
     );
@@ -156,27 +149,36 @@ export class SliderComponent implements OnInit {
 
 
 
-  updateImage() {
-    this.spinner.show();
-    this.submitted = true;
-    if (this.sliderForm.invalid) {
-      this.toastService.warning('Please fill all required field !');
-      return;
-    }
-    const fd = new FormData();
-    fd.append('key', 'slider');
-    fd.append('type', this.sliderForm.value.type);
-    fd.append('name', this.sliderForm.value.name);
-    if (this.images) {
-      fd.append('image', this.images, this.images.name);
-    }
-    this.userSer.updateImage(this.id, fd).subscribe((success) => {
-      console.log(success);
-      this.toastService.success('Gallery Update Successfully!');
-      this.spinner.hide();
-      this.router.navigate(['/user/slider-list']);
-    });
-  }
+
+
+
+  // updateImage() {
+  //   this.submitted = true;
+  //   this.spinner.show();
+
+  //   const fd = new FormData();
+  //   fd.append('key', 'slider');
+
+  //   if (typeof this.images == 'object') {
+  //     fd.append('image', this.images, this.images.name);
+  //   } else {
+  //     const videoUrl = this.sliderForm.value.videoUrl;
+  //     if (videoUrl) {
+  //       fd.append('videoUrl', videoUrl);
+  //     } else {
+  //       console.error('Neither TDSFile nor videoUrl provided');
+  //       this.toastService.error('Please provide either a TDSFile or videoUrl');
+  //       this.spinner.hide();
+  //       return;
+  //     }
+  //   }
+  //   this.userSer.updateImage(this.id, fd).subscribe((success) => {
+  //     console.log(success);
+  //     this.toastService.success('Gallery Update Successfully!');
+  //     this.spinner.hide();
+  //     this.router.navigate(['/user/slider-list']);
+  //   });
+  // }
   getSliderById() {
     this.userSer.getImageById(this.id).subscribe(
       (success: any) => {

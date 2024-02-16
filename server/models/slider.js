@@ -10,10 +10,6 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false,
       },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
       image: {
         type: DataTypes.STRING(1324),
         allowNull: true,
