@@ -4,11 +4,13 @@
   box-sizing: border-box;
 }
 .fixed-header {
-  position: fixed;
+  // position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000; 
 }
+ 
 .nav-links ul {
   position: absolute;
 

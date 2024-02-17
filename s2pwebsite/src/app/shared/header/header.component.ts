@@ -51,10 +51,10 @@ export class HeaderComponent {
      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
     if (currentScroll > this.lastScrollTop) {
       // Scrolling down
-      this.headerVisible = false;
+      this.headerVisible = true;
     } else {
       // Scrolling up
-      this.headerVisible = true;
+      this.headerVisible = false;
     }
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
