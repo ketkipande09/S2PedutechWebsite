@@ -1,10 +1,14 @@
 import { Component,EventEmitter,HostListener, Output } from '@angular/core';
-import { Router,RouterModule } from '@angular/router';
+import { Router,RouterModule, Routes } from '@angular/router';
+import { PlacementComponent } from 'src/app/placement/placement.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
+
 export class HeaderComponent {
   headerVisible = true;
   text: any = '';
@@ -33,6 +37,9 @@ export class HeaderComponent {
       inline : 'nearest'
     });
   }
+
+ 
+  
 
   
   ngOnInit(): void {
