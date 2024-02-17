@@ -1,66 +1,46 @@
-
-.cover {
-  background: #cdcccc86;
-  opacity: 1;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  
+.section-heading{
+  font: 50px poppin;
+  color: #333;
+  margin-right: 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
-h2 {
-  color: #0078B3;
+.card{
+  margin-bottom: 50px;
 }
-.background {
-  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg4.goodfon.com%2Fwallpaper%2Fbig%2Ff%2Fa0%2Fbackground-rainbow-colorful-splash-colors-bright-painting-fo.jpg&f=1&nofb=1
-);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
+.container {
+  background-color: #f9f9f9;
 }
-
-.contactInfo {
-  padding: 100px 30px;
+.left{
+  background-color: #ffa65e;
+  text-align: center;
+  padding-top: 100px;
+  .subhead{
+    margin-bottom: 50px;
+    font: 30px poppin;
+  }
+  .faq{
+    font: 18px poppin;
+    margin-bottom: 20px;
+  }
+  .phonecont{
+    font: 15px poppin;
+    margin-top: 50px;
+  }
+  .emailcont{
+    font: 15px poppin;
+  }
 }
-
-h6 {
-  font-size: 32px;
-  font-weight: 600;
-  color: #0d0c0c;
-  margin-bottom: 30px;
-  text-transform: capitalize;
-}
-
-.contactInfo .brief {
-  text-transform: capitalize;
-}
-
-.contactInfo p {
-  color: black;
-  font-size: 17px;
-  line-height: 30px;
-}
+.right{
+  background-color: #ffda6c;
 
 .contactForm {
-  padding: 40px 30px 0px 40px;
+  padding: 40px 30px 30px 40px;
 }
-
-.contactForm:before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 2;
-  bottom: 0;
-  left: 0;
-  border-radius: 2px;
-  box-shadow: 0px 7px 10px 0px rgba(255, 255, 255, 0.2);
-  background: #fff;
-  width: 100%;
-}
-
 .contactForm input {
   font-size: 16px;
   font-weight: 600;
-  transition: all 0.3s ease-in-out;
   border: 2px solid transparent;
   border-bottom-color: rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
@@ -68,7 +48,6 @@ h6 {
   font-weight: 600;
   height: 55px;
 }
-
 .contactForm textarea {
   font-size: 16px;
   font-weight: 600;
@@ -76,21 +55,18 @@ h6 {
   border: 2px solid transparent;
   border-bottom-color: rgba(0, 0, 0, 0.2);
 }
-
 .contactForm input:placeholder {
   color: #000;
   font-size: 16px;
   font-weight: 600;
   text-transform: capitalize;
 }
-
 .contactForm textarea:placeholder {
   color: #000;
   font-size: 16px;
   font-weight: 600;
   text-transform: capitalize;
 }
-
 .contactForm input:hover,
 .contactForm input:focus {
   outline: none;
@@ -98,7 +74,6 @@ h6 {
   border: 2px solid transparent;
   border-bottom-color: #41b4bf;
 }
-
 .contactForm textarea:hover,
 .contactForm textarea:focus {
   outline: none;
@@ -106,7 +81,6 @@ h6 {
   border: 2px solid transparent;
   border-bottom-color: #41b4bf;
 }
-
 .button {
   text-align: center;
   padding: 8px 20px;
@@ -129,68 +103,114 @@ h6 {
 .button:focus {
   outline: none;
 }
-
-.main {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
-.main-heading {
-  color: #000000;
-  text-transform: uppercase;
-}
-
-.main-heading-primary {
-  display: block;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 8px;
-  animation: moveInLeft 3s ease-out;
-  text-align: center;
-  margin-bottom: 138px;
-  margin-top: 50px;
-}
-
-
-
-
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
+@media (max-width: 768px) {
+  .section-heading{
+    font-size: 30px;
+    text-align: center;
   }
-
-  80% {
-    transform: translateX(10px);
+  .left{
+    text-align: center;
+    padding-top: 30px;
+    .subhead{
+      margin-bottom: 20px;
+      font: 20px poppin;
+    }
+    .faq{
+      font: 15px poppin;
+      margin-bottom: 10px;
+    }
+    .phonecont{
+      font: 12px poppin;
+      margin-top: 10px;
+    }
+    .emailcont{
+      font: 12px poppin;
+    }
   }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+  .right{
+    .contactForm input{
+      font-size: 12px;
+      margin-bottom: 30px;
+      font-weight: 600;
+      height: 35px;
+    }
+    .contactForm input:placeholder {
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .contactForm textarea {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+    .contactForm textarea:placeholder {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .button {
+      padding: 4px 10px;
+      font-size: 12px;
+      border-radius: 3px;
+      color: #fff;
+      font-weight: 500;
+    }
+  } 
 }
 
 
-@media (max-width: 900px) {
 
-  .contactForm:before {
-    
-    top: 10;
-    
-    bottom: 0;
-    left: 6px;
-    height: 80%;
-    width: 97%;
+@media (max-width: 376px) {
+  .section-heading{
+    font-size: 20px;
+    text-align: center;
   }
-  
-.main {
- 
-  top: 32%;
-  
-}
-
-
+  .left{
+    text-align: center;
+    padding-top: 20px;
+    .subhead{
+      margin-bottom: 10px;
+      font: 15px poppin;
+    }
+    .faq{
+      font: 12px poppin;
+      margin-bottom: 10px;
+    }
+    .phonecont{
+      font: 10px poppin;
+      margin-top: 10px;
+    }
+    .emailcont{
+      font: 10px poppin;
+    }
+  }
+  .right{
+    .contactForm input{
+      font-size: 10px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      height: 25px;
+    }
+    .contactForm input:placeholder {
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .contactForm textarea {
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 10px;
+    }
+    .contactForm textarea:placeholder {
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .button {
+      padding: 4px 8px;
+      font-size: 10px;
+      border-radius: 3px;
+      color: #fff;
+      font-weight: 500;
+    }
+  }
 }

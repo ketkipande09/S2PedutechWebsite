@@ -2,7 +2,9 @@
   <div class="container-fluid event" *ngIf="event.eventStatus">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-        <div class="eventhead" style="display: flex; flex-wrap: nowrap">
+        <div class="section-heading1">Our Latest Event</div>
+
+        <!-- <div class="eventhead" style="display: flex; flex-wrap: nowrap">
           <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 35%">
             <div class="green-line"></div>
           </div>
@@ -10,7 +12,7 @@
           <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 38%">
             <div class="green-line"></div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -24,7 +26,7 @@
           <div class="card-body">
             <div class="center">
               <h2 class="text">{{event.eventName}}</h2>
-              <h5>
+              <h5 class="description">
                 {{event.description}}
               </h5>
               <h3 class="text-center">Start Date: {{event.startDate | date}}</h3>
@@ -87,7 +89,9 @@
   <div class="container-fluid placement">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-        <div class="clienthead" style="display: flex; flex-wrap: nowrap">
+        <div class="section-heading1">Our Latest Placements</div>
+
+        <!-- <div class="clienthead" style="display: flex; flex-wrap: nowrap">
           <div fxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 32%">
             <div class="green-line"></div>
           </div>
@@ -97,7 +101,7 @@
           <div fxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 32%">
             <div class="green-line"></div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 

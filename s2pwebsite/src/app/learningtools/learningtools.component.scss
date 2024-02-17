@@ -28,18 +28,25 @@
     height: 2px;
     background-color: green;
   }
-  .section-heading1 {
+  .section-heading{
     font: 50px poppin;
     color: #333;
-    margin-left: 20px;
-    margin-top: -30px;
-    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .section-heading {
+      font-size: 30px;
+      text-align: center;
+    }
   }
   
-  @media (max-width: 964px) {
-  
-    .gap{
-    padding-top: 20px;
+  @media (max-width: 375px) {
+    .section-heading {
+      font-size: 25px;
+      text-align: center;
     }
   }
   

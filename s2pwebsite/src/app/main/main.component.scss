@@ -7,56 +7,9 @@
   font: 20px poppins;
   color: black;
   background-color:   #ffc107;
-  // background-color: #fedc71;
-  // #ffb45e
 }
 
 
-// .top-row {
-//   // background-image: url("../../assets/landingfinal.png");
-//   background-size: cover;
-//   position: relative;
-//   overflow-x: hidden;
-//   overflow-y: hidden;
-//   margin-top: -0.4rem;
-//   background-color: #fff7ba;
-//   // background-color: #fedc71;
-//   height: auto;
-// }
-// .text{
-//   padding-bottom: 2rem;
-//   color: red;
-//   font: 40px poppin;
-// }
-
-// .tophead {
-//   opacity: 0;
-//   animation: fadeIn 3s ease-in-out forwards;
-//   font: 40px poppin;
-//   }
-
-// .right{
-//   h1{
-//     text-align: center;
-//     margin-top: -2rem;
-//     font: bold;
-//   }
-// }
-
-// @keyframes fadeIn {
-//   from {
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//   }
-// }
-// .typing-animation {
-//   overflow: hidden;
-//   white-space: nowrap;
-//   display: inline-block;
-//   animation: typing 1s steps(40, end);
-// }
 .placement-counter {
   animation: count-up 2s ease-out forwards;
 }
@@ -77,6 +30,21 @@
 .img-fluid{
   height: 39.2rem;
   width: 150rem;
+}
+@media(max-width:768px){
+  .img-fluid{
+    height: 20rem;
+  }
+}
+@media(max-width:550px){
+  .img-fluid{
+    height: 15rem;
+  }
+}
+@media(max-width:375px){
+  .img-fluid{
+    height: 12rem;
+  }
 }
 
 

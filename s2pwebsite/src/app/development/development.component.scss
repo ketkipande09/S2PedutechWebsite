@@ -67,18 +67,17 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 1050; 
+    z-index: 1050;
     padding: 0;
     background-color: transparent;
     border: 0;
     cursor: pointer;
   }
-  
+
   .btn-close:focus {
     outline: none;
   }
 }
-
 
 .card22 {
   .card-body {
@@ -111,23 +110,13 @@
   background-color: green;
 }
 
-.section-heading1 {
+.section-heading {
   font: 50px poppin;
   color: #333;
-  margin-bottom: 5px;
-  margin-left: 20px;
-  margin-top: -30px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
-
-.section-heading2 {
-  font: 50px poppin;
-  color: #333;
-  margin-bottom: 5px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: -30px;
-}
-
 .card22 {
   .body {
     font: 20px poppin;
@@ -256,54 +245,28 @@ $animationSpeed: 15s;
   }
 }
 
-
-
 // step
 .stepcontainer {
-  // background-color: #ffe667;
   background-color: #1e2c7c;
   border-radius: 0 250px 0 250px;
   margin-top: 7rem;
   margin-bottom: 3rem;
-  // height: 25rem;
-
-  // .slider1 {
-  //   background-color: #1e2c7c;
-  //   margin-top: 1.5rem;
-  //   overflow: hidden;
-  //   position: relative;
-  //   animation: linear infinite;
-  // }
-
-  // .slide-track {
-  //   animation: scroll $animationSpeed linear infinite;
-  //   display: flex;
-  //   width: calc(250px * 80);
-  // }
-
-  // .container1 {
-  //   width: 80%;
-  // }
-
-  // &:hover div {
-  //   animation-play-state: paused;
-  // }
 }
-
-
 .heading1 {
   padding: 10px 150px;
   font: 50px poppins;
   color: #669fff;
 }
-
 .heading2 {
   font-weight: bold;
   font: 45px poppins;
   padding: 0px 150px;
   color: #ffffff;
 }
-
+.photorow {
+  margin-left: 50px;
+  margin-right: 50px;
+}
 .card-heading {
   padding: 0px 0px 0px 20px;
 }
@@ -329,6 +292,10 @@ $animationSpeed: 15s;
   width: 6rem;
   height: 6rem;
 }
+.photostep {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
 
 .bottom-text {
   margin-top: 10px;
@@ -338,12 +305,75 @@ $animationSpeed: 15s;
   color: #000000;
 }
 
+@media (max-width: 576px) {
+  .ng-template {
+    width: 50%;
+  }
+  .modal-content {
+    width: 30%;
+  }
+}
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+}
 
-@media(max-width: 576px){
-.ng-template{
-  width: 50%;
+@media (max-width: 426px) {
+  .stepcontainer {
+    .heading1 {
+      padding: 10px 10px;
+      font: 30px poppins;
+      color: #669fff;
+    }
+    .heading2 {
+      font: 25px poppins;
+      padding: 0px 10px;
+    }
+    .photorow {
+      .photostep {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        padding-left: 5rem;
+      }
+    }
+    .step {
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      font: 15px poppins;
+    }
+  }
 }
-.modal-content{
-  width: 30%;
-}
+
+@media (max-width: 375px) {
+  .section-heading {
+    font-size: 25px;
+    text-align: center;
+  }
+  .stepcontainer {
+    .heading1 {
+      padding: 10px 10px;
+      font: 20px poppins;
+      color: #669fff;
+    }
+    .heading2 {
+      font: 15px poppins;
+      padding: 0px 10px;
+    }
+    .photorow {
+      .photostep {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+      }
+    }
+    .step {
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      font: 12px poppins;
+    }
+  }
 }
