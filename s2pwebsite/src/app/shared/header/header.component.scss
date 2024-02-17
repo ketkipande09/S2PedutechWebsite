@@ -9,14 +9,10 @@
   width: 100%;
   z-index: 1000; 
 }
-
-
-
 .nav-links ul {
   position: absolute;
 
 }
-
 nav {
   height: 70px;
   position: sticky;
@@ -33,12 +29,12 @@ a {
   cursor: pointer;
 }
 a:hover {
-  transition: 0.2s;
-  font-size: 18px;
+color: rgb(17, 10, 245);
+transform: scale(1.1);
+transition: all ease 0.5s;
+
 }
-a:visited {
-  color: #005b75;
-}
+
 
 .nav-links {
   width: 100%;
@@ -100,12 +96,6 @@ img {
   padding: 18px;
   font-size: 18px;
   border: none;
-
-  &:hover {
-    transform: scale(1.25);
-    transition: all ease 0.5s;
-    color: rgb(17, 10, 245);
-  }
 }
 
 @media (max-width: 900px) {
