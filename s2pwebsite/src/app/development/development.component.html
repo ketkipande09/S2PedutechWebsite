@@ -21,7 +21,7 @@
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mobile">
 
-                
+
                 <div class="card move content card01" (click)="openVerticallyCentered(longContent)">
                   <img src="../../../../../assets/website.png" class="image mt-4" alt="..." />
                   <div class="card-body mt-4">
@@ -29,26 +29,41 @@
                       <strong>Website Development</strong>
                     </h5>
                   </div>
-                  <div class="modal-content">
-                  <ng-template  #longContent let-modal>
-                    <div class="modal-body justify-content-center" >
-                      <div class="d-flex justify-content-center">                        
-                      <h4 class="modal-title">Website Development</h4>
-                      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-                    </div>
-                    <h5 class="subheading">Our Notable Works</h5>
+                  <div class="modal-content bg-light">
+                    <ng-template #longContent let-modal>
+                      <div class="modal-body text-center">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                          <h3 class="modal-title font-weight-bold text-primary">Elevate Your Online Presence</h3>
+                          <button type="button" class="btn-close" aria-label="Close"
+                            (click)="modal.dismiss('Cross click')"></button>
+                        </div>
+                        <h4 class="subheading text-secondary mb-3">Explore Our Noteworthy Website Development Projects
+                        </h4>
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <span class="text-primary font-weight-bold">Reshimbandh - </span> Matrimonial website
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary font-weight-bold">Adarsh Vidya Mandir - </span> A Dynamic website
+                            for Group of College
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary font-weight-bold">Nagpur Tahelka - </span> A local news portal
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary font-weight-bold">Famocop - </span> Website of e-commerce platform
+                          </li>
+                          <li class="list-group-item">
+                            <span class="text-primary font-weight-bold">Steelteq - </span> A Website for Structural
+                            engineering company
+                          </li>
+                        </ul>
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
 
-                    <p><b>Reshimbandh - </b>Matrimonial website</p>
-                    <p><b>Adarsh Vidya Mandir - </b>A Dynamic website for Group of College</p>
-                    <p><b>Nagpur Tahelka - </b>A local news portal</p>
-                    <p><b>Famocop - </b>Website of e-com platform</p>
-                    <p><b>Steelteq - </b>A Website for Structural engineering company</p>
-                    <p><b>Riovik - </b>A Website for Structural engineering company</p>
-                    
-                    </div>
-                  </ng-template>
-                </div>
-                </div>
+
 
                 <div class="card card01 mt-3" (click)="openVerticallyCentered(longContent1)">
                   <img src="../../../../../assets/mobile.png" class="image mt-4" alt="..." />
@@ -59,28 +74,32 @@
                   </div>
                   <ng-template #longContent1 let-modal>
                     <div class="modal-body">
-                      <div class="d-flex justify-content-center">                        
+                      <div class="d-flex justify-content-center">
                         <h4 class="modal-title">Web Application Development</h4>
-                        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                        <button type="button" class="btn-close" aria-label="Close"
+                          (click)="modal.dismiss('Cross click')"></button>
                       </div>
                       <h5 class="subheading">Our Notable Works</h5>
 
-                    <p><b>IDMS - </b>An SAAS based ERP for SSI & MSSI's</p>
-                    <p><b>Femi9world - </b>An E-Commerce apparel shopping Website</p>
-                    <p><b>Rapid Proposal - </b>A multi user platform for creating, editing, sharing proposals</p>
-                    <p><b>GPF - </b>A Platform for an NGO to connect the Mentors & Mentees</p>
-                    <p><b>Call Analytics - </b>A SASS based platform for getting run time analytics for Call center data.</p>
-                    <p><b>Legaci - </b>A Web app for preparing Legal Wills</p>
-                    <p><b>Emerge - </b>A Web App for Bank Card Management</p>
-                    <p><b>Mapple Provision - </b>A Platform for Colleges, Companies and students for hiring skilled resources</p>
-                    <p><b>Find my Money - </b>A web app to Find clients lost money in Shares and Debentures in quick steps.</p>
+                      <p><b>IDMS - </b>An SAAS based ERP for SSI & MSSI's</p>
+                      <p><b>Femi9world - </b>An E-Commerce apparel shopping Website</p>
+                      <p><b>Rapid Proposal - </b>A multi user platform for creating, editing, sharing proposals</p>
+                      <p><b>GPF - </b>A Platform for an NGO to connect the Mentors & Mentees</p>
+                      <p><b>Call Analytics - </b>A SASS based platform for getting run time analytics for Call center
+                        data.</p>
+                      <p><b>Legaci - </b>A Web app for preparing Legal Wills</p>
+                      <p><b>Emerge - </b>A Web App for Bank Card Management</p>
+                      <p><b>Mapple Provision - </b>A Platform for Colleges, Companies and students for hiring skilled
+                        resources</p>
+                      <p><b>Find my Money - </b>A web app to Find clients lost money in Shares and Debentures in quick
+                        steps.</p>
                     </div>
                   </ng-template>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mobile">
-                
-                <div class="card card01 mt-3" (click)="openVerticallyCentered(longContent2)" >
+
+                <div class="card card01 mt-3" (click)="openVerticallyCentered(longContent2)">
                   <img src="../../../../../assets/webs app development.png" class="image mt-4" alt="..." />
                   <div class="card-body mt-4">
                     <h5 class="card-text">
@@ -89,21 +108,22 @@
                   </div>
                   <ng-template #longContent2 let-modal>
                     <div class="modal-body">
-                      <div class="d-flex justify-content-center">                        
+                      <div class="d-flex justify-content-center">
                         <h4 class="modal-title">Mobile App Development</h4>
-                        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                        <button type="button" class="btn-close" aria-label="Close"
+                          (click)="modal.dismiss('Cross click')"></button>
                       </div>
                       <h5 class="subheading">Our Notable Works</h5>
-                     
-                        <p><b>	Famocop -</b>  A super application for online shopping</p>
-                        <p><b>	Bharat Online -</b>  A super application for online shopping</p>
-                        <p><b>	Kanak Mart -</b> An app for online Fruits & Veetables shopping</p>
-                        <p><b>	The Shredded Farmer -</b> An app for online fitness coaching (Mudgal)</p>
-                        <p><b>	Emerge -</b> An app for seaching jobs</p>
-                        <p><b>	Enerty -</b> An app for energy audit</p>
-                        <p><b>	OHO Radio -</b> A radio application</p>
-                        
-                      
+
+                      <p><b> Famocop -</b> A super application for online shopping</p>
+                      <p><b> Bharat Online -</b> A super application for online shopping</p>
+                      <p><b> Kanak Mart -</b> An app for online Fruits & Veetables shopping</p>
+                      <p><b> The Shredded Farmer -</b> An app for online fitness coaching (Mudgal)</p>
+                      <p><b> Emerge -</b> An app for seaching jobs</p>
+                      <p><b> Enerty -</b> An app for energy audit</p>
+                      <p><b> OHO Radio -</b> A radio application</p>
+
+
                     </div>
                   </ng-template>
                 </div>
@@ -124,12 +144,17 @@
                     <div class="head">
                       <strong>WHAT WE DO ?</strong>
                     </div>
-                    <div class="headingtext">
-                      We are a team of young and talented and energetic developers who are keen on taking up new challenge everytime. 
-                      If you wish to build a simple website, or a Web Application or a Mobile Application for your business, contact us, and we would be happy to help. 
-                      Our Team specializes in creating beautiful UI in Angular and API's in NodeJS supporting MySQL/MongoDB Database. 
-                      We also have good expertise in creating Hybrid/Cross Platform mobile applications using Ionic Framework. 
-                      Also, if you are in search of resources in MEAN Stack/Java Full Stack/ SAP Hybris, you have come to the right place. 
+                    <div class="text-center headingtext">
+                      We are a team of young and talented and energetic developers who are keen on taking up new
+                      challenge everytime.
+                      If you wish to build a simple website, or a Web Application or a Mobile Application for your
+                      business, contact us, and we would be happy to help.
+                      Our Team specializes in creating beautiful UI in Angular and API's in NodeJS supporting
+                      MySQL/MongoDB Database.
+                      We also have good expertise in creating Hybrid/Cross Platform mobile applications using Ionic
+                      Framework.
+                      Also, if you are in search of resources in MEAN Stack/Java Full Stack/ SAP Hybris, you have come
+                      to the right place.
                       Our teams average experience is 2-3 years and our commitment is no less.
                     </div>
                   </div>
@@ -149,14 +174,14 @@
     style="height: max-content">
     <div class="heading1 row">How We Work</div>
     <div class="heading2 subheading row">Roadmap To Your Success</div>
-    
+
     <div class="container containerphoto">
       <div class="row photorow">
         <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-12 col-xl-12 col-xxl-12"
         style="padding-top: 1.5rem; padding-bottom: 3rem"> -->
         <!-- <div class="d-flex justify-content-center"> -->
 
-          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2 photostep">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2 photostep">
           <div class="card-heading">
             <div class="step">Step 1</div>
             <div class="card stepcard justify-content-center">
