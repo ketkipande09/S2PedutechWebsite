@@ -3,26 +3,24 @@
   padding-bottom: 2rem;
   background-color: #fdf0e0;
 }
+
 // .eventhead {
 //   .green-line {
 //     height: 2px;
 //     background-color: green;
 //     margin-top: 3rem;
 //   }
-  .section-heading1 {
-    font: 50px poppin;
-    color: #333;
-    margin-bottom: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 1rem;
-    padding-bottom: 30px;
-    text-align: center;
-  }
+.section-heading1 {
+  font: 50px poppin;
+  color: #333;
+  text-align: center;
+}
+
 // }
 .eventcontainer {
   padding: 0px 20px;
 }
+
 .center {
   h2 {
     text-align: center;
@@ -30,48 +28,59 @@
     font: 30px poppin;
     color: #333;
   }
+
   h5 {
     font: 20px poppin;
     padding: 10px;
   }
+
   h3 {
     font: 24px poppin;
     padding: 10px;
   }
 }
+
 .eventimage {
   height: 20rem;
   width: 30rem;
 }
+
 .qrimage {
   height: 10rem;
   width: 12rem;
 }
+
 .eventcard {
   background-color: #fff3e6;
   border-width: 2px;
 }
+
 .modal-content {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 .modal-body {
   padding: 20px;
 }
+
 .modal-img img {
   max-width: 15rem;
   height: 15rem;
 }
+
 .modal-text {
   h1 {
     font: 30px poppin;
     text-align: center;
   }
+
   h5 {
     font: 20px poppin;
     margin-top: 10px;
   }
+
   h3 {
     font: 25px poppin;
     margin-top: 2rem;
@@ -86,6 +95,7 @@
   padding-left: 10rem;
   padding-top: 20px;
 }
+
 .knowbutton {
   display: inline-block;
   padding: 10px 20px;
@@ -99,82 +109,94 @@
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
+
 .knowbutton:hover {
   background-color: #ff8a00;
   color: #fff;
 }
 
-@media(max-width: 1200px){
-.eventcontainer{
-  .eventcard{
-    .eventimage{
-      height: 15rem;
-      width: 18rem;
-    }
-    .center{
-      .text{
-        font-size: 22px;
+@media(max-width: 1200px) {
+  .eventcontainer {
+    .eventcard {
+      .eventimage {
+        height: 15rem;
+        width: 18rem;
       }
-      .description{
-        font-size: 18px;
-      }
-      .text-center{
-        font-size: 16px;
-        padding: 0px;
-      }
-      .knowbutton{
-        font-size: 12px;
-        height: max-content;
-        width: max-content;
-        padding: 5px;
-       position: relative;
-      //  right: rem;
+
+      .center {
+        .text {
+          font-size: 22px;
+        }
+
+        .description {
+          font-size: 18px;
+        }
+
+        .text-center {
+          font-size: 16px;
+          padding: 0px;
+        }
+
+        .knowbutton {
+          font-size: 12px;
+          height: max-content;
+          width: max-content;
+          padding: 5px;
+          position: relative;
+          //  right: rem;
+        }
       }
     }
   }
 }
-}
-@media(max-width: 768px){
-  .section-heading1{
+
+@media(max-width: 768px) {
+  .section-heading1 {
     font-size: 30px;
     text-align: center;
   }
-  .eventcontainer{
-    .eventcard{
-      .eventimage{
+
+  .eventcontainer {
+    .eventcard {
+      .eventimage {
         height: 10rem;
         width: 15rem;
         margin-top: 20px;
       }
-      .center{
-      .text{
-        font-size: 18px;
-      }
-      .description{
-        font-size: 12px;
-      }
-      .text-center{
-        font-size: 15px;
-        padding: 0px;
-      }
-      .knowbutton{
-        font-size: 10px;
-        height: max-content;
-        width: max-content;
-        padding: 5px;
-       position: relative;
-       right: 5rem;
-      }
+
+      .center {
+        .text {
+          font-size: 18px;
+        }
+
+        .description {
+          font-size: 12px;
+        }
+
+        .text-center {
+          font-size: 15px;
+          padding: 0px;
+        }
+
+        .knowbutton {
+          font-size: 10px;
+          height: max-content;
+          width: max-content;
+          padding: 5px;
+          position: relative;
+          right: 5rem;
+        }
       }
     }
   }
+}
+
+@media (max-width: 375px) {
+  .section-heading1 {
+    font-size: 25px;
+    text-align: center;
   }
-  @media (max-width: 375px) {
-    .section-heading1{
-      font-size: 25px;
-      text-align: center;
-    }
-  }
+}
 
 
 
@@ -183,19 +205,15 @@
 .placement {
   padding-top: 50px;
   padding-bottom: 50px;
+
   h2 {
     color: #0078b3;
   }
+
   .card {
-    width: 16rem;
-    height: 21rem;
     border-radius: 10px;
     align-items: center;
     padding-top: 20px;
-
-    img {
-      border-radius: 10px;
-    }
 
     h5 {
       font: 20px poppins;
@@ -221,6 +239,7 @@
     transform: scale(1.06);
     transition: all ease 0.5s;
   }
+
   .center {
     display: flex;
     justify-content: center;
@@ -234,16 +253,15 @@ body {
   display: flex;
   justify-content: center;
 }
+
 h2 {
   color: #0078b3;
 }
 
 @mixin white-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 @keyframes scroll {
@@ -271,6 +289,9 @@ h2 {
 //     padding-bottom: 30px;
 //   }
 // }
+.placementclass {
+  width: 250px;
+}
 
 .palcement {
   margin: auto;
@@ -304,11 +325,11 @@ h2 {
     left: 0;
     top: 0;
   }
+
   .slide {
-    height: 100px;
-    width: 250;
     padding: 20px;
     border-radius: 2px;
+    width: 300px;
   }
 
   .circle-container {
@@ -331,7 +352,8 @@ h2 {
     border-radius: 50%;
   }
 }
-.bodyrow{
+
+.bodyrow {
   padding-top: 5px;
 }
 
@@ -394,7 +416,6 @@ body {
 @media (max-width: 1298px) {
   .placement {
     .placementcard {
-      height: 18rem;
       .circle-container {
         width: 7rem;
         height: 7rem;
@@ -402,17 +423,18 @@ body {
         border-radius: 50%;
         margin-left: 2px;
       }
+
       .card-text-color {
         height: 8rem;
       }
     }
   }
 }
+
 @media (max-width: 1063px) {
   .placement {
     .placementcard {
-      height: 10rem;
-      width: 9rem;
+
       .circle-container {
         width: 5rem;
         height: 4rem;
@@ -420,12 +442,15 @@ body {
         border-radius: 50%;
         margin-left: 2px;
       }
+
       .card-text-color {
         height: 5rem;
-        .placements{
+
+        .placements {
           padding: 2px;
         }
-        .text-center{
+
+        .text-center {
           font-size: 8px;
         }
       }
@@ -433,3 +458,9 @@ body {
   }
 }
 
+.img-fluid {
+  min-height: 200px;
+  max-height: 200px;
+  min-width: 200px;
+  max-width: 200px;
+}
