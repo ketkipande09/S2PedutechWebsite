@@ -19,25 +19,53 @@
     <div class="container eventcontainer">
       <div class="card eventcard">
         <div class="row">
-          <div class="col-md-6 d-flex justify-content-center align-items-center">
-            <img src="{{event.image}}" class="eventimage" alt="" />
+          <div
+            class="col-md-6 d-flex justify-content-center align-items-center"
+          >
+            <img src="{{ event.image }}" class="eventimage" alt="" />
           </div>
           <div class="col-md-6">
             <div class="card-body">
               <div class="center">
-                <h2 class="text">{{event.eventName}}</h2>
+                <h2 class="text">{{ event.eventName }}</h2>
                 <h5 class="description">
-                  {{event.description}}
+                  {{ event.description }}
                 </h5>
-                <h3 class="text-center">Start Date: {{event.startDate | date}}</h3>
-                <h3 class="text-center">End Date:{{event.endDate | date }}</h3>
+
+                <div class="calendar d-flex justify-content-evenly">
+                  <div class="image-container right">
+                    <h4 class="text-center">Start Date:</h4>
+                    <img src="../../assets/calendar.png"
+                      class="startcalendar"
+                      alt="image"/>
+                    <div class="overlay-text">
+                      <h3>{{ event.startDate | date }}</h3>
+                    </div>
+                  </div>
+                  <div class="image-container left">
+                    <h4 class="text-center">End Date:</h4>
+                    <img
+                      src="../../assets/calendar.png"
+                      class="startcalendar"
+                      alt="image"/>
+                    <div class="overlay-text">
+                      <h3>{{ event.endDate | date }}</h3>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <h3 class="text-center">End Date:{{event.endDate | date }}</h3> -->
 
                 <div class="button">
                   <ng-template #content let-modal>
                     <div class="code">
                       <div class="modal-body d-flex">
                         <div class="col-md-6 modal-img justify-content-center">
-                          <img src="{{event.eventQr}}" alt="" class="qrimage" />
+                          <img
+                            src="{{ event.eventQr }}"
+                            alt=""
+                            class="qrimage"
+                          />
                         </div>
                         <div class="col-md-6 modal-text">
                           <h1>Scan Code</h1>
@@ -50,7 +78,10 @@
                     </div>
                   </ng-template>
 
-                  <button class="knowbutton" (click)="openVerticallyCentered(content)">
+                  <button
+                    class="knowbutton"
+                    (click)="openVerticallyCentered(content)"
+                  >
                     Register Here
                   </button>
 
@@ -59,7 +90,11 @@
                     <div class="code">
                       <div class="modal-body d-flex">
                         <div class="col-md-6 modal-img justify-content-center">
-                          <img src="{{event.FeedbackQr}}" alt="" class="qrimage" />
+                          <img
+                            src="{{ event.FeedbackQr }}"
+                            alt=""
+                            class="qrimage"
+                          />
                         </div>
                         <div class="col-md-6 modal-text">
                           <h1>Scan Code</h1>
@@ -71,12 +106,14 @@
                       </div>
                     </div>
                   </ng-template>
-                  <button class="knowbutton" (click)="openVerticallyCentered(feedback)"
-                    *ngIf="event.FeedbackQr && event.feedbackLink">
+                  <button
+                    class="knowbutton"
+                    (click)="openVerticallyCentered(feedback)"
+                    *ngIf="event.FeedbackQr && event.feedbackLink"
+                  >
                     Send Feedback
                   </button>
                 </div>
-
               </div>
             </div>
           </div>
@@ -90,41 +127,43 @@
   <div class="container-fluid placement p-0">
     <div class="row w-100 justify-content-center">
       <div class="col-12 d-flex justify-content-center align-items-center">
-        <p class="section-heading1 m-0">Our Latest Placements</p>
+        <p class="section-heading2 m-0">Our Latest Placements</p>
       </div>
     </div>
-    <marquee onmouseover="this.stop()" onmouseout="this.start()" [scrollAmount]="12">
-    <div class="row py-3 w-100">
-      <div class="col-12 d-flex ">
-            <div class="slide" *ngFor="let place of readList;let i = index">
-              <div class="card d-flex p-3 m-3 placementclass"
-                [ngClass]="{'blue-background': i % 2 === 0, 'green-background': i % 2 !== 0}">
-                <div class="circle-container">
-                  <img src="{{ place.image }}" class="img-fluid rounded-circle" alt="..." />
-                </div>
-                <div class="card-body card-text-color">
-                  <div class="row bodyrow">
-                    <h5 class="text-center">Name:- {{ place.studentName }}</h5>
-                    <h5 class="text-center">
-                      College:- {{ place.collage }}
-                    </h5>
-                    <h5 class="text-center">
-                      Company:- {{ place.company }}
-                    </h5>
-                  </div>
-
+    <marquee
+      onmouseover="this.stop()"
+      onmouseout="this.start()"
+      [scrollAmount]="12"
+    >
+      <div class="row py-3 w-100">
+        <div class="col-12 d-flex">
+          <div class="slide" *ngFor="let place of readList; let i = index">
+            <div
+              class="card d-flex p-3 m-3 placementclass"
+              [ngClass]="{
+                'blue-background': i % 2 === 0,
+                'green-background': i % 2 !== 0
+              }"
+            >
+              <div class="circle-container">
+                <img
+                  src="{{ place.image }}"
+                  class="img-fluid rounded-circle"
+                  alt="..."
+                />
+              </div>
+              <div class="card-body card-text-color">
+                <div class="row bodyrow">
+                  <h5 class="text-center">Name:- {{ place.studentName }}</h5>
+                  <h5 class="text-center">College:- {{ place.collage }}</h5>
+                  <h5 class="text-center">Company:- {{ place.company }}</h5>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </marquee>
-
-
-
-
-
-
+      </div>
+    </marquee>
 
     <!-- <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12 col-xxl-12">
       <div class="slider">
@@ -154,7 +193,5 @@
         </div>
       </div>
     </div> -->
-
-
   </div>
 </section>

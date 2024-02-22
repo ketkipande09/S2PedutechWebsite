@@ -2,26 +2,37 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: #fdf0e0;
+  // background-image: url('../../assets/eventback.avif');
 }
-
-// .eventhead {
-//   .green-line {
-//     height: 2px;
-//     background-color: green;
-//     margin-top: 3rem;
-//   }
 .section-heading1 {
   font: 50px poppin;
   color: #333;
   text-align: center;
 }
-
-// }
-.eventcontainer {
-  padding: 0px 20px;
-}
-
 .center {
+  .calendar{
+    text-align: center;
+  }
+  .startcalendar{
+    width: 100px;
+  }
+  .image-container {
+    position: relative;
+    display: inline-block;  
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 75%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #333; 
+    text-align: center;
+  }
+  .eventcontainer {
+    padding: 0px 20px;
+  }
+
   h2 {
     text-align: center;
     margin-bottom: 1rem;
@@ -33,9 +44,14 @@
     font: 20px poppin;
     padding: 10px;
   }
+  h4 {
+    font: 20px poppin;
+    margin-bottom: -5px;
+    margin-top: 10px;
+  }
 
   h3 {
-    font: 24px poppin;
+    font: 17px poppin;
     padding: 10px;
   }
 }
@@ -51,8 +67,10 @@
 }
 
 .eventcard {
-  background-color: #fff3e6;
+  // background-color: #fff3e6;
   border-width: 2px;
+  background-image: url('../../assets/eventback.avif');
+  color: #fff;
 }
 
 .modal-content {
@@ -92,8 +110,10 @@
 }
 
 .button {
-  padding-left: 10rem;
-  padding-top: 20px;
+  // padding-left: 15rem;
+  // padding-top: 20px;
+  margin-left: 14rem;
+  margin-top: 0.5rem;
 }
 
 .knowbutton {
@@ -257,7 +277,11 @@ body {
 h2 {
   color: #0078b3;
 }
-
+.section-heading2 {
+  font: 50px poppin;
+  color: #333;
+  text-align: center;
+}
 @mixin white-gradient {
   background: linear-gradient(to right,
       rgba(255, 255, 255, 1) 0%,
