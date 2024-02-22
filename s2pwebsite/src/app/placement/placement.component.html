@@ -95,9 +95,9 @@
     </div>
     <marquee onmouseover="this.stop()" onmouseout="this.start()" [scrollAmount]="12">
     <div class="row py-3 w-100">
-      <div class="col-12 d-flex placementclass">
+      <div class="col-12 d-flex ">
             <div class="slide" *ngFor="let place of readList;let i = index">
-              <div class="card d-flex p-3 m-3"
+              <div class="card d-flex p-3 m-3 placementclass"
                 [ngClass]="{'blue-background': i % 2 === 0, 'green-background': i % 2 !== 0}">
                 <div class="circle-container">
                   <img src="{{ place.image }}" class="img-fluid rounded-circle" alt="..." />
