@@ -129,7 +129,7 @@ const placementObj = {
 
             if (!placement) {
                 if (req.file.filename) {
-                    let path = `assets/image/${req.file.filename}`;
+                    let path = `assets/placement/${req.file.filename}`;
                     if (fs.existsSync(path)) {
                         fs.unlinkSync(path);
                     }
@@ -148,7 +148,7 @@ const placementObj = {
                 var placementObject = req.body;
                 if (req.file) {
                     if (placement.image && placement.image != 'undefined') {
-                        let path = `assets/placementImage/${placement.image.split('placementImage/')[1]
+                        let path = `assets/placement/${placement.image.split('placement/')[1]
                             }`;
                         if (fs.existsSync(path)) {
                             fs.unlinkSync(path);
@@ -237,7 +237,7 @@ const placementObj = {
             let placement = await Placement.destroy(query);
             if (placement) {
                 if (imagePath) {
-                    let path = `assets/image/${imagePath.split('image/')[1]}`;
+                    let path = `assets/placement/${imagePath.split('placement/')[1]}`;
 
                     if (fs.existsSync(path)) {
                         fs.unlinkSync(path);

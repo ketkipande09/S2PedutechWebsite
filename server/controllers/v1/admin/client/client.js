@@ -13,7 +13,7 @@ const resCode = MESSAGES.resCode;
 const Op = sequelize.Op;
 
 const ClientObj = {
-   
+
     createClient: async (req, res) => {
         try {
             let query = {
@@ -45,7 +45,7 @@ const ClientObj = {
             throw new Error(e);
         }
     },
-   
+
     getClientListing: async (req, res) => {
         try {
             let offset = req.query.page || 1;
@@ -93,7 +93,7 @@ const ClientObj = {
             throw new Error(e);
         }
     },
-    
+
     updateClient: async (req, res) => {
         try {
             let id = req.params.id;
@@ -114,7 +114,7 @@ const ClientObj = {
 
             if (!client) {
                 if (req.file.filename) {
-                    let path = `assets/image/${req.file.filename}`;
+                    let path = `assets/client/${req.file.filename}`;
                     if (fs.existsSync(path)) {
                         fs.unlinkSync(path);
                     }
@@ -133,7 +133,7 @@ const ClientObj = {
                 var clientObject = req.body;
                 if (req.file) {
                     if (client.image && client.image != 'undefined') {
-                        let path = `assets/clientImage/${client.image.split('clientImage/')[1]
+                        let path = `assets/client/${client.image.split('client/')[1]
                             }`;
                         if (fs.existsSync(path)) {
                             fs.unlinkSync(path);
@@ -160,7 +160,7 @@ const ClientObj = {
             throw new Error(e);
         }
     },
-   
+
     getClientById: async (req, res) => {
         try {
             let id = req.params.id;
@@ -199,7 +199,7 @@ const ClientObj = {
             throw new Error(e);
         }
     },
-  
+
     deleteClient: async (req, res) => {
         try {
             let id = req.params.id;
@@ -222,7 +222,7 @@ const ClientObj = {
             let client = await Client.destroy(query);
             if (client) {
                 if (imagePath) {
-                    let path = `assets/image/${imagePath.split('image/')[1]}`;
+                    let path = `assets/client/${imagePath.split('client/')[1]}`;
 
                     if (fs.existsSync(path)) {
                         fs.unlinkSync(path);

@@ -342,7 +342,7 @@ const eventObj = {
       let event = await Event.destroy(query);
       if (event) {
         if (imagePath) {
-          let path = `assets/image/${imagePath.split('image/')[1]}`;
+          let path = `assets/eventImage/${imagePath.split('eventImage/')[1]}`;
 
           if (fs.existsSync(path)) {
             fs.unlinkSync(path);
