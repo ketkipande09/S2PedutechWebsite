@@ -35,6 +35,20 @@
     text-align: justify;
   }
 }
+.modalcard{
+  height: 20rem;
+  margin: 5px;
+  padding: 0;
+  .card-body{
+    .card-heading{
+      font-size: 18px;
+    }
+    .card-text{
+      font-size: 13px;
+    }
+  }
+
+}
 
 .modal-body {
   padding: 20px;
@@ -319,6 +333,9 @@ $animationSpeed: 15s;
 @media (max-width: 576px) {
   .ng-template {
     width: 50%;
+  }
+  .modalcard{
+    height: fit-content;
   }
 
   .modal-content {
