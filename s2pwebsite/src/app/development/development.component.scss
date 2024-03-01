@@ -183,6 +183,11 @@ h2 {
   color: #0078b3;
 }
 
+.placementclass {
+  width: 250px;
+  height: 150px;
+}
+
 @mixin white-gradient {
   background: linear-gradient(to right,
       rgba(255, 255, 255, 1) 0%,
