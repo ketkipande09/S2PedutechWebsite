@@ -14,6 +14,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      OurEMPLOYEE: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      YearsExperience: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
       placementCount: {
         type: DataTypes.INTEGER,
         allowNull: true,

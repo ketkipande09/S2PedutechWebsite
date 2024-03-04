@@ -50,6 +50,34 @@
                                        </validation-messages>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                    <label class="form-lable fs-6 fw-bold">Years Experience 
+                                        <!-- <span class="text-danger">*</span> -->
+                                    </label>
+                                    <input formControlName="YearsExperience" placeholder="Years Experience" type="number"
+                                        class="form-control" [ngClass]="{'is-invalid':homeForm.controls['YearsExperience'].invalid
+                                        && submitted && (f['YearsExperience'].errors 
+                                       || f['YearsExperience'].touched || f['YearsExperience'].dirty)}">
+                                       
+                                       <validation-messages style="text-align: left" [control]=" f['YearsExperience']">
+                                       </validation-messages>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                    <label class="form-lable fs-6 fw-bold">Our EMPLOYEE 
+                                        <!-- <span class="text-danger">*</span> -->
+                                    </label>
+                                    <input formControlName="OurEMPLOYEE" placeholder="Our EMPLOYEE" type="number"
+                                        class="form-control" [ngClass]="{'is-invalid':homeForm.controls['OurEMPLOYEE'].invalid
+                                        && submitted && (f['OurEMPLOYEE'].errors 
+                                       || f['OurEMPLOYEE'].touched || f['OurEMPLOYEE'].dirty)}">
+                                       
+                                       <validation-messages style="text-align: left" [control]=" f['OurEMPLOYEE']">
+                                       </validation-messages>
+                                </div>
+                            </div>
                             <div class="text-center my-3 pt-4 ">
                                 <button  type="submit" *ngIf="!this.homeId"  class="btn btn-success  shadow rounded rounded-3"
                                     (click)="createHome()">Create

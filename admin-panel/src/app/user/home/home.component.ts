@@ -45,6 +45,8 @@ export class HomeComponent implements OnInit {
   homeForm = new FormGroup({
     bulletPoint: new FormControl(''),
     placementCount: new FormControl(0),
+    OurEMPLOYEE: new FormControl(0),
+    YearsExperience: new FormControl(0),
     // image: new FormControl(''),
   });
 
@@ -61,7 +63,10 @@ export class HomeComponent implements OnInit {
     } else {
       const homeData = {
         bulletPoint: this.homeForm.value.bulletPoint,
-        placementCount: this.homeForm.value.placementCount
+        placementCount: this.homeForm.value.placementCount,
+        OurEMPLOYEE: this.homeForm.value.OurEMPLOYEE,
+        YearsExperience: this.homeForm.value.YearsExperience
+
       };
 
       this.userService.createHome(homeData).subscribe((data) => {
@@ -81,6 +86,8 @@ export class HomeComponent implements OnInit {
     }
 
     const homeData = {
+      OurEMPLOYEE: this.homeForm.value.OurEMPLOYEE,
+        YearsExperience: this.homeForm.value.YearsExperience,
       bulletPoint: this.homeForm.value.bulletPoint,
       placementCount: this.homeForm.value.placementCount
     };

@@ -29,6 +29,7 @@ export class MainComponent implements OnInit, OnDestroy {
   animationState: string = 'in';
   currentNumber: number = 0;
   targetNumber: any;
+  
   private subscription: Subscription;
   
   constructor(private restService: RestService, private router: Router, ) {
@@ -55,6 +56,9 @@ export class MainComponent implements OnInit, OnDestroy {
     if (this.currentNumber < this.targetNumber) {
       this.currentNumber++;
     }
+  }
+  incrementNumberOne(){
+
   }
 
   getall() {

@@ -22,7 +22,9 @@
               <th scope="col">Sr no</th>
               <!-- <th scope="col">Logo</th> -->
               <th scope="col">Placement Count</th>
-              <th scope="col">Current Bulletin</th>        
+              <th scope="col">Current Bulletin</th>   
+              <th scope="col">Years Experience</th>
+              <th scope="col">Our EMPLOYEE</th>      
               <th scope="col" class="mx-auto text-center">Action</th>
             </tr>
           </thead>
@@ -36,8 +38,16 @@
                     {{h.bulletPoint}}
                 </span>
             </td>
-             
-  
+            <td  scope="row">
+              <span class="action-span" placement="left" ngbTooltip="{{h.OurEMPLOYEE}}">
+                  {{h.OurEMPLOYEE}}
+              </span>
+          </td>
+          <td  scope="row">
+            <span class="action-span" placement="left" ngbTooltip="{{h.YearsExperience}}">
+                {{h.YearsExperience}}
+            </span>
+        </td>
               <td scope="row" class="text-center">
                 <button class="btn btn-outline-warning btn-sm mx-2" style="width: 30px;" (click)="edit(h)" ngbTooltip="Update"><i
                     class="bi bi-pencil-square"></i></button>
