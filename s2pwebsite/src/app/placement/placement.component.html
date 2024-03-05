@@ -21,16 +21,17 @@
 </div>
 
 <!-- event -->
-<div *ngFor="let event of readLists">
-  <div class="container-fluid event" *ngIf="event.eventStatus">
+<div *ngIf="readLists && readLists.length > 0">
+<div>
+  <div class="container-fluid event" >
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
         <div class="section-heading1">Our Latest Event</div>
       </div>
     </div>
 
-    <div class="container eventcontainer">
-      <div class="card eventcard">
+    <div class="container eventcontainer" *ngFor="let event of readLists">
+      <div class="card eventcard" *ngIf="event.eventStatus">
         <div class="row">
           <div class="col-md-6 d-flex justify-content-center align-items-center">
             <img src="{{ event.image }}" class="eventimage" alt="" />
@@ -114,6 +115,8 @@
     </div>
   </div>
 </div>
+</div>
+
 
 
 <!-- placement -->
