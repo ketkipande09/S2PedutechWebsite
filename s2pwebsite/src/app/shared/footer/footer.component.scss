@@ -185,17 +185,17 @@ h1 {
   display: flex;
   justify-content: center;
 }
-.centering {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
-  width: 30vw;
-  position: fixed;
-  left: 50vw;
-  top: 50vh;
-  transform: translate(-50%, -50%);
-}
+  .centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 30vw;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+  }
 
 .input__wrapper {
   position: relative;
@@ -316,28 +316,30 @@ label,
   color: #fff;
 }
 
+
+
 @media (max-width: 768px) {
   .box {
-    background-color: white;
-    padding: 24px;
-    padding-top: 75px;
-    border-radius: 16px;
-    width: 90vw;
+    width: 70vw;
+    height: 70vw;
   }
-
   .input__field {
-    border: 0;
-    border-bottom: 2px solid #6f7e8c;
-    outline: 0;
-    font-size: 16px;
-    color: #212121;
-    padding: 4px 0px;
-    padding-right: 32px;
+    font-size: 12px;
+    padding: 0px 0px;
     background: transparent;
-    transition: border-color 0.2s;
     width: 285px;
   }
+  .heading {
+    text-underline-offset: 10px;
+    font-size: 20px;
+  }
+  
+  .close {
+    font-size: 12px;
+    padding-top: 0px;
+  }
 }
+
 
 ul {
   .ifarme {  

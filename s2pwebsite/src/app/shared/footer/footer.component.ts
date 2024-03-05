@@ -1,8 +1,10 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -10,7 +12,7 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class FooterComponent {
 
-
+  private modalService = inject(NgbModal);
   id: any;
   isOpen = false;
 
@@ -26,6 +28,9 @@ export class FooterComponent {
         console.log('params id ', params.id);
       }
     });
+  }
+  openVerticallyCentered(longContent: any) {
+    this.modalService.open(longContent, { centered: true });
   }
 
 

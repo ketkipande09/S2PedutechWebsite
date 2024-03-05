@@ -35,19 +35,23 @@
     text-align: justify;
   }
 }
-.modalcard{
+.modalcard {
   height: 20rem;
   margin: 5px;
   padding: 0;
-  .card-body{
-    .card-heading{
+  .card-img-top {
+    height: 12rem;
+    width: 15rem;
+    padding: 10px;
+  }
+  .card-body {
+    .card-heading {
       font-size: 18px;
     }
-    .card-text{
+    .card-text {
       font-size: 13px;
     }
   }
-
 }
 
 .modal-body {
@@ -113,22 +117,15 @@
   color: #924c06;
   font-family: "Times New Roman", Times, serif;
 
-  // padding-right: 100px;
   p {
     text-align: justify;
   }
 }
 
-/* Add media query for responsiveness */
 @media only screen and (max-width: 600px) {
   .headingtext {
     font-size: 16px;
   }
-}
-
-.green-line {
-  height: 2px;
-  background-color: green;
 }
 
 .section-heading {
@@ -143,6 +140,65 @@
   .body {
     font: 20px poppin;
     padding: 10px 30px 10px 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .modalcard {
+    .card-img-top {
+      height: 8rem;
+      width: 10rem;
+      padding: 8px;
+    }
+    .card-body {
+      .card-heading {
+        font-size: 18px;
+      }
+      .card-text {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px){
+  .modalcard{
+    height: 15rem;
+    margin: 5px;
+    padding: 0;
+    .card-img-top {
+      height: 7rem;
+      width: 12rem;
+      padding: 5px;
+    }
+    .card-body {
+      .card-heading {
+        font-size: 15px;
+      }
+      .card-text {
+        font-size: 12px;
+      }
+    }
+  }
+}
+@media (max-width: 992px){
+  .modalcard{
+    height: 15rem;
+    margin: 5px;
+    padding: 0;
+    .card-img-top {
+      height: 10rem;
+      width: 15rem;
+      padding: 5px;
+    }
+    .card-body {
+      .card-heading {
+        font-size: 15px;
+      }
+      .card-text {
+        font-size: 12px;
+      }
+    }
   }
 }
 
@@ -203,9 +259,11 @@ h2 {
 }
 
 @mixin white-gradient {
-  background: linear-gradient(to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 $animationSpeed: 15s;
@@ -339,7 +397,7 @@ $animationSpeed: 15s;
   .ng-template {
     width: 50%;
   }
-  .modalcard{
+  .modalcard {
     height: fit-content;
   }
 
