@@ -55,12 +55,8 @@ export class PlacementComponent implements OnInit {
     this.animationState = 'in';
     this.subscription = interval(10).subscribe(() => {
       this.incrementNumber();
-    });
-    this.subscription = interval(10).subscribe(() => {
-      this.incrementEmployee()
-    });
-    this.subscription = interval(10).subscribe(() => {
-      this.incrementYearExperience()
+      this.incrementNumberEmployee();
+      this.incrementNumberYearExperience();
     });
   }
   getAllPlacements() {
@@ -93,16 +89,18 @@ export class PlacementComponent implements OnInit {
       this.currentNumber++;
     }
   }
-  incrementYearExperience() {
+
+  incrementNumberYearExperience() {
     if (this.yearExperienceNumber < this.yearExperience) {
       this.yearExperienceNumber++;
     }
   }
-  incrementEmployee() {
+  incrementNumberEmployee() {
     if (this.employeeNumber < this.employee) {
       this.employeeNumber++;
     }
   }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
@@ -110,8 +108,8 @@ export class PlacementComponent implements OnInit {
     this.restService.getbulletin().subscribe((data: any) => {
       this.mainData = data.result.Home;
       this.targetNumber = this.mainData[0]?.placementCount
-      this.yearExperience = this.mainData[0]?.YearsExperience
-      this.employee = this.mainData[0]?.OurEMPLOYEE
+      this.yearExperience = this.mainData[0]?.YearsExperience;
+      this.employee = this.mainData[0]?.OurEMPLOYEE;
     });
   }
 
