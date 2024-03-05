@@ -155,6 +155,16 @@ a.float:hover + div.label-container {
 .floating-button:hover {
   background-color: #0056b3;
 }
+
+@media(max-width:376px){
+  .floating-button {
+    bottom: 20px;
+    right: 30px;
+    border-radius: 10%;
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}
 .box {
   background-color: white;
   padding: 24px;

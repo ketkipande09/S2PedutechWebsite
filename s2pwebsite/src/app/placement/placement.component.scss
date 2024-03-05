@@ -1,3 +1,75 @@
+// placementcontainer
+.placementcontainer {
+  background-color: #fdf0e0;
+  padding-bottom: 3rem;
+
+  .container {
+    .card {
+      height: 200px;
+      background-color: #f9f2e9;
+      border-radius: 30px;
+      margin-top: -5rem;
+      .card-body {
+        margin-top: 40px;
+        .text-center {
+          font: 40px poppin;
+        }
+        .text {
+          font: 20px poppin;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .placementcontainer {
+    .container {
+      .card {
+        height: 180px;
+      }
+    }
+  }
+}
+@media (max-width: 426px) {
+  .placementcontainer {
+    .container {
+      .card {
+        height: 120px;
+        .card-body {
+          margin-top: 10px;
+          .text-center {
+            font: 25px poppin;
+          }
+          .text {
+            font: 15px poppin;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 376px) {
+  .placementcontainer {
+    .container {
+      .card {
+        margin-top: -3rem;
+        height: 100px;
+        .card-body {
+          margin-top: 10px;
+
+          .text-center {
+            font: 20px poppin;
+          }
+          .text {
+            font: 11px poppin;
+          }
+        }
+      }
+    }
+  }
+}
+
+// event
 .event {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -10,23 +82,23 @@
   text-align: center;
 }
 .center {
-  .calendar{
+  .calendar {
     text-align: center;
   }
-  .startcalendar{
+  .startcalendar {
     width: 100px;
   }
   .image-container {
     position: relative;
-    display: inline-block;  
+    display: inline-block;
   }
 
   .overlay-text {
     position: absolute;
-    top: 75%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    color: #333; 
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
     text-align: center;
   }
   .eventcontainer {
@@ -69,7 +141,7 @@
 .eventcard {
   // background-color: #fff3e6;
   border-width: 2px;
-  background-image: url('../../assets/eventback.avif');
+  background-image: url("../../assets/eventback.avif");
   color: #fff;
 }
 
@@ -110,8 +182,6 @@
 }
 
 .button {
-  // padding-left: 15rem;
-  // padding-top: 20px;
   margin-left: 14rem;
   margin-top: 0.5rem;
 }
@@ -135,7 +205,7 @@
   color: #fff;
 }
 
-@media(max-width: 1200px) {
+@media (max-width: 1200px) {
   .eventcontainer {
     .eventcard {
       .eventimage {
@@ -147,11 +217,9 @@
         .text {
           font-size: 22px;
         }
-
         .description {
           font-size: 18px;
         }
-
         .text-center {
           font-size: 16px;
           padding: 0px;
@@ -170,11 +238,12 @@
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .section-heading1 {
     font-size: 30px;
     text-align: center;
   }
+ 
 
   .eventcontainer {
     .eventcard {
@@ -204,7 +273,8 @@
           width: max-content;
           padding: 5px;
           position: relative;
-          right: 5rem;
+          right: 6rem;
+          
         }
       }
     }
@@ -216,10 +286,8 @@
     font-size: 25px;
     text-align: center;
   }
+
 }
-
-
-
 
 
 .placement {
@@ -263,7 +331,6 @@
   .center {
     display: flex;
     justify-content: center;
-
   }
 }
 
@@ -283,9 +350,11 @@ h2 {
   text-align: center;
 }
 @mixin white-gradient {
-  background: linear-gradient(to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 @keyframes scroll {
@@ -298,21 +367,6 @@ h2 {
   }
 }
 
-// .clienthead {
-//   .green-line {
-//     height: 2px;
-//     background-color: green;
-//   }
-
-//   .section-heading1 {
-//     font: 50px poppin;
-//     color: #333;
-//     margin-bottom: 5px;
-//     margin-left: 30px;
-//     margin-top: -30px;
-//     padding-bottom: 30px;
-//   }
-// }
 .placementclass {
   width: 250px;
 }
@@ -404,34 +458,6 @@ body {
     flex: 1;
   }
 }
-
-// @media (max-width: 900px) {
-//   .gradient {
-//     align-items: stretch;
-//     margin: 1em 0;
-//     height: 62px;
-//     line-height: 2em;
-//     color: white;
-//     background: #ff7403;
-//     font-size: 29px;
-//     width: 70% !important;
-//     margin-top: 37px;
-//   }
-
-//   .slider {
-//     background: white;
-//     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-//     height: 410px;
-//     margin: auto;
-//     overflow: hidden;
-//     position: relative;
-//     width: 100%;
-//     padding-bottom: 15%;
-//     animation: linear infinite;
-//     border-radius: 0px;
-//   }
-// }
-
 .mx-auto {
   margin-right: auto !important;
   margin-left: auto !important;
@@ -458,7 +484,6 @@ body {
 @media (max-width: 1063px) {
   .placement {
     .placementcard {
-
       .circle-container {
         width: 5rem;
         height: 4rem;
@@ -479,6 +504,18 @@ body {
         }
       }
     }
+  }
+}
+@media(max-width: 768px){
+  .section-heading2 {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+@media(max-width: 375px){
+  .section-heading2 {
+    font-size: 25px;
+    text-align: center;
   }
 }
 

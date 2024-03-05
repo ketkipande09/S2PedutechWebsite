@@ -1,43 +1,31 @@
+<!-- placementcount -->
+<div class="container-fluid placementcontainer" >
 <div class="container">
-
-
-  <div class="card w-100" >
-    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-    <div class="card-body d-flex justify-content-around text-warning bg-warning text-dark">
-      <!-- <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  <div class="card w-100 text-center">
+    <div class="card-body d-flex justify-content-around">
       <div class="employee">
         <h1 class="text-center">{{employee}}+</h1>
-        <p>YOUR EMPLOYEE</p>
+        <p class="text">Your Project's</p>
       </div>
       <div class="branch">
         <h1 class="text-center">{{yearExperience}}+</h1>
-        <p>Years Experience</p>
+        <p class="text">Years Experience</p>
       </div>
       <div class="exprience">
         <h1 class="text-center">{{currentNumber}}+</h1>
-        <p>Placement Count</p>
+        <p class="text">Placement Count</p>
       </div>
     </div>
   </div>
 </div>
+</div>
 
+<!-- event -->
 <div *ngFor="let event of readLists">
   <div class="container-fluid event" *ngIf="event.eventStatus">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
         <div class="section-heading1">Our Latest Event</div>
-
-        <!-- <div class="eventhead" style="display: flex; flex-wrap: nowrap">
-          <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 35%">
-            <div class="green-line"></div>
-          </div>
-          <div class="section-heading1">Our Latest Event</div>
-          <div dxhide.xs="true" style="flex: 1 1 100%; box-sizing: border-box; max-width: 38%">
-            <div class="green-line"></div>
-          </div>
-        </div> -->
       </div>
     </div>
 
@@ -127,11 +115,13 @@
   </div>
 </div>
 
+
+<!-- placement -->
 <section id="placements" class="py-5">
   <div class="container-fluid placement p-0">
     <div class="row w-100 justify-content-center">
       <div class="col-12 d-flex justify-content-center align-items-center">
-        <p class="section-heading2 m-0">Our Latest Placements</p>
+        <p class="section-heading2 ">Our Latest Placements</p>
       </div>
     </div>
     <marquee onmouseover="this.stop()" onmouseout="this.start()" [scrollAmount]="12">
