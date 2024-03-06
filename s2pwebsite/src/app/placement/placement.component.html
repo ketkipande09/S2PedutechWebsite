@@ -25,15 +25,22 @@
   <div>
     <div class="container-fluid event">
       <div class="row" *ngIf="checkEvent">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div
+          class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+        >
           <div class="section-heading1">Our Latest Event</div>
         </div>
       </div>
 
-      <div class="container eventcontainer mb-5" *ngFor="let event of readLists">
+      <div
+        class="container eventcontainer mb-5"
+        *ngFor="let event of readLists"
+      >
         <div class="card eventcard" *ngIf="event.eventStatus">
           <div class="row">
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <div
+              class="col-md-6 d-flex justify-content-center align-items-center"
+            >
               <img src="{{ event.image }}" class="eventimage" alt="" />
             </div>
             <div class="col-md-6">
@@ -47,14 +54,22 @@
                   <div class="calendar d-flex justify-content-evenly">
                     <div class="image-container right">
                       <h4 class="text-center">Start Date:</h4>
-                      <img src="../../assets/calendar.png" class="startcalendar" alt="image" />
+                      <img
+                        src="../../assets/calendar.png"
+                        class="startcalendar"
+                        alt="image"
+                      />
                       <div class="overlay-text">
                         <h3>{{ event.startDate | date }}</h3>
                       </div>
                     </div>
                     <div class="image-container left">
                       <h4 class="text-center">End Date:</h4>
-                      <img src="../../assets/calendar.png" class="startcalendar" alt="image" />
+                      <img
+                        src="../../assets/calendar.png"
+                        class="startcalendar"
+                        alt="image"
+                      />
                       <div class="overlay-text">
                         <h3>{{ event.endDate | date }}</h3>
                       </div>
@@ -64,20 +79,37 @@
                     <ng-template #content let-modal>
                       <div class="code">
                         <div class="modal-body d-flex">
-                          <div class="col-md-6 modal-img justify-content-center">
-                            <img src="{{ event.eventQr }}" alt="" class="qrimage" />
+                          <div
+                            class="col-md-6 modal-img justify-content-center"
+                          >
+                            <img
+                              src="{{ event.eventQr }}"
+                              alt=""
+                              class="qrimage"
+                            />
                           </div>
                           <div class="col-md-6 modal-text">
-                            <h1>Scan Code</h1>
-                            <h5>Register yourself by scanning the QR code.</h5>
+                            <h1 class="text">Scan Code</h1>
+                            <h5 class="description">
+                              Register yourself by scanning the QR code.
+                            </h5>
+
+                            <h1 class="mt-5">OR</h1>
+
                             <a [href]="event.eventLink">
-                              <h3>Click here</h3>
+                              <button class="animated-button">
+                                <span class="click">Click Here</span>
+                                <span></span>
+                              </button>
                             </a>
                           </div>
                         </div>
                       </div>
                     </ng-template>
-                    <button class="knowbutton" (click)="openVerticallyCentered(content)">
+                    <button
+                      class="knowbutton"
+                      (click)="openVerticallyCentered(content)"
+                    >
                       Register Here
                     </button>
 
@@ -85,21 +117,36 @@
                     <ng-template #feedback let-modal>
                       <div class="code">
                         <div class="modal-body d-flex">
-                          <div class="col-md-6 modal-img justify-content-center">
-                            <img src="{{ event.FeedbackQr }}" alt="" class="qrimage" />
+                          <div
+                            class="col-md-6 modal-img justify-content-center"
+                          >
+                            <img
+                              src="{{ event.FeedbackQr }}"
+                              alt=""
+                              class="qrimage"
+                            />
                           </div>
                           <div class="col-md-6 modal-text">
-                            <h1>Scan Code</h1>
-                            <h5>Please Share your valuable Feedback.</h5>
+                            <h1 class="text">Scan Code</h1>
+                            <h5 class="description">
+                              Please Share your valuable Feedback.
+                            </h5>
+                            <h1 class="mt-5">OR</h1>
                             <a [href]="event.feedbackLink">
-                              <h3>Click here</h3>
+                              <button class="animated-button">
+                                <span class="click">Click Here</span>
+                                <span></span>
+                              </button>
                             </a>
                           </div>
                         </div>
                       </div>
                     </ng-template>
-                    <button class="knowbutton" (click)="openVerticallyCentered(feedback)"
-                      *ngIf="event.FeedbackQr && event.feedbackLink">
+                    <button
+                      class="knowbutton"
+                      (click)="openVerticallyCentered(feedback)"
+                      *ngIf="event.FeedbackQr && event.feedbackLink"
+                    >
                       Send Feedback
                     </button>
                   </div>
@@ -112,8 +159,6 @@
     </div>
   </div>
 </div>
-
-
 
 <!-- placement -->
 <section id="placements" class="py-5">

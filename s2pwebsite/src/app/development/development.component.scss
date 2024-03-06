@@ -18,6 +18,17 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      .view{
+        color: #924c06;
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+      }
+      .view:hover {
+        transform: scale(1.2);
+        transition: all ease 0.1s;
+        font-weight: 500
+      }
     }
   }
 
@@ -206,26 +217,6 @@
     }
   }
 }
-// @media (max-width: 992px){
-//   .modalcard{
-//     height: 15rem;
-//     margin: 5px;
-//     padding: 0;
-//     .card-img-top {
-//       height: 10rem;
-//       width: 15rem;
-//       padding: 5px;
-//     }
-//     .card-body {
-//       .card-heading {
-//         font-size: 15px;
-//       }
-//       .card-text {
-//         font-size: 12px;
-//       }
-//     }
-//   }
-// }
 
 @media (min-width: 769px) {
   .move {

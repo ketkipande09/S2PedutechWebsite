@@ -13,8 +13,8 @@
 
     .card-body {
       flex-direction: column;
-    //   padding: 0;
-    padding: 0px 20px;
+      //   padding: 0;
+      padding: 0px 20px;
 
       .btn {
         background-color: #1338be;
@@ -28,18 +28,14 @@
     justify-content: center;
   }
 }
-.brochure{
-    padding-bottom: 10px;
+.brochure {
+  padding-bottom: 10px;
 }
 .card-title {
   text-align: center;
   padding: 0%;
 }
-.green-line {
-  height: 2px;
-  background-color: green;
-  margin-top: 30px;
-}
+
 .section-heading1 {
   font: 50px poppin;
   color: #333;
@@ -48,7 +44,6 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
-
 }
 
 .bullet {
@@ -76,7 +71,7 @@
 }
 
 @media (max-width: 768px) {
-  .section-heading1{
+  .section-heading1 {
     font-size: 30px;
     text-align: center;
   }
@@ -84,10 +79,10 @@
     display: flex;
     justify-content: center;
   }
-.bullet{
-  font-size: 15px;
-  padding-top: 0px;
-}
+  .bullet {
+    font-size: 15px;
+    padding-top: 0px;
+  }
   .parts {
     .card {
       width: 255px;
@@ -115,186 +110,22 @@
   }
 }
 @media (max-width: 375px) {
-  .section-heading1{
+  .section-heading1 {
     font-size: 25px;
     text-align: center;
   }
 }
 
-
-
 // modal
-
-.modelPage {
-  .modal-dialog {
-      max-width: 115rem;
-  }
-
-  .line-border {
-      border: 1px solid var(--bs-secondary);
-      opacity: 1;
-  }
-
-  .line-border-with-title {
-      border-top: 2px solid var(--bs-secondary);
-      opacity: 1;
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
-      span {
-          background-color: var(--bs-secondary);
-          color: white;
-          font-size: 1.2rem;
-          border-radius: 0 0 0.4rem 0.4rem;
-          padding: 0.1rem 0 0.3rem 0;
-      }
-  }
-
-  .modal-header {
-      display: flex;
-      justify-content: space-between;
-      color: var(--bs-white) !important;
-      background-color: var(--bs-secondary) !important;
-
-      .heading {
-          padding-left: 2rem;
-          font-size: 1.5rem !important;
-          font-weight: 400;
-      }
-
-      .btn-cross {
-          height: 2.4rem !important;
-          background-color: var(--bs-white) !important;
-
-          i {
-              font-size: 1.7rem;
-              color: var(--bs-secondary) !important;
-              vertical-align: text-top;
-          }
-      }
-  }
-
-  .bg-yellow-color {
-      background-color: #fffff0 !important;
-  }
-  .bg-pink-color {
-      background-color: #fff0ff !important;
-  }
-  .bg-magenta-color {
-      background-color: #f0ffff !important;
-  }
-
-  .modal-body {
-      box-sizing: border-box;
-
-      .form-btn-sm {
-          height: 1.6rem;
-          font-size: 1rem !important;
-      }
-      .form-label {
-          color: var(--bs-secondary) !important;
-      }
-
-      padding: 2rem 3rem 0 3rem !important;
-
-      .table {
-          .bg-primary {
-              background-color: var(--bs-secondary) !important;
-          }
-      }
-  }
-
-  .form-control-size-sm {
-      margin: 0px !important;
-      height: 2.4rem !important;
-      width: 13rem !important;
-  }
-  .form-control-size-lg {
-      margin: 0px !important;
-      height: 2.4rem !important;
-      width: 19rem !important;
-  }
-  .form-control-size-xl {
-      margin: 0px !important;
-      height: 2.4rem !important;
-      width: 28rem !important;
-  }
-}
-
-.development {
-  background-color: #fafafad7;
-
-  .card01 {
-    border-radius: 13px;
-    box-shadow: 0px 4px 4px 0px #ff8a00;
-    padding: 10px;
-    border: 2px solid #ff8a00;
-    width: 206px;
-    height: 240px;
-
-    .image {
-      width: 98px;
-      height: 70px;
-    }
-
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-  }
-
-  .card01:hover {
-    // background-color: #ff8a00;
-    transform: scale(1.03);
-    transition: all ease 0.1s;
-  }
-
-  h2 {
-    color: #0078b3;
-  }
-
-  .text {
-    text-align: justify;
-  }
-}
-.modalcard{
-  height: 20rem;
-  margin: 5px;
-  padding: 0;
-  .card-body{
-    .card-heading{
-      font-size: 18px;
-    }
-    .card-text{
-      font-size: 13px;
-    }
-  }
-
-}
-
 .modal-body {
   padding: 20px;
   background-color: #fdf0e0;
   height: max-content;
-
-  p {
-    font-family: Montserrat, sans-serif;
-    font-size: 15px;
-  }
-
-  .modal-header {
-    text-align: center;
-    font-family: Montserrat, sans-serif;
-    font-size: 24px;
-  }
-
   .modal-title {
     text-align: center;
     font-family: Montserrat, sans-serif;
     font-size: 24px;
   }
-
   .subheading {
     text-align: center;
     color: #502400;
@@ -302,7 +133,29 @@
     padding-bottom: 5px;
     font-family: Montserrat, sans-serif;
   }
-
+  .modalcard {
+    height: 15rem;
+    margin: 5px;
+    padding: 0;
+    .card-img-top {
+      height: 6rem;
+      width: 8rem;
+      padding: 10px;
+    }
+    .card-body {
+      .card-heading {
+        font-size: 15px;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        padding: 0;
+      }
+      .card-text {
+        font-size: 15px;
+        color: #924c06;
+        padding: 0;
+      }
+    }
+  }
   .btn-close {
     position: absolute;
     top: 10px;
@@ -319,326 +172,23 @@
   }
 }
 
-.card22 {
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-}
-
-.headingtext {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  font-size: 20px;
-  line-height: 1.6;
-  color: #924c06;
-  font-family: "Times New Roman", Times, serif;
-
-  // padding-right: 100px;
-  p {
-    text-align: justify;
-  }
-}
-
-/* Add media query for responsiveness */
-@media only screen and (max-width: 600px) {
-  .headingtext {
-    font-size: 16px;
-  }
-}
-
-.green-line {
-  height: 2px;
-  background-color: green;
-}
-
-.section-heading {
-  font: 50px poppin;
-  color: #333;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.card22 {
-  .body {
-    font: 20px poppin;
-    padding: 10px 30px 10px 30px;
-  }
-}
-
-@media (min-width: 769px) {
-  .move {
-    position: relative;
-    margin-top: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  .content {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 764px) {
-  .mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: space-between;
-    flex-direction: column;
-  }
-}
-
-.head {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #f0710a;
-  text-align: center;
-  // padding-right: 100px;
-}
-
-// <---Client CSS--->
-
-.clienthead {
-  padding-top: 5rem;
-}
-
-body {
-  align-items: center;
-  background: #ffffff;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-}
-
-h2 {
-  color: #0078b3;
-}
-
-.placementclass {
-  width: 250px;
-  height: 150px;
-}
-
-@mixin white-gradient {
-  background: linear-gradient(to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%);
-}
-
-$animationSpeed: 15s;
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(calc(-250px * 8));
-  }
-}
-
-.slider2 {
-  background: rgb(255, 255, 255);
-  // box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-  height: 100px;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  padding-bottom: 20%;
-  animation: linear infinite;
-
-  &::before,
-  &::after {
-    @include white-gradient;
-    content: "";
-    height: 100px;
-    position: absolute;
-    width: px;
-    z-index: 2;
-  }
-
-  &:hover div {
-    animation-play-state: paused;
-  }
-
-  &::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(200deg);
-  }
-
-  &::before {
-    left: 0;
-    top: 0;
-  }
-
-  .slide-track {
-    animation: scroll $animationSpeed linear infinite;
-    display: flex;
-    width: calc(250px * 80);
-  }
-
-  .slide {
-    height: 100px;
-    width: 250;
-    padding: 20px;
-    border-radius: 2px;
-  }
-}
-
-// step
-.stepcontainer {
-  background-color: #1e2c7c;
-  border-radius: 0 250px 0 250px;
-  margin-top: 7rem;
-  margin-bottom: 3rem;
-}
-
-.heading1 {
-  padding: 10px 150px;
-  font: 50px poppins;
-  color: #669fff;
-}
-
-.heading2 {
-  font-weight: bold;
-  font: 45px poppins;
-  padding: 0px 150px;
-  color: #ffffff;
-}
-
-.photorow {
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.card-heading {
-  padding: 0px 0px 0px 20px;
-}
-
-.step {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-  font: 20px poppins;
-  color: #ffffff;
-}
-
-.stepcard {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  width: 140px;
-  height: 170px;
-}
-
-.stepimage {
-  width: 6rem;
-  height: 6rem;
-}
-
-.photostep {
-  padding-top: 1.5rem;
-  padding-bottom: 3rem;
-}
-
-.bottom-text {
-  margin-top: 10px;
-  font-size: 16px;
-  text-align: center;
-  font: 20px poppins;
-  color: #000000;
-}
-
-@media (max-width: 576px) {
-  .ng-template {
-    width: 50%;
-  }
-  .modalcard{
-    height: fit-content;
-  }
-
-  .modal-content {
-    width: 30%;
-  }
-}
-
-@media (max-width: 768px) {
-  .section-heading {
-    font-size: 30px;
-    text-align: center;
-  }
-}
-
-@media (max-width: 426px) {
-  .stepcontainer {
-    .heading1 {
-      padding: 10px 10px;
-      font: 30px poppins;
-      color: #669fff;
-    }
-
-    .heading2 {
-      font: 25px poppins;
-      padding: 0px 10px;
-    }
-
-    .photorow {
-      .photostep {
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-        padding-left: 5rem;
+@media (max-width: 1200px) {
+  .modal-body {
+    .modalcard {
+      .card-img-top {
+        height: 4rem;
+        width: 7rem;
+        padding: 8px;
+      }
+      .card-body {
+        .card-heading {
+          font-size: 12px;
+        }
+        .card-text {
+          font-size: 12px;
+        }
       }
     }
-
-    .step {
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: center;
-      font: 15px poppins;
-    }
   }
 }
 
-@media (max-width: 375px) {
-  .section-heading {
-    font-size: 25px;
-    text-align: center;
-  }
-
-  .stepcontainer {
-    .heading1 {
-      padding: 10px 10px;
-      font: 20px poppins;
-      color: #669fff;
-    }
-
-    .heading2 {
-      font: 15px poppins;
-      padding: 0px 10px;
-    }
-
-    .photorow {
-      .photostep {
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-        padding-left: 2rem;
-      }
-    }
-
-    .step {
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: center;
-      font: 12px poppins;
-    }
-  }
-}

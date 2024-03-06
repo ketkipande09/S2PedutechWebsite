@@ -82,6 +82,9 @@
   text-align: center;
 }
 .center {
+  .text {
+    font-weight: 1000;
+  }
   .calendar {
     text-align: center;
   }
@@ -141,8 +144,8 @@
 .eventcard {
   // background-color: #fff3e6;
   border-width: 2px;
-  background-image: url("../../assets/eventback.avif");
-  color: #fff;
+  background-image: url("../../assets/backevent.png");
+  color: #834200;
 }
 
 .modal-content {
@@ -179,6 +182,63 @@
 
 .code {
   background-color: #fdf0e0;
+  .modal-text {
+    .text {
+      font-weight: 500;
+    }
+    .description {
+      color: #834200;
+    }
+  }
+  .animated-button {
+    position: relative;
+    margin-top: 2rem;
+    left: 40px;
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    font-size: 20px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: #834200;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button span:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #834200;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button span:first-child {
+    position: relative;
+    z-index: 1;
+  }
+
+  .animated-button:hover {
+    box-shadow: 0 0 0 5px #331a01;
+    color: #ffffff;
+  }
+
+  .animated-button:active {
+    scale: 0.95;
+  }
+
+  .animated-button:hover span:last-child {
+    width: 150px;
+    height: 150px;
+    opacity: 1;
+  }
 }
 
 .button {
@@ -192,8 +252,8 @@
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  border: 2px solid #ff8a00;
-  color: #ff8a00;
+  border: 2px solid #834200;
+  color: #834200;
   background-color: transparent;
   border-radius: 5px;
   cursor: pointer;
@@ -201,7 +261,7 @@
 }
 
 .knowbutton:hover {
-  background-color: #ff8a00;
+  background-color: #924c06;
   color: #fff;
 }
 
@@ -243,7 +303,6 @@
     font-size: 30px;
     text-align: center;
   }
- 
 
   .eventcontainer {
     .eventcard {
@@ -274,7 +333,6 @@
           padding: 5px;
           position: relative;
           right: 6rem;
-          
         }
       }
     }
@@ -286,9 +344,7 @@
     font-size: 25px;
     text-align: center;
   }
-
 }
-
 
 .placement {
   padding-top: 50px;
@@ -506,13 +562,13 @@ body {
     }
   }
 }
-@media(max-width: 768px){
+@media (max-width: 768px) {
   .section-heading2 {
     font-size: 30px;
     text-align: center;
   }
 }
-@media(max-width: 375px){
+@media (max-width: 375px) {
   .section-heading2 {
     font-size: 25px;
     text-align: center;
@@ -525,5 +581,3 @@ body {
   min-width: 200px;
   max-width: 200px;
 }
-
-
