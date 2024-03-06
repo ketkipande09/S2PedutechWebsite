@@ -40,7 +40,11 @@ scrollTo(section:any){
   })
   
 }
-  
+routeTo(section:any){
+  setTimeout(() => {
+    this.scrollTo(section)
+  }, 300);
+}
 
   
   ngOnInit(): void {

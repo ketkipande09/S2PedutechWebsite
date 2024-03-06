@@ -9,14 +9,14 @@
             <i class="fa fa-bars" aria-hidden="true"></i>
         </label>
         <ul class="nav-links justify-content-end">
-            <li class="dropbtn"><a class="nav-links" href="/">
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('/landing');routeTo('header')">
                     <strong> Home</strong>
                 </a></li>
-            <li class="dropbtn"><a class="nav-links" (click)="scrollTo('placements')" >
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('/landing');routeTo('placements')" >
                     <strong>Placement</strong></a></li>
-            <li class="dropbtn"><a class="nav-links" (click)="scrollTo('development-resources')"> <strong>Development &
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('/landing');routeTo('development-resources')"> <strong>Development &
                         Resources</strong></a></li>
-            <li class="dropbtn"><a class="nav-links" (click)="scrollTo('training')"><strong>Training </strong></a>
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('/landing');routeTo('training')"><strong>Training </strong></a>
             </li>
             <li class="dropbtn"><a class="nav-links" (click)="navigateTo('gallery')"><strong>Gallery</strong></a></li>
             <li class="dropbtn"><a class="nav-links" (click)="navigateTo('contact')"><strong>Contact</strong></a></li>
@@ -25,20 +25,3 @@
 
     </nav>
 </div>
-
-
-<input type="checkbox" id="toggle">
-<!-- <ul class="nav-links justify-content-end">
-    <li class="dropbtn"><a class="nav-links" href="/">
-            <strong> Home</strong>
-        </a></li>
-    <li class="dropbtn"><a class="nav-links" href="#placements">
-            <strong>Placement</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" href="#development-resources"> <strong>Development &
-                Resources</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" href="#training"><strong>Training </strong></a>
-    </li>
-    <li class="dropbtn"><a class="nav-links" (click)="navigateTo('gallery')"><strong>Gallery</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" (click)="navigateTo('contact')"><strong>Contact</strong></a></li>
-
-</ul> -->
