@@ -1,5 +1,5 @@
 
-import { Component, inject } from '@angular/core';
+import { Component, inject,ViewChild  } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
@@ -15,6 +15,7 @@ export class FooterComponent {
   private modalService = inject(NgbModal);
   id: any;
   isOpen = false;
+  @ViewChild('SuccessMessage') SuccessMessage: any;
 
   constructor(private activatedRoute: ActivatedRoute, private restService: RestService) {
   }
@@ -43,9 +44,9 @@ export class FooterComponent {
     name: new FormControl('', [Validators.required]),
     branch: new FormControl('Select your Branch', [Validators.required]),
     college: new FormControl('', [Validators.required]),
-    mobile: new FormControl('', [Validators.required]),
-    passingyear: new FormControl('', [Validators.required]),
-    course: new FormControl('Select your course',[Validators.required]),
+    mobile: new FormControl('', [Validators.required,Validators.minLength(10),Validators.pattern("^[0-9]{10}$")]),
+    passingyear: new FormControl('', [Validators.required,]),
+    course: new FormControl('Select your course', [Validators.required]),
 
   });
 
@@ -54,7 +55,6 @@ export class FooterComponent {
     if (this.enquiryForm.invalid) {
       return;
     }
-
     const formValues = this.enquiryForm.value;
     console.log('Form values:', formValues);
 
@@ -64,6 +64,8 @@ export class FooterComponent {
         this.enquiryForm.reset();
         this.enquiryForm.controls['course'].setValue('Select your course');
         this.enquiryForm.controls['branch'].setValue('Select your Branch');
+         this.modalService.dismissAll();
+         this.modalService.open(this.SuccessMessage, { centered: true });
       },
       (errorResponse: any) => {
         console.error('Error creating enquiry:', errorResponse);
