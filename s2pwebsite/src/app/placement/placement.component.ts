@@ -33,7 +33,7 @@ export class PlacementComponent implements OnInit {
   collection: any;
   collections: any;
   private modalService = inject(NgbModal)
-
+  checkEvent: boolean = false
 
   constructor(
     private restService: RestService,
@@ -80,8 +80,12 @@ export class PlacementComponent implements OnInit {
     };
     this.service.getAllEvents(obj).subscribe((res) => {
       console.log(res, "<=getAll");
-      this.readLists = res.result.events;
-      this.collections = res.result.count;
+      this.readLists = res?.result?.events;
+      if (this.readLists.length > 0) {
+        this.checkEvent = this.readLists?.some((item: any) => item.eventStatus == true)
+
+      }
+      this.collections = res?.result?.count;
     });
   }
   incrementNumber() {
