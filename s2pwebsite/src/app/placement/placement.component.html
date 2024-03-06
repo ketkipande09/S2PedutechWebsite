@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="container eventcontainer" *ngFor="let event of readLists">
+      <div class="container eventcontainer mb-5" *ngFor="let event of readLists">
         <div class="card eventcard" *ngIf="event.eventStatus">
           <div class="row">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -60,9 +60,6 @@
                       </div>
                     </div>
                   </div>
-
-                  <!-- <h3 class="text-center">End Date:{{event.endDate | date }}</h3> -->
-
                   <div class="button">
                     <ng-template #content let-modal>
                       <div class="code">
@@ -80,7 +77,6 @@
                         </div>
                       </div>
                     </ng-template>
-
                     <button class="knowbutton" (click)="openVerticallyCentered(content)">
                       Register Here
                     </button>

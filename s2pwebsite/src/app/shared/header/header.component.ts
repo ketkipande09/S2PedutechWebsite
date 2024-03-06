@@ -29,18 +29,17 @@ export class HeaderComponent {
     this.router.navigate([path])
   }
   
- scrollTo(sectionId: string): void {
-  const element = document.getElementById(sectionId);
 
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-    console.log(`Element with ID ${sectionId} found.`);
-  } else {
-    console.error(`Element with ID ${sectionId} not found.`);
-  }
+scrollTo(section:any){
+  let element:any = document.getElementById(section);
+
+  element.scrollIntoView({
+    behavior : 'smooth',
+    inline : 'nearest',
+    block : 'start'
+  })
+  
 }
-
- 
   
 
   
