@@ -55,52 +55,44 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="container">
-
       <div class="row">
-        <!-- <div class="col d-flex"> -->
-          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 rightside">
-            <h3 class="head">Services</h3>
-            <h5 class="subhead">Training</h5>
-            <h5 class="subhead">Coaching</h5>
-            <h5 class="subhead">Consulting</h5>
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 rightside">
+          <h3 class="head">Services</h3>
+          <h5 class="subhead">Training</h5>
+          <h5 class="subhead">Coaching</h5>
+          <h5 class="subhead">Consulting</h5>
+        </div>
+
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+          <h3 class="head">Contacts</h3>
+          <h5 class="subhead">Phone</h5>
+          <p class="midhead">
+            <i class="fa-solid fa-phone"></i> +91 9096360650 | +91 8888755259
+          </p>
+          <h5 class="subhead">E-mail</h5>
+          <p class="midhead">
+            <i class="fa-solid fa-envelope"></i>
+            sachinnandgirwar@s2pedutech.com
+          </p>
+        </div>
+
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+          <h3 class="head">Address</h3>
+          <p class="midhead">
+            <i class="fa-solid fa-location-dot fa-lg"></i> Meera bhavan, opp.
+            Sony Center,<br />
+            Near Old Dande Hospital,<br />
+            Nagpur -440010.
+          </p>
+        </div>
+
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+          <div style="overflow: hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.170803763473!2d79.05370937401278!3d21.14559988375766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c06816ae14cf%3A0x16bece4149d8d45e!2sS2P%20EDUTECH!5e0!3m2!1sen!2sin!4v1707816704924!5m2!1sen!2sin"
+            ></iframe>
           </div>
-
-          <!-- <div class="col-md-1 vertical-line" style="height: 100%"></div> -->
-
-          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
-            <h3 class="head">Contacts</h3>
-            <h5 class="subhead">Phone</h5>
-            <p class="midhead">
-              <i class="fa-solid fa-phone"></i> +91 9096360650 | +91 8888755259
-            </p>
-            <h5 class="subhead">E-mail</h5>
-            <p class="midhead">
-              <i class="fa-solid fa-envelope"></i>
-              sachinnandgirwar@s2pedutech.com
-            </p>
-          </div>
-
-          <!-- <div class="col-md-1 vertical-line" style="height: 100%"></div> -->
-
-          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 ">
-            <h3 class="head">Address</h3>
-            <p class="midhead">
-              <i class="fa-solid fa-location-dot fa-lg"></i> Meera bhavan, opp.
-              Sony Center,<br />
-              Near Old Dande Hospital,<br />
-              Nagpur -440010.
-            </p>
-          </div>
-
-
-          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
-            <div style="overflow: hidden;">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.170803763473!2d79.05370937401278!3d21.14559988375766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c06816ae14cf%3A0x16bece4149d8d45e!2sS2P%20EDUTECH!5e0!3m2!1sen!2sin!4v1707816704924!5m2!1sen!2sin"
-              ></iframe>
-            </div>
-          </div>
-        <!-- </div> -->
+        </div>
       </div>
     </div>
 
@@ -109,7 +101,6 @@
     <div class="row py-3">
       <div class="col-12 bottom">
         <h6>Connect with us</h6>
-        <!-- <div class="social-row py-3"> -->
         <a
           href="https://www.facebook.com/FromStudentToProfessional"
           class="media-icon"
@@ -134,17 +125,74 @@
         >
           <i class="fab fa-youtube"></i>
         </a>
-        <!-- </div> -->
       </div>
     </div>
   </div>
 </div>
 
 <!-- floating-button -->
-<button class="floating-button" (click)="this.isOpen = !this.isOpen">
+<button class="floating-button" (click)="openVerticallyCentered(Content)">
   <strong>Enquire Now</strong>
 </button>
-<div *ngIf="isOpen == true" class="centering mt-4" >
+<ng-template #Content let-modal>
+  <div class="card">
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      <div class="d-flex justify-content-center">
+    <img
+      src="../../../assets/enquire_now_img.png"
+      class="image"
+      alt="..."
+    />
+  </div>
+
+    <div class="modal-body">
+      <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+        <br>
+        <label for="mobile">Contact No:</label>
+        <input type="mobile" id="number" formControlName="number">
+        <br>
+        
+          <label for="branch">Branch</label>
+          <select id="branch" class="inputfield" formControlName="branch">
+            <option value="Computer Technology">Computer Technology</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics And Telecommunication">Electronics And Telecommunication</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Others">Others</option>
+          </select>
+       
+        <br>
+        <select class="inputfield" formControlName="course">
+          <option selected>Select your course</option>
+          <option value="Java Full Stack Developer">
+            Java Full Stack Developer
+          </option>
+          <option value="Mean Stack Developer">Mean Stack Developer</option>
+        </select>
+        <br>
+        <button (click)="onSubmit()" type="submit">Submit</button>
+      </form>
+    </div>
+
+
+
+
+
+
+
+
+
+  </div>
+</ng-template>
+
+<!-- <div *ngIf="isOpen == true" class="centering mt-4" >
   <div class="box mt-3">
     <button
       type="button"
@@ -224,8 +272,4 @@
     </div>
     <button (click)="onSubmit()" class="submit mt-3">Submit</button>
   </div>
-</div>
-
-
-
-
+</div> -->

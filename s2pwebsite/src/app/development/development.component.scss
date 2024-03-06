@@ -36,12 +36,12 @@
   }
 }
 .modalcard {
-  height: 13rem;
+  height: 14rem;
   margin: 5px;
   padding: 0;
   .card-img-top {
-    height: 5rem;
-    width: 5rem;
+    height: 6rem;
+    width: 8rem;
     padding: 10px;
   }
   .card-body {
@@ -54,6 +54,7 @@
     .card-text {
       font-size: 13px;
       color: #924c06;
+      padding: 0;
     }
   }
 }
@@ -170,8 +171,8 @@
 @media (max-width: 1200px) {
   .modalcard {
     .card-img-top {
-      height: 8rem;
-      width: 10rem;
+      height: 4.5rem;
+      width: 7rem;
       padding: 8px;
     }
     .card-body {
@@ -191,8 +192,8 @@
     margin: 5px;
     padding: 0;
     .card-img-top {
-      height: 7rem;
-      width: 10rem;
+      height: 4rem;
+      width: 6rem;
       padding: 5px;
     }
     .card-body {

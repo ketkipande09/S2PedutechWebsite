@@ -36,11 +36,11 @@ export class MainComponent implements OnInit, OnDestroy {
     this.subscription = new Subscription();
   } 
   
-  img :any = {
-    img1: "../../assets/WELCOME TO.gif",
-    img2: "../../assets/landing.gif",
-    img3: "../../assets/WELCOME TO.gif"
-  }
+  // img :any = {
+  //   img1: "../",
+  //   img2: "../../assets/landing.gif",
+  //   img3: "../../assets/WELCOME TO.gif"
+  // }
   
   ngOnInit(): void {
     this.getall();
