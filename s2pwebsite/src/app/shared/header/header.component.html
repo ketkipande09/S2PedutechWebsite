@@ -1,4 +1,4 @@
-<div class="col-md-12" [ngClass]="{'fixed-header': !headerVisible, 'initial-header': headerVisible}">
+<div id="header" class="col-md-12" [ngClass]="{'fixed-header': !headerVisible, 'initial-header': headerVisible}">
     <nav [class.header]="!headerVisible">
 
         <h1 class="logo me-auto" (click)="navigateTo('landing')"><a href="index.html"><img
@@ -9,36 +9,19 @@
             <i class="fa fa-bars" aria-hidden="true"></i>
         </label>
         <ul class="nav-links justify-content-end">
-    <li class="dropbtn"><a class="nav-links" href="/">
-            <strong> Home</strong>
-        </a></li>
-    <li class="dropbtn"><a class="nav-links" href="#placements">
-            <strong>Placement</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" href="#development-resources"> <strong>Development &
-                Resources</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" href="#training"><strong>Training </strong></a>
-    </li>
-    <li class="dropbtn"><a class="nav-links" (click)="navigateTo('gallery')"><strong>Gallery</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" (click)="navigateTo('contact')"><strong>Contact</strong></a></li>
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('/landing');routeTo('header')">
+                    <strong> Home</strong>
+                </a></li>
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('/landing');routeTo('placements')" >
+                    <strong>Placement</strong></a></li>
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('/landing');routeTo('development-resources')"> <strong>Development &
+                        Resources</strong></a></li>
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('/landing');routeTo('training')"><strong>Training </strong></a>
+            </li>
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('gallery')"><strong>Gallery</strong></a></li>
+            <li class="dropbtn"><a class="nav-links" (click)="navigateTo('contact')"><strong>Contact</strong></a></li>
 
-</ul>
-          
+        </ul>
+
     </nav>
 </div>
-
-
-<input type="checkbox" id="toggle">
-<!-- <ul class="nav-links justify-content-end">
-    <li class="dropbtn"><a class="nav-links" href="/">
-            <strong> Home</strong>
-        </a></li>
-    <li class="dropbtn"><a class="nav-links" href="#placements">
-            <strong>Placement</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" href="#development-resources"> <strong>Development &
-                Resources</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" href="#training"><strong>Training </strong></a>
-    </li>
-    <li class="dropbtn"><a class="nav-links" (click)="navigateTo('gallery')"><strong>Gallery</strong></a></li>
-    <li class="dropbtn"><a class="nav-links" (click)="navigateTo('contact')"><strong>Contact</strong></a></li>
-
-</ul> -->
