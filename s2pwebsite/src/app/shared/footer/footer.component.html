@@ -147,32 +147,52 @@
     </div>
 
     <div class="modal-body">
-      <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="enquiryForm">
         <label for="name">Name:</label>
-        <input type="text" id="name" formControlName="name" />
-        <br />
-        <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email" />
-        <br />
+        <input type="text" id="name" formControlName="name">
+        <div *ngIf="enquiryForm.controls['name'].hasError('required') && enquiryForm.controls['name'].touched" class="error-message">
+          Name is required
+        </div>
+        <br>
+        <label for="college">College:</label>
+        <input type="text" id="college" formControlName="college">
+        <div *ngIf="enquiryForm.controls['college'].hasError('required') && enquiryForm.controls['college'].touched" class="error-message">
+          College is required
+        </div>
+        <br>
         <label for="mobile">Contact No:</label>
-        <input type="mobile" id="number" formControlName="number" />
-        <br />
-
-        <label for="branch">Branch</label>
-        <select id="branch" class="inputfield" formControlName="branch">
-          <option value="Computer Technology">Computer Technology</option>
-          <option value="Information Technology">Information Technology</option>
-          <option value="Electronics And Telecommunication">
-            Electronics And Telecommunication
-          </option>
-          <option value="Mechanical Engineering">Mechanical Engineering</option>
-          <option value="Civil Engineering">Civil Engineering</option>
-          <option value="Electrical Engineering">Electrical Engineering</option>
-          <option value="Others">Others</option>
-        </select>
-
-        <br />
+        <input type="text" id="mobile" formControlName="mobile">
+        <div *ngIf="enquiryForm.controls['mobile'].hasError('required') && enquiryForm.controls['mobile'].touched" class="error-message">
+          Contact No is required
+        </div>
+        <br>
+        <label for="passingyear">passing Year</label>
+        <input type="passingyear" id="passingyear" formControlName="passingyear">
+        <div *ngIf="enquiryForm.controls['passingyear'].hasError('required') && enquiryForm.controls['passingyear'].touched" class="error-message">
+          Passing year is required
+        </div>
+        <br>
+          <label for="branch">Branch</label>
+          <select id="branch" class="inputfield" formControlName="branch">
+            <div *ngIf="enquiryForm.controls['branch'].hasError('required') && enquiryForm.controls['branch'].touched" class="error-message">
+              Branch is required
+            </div>
+            <option selected>Select your course</option>
+            <option value="Computer Technology">Computer Technology</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics And Telecommunication">Electronics And Telecommunication</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Others">Others</option>
+          </select>
+       
+        <br>
+        <label for="course">Course</label>
         <select class="inputfield" formControlName="course">
+          <div *ngIf="enquiryForm.controls['course'].hasError('required') && enquiryForm.controls['course'].touched" class="error-message">
+            Course is required
+          </div>
           <option selected>Select your course</option>
           <option value="Java Full Stack Developer">
             Java Full Stack Developer
@@ -182,6 +202,15 @@
         <br />
         <button (click)="onSubmit()" type="submit">Submit</button>
       </form>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #SuccessMessage let-modal>
+  <div class="success-modal">
+    <div class="modal-body">
+      <p>Your inquiry has been submitted successfully. Our team will contact you soon.</p>
+      <button type="button" class="btn btn-primary" (click)="modal.dismiss('Close click')">Close</button>
     </div>
   </div>
 </ng-template>
