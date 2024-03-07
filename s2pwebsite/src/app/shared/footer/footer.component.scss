@@ -327,7 +327,7 @@ a.float:hover + div.label-container {
 .success-modal {
   position: relative;
   width: 500px;
-  height: 500px;
+  height: 400px;
   background-color: #fdf0e0;
   z-index: 1111;
   overflow: hidden;
@@ -340,13 +340,13 @@ a.float:hover + div.label-container {
   .bg {
     position: absolute;
     width: 490px;
-    height: 490px;
+    height: 390px;
     z-index: 2;
     background-color: #fdf0e0;
     backdrop-filter: blur(24px);
     .card-img-top{
       justify-content: center;
-      height: 20rem;
+      height: 15rem;
     }
     .btn-close {
       border: none;
@@ -379,7 +379,7 @@ a.float:hover + div.label-container {
     background-color: rgb(0, 110, 0);
     opacity: 1;
     filter: blur(12px);
-    animation: blob-bounce 5s infinite ease;
+    animation: blob-bounce 3s infinite ease;
   }
 
   @keyframes blob-bounce {

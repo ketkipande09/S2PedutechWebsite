@@ -146,13 +146,16 @@
       .card-heading {
         font-size: 15px;
         font-weight: 800;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         padding: 0;
+        height: 3rem;
       }
       .card-text {
-        font-size: 15px;
+        font: 20px poppin;
         color: #924c06;
-        padding: 0;
+        padding: 5px;
+        margin-left: 15px;
+        text-align: center;
       }
     }
   }
