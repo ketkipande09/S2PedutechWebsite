@@ -73,11 +73,7 @@
   height: fit-content;
   margin: 5px;
   padding: 0;
-  .card-img-top {
-    height: 5rem;
-    width: 5rem;
-    padding: 10px;
-  }
+  
   .card-body {
     .card-heading {
       font-size: 18px;
@@ -86,6 +82,9 @@
     .card-text {
       font-size: 13px;
       color: #924c06;
+    }
+    p {
+      text-align: justify;
     }
   }
 }
@@ -337,10 +336,10 @@ $animationSpeed: 15s;
   }
 
   .slide {
-    height: 100px;
-    width: 250;
+    // height: 100px;
+    // width: 250;
     padding: 20px;
-    border-radius: 2px;
+    // border-radius: 2px;
   }
 }
 
