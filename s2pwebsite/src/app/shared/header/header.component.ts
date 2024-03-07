@@ -9,16 +9,16 @@ import { PlacementComponent } from 'src/app/placement/placement.component';
 })
 
 
-export class HeaderComponent {
+export class HeaderComponent { 
   headerVisible = true;
   text: any = '';
   active: any = '';
 
   isCollapsed = false;
   isScroll: boolean = false;
-
-  @Output() navigate = new EventEmitter();
-
+  
+    @Output() navigate = new EventEmitter();
+  
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
   }  
@@ -76,7 +76,7 @@ routeTo(section:any){
     }
     this.navigate.emit(key);
   }
-
+  
 
   
 
