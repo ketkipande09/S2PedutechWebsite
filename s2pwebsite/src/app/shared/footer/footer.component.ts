@@ -22,7 +22,8 @@ export class FooterComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private restService: RestService
+    private restService: RestService,
+    private formBuilder: FormBuilder,
   ) {}
   ngOnInit(): void {
     this.enquiryForm.value;
@@ -43,21 +44,21 @@ export class FooterComponent {
     return this.enquiryForm.controls;
   }
 
-  enquiryForm = new FormGroup({
+  enquiryForm = this.formBuilder.group({
     name: new FormControl('', [Validators.required]),
     branch: new FormControl('Select your Branch', [Validators.required]),
     college: new FormControl('', [Validators.required]),
     mobile: new FormControl('', [
       Validators.required,
-      Validators.minLength(10),
-      Validators.pattern('^[0-9]{10}$'),
+        Validators.pattern('^[7-9][0-9]{9}$'),
+        Validators.minLength(10),
+        Validators.maxLength(10),
     ]),
     passingyear: new FormControl('', [Validators.required]),
     course: new FormControl('Select your course', [Validators.required]),
   });
 
   onSubmit(): void {
-    console.log('Submit button clicked');
     if (this.enquiryForm.invalid) {
       return;
     }
