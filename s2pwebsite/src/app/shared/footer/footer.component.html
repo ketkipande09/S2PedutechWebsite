@@ -148,31 +148,91 @@
 
     <div class="modal-body">
       <form [formGroup]="enquiryForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" formControlName="name">
-        <div *ngIf="enquiryForm.controls['name'].hasError('required') && enquiryForm.controls['name'].touched" class="error-message">
-          Name is required
+        <!-- <label for="name">Name:</label>
+          <br>
+          <input type="text" id="name" formControlName="name">
+          <div *ngIf="enquiryForm.controls['name'].hasError('required') && enquiryForm.controls['name'].touched" class="error-message">
+            Name is required
+        </div> -->
+        <div class="group">
+          <input
+            required=""
+            type="text"
+            class="input"
+            id="name"
+            formControlName="name"
+          />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Name</label>
         </div>
-        <br>
-        <label for="college">College:</label>
-        <input type="text" id="college" formControlName="college">
-        <div *ngIf="enquiryForm.controls['college'].hasError('required') && enquiryForm.controls['college'].touched" class="error-message">
-          College is required
+        <br />
+        <div class="group">
+          <input
+            required=""
+            type="text"
+            class="input"
+            id="college"
+            formControlName="college"
+          />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>College</label>
         </div>
-        <br>
-        <label for="mobile">Contact No:</label>
+
+        <!-- <br>
+          <label for="college">College:</label>
+          <br>
+          <input type="text" id="college" formControlName="college">
+          <div *ngIf="enquiryForm.controls['college'].hasError('required') && enquiryForm.controls['college'].touched" class="error-message">
+            College is required
+          </div> -->
+
+        <br />
+        <div class="row">
+          <div class="col-6">
+            <!-- <label for="mobile">Contact No:</label>
         <input type="text" id="mobile" formControlName="mobile">
         <div *ngIf="enquiryForm.controls['mobile'].hasError('required') && enquiryForm.controls['mobile'].touched" class="error-message">
           Contact No is required
-        </div>
-        <br>
-        <label for="passingyear">passing Year</label>
+        </div> -->
+            <div class="group">
+              <input
+                required=""
+                type="text"
+                class="input"
+                id="mobile"
+                formControlName="mobile"
+              />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Contact No:</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <!-- <label for="passingyear">passing Year</label>
         <input type="passingyear" id="passingyear" formControlName="passingyear">
         <div *ngIf="enquiryForm.controls['passingyear'].hasError('required') && enquiryForm.controls['passingyear'].touched" class="error-message">
           Passing year is required
+        </div> -->
+            <div class="group">
+              <input
+                required=""
+                type="passingyear"
+                class="input"
+                id="passingyear"
+                formControlName="passingyear"
+              />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Passing Year</label>
+            </div>
+          </div>
         </div>
-        <br>
-          <label for="branch">Branch</label>
+        <br />
+
+        <!-- <label for="branch">Branch</label>
+          <br>
           <select id="branch" class="inputfield" formControlName="branch">
             <div *ngIf="enquiryForm.controls['branch'].hasError('required') && enquiryForm.controls['branch'].touched" class="error-message">
               Branch is required
@@ -185,10 +245,39 @@
             <option value="Civil Engineering">Civil Engineering</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
             <option value="Others">Others</option>
+          </select> -->
+
+        <div class="group">
+          <select
+            required=""
+            class="input"
+            id="branch"
+            formControlName="branch"
+          >
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <option selected>Select your Branch</option>
+            <option value="Computer Technology">Computer Technology</option>
+            <option value="Information Technology">
+              Information Technology
+            </option>
+            <option value="Electronics And Telecommunication">
+              Electronics And Telecommunication
+            </option>
+            <option value="Mechanical Engineering">
+              Mechanical Engineering
+            </option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Electrical Engineering">
+              Electrical Engineering
+            </option>
+            <option value="Others">Others</option>
           </select>
-       
+        </div>
+
+        <br />
+        <!-- <label for="course">Course</label>
         <br>
-        <label for="course">Course</label>
         <select class="inputfield" formControlName="course">
           <div *ngIf="enquiryForm.controls['course'].hasError('required') && enquiryForm.controls['course'].touched" class="error-message">
             Course is required
@@ -198,8 +287,27 @@
             Java Full Stack Developer
           </option>
           <option value="Mean Stack Developer">Mean Stack Developer</option>
-        </select>
+        </select> -->
+
+        <div class="group">
+          <select
+            required=""
+            type="passingyear"
+            class="input"
+            formControlName="course"
+          >
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Course</label>
+            <option selected>Select your course</option>
+            <option value="Java Full Stack Developer">
+              Java Full Stack Developer
+            </option>
+            <option value="Mean Stack Developer">Mean Stack Developer</option>
+          </select>
+        </div>
         <br />
+
         <button (click)="onSubmit()" type="submit">Submit</button>
       </form>
     </div>
@@ -208,9 +316,27 @@
 
 <ng-template #SuccessMessage let-modal>
   <div class="success-modal">
-    <div class="modal-body">
-      <p>Your inquiry has been submitted successfully. Our team will contact you soon.</p>
-      <button type="button" class="btn btn-primary" (click)="modal.dismiss('Close click')">Close</button>
+    <div class="bg">
+      <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+    <img src="../../../assets/thankyou.png" alt="" class="card-img-top">
+      <p class="text-center">
+        We just received your message
+      </p>
+      <p class="text">
+        We are working on your request and will get in touch as soon as possible. 
+      </p>
+      <!-- <button
+        type="button"
+        class="btn btn-primary"
+        (click)="modal.dismiss('Close click')">
+        Close
+      </button> -->
     </div>
+    <div class="blob"></div>
   </div>
 </ng-template>

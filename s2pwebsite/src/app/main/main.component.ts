@@ -29,6 +29,10 @@ export class MainComponent implements OnInit, OnDestroy {
   animationState: string = 'in';
   currentNumber: number = 0;
   targetNumber: any;
+  yearExperienceNumber: number = 0
+  yearExperience: any;
+  employeeNumber: number = 0;
+  employee: any;
   
   private subscription: Subscription;
   
@@ -44,9 +48,12 @@ export class MainComponent implements OnInit, OnDestroy {
   
   ngOnInit(): void {
     this.getall();
+    this.getalldata();
     this.animationState = 'in';
     this.subscription = interval(10).subscribe(() => {
       this.incrementNumber();
+      this.incrementNumberEmployee();
+      this.incrementNumberYearExperience();
     });
   }
   ngOnDestroy(): void {
@@ -57,6 +64,17 @@ export class MainComponent implements OnInit, OnDestroy {
       this.currentNumber++;
     }
   }
+
+  incrementNumberYearExperience() {
+    if (this.yearExperienceNumber < this.yearExperience) {
+      this.yearExperienceNumber++;
+    }
+  }
+  incrementNumberEmployee() {
+    if (this.employeeNumber < this.employee) {
+      this.employeeNumber++;
+    }
+  }
   incrementNumberOne(){
 
   }
@@ -65,6 +83,14 @@ export class MainComponent implements OnInit, OnDestroy {
     this.restService.getbulletin().subscribe((data: any) => {
       this.mainData = data.result.Home;
       this.targetNumber = this.mainData[0]?.placementCount 
+    });
+  }
+  getalldata() {
+    this.restService.getbulletin().subscribe((data: any) => {
+      this.mainData = data.result.Home;
+      this.targetNumber = this.mainData[0]?.placementCount
+      this.yearExperience = this.mainData[0]?.YearsExperience;
+      this.employee = this.mainData[0]?.OurEMPLOYEE;
     });
   }
 

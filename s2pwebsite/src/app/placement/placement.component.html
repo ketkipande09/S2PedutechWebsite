@@ -179,8 +179,8 @@
             <div
               class="card d-flex p-3 m-3 placementclass"
               [ngClass]="{
-                'blue-background': i % 2 === 0,
-                'green-background': i % 2 !== 0
+                'first-background': i % 2 === 0,
+                'second-background': i % 2 !== 0
               }"
             >
               <div class="circle-container">
@@ -190,11 +190,12 @@
                   alt="..."
                 />
               </div>
-              <div class="card-body card-text-color">
+              <div class="card-body ">
                 <div class="row bodyrow">
-                  <h5 class="text-center">Name:- {{ place.studentName }}</h5>
-                  <h5 class="text-center">College:- {{ place.collage }}</h5>
-                  <h5 class="text-center">Company:- {{ place.company }}</h5>
+                  <h5 class="text-center" style="font-weight: 1000;">{{ place.studentName }}</h5>
+                  <h5 class="text-center">{{ place.collage }}</h5>
+                  <h5 class="text">{{ place.company }}</h5>
+                 
                 </div>
               </div>
             </div>
@@ -202,34 +203,5 @@
         </div>
       </div>
     </marquee>
-
-    <!-- <div class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12 col-xxl-12">
-      <div class="slider">
-        <div class="slide-track">
-          <div class="slide" *ngFor="let place of readList;let i = index">
-            <div class="card d-flex" [ngClass]="{'blue-background': i % 2 === 0, 'green-background': i % 2 !== 0}">
-              <div class="circle-container">
-                <img src="{{ place.image }}" class="card-img-top circular-img" alt="..." />
-              </div>
-              <div class="card-body card-text-color">
-                <div class="row mt-3">
-                  <h5 class="text-center">Name:- {{ place.studentName }}</h5>
-                  <h5 class="text-center pt-2">
-                    College:- {{ place.collage }}
-                  </h5>
-                </div>
-                <div class="row placements">
-                  <div class="col">
-                    <h5 class="px-3 text-center">
-                      Company:- {{ place.company }}
-                    </h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </section>
