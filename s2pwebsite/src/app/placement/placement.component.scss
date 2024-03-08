@@ -15,7 +15,7 @@
           font: 40px poppin;
         }
         .text {
-          font: 20px poppin;
+          font: 30px poppin;
         }
       }
     }
@@ -26,6 +26,15 @@
     .container {
       .card {
         height: 180px;
+        .card-body {
+          margin-top: 50px;
+          .text-center {
+            font: 35px poppin;
+          }
+          .text {
+            font: 20px poppin;
+          }
+        }
       }
     }
   }
@@ -95,7 +104,6 @@
     position: relative;
     display: inline-block;
   }
-
   .overlay-text {
     position: absolute;
     top: 75%;
@@ -119,7 +127,6 @@
     font: 20px poppin;
     padding: 10px;
     text-align: justify;
-
   }
   h4 {
     font: 20px poppin;
@@ -133,115 +140,96 @@
   }
 }
 
-.eventimage {
-  height: 20rem;
-  width: 30rem;
-}
-
 .qrimage {
   height: 10rem;
   width: 12rem;
 }
 
 .eventcard {
-  // background-color: #fff3e6;
   border-width: 2px;
   background-image: url("../../assets/backevent.png");
   color: #834200;
-}
-
-.modal-content {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.modal-body {
-  padding: 20px;
-}
-
-.modal-img img {
-  max-width: 15rem;
-  height: 15rem;
-}
-
-.modal-text {
-  h1 {
-    font: 30px poppin;
-    text-align: center;
-  }
-
-  h5 {
-    font: 20px poppin;
-    margin-top: 10px;
-
-  }
-
-  h3 {
-    font: 25px poppin;
-    margin-top: 2rem;
+  .eventimage {
+    height: 20rem;
+    width: 30rem;
   }
 }
 
 .code {
   background-color: #fdf0e0;
-  .modal-text {
-    .text {
-      font-weight: 500;
+  .modal-body {
+    padding: 20px;
+    .modal-img img {
+      max-width: 15rem;
+      height: 15rem;
     }
-    .description {
-      color: #834200;
-      
+    .modal-text {
+      .text {
+        font: 30px poppin;
+        text-align: center;
+      }
+      h1 {
+        font: 30px poppin;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .description {
+        font: 20px poppin;
+        margin-top: 10px;
+        color: #834200;
+        text-align: justify;
+      }
+      .animated-button {
+        position: relative;
+        margin-top: 2rem;
+        left: 40px;
+        display: inline-block;
+        padding: 12px 24px;
+        border: none;
+        font: 20px poppin;
+        background-color: inherit;
+        border-radius: 100px;
+        font-weight: 600;
+        color: #834200;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .animated-button span:last-child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background-color: #834200;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .animated-button span:first-child {
+        position: relative;
+        z-index: 1;
+      }
+
+      .animated-button:hover {
+        box-shadow: 0 0 0 5px #331a01;
+        color: #ffffff;
+      }
+
+      .animated-button:active {
+        scale: 0.95;
+      }
+
+      .animated-button:hover span:last-child {
+        width: 150px;
+        height: 150px;
+        opacity: 1;
+      }
     }
-  }
-  .animated-button {
-    position: relative;
-    margin-top: 2rem;
-    left: 40px;
-    display: inline-block;
-    padding: 12px 24px;
-    border: none;
-    font-size: 20px;
-    background-color: inherit;
-    border-radius: 100px;
-    font-weight: 600;
-    color: #834200;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button span:last-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background-color: #834200;
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button span:first-child {
-    position: relative;
-    z-index: 1;
-  }
-
-  .animated-button:hover {
-    box-shadow: 0 0 0 5px #331a01;
-    color: #ffffff;
-  }
-
-  .animated-button:active {
-    scale: 0.95;
-  }
-
-  .animated-button:hover span:last-child {
-    width: 150px;
-    height: 150px;
-    opacity: 1;
   }
 }
 
@@ -342,11 +330,99 @@
     }
   }
 }
+@media (max-width: 426px) {
+  .code {
+    .modal-body {
+      padding: 10px;
+      .qrimage {
+        max-width: 10rem;
+        max-height: 10rem;
+      }
+      .modal-text {
+        .text {
+          font: 25px poppin;
+          text-align: center;
+        }
+        .description {
+          font: 15px poppin;
+          margin: 15px;
+          color: #834200;
+        }
+        h1 {
+          font: 20px poppin;
+          text-align: center;
+          margin: 20px;
+        }
+
+        .animated-button {
+          position: relative;
+          margin-top: -1rem;
+          left: 40px;
+          padding: 6px 12px;
+          font: 15px poppin;
+          font-weight: 500;
+        }
+
+        .animated-button span:last-child {
+          width: 10px;
+          height: 10px;
+        }
+
+        .animated-button:hover span:last-child {
+          width: 100px;
+          height: 100px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
 
 @media (max-width: 375px) {
   .section-heading1 {
     font-size: 25px;
     text-align: center;
+  }
+  .code {
+    .modal-body {
+      padding: 10px;
+      .qrimage {
+        width: 5rem;
+        max-height: 5rem;
+      }
+      .modal-text {
+        .text {
+          font: 20px poppin;
+          text-align: center;
+        }
+        .description {
+          font: 10px poppin;
+          margin: 5px;
+          color: #834200;
+        }
+        h1 {
+          font: 15px poppin;
+          text-align: center;
+          // margin: 20px;
+        }
+        .animated-button {
+          position: relative;
+          margin-top: -1rem;
+          left: 3rem;
+          font: 12px poppin;
+          // font-weight: 500;
+        }
+
+        .animated-button span:last-child {
+          width: 8px;
+          height: 8px;
+        }
+        .animated-button:hover span:last-child {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
   }
 }
 

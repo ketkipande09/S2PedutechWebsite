@@ -17,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,13 @@ import { NgIf } from '@angular/common';
     AppRoutingModule,SharedModule,HttpClientModule,ReactiveFormsModule,BrowserAnimationsModule,
     NgbModule,
     NgbCarouselModule,
-    NgIf
+    NgIf,
+    ToastrModule.forRoot({
+      timeOut: 3000, // Time to close the toaster (in milliseconds)
+      positionClass: "toast-top-right", // Toast position
+      closeButton: true, // Show close button
+      progressBar: true, // Show progress bar
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

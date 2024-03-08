@@ -76,10 +76,16 @@
         <div class="col-md-6 left">
           <h2 class="subhead">Drop Us A Message</h2>
           <p class="faq">Got A Question ? We'd Love To Hear From You.</p>
-          <p class="faq">Send Us A Message And We'll Respond As Soon As Possible.</p>
+          <p class="faq">
+            Send Us A Message And We'll Respond As Soon As Possible.
+          </p>
 
-          <p class="phonecont"><i class="fa fa-phone"></i> : 9096360650 | 8888755259</p>
-          <p class="emailcont"><i class="fa fa-envelope"></i> : sachinnandgirwar@s2pedutech.com</p>
+          <p class="phonecont">
+            <i class="fa fa-phone"></i> : 9096360650 | 8888755259
+          </p>
+          <p class="emailcont">
+            <i class="fa fa-envelope"></i> : sachinnandgirwar@s2pedutech.com
+          </p>
         </div>
         <div class="col-md-6 right">
           <div class="contactForm">
@@ -87,30 +93,97 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <input type="text" name="" class="form-control" value="" placeholder="Name" formControlName="name">
+                    <input
+                      type="text"
+                      name=""
+                      class="form-control"
+                      value=""
+                      placeholder="Name"
+                      formControlName="name"
+                    />
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="" value="" placeholder="Email ID"
-                      formControlName="email">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="number" class="form-control" name="" value="" placeholder="Contact"
-                      formControlName="contact">
+                <div
+                  *ngIf="
+                    contactForm.get('name')!.invalid &&
+                    (contactForm.get('name')!.dirty ||
+                      contactForm.get('name')!.touched)
+                  "
+                  style="color: red"
+                >
+                  <div *ngIf="contactForm.get('name')!.errors?.['required']">
+                    Name is required.
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <textarea name="" rows="4" class="form-control" placeholder="Message"
-                      formControlName="message"></textarea>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name=""
+                      value=""
+                      placeholder="Email ID"
+                      formControlName="email"
+                    />
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    contactForm.get('email')!.invalid &&
+                    (contactForm.get('email')!.dirty ||
+                      contactForm.get('email')!.touched)
+                  "
+                  style="color: red"
+                >
+                  <div *ngIf="contactForm.get('email')!.errors?.['required']">
+                    Email is required.
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name=""
+                      value=""
+                      placeholder="Contact"
+                      formControlName="contact"
+                    />
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    contactForm.get('contact')!.invalid &&
+                    (contactForm.get('contact')!.dirty ||
+                      contactForm.get('contact')!.touched)
+                  "
+                  style="color: red"
+                >
+                  <div *ngIf="contactForm.get('contact')!.errors?.['required']">
+                    Mobile number is required.
+                  </div>
+                  <div *ngIf="contactForm.get('contact')!.errors?.['pattern']" >
+                    Please enter a valid 10-digit mobile number.
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <textarea
+                      name=""
+                      rows="4"
+                      class="form-control"
+                      placeholder="Message"
+                      formControlName="message"
+                    ></textarea>
                   </div>
                 </div>
                 <div class="col-md-12 mb-2">
-                  <button type="button" class="button" (click)="onSubmit()">Send Message</button>
+                  <button type="button" class="button" (click)="onSubmit()">
+                    Send Message
+                  </button>
                 </div>
               </div>
             </form>

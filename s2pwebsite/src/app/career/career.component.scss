@@ -3,6 +3,26 @@
   margin-top: 10px;
   margin-bottom: 10px;
 
+  // .card {
+  //   border-radius: 15px;
+  //   border-top: 3px solid #ff8a00;
+  //   border-bottom: 5px solid #ff8a00;
+  //   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.4);
+  //   width: 15rem;
+  //   height: 20rem;
+
+  //   .card-body {
+  //     flex-direction: column;
+  //     //   padding: 0;
+  //     padding: 0px 20px;
+
+  //     .btn {
+  //       background-color: #1338be;
+  //       border-radius: 25px;
+  //       color: #fff;
+  //     }
+  //   }
+  // }
   .card {
     border-radius: 15px;
     border-top: 3px solid #ff8a00;
@@ -10,30 +30,67 @@
     box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.4);
     width: 15rem;
     height: 20rem;
-
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  
+    &:hover {
+      transform: rotate(0deg);
+      box-shadow: 0px 0px 20px 0px rgba(183, 67, 67, 0.4);
+    }
+  
     .card-body {
       flex-direction: column;
-      //   padding: 0;
       padding: 0px 20px;
-
-      .btn {
-        background-color: #1338be;
-        border-radius: 25px;
-        color: #fff;
+      .card-title {
+        text-align: center;
+        padding: 0%;
       }
+      .brochure {
+       padding-bottom: 10px;
+        .btn {
+          background-color: #1338be;
+          border-radius: 25px;
+          color: #fff;
+        }
+      }
+
+    }
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: #ff8a00;
+      border-radius: 50%;
+      animation: shadowRoll 5s linear infinite;
+      transition: all 0.3s ease;
+      z-index: -1;
     }
   }
+  
+  @keyframes shadowRoll {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
   .center {
     display: flex;
     justify-content: center;
   }
-}
-.brochure {
-  padding-bottom: 10px;
-}
-.card-title {
-  text-align: center;
-  padding: 0%;
 }
 
 .section-heading1 {
