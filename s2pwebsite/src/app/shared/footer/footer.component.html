@@ -136,13 +136,14 @@
           <span class="bar"></span>
           <label>Name</label>
         </div>
-        <div *ngIf="enquiryForm.get('name')!.invalid && (enquiryForm.get('name')!.dirty || enquiryForm.get('name')!.touched)"
-             style="color: red;">
+        <div
+          *ngIf="enquiryForm.get('name')!.invalid && (enquiryForm.get('name')!.dirty || enquiryForm.get('name')!.touched)"
+          style="color: red;">
           <div *ngIf="enquiryForm.get('name')!.errors?.['required']">
             Name is required.
           </div>
         </div>
-        
+
         <br />
         <div class="group">
           <input required="" type="text" class="input" id="college" formControlName="college" />
@@ -150,12 +151,13 @@
           <span class="bar"></span>
           <label>College</label>
         </div>
-        <div *ngIf="enquiryForm.get('college')!.invalid && (enquiryForm.get('college')!.dirty || enquiryForm.get('college')!.touched)"
-             style="color: red;">
+        <div
+          *ngIf="enquiryForm.get('college')!.invalid && (enquiryForm.get('college')!.dirty || enquiryForm.get('college')!.touched)"
+          style="color: red;">
           <div *ngIf="enquiryForm.get('college')!.errors?.['required']">
             College is required.
           </div>
-        </div>        
+        </div>
         <br />
         <div class="row">
           <!-- Add the error message below the mobile input field -->
@@ -179,19 +181,27 @@
           </div>
           <div class="col-6">
             <div class="group">
-              <input required="" type="passingyear" class="input" id="passingyear" formControlName="passingyear" />
+              <input required="" type="number" class="input" id="passingyear" formControlName="passingyear" />
               <span class="highlight"></span>
               <span class="bar"></span>
               <label>Passing Year</label>
             </div>
+            <div
+            *ngIf="enquiryForm.get('passingyear')!.invalid && (enquiryForm.get('passingyear')!.dirty || enquiryForm.get('passingyear')!.touched)"
+            style="color: red;">
+            <div *ngIf="enquiryForm.get('passingyear')!.errors?.['required']">
+              Passing year is required.
+            </div>
           </div>
+          </div>
+          
         </div>
         <br />
         <div class="group">
           <select required="" class="input" id="branch" formControlName="branch">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <option selected>Select your Branch</option>
+            <!-- <option value="" selected disabled>Select your Branch</option> -->
             <option value="Computer Technology">Computer Technology</option>
             <option value="Information Technology">
               Information Technology
@@ -208,14 +218,14 @@
             </option>
             <option value="Others">Others</option>
           </select>
+          <label>Select your Branch</label>
         </div>
         <br />
         <div class="group">
           <select required="" type="passingyear" class="input" formControlName="course">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Course</label>
-            <option selected>Select your course</option>
+            <!-- <option value="" selected disabled>Select your course</option> -->
             <option value="Java Full Stack Developer">
               Java Full Stack Developer
             </option>
@@ -231,6 +241,7 @@
             <option value="RPA Using UiPath">RPA Using UiPath</option>
             <option value="Machine Learning Using Python">Machine Learning Using Python</option>
           </select>
+        <label>Select your course</label>
         </div>
         <br />
 
@@ -246,10 +257,10 @@
       <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
       <img src="../../../assets/thankyou.png" alt="" class="card-img-top">
       <p class="text-center">
-       For Your Enquiry
+        For Your Enquiry
       </p>
       <p class="text">
-        We will get in touch as soon as possible. 
+        We will get in touch as soon as possible.
       </p>
     </div>
     <div class="blob"></div>

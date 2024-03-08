@@ -24,7 +24,7 @@ export class FooterComponent {
     private activatedRoute: ActivatedRoute,
     private restService: RestService,
     private formBuilder: FormBuilder,
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.enquiryForm.value;
     this.activatedRoute.queryParams.subscribe((params: any) => {
@@ -46,16 +46,16 @@ export class FooterComponent {
 
   enquiryForm = this.formBuilder.group({
     name: new FormControl('', [Validators.required]),
-    branch: new FormControl('Select your Branch', [Validators.required]),
+    branch: new FormControl('', [Validators.required]),
     college: new FormControl('', [Validators.required]),
     mobile: new FormControl('', [
       Validators.required,
-        Validators.pattern('^[7-9][0-9]{9}$'),
-        Validators.minLength(10),
-        Validators.maxLength(10),
+      Validators.pattern('^[7-9][0-9]{9}$'),
+      Validators.minLength(10),
+      Validators.maxLength(10),
     ]),
     passingyear: new FormControl('', [Validators.required]),
-    course: new FormControl('Select your course', [Validators.required]),
+    course: new FormControl('', [Validators.required]),
   });
 
   onSubmit(): void {
