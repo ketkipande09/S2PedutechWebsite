@@ -15,7 +15,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  private modalService = inject(NgbModal);
   id: any;
   isOpen = false;
   @ViewChild('SuccessMessage') SuccessMessage: any;
@@ -24,6 +23,7 @@ export class FooterComponent {
     private activatedRoute: ActivatedRoute,
     private restService: RestService,
     private formBuilder: FormBuilder,
+    private modalService: NgbModal
   ) { }
   ngOnInit(): void {
     this.enquiryForm.value;
@@ -59,6 +59,9 @@ export class FooterComponent {
   });
 
   onSubmit(): void {
+    Object.values(this.enquiryForm.controls).forEach(control => {
+      control.markAsTouched();
+    });
     if (this.enquiryForm.invalid) {
       return;
     }
@@ -78,5 +81,8 @@ export class FooterComponent {
         console.error('Error creating enquiry:', errorResponse);
       }
     );
+  }
+  resetForm() {
+    this.enquiryForm.reset();
   }
 }

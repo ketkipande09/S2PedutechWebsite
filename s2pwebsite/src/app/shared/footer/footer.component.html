@@ -123,7 +123,8 @@
 </button>
 <ng-template #Content let-modal>
   <div class="card">
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    <button type="button" class="btn-close" aria-label="Close"
+      (click)="resetForm(); modal.dismiss('Cross click')"></button>
     <div class="d-flex justify-content-center">
       <img src="../../../assets/enquire_now_img.png" class="image" alt="..." />
     </div>
@@ -187,14 +188,14 @@
               <label>Passing Year</label>
             </div>
             <div
-            *ngIf="enquiryForm.get('passingyear')!.invalid && (enquiryForm.get('passingyear')!.dirty || enquiryForm.get('passingyear')!.touched)"
-            style="color: red;">
-            <div *ngIf="enquiryForm.get('passingyear')!.errors?.['required']">
-              Passing year is required.
+              *ngIf="enquiryForm.get('passingyear')!.invalid && (enquiryForm.get('passingyear')!.dirty || enquiryForm.get('passingyear')!.touched)"
+              style="color: red;">
+              <div *ngIf="enquiryForm.get('passingyear')!.errors?.['required']">
+                Passing year is required.
+              </div>
             </div>
           </div>
-          </div>
-          
+
         </div>
         <br />
         <div class="group">
@@ -220,6 +221,11 @@
           </select>
           <label>Select your Branch</label>
         </div>
+        <div *ngIf="enquiryForm.get('branch')!.invalid && enquiryForm.get('branch')!.touched" style="color: red;">
+          <div *ngIf="enquiryForm.get('branch')!.errors?.['required']">
+            Select your Branch is required.
+          </div>
+        </div>
         <br />
         <div class="group">
           <select required="" type="passingyear" class="input" formControlName="course">
@@ -241,7 +247,12 @@
             <option value="RPA Using UiPath">RPA Using UiPath</option>
             <option value="Machine Learning Using Python">Machine Learning Using Python</option>
           </select>
-        <label>Select your course</label>
+          <label>Select your course</label>
+        </div>
+        <div *ngIf="enquiryForm.get('course')!.invalid && enquiryForm.get('course')!.touched" style="color: red;">
+          <div *ngIf="enquiryForm.get('course')!.errors?.['required']">
+            Select your course is required.
+          </div>
         </div>
         <br />
 
