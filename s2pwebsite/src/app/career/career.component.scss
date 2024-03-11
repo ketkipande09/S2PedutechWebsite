@@ -95,7 +95,7 @@
 
 .section-heading1 {
   font: 50px poppin;
-  color: #333;
+  color: #f79521;
   // margin-bottom: 5px;
   // margin-left: 20px;
   margin-top: 1rem;
@@ -248,6 +248,257 @@
           font-size: 12px;
         }
       }
+    }
+  }
+}
+
+.card {
+  background-color: #fdf0e0;
+  .btn-close {
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    position: relative;
+    left: 30rem;
+    top: 10px;
+  }
+  .image {
+    height: 180px;
+    width: 300px;
+  }
+}
+
+.modal-body {
+  padding: 20px;
+
+  .group {
+    position: relative;
+
+    .input {
+      font-size: 16px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 95%;
+      border: none;
+      border-bottom: 1px solid #515151;
+      background: transparent;
+    }
+
+    .input:focus {
+      outline: none;
+    }
+
+    label {
+      color: #999;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    .input:focus ~ label,
+    .input:valid ~ label {
+      top: -10px;
+      font-size: 14px;
+      color: #5264ae;
+    }
+
+    .bar {
+      position: relative;
+      display: block;
+      width: 200px;
+    }
+
+    .bar:before,
+    .bar:after {
+      content: "";
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: #5264ae;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    .bar:before {
+      left: 50%;
+    }
+
+    .bar:after {
+      right: 50%;
+    }
+
+    .input:focus ~ .bar:before,
+    .input:focus ~ .bar:after {
+      width: 50%;
+    }
+
+    .highlight {
+      position: absolute;
+      height: 60%;
+      width: 100px;
+      top: 25%;
+      left: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .input:focus ~ .highlight {
+      animation: inputHighlighter 0.3s ease;
+    }
+
+    @keyframes inputHighlighter {
+      from {
+        background: #5264ae;
+      }
+
+      to {
+        width: 0;
+        background: transparent;
+      }
+    }
+  }
+
+  button[type="submit"] {
+    padding: 10px;
+    background-color: #ffcf57;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #f6c504;
+  }
+}
+
+@media (max-width: 426px) {
+  .card {
+    .btn-close {
+      border: none;
+      position: relative;
+      left: 24rem;
+      top: 10px;
+    }
+  }
+}
+@media (max-width: 376px) {
+  .card {
+    .btn-close {
+      border: none;
+      position: relative;
+      left: 21rem;
+      top: 10px;
+    }
+    .image {
+      height: 150px;
+      width: 300px;
+    }
+  }
+}
+@media (max-width: 350px) {
+  .card {
+    .btn-close {
+      border: none;
+      position: relative;
+      left: 19rem;
+      top: 10px;
+    }
+    .image {
+      height: 100px;
+      width: 200px;
+    }
+  }
+}
+
+//sucess
+.success-modal {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  background-color: #fdf0e0;
+  z-index: 1111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+
+  .bg {
+    position: absolute;
+    width: 490px;
+    height: 390px;
+    z-index: 2;
+    background-color: #fdf0e0;
+    backdrop-filter: blur(24px);
+    .card-img-top{
+      justify-content: center;
+      height: 15rem;
+    }
+    .btn-close {
+      border: none;
+      font-size: 10px;
+      cursor: pointer;
+      position: relative;
+      left: 29.5rem;
+    }
+    .text-center {
+      // padding: 25px;
+      color: #834200;
+      font: 22px poppin;
+    }
+    .text{
+      text-align: center;
+      font: 25px poppin;
+      margin:2rem;
+      color: #010101;
+    }
+  }
+
+  .blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 350px;
+    border-radius: 70%;
+    background-color: rgb(0, 110, 0);
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 3s infinite ease;
+  }
+
+  @keyframes blob-bounce {
+    0% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+
+    25% {
+      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+
+    50% {
+      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+
+    75% {
+      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+
+    100% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
     }
   }
 }

@@ -13,7 +13,6 @@ const resCode = MESSAGES.resCode;
 const Op = sequelize.Op;
 
 const placementObj = {
-
     createPlacement: async (req, res) => {
         try {
             console.log("req.body========>", req.body);
@@ -22,7 +21,8 @@ const placementObj = {
                     [Op.or]: [{ studentName: req.body.studentName.toLowerCase() }],
                 },
             };
-            /** check if Course exist or not */
+
+            // Check if Course already exists
             let existingCourse = await Placement.findOne(query);
 
             if (existingCourse) {
@@ -37,16 +37,21 @@ const placementObj = {
                         )
                     );
             }
+
             var createObj = new Placement(req.body);
-            // var courseObj = req.body;
+
             if (req.file) {
                 placementObj.image = req.file.filename;
             }
-            Object.keys(placementObj).forEach((key, index) => {
-                createObj[key] = placementObj[key];
-            });
+            // else {
+                
+            //     placementObj.image = 'placeholder.jpg';
+            // }
+
+            createObj.image = placementObj.image;
+
             let course = await createObj.save();
-            // let course = await Course.create(createObj);
+
             return res.status(resCode.HTTP_OK).json(
                 generateResponse(resCode.HTTP_OK, {
                     message: MESSAGES.apiSuccessStrings.ADDED(`The Course is`),

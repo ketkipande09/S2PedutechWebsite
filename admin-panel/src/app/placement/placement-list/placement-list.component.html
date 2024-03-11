@@ -45,7 +45,9 @@
             <td scope="row">{{ r.studentName }}</td>
             <td scope="row">{{ r.collage }}</td>
             <td scope="row">
-              <img src="{{ r.image }}" alt="placeholder" height="50" width="75" />
+              <img *ngIf="r.image" src="{{ r.image }}" alt="placeholder" height="50" width="75" />
+              <img *ngIf="!r.image" src="./../../../assets/img/placeholder.jpg" alt="placeholder" height="50" width="75" />
+              
             </td>
             <td scope="row">{{ r.company }}</td>
             <td scope="row" class="text-center">
