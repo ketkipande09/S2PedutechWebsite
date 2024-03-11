@@ -89,7 +89,7 @@
               </div>
             </div>
           </div> -->
-         
+
           <div class="col-xs-7 col-sm-7 col-md-6 col-lg-3 col-xl-3 col-xxl-3 center">
             <div class="card">
               <img src="../../../../../assets/crt.png" class="card-img-top" alt="..." />
@@ -130,7 +130,7 @@
                     <ng-template #Content let-modal>
                       <div class="modal-body text-center">
                         <div class="d-flex justify-content-center">
-                          <h4 class="modal-title">Training cum  Internship</h4>
+                          <h4 class="modal-title">Training cum Internship</h4>
                           <button type="button" class="btn-close" aria-label="Close"
                             (click)="modal.dismiss('Cross click')"></button>
                         </div>
@@ -139,33 +139,19 @@
                           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                             <div class="card modalcard">
                               <div class="justify-content-center">
-                                <img src="../../assets/courses/C_Programming_Language.svg.png" class="card-img-top" alt="..." />
+                                <img src="../../assets/courses/C_Programming_Language.svg.png" class="card-img-top"
+                                  alt="..." />
                               </div>
                               <div class="card-body">
                                 <p class="card-heading text-center">
-                                  Programming Basics Using ‘C’
+                                  Programming Basics Using ‘C’ <br>
+                                  <button type="button" class="mt-3 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('Programming Basics Using C',OpenModel)">know
+                                    More</button>
                                 </p>
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('Programming Basics Using C',OpenModel)">Warning</button>
-                                  <div class="d-flex justify-content-center">
-                                    <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
-                                    <p class="card-text">15 Days</p>
-                                  </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
-                            <div class="card modalcard">
-                              <div class="justify-content-center">
-                              <img src="../../assets/courses/html-css-.jpg" class="card-img-top" alt="..." />
-                              </div>
-                              <div class="card-body">
-                                <p class="card-heading text-center">
-                                  Web Development Using HTML | CSS
-                                </p>
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('Web Development Using HTML CSS',OpenModel)">Warning</button>
                                 <div class="d-flex justify-content-center">
-                                  <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
-                                  <p class="card-text">15 Days</p>
+                                  <i class="mt-2 fa-regular fa-clock fa-fade fa-2x" style="color: #924c06;"></i>
+                                  <p class="card-text mt-2">15 Days</p>
                                 </div>
                               </div>
                             </div>
@@ -173,16 +159,18 @@
                           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                             <div class="card modalcard">
                               <div class="justify-content-center">
-                              <img src="../../assets/courses/py.jpg" class="card-img-top" alt="..." />
+                                <img src="../../assets/courses/html-css-.jpg" class="card-img-top" alt="..." />
                               </div>
                               <div class="card-body">
                                 <p class="card-heading text-center">
-                                  Python Basics
+                                  Web Development Using HTML | CSS <br>
+                                  <button type="button" class="mt-3 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('Web Development Using HTML CSS',OpenModel)">know
+                                    More</button>
                                 </p>
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('Python Basics',OpenModel)">Warning</button>
                                 <div class="d-flex justify-content-center">
-                                  <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
-                                  <p class="card-text">15 Days</p>
+                                  <i class="mt-2 fa-regular fa-clock fa-fade fa-2x" style="color: #924c06;"></i>
+                                  <p class="card-text mt-2">15 Days</p>
                                 </div>
                               </div>
                             </div>
@@ -190,11 +178,32 @@
                           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                             <div class="card modalcard">
                               <div class="justify-content-center">
-                              <img src="../../assets/courses/py_numpy_panda.png" class="card-img-top" alt="..." />
+                                <img src="../../assets/courses/py.jpg" class="card-img-top" alt="..." />
                               </div>
                               <div class="card-body">
-                                <p class="card-heading text-center">Python | Numpy | Pandas</p>
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('Python | Numpy | Pandas',OpenModel)">Warning</button>
+                                <p class="card-heading text-center mt-2">
+                                  Python Basics <br>
+                                  <button type="button" class="mt-4 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('Python Basics',OpenModel)">know More</button>
+                                </p>
+                                <div class="d-flex justify-content-center">
+                                  <i class="mt-0 fa-regular fa-clock fa-fade fa-2x" style="color: #924c06;"></i>
+                                  <p class="card-text mt-0">15 Days</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                            <div class="card modalcard">
+                              <div class="justify-content-center">
+                                <img src="../../assets/courses/py_numpy_panda.png" class="card-img-top" alt="..." />
+                              </div>
+                              <div class="card-body">
+                                <p class="card-heading text-center mt-2">Python | Numpy | Pandas <br>
+                                  <button type="button" class="mt-4 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('Python | Numpy | Pandas',OpenModel)">know
+                                    More</button>
+                                </p>
                                 <div class="d-flex justify-content-center">
                                   <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
                                   <p class="card-text">1 Month</p>
@@ -207,11 +216,50 @@
                           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                             <div class="card modalcard">
                               <div class="justify-content-center">
-                              <img src="../../assets/courses/angular_solidBlack (1).png" class="card-img-top" alt="..." />
+                                <img src="../../assets/courses/angular_solidBlack (1).png" class="card-img-top"
+                                  alt="..." />
                               </div>
                               <div class="card-body">
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('Web Development USING Angular',OpenModel)">Warning</button>
-                                <p class="card-heading text-center">Web Development USING Angular</p>
+                                <p class="card-heading text-center">Web Development USING Angular <br>
+                                  <button type="button" class="mt-3 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('Web Development USING Angular',OpenModel)">know
+                                    More</button>
+                                </p>
+                                <div class="d-flex justify-content-center">
+                                  <i class=" mt-2 fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
+                                  <p class="card-text mt-2">1 Month</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                            <div class="card modalcard">
+                              <div class="justify-content-center">
+                                <img src="../../assets/courses/node.png" class="card-img-top" alt="..." />
+                              </div>
+                              <div class="card-body">
+                                <p class="card-heading text-center">Server Side Development Using Nodejs <br>
+                                  <button type="button" class="mt-3 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('Server Side Development Using Nodejs',OpenModel)">know
+                                    More</button>
+                                </p>
+                                <div class="d-flex justify-content-center">
+                                  <i class="mt-2 fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
+                                  <p class="card-text mt-2">1 Month</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                            <div class="card modalcard">
+                              <div class="justify-content-center">
+                                <img src="../../assets/courses/opps concept.jpg" class="card-img-top" alt="..." />
+                              </div>
+                              <div class="card-body">
+                                <p class="card-heading text-center mt-2">OOP Using JAVA <br>
+                                  <button type="button" class="mt-4 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('OOP Using JAVA',OpenModel)">know More</button>
+                                </p>
                                 <div class="d-flex justify-content-center">
                                   <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
                                   <p class="card-text">1 Month</p>
@@ -222,11 +270,31 @@
                           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                             <div class="card modalcard">
                               <div class="justify-content-center">
-                              <img src="../../assets/courses/node.png" class="card-img-top" alt="..." />
+                                <img src="../../assets/courses/java.png" class="card-img-top" alt="..." />
                               </div>
                               <div class="card-body">
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('Server Side Development Using Nodejs',OpenModel)">Warning</button>
-                                <p class="card-heading text-center">Server Side Development Using Nodejs</p>
+                                <p class="card-heading text-center">Server Side Development Using JAVA <br>
+                                  <button type="button" class="mt-3 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('Server Side Development Using JAVA',OpenModel)">know
+                                    More</button>
+                                </p>
+                                <div class="d-flex justify-content-center">
+                                  <i class="mt-2 fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
+                                  <p class="card-text mt-2">1 Month</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                            <div class="card modalcard">
+                              <div class="justify-content-center">
+                                <img src="../../assets/courses/uipathrpa.jpg" class="card-img-top" alt="..." />
+                              </div>
+                              <div class="card-body">
+                                <p class="card-heading text-center mt-2">RPA Using UiPath <br>
+                                  <button type="button" class="mt-4 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('RPA Using UiPath',OpenModel)">know More</button>
+                                </p>
                                 <div class="d-flex justify-content-center">
                                   <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
                                   <p class="card-text">1 Month</p>
@@ -237,59 +305,18 @@
                           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                             <div class="card modalcard">
                               <div class="justify-content-center">
-                              <img src="../../assets/courses/opps concept.jpg" class="card-img-top" alt="..." />
+                                <img src="../../assets/courses/Machine-Learning.jpg" class="card-img-top" alt="..." />
                               </div>
                               <div class="card-body">
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('OOP Using JAVA',OpenModel)">Warning</button>
-                                <p class="card-heading text-center">OOP Using JAVA</p>
+                                <p class="card-heading text-center">Machine Learning Using Python <br>
+                                  <button type="button" class="mt-3 btn btn-warning btn-sm"
+                                    (click)="openVerticallyCentered('Machine Learning Using Python',OpenModel)">know
+                                    More 
+                                  </button>
+                                </p>
                                 <div class="d-flex justify-content-center">
-                                  <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
-                                  <p class="card-text">1 Month</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
-                            <div class="card modalcard">
-                              <div class="justify-content-center">
-                              <img src="../../assets/courses/java.png" class="card-img-top" alt="..." />
-                              </div>
-                              <div class="card-body">
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('Server Side Development Using JAVA',OpenModel)">Warning</button>
-                                <p class="card-heading text-center">Server Side Development Using JAVA</p>
-                                <div class="d-flex justify-content-center">
-                                  <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
-                                  <p class="card-text">1 Month</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
-                            <div class="card modalcard">
-                              <div class="justify-content-center">
-                              <img src="../../assets/courses/uipathrpa.jpg" class="card-img-top" alt="..." />
-                              </div>
-                              <div class="card-body">
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('RPA Using UiPath',OpenModel)">Warning</button>
-                                <p class="card-heading text-center">RPA Using UiPath</p>
-                                <div class="d-flex justify-content-center">
-                                  <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
-                                  <p class="card-text">1 Month</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
-                            <div class="card modalcard">
-                              <div class="justify-content-center">
-                              <img src="../../assets/courses/Machine-Learning.jpg" class="card-img-top" alt="..." />
-                              </div>
-                              <div class="card-body">
-                                <button type="button" class="mt-0 btn btn-warning btn-sm" (click)="openVerticallyCentered('Machine Learning Using Python',OpenModel)">Warning</button>
-                                <p class="card-heading text-center">Machine Learning Using Python</p>
-                                <div class="d-flex justify-content-center">
-                                  <i class="fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
-                                  <p class="card-text">2+1 Month</p>
+                                  <i class=" mt-2 fa-regular fa-clock fa-fade fa-2xl" style="color: #924c06;"></i>
+                                  <p class="card-text mt-2">2+1 Month</p>
                                 </div>
                               </div>
                             </div>
@@ -310,14 +337,14 @@
 
 
 <ng-template #OpenModel let-modal>
-  <div class="card">
+  <div class="careerCard">
     <button type="button" class="btn-close" aria-label="Close"
       (click)="resetForm(); modal.dismiss('Cross click')"></button>
     <div class="d-flex justify-content-center">
       <img src="../../../assets/enquire_now_img.png" class="image" alt="..." />
     </div>
 
-    <div class="modal-body">
+    <div class="CareerModal-body">
       <form [formGroup]="enquiryForm">
         <div class="group">
           <input required="" type="text" class="input" id="name" formControlName="name" />

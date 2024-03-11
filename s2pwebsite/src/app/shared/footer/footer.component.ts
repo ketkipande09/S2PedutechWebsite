@@ -37,8 +37,15 @@ export class FooterComponent {
     });
   }
   openVerticallyCentered(longContent: any) {
-    this.modalService.open(longContent, { centered: true });
+    const modalRef = this.modalService.open(longContent, { centered: true });
+  
+    // Subscribe to the dismissed event
+    modalRef.dismissed.subscribe(() => {
+      // Clear the form data when the modal is dismissed (clicked outside)
+      this.resetForm();
+    });
   }
+  
 
   get enquiryFormControls() {
     return this.enquiryForm.controls;

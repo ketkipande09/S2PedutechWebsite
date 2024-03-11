@@ -53,16 +53,15 @@ export class CareerComponent {
   }
 
   openVerticallyCentered(course: any, longContent: any) {
-    // Close the XL modal if it's open
     this.enquiryForm.controls['course'].setValue(course);
     if (this.xlModalRef) {
       this.xlModalRef.close();
     }
-
-
-    // Open the vertically centered modal
     this.centeredModalRef = this.modalService.open(longContent, {
       centered: true,
+    });
+    this.centeredModalRef.dismissed.subscribe(() => {
+      this.resetForm();
     });
   }
 

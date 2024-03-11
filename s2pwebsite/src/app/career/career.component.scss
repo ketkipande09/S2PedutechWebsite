@@ -176,7 +176,7 @@
 // modal
 .modal-body {
   padding: 20px;
-  background-color: #fdf0e0;
+  background-color: #fedc71;
   height: max-content;
   .modal-title {
     text-align: center;
@@ -191,7 +191,7 @@
     font-family: Montserrat, sans-serif;
   }
   .modalcard {
-    height: 15rem;
+    height: 16rem;
     margin: 5px;
     padding: 0;
     .card-img-top {
@@ -205,13 +205,13 @@
         font-weight: 800;
         margin-bottom: 2rem;
         padding: 0;
-        height: 3rem;
+        height: 4rem;
       }
       .card-text {
         font: 20px poppin;
         color: #924c06;
-        padding: 5px;
-        margin-left: 15px;
+        padding: 2px;
+        margin-left: 8px;
         text-align: center;
       }
     }
@@ -252,7 +252,7 @@
   }
 }
 
-.card {
+.careerCard {
   background-color: #fdf0e0;
   .btn-close {
     border: none;
@@ -268,7 +268,7 @@
   }
 }
 
-.modal-body {
+.CareerModal-body {
   padding: 20px;
 
   .group {
