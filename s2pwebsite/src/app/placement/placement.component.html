@@ -28,12 +28,12 @@
         <div
           class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
         >
-          <div class="section-heading1">Our Latest Event</div>
+          <div class="section-heading1 mb-3">Our Latest Event</div>
         </div>
       </div>
 
       <div
-        class="container eventcontainer mb-5"
+        class="container eventcontainer mb-3"
         *ngFor="let event of readLists"
       >
         <div class="card eventcard" *ngIf="event.eventStatus">
@@ -161,7 +161,7 @@
 </div>
 
 <!-- placement -->
-<section id="placement02s" class="py-5">
+<section id="placements" class="py-5">
   <div class="container-fluid placement p-0">
     <div class="row w-100 justify-content-center">
       <div class="col-12 d-flex justify-content-center align-items-center">
@@ -184,11 +184,16 @@
               }"
             >
               <div class="circle-container">
-                <img
+                <img  *ngIf="place.image"
                   src="{{ place.image }}"
                   class="img-fluid rounded-circle"
                   alt="..."
                 />
+                <img *ngIf="!place.image"
+                src="../../assets/placeholder.jpg"
+                class="img-fluid rounded-circle"
+                alt="..."
+              />
               </div>
               <div class="card-body ">
                 <div class="row bodyrow">

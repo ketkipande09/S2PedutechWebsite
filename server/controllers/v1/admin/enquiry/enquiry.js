@@ -17,21 +17,19 @@ const enquiryObj = {
 
   createEnquiry: async (req, res) => {
     try {
-      let query = {
-        where: {
-          [Op.or]: [{ name: req.body.name }],
-        },
-      };
-      let existingEnquiry = await Enquiry.findOne(query);
-      var createObj = new Enquiry();
-      var enquiryObj = req.body;
+      let createObj = new Enquiry();
+      let enquiryObj = req.body;
+
       if (req.file) {
         enquiryObj.image = req.file.filename;
       }
-      Object.keys(enquiryObj).forEach((key, index) => {
+
+      Object.keys(enquiryObj).forEach((key) => {
         createObj[key] = enquiryObj[key];
       });
+
       let enquiry = await createObj.save();
+
       return res.status(resCode.HTTP_OK).json(
         generateResponse(resCode.HTTP_OK, {
           message: MESSAGES.apiSuccessStrings.ADDED(`enquiry added`),
@@ -45,6 +43,7 @@ const enquiryObj = {
       throw new Error(e);
     }
   },
+
   //** Enquiry listing */
   getEnquiryListing: async (req, res) => {
     try {

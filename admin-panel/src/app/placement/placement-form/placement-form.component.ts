@@ -87,30 +87,30 @@ export class PlacementFormComponent implements OnInit {
     console.log(this.images);
     this.submitted = true;
     if (this.placementForm.invalid) {
-      this.toastService.warning('Please fill all required field !');
+      this.toastService.warning('Please fill all required fields!');
       return;
     } else {
       const fd = new FormData();
+      // Always append other form fields
+      fd.append('key', 'placement');
+      fd.append('studentName', this.placementForm.value.studentName);
+      fd.append('collage', this.placementForm.value.collage);
+      fd.append('company', this.placementForm.value.company);
+
       if (this.images) {
-        // this.spinner.show();
-        fd.append('key', 'placement');
+        // Append image data if available
         fd.append('image', this.images, this.images.name);
-        fd.append('studentName', this.placementForm.value.studentName);
-        fd.append('collage', this.placementForm.value.collage);
-        fd.append('company', this.placementForm.value.company)
-        console.log('fd,,,,', fd);
-        this.PlacementService.createPlacement(fd).subscribe((data) => {
-          console.log(data);
-          this.router.navigate(['/placement/placement-list']);
-          this.toastService.success('placement Created Successfully!');
-          //  this.modalService.dismissAll();
-          // this.spinner.hide();
-        });
-      } else {
-        this.toastService.warning('Please upload images');
       }
+
+      console.log('fd,,,,', fd);
+      this.PlacementService.createPlacement(fd).subscribe((data) => {
+        console.log(data);
+        this.router.navigate(['/placement/placement-list']);
+        this.toastService.success('Placement Created Successfully!');
+      });
     }
   }
+
 
   updatePlacement() {
     if (this.placementForm.invalid) {
@@ -125,7 +125,9 @@ export class PlacementFormComponent implements OnInit {
     if (this.images) {
       fd.append('key', 'placement')
       fd.append('image', this.images, this.images.name);
-    }
+    } 
+    console.log("this.images", this.images);
+
     this.PlacementService
       .updatePlacement(fd, this.placementId)
       .subscribe((success) => {

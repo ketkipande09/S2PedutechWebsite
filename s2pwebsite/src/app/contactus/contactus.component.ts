@@ -84,6 +84,7 @@ export class ContactusComponent {
     this.restService.createContact(formValues).subscribe(
       (successResponse: any) => {
         this.toastr.success('Message sent successfully',successResponse.message);
+        this.contactForm.reset();
       },
       (errorResponse: any) => {
         this.toastr.error('Error creating contactform:', errorResponse.message);
