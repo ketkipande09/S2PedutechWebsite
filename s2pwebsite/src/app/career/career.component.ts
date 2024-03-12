@@ -16,6 +16,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 export class CareerComponent {
   id: any;
   isOpen = false;
+  bullet = 'We Specialize in Mean Stack and Java Full Stack courses and plan to create developers of future. Join us if you wish to learn Web Application Development with emphasis on industry standards.'
   @ViewChild('SuccessMessage') SuccessMessage: any;
   // private modalService = inject(NgbModal);
   mainData: any = [];
