@@ -18,59 +18,28 @@ const Excel = require('exceljs');
 
 const feedbackObj = {
   //** Create Test */
-  createFeedback: async (req, res) => {
-    try {
-      var createObj = req.body;
-      const foundItem = await Feedback.findOne({
-        where: {
-          [Op.and]: [{ email: req.body.email }, { name: req.body.name }],
-        },
-      });
-      if (foundItem) {
-        let errors = MESSAGES.apiErrorStrings.Data_EXISTS('This Feedback');
-        return res
-          .status(resCode.HTTP_BAD_REQUEST)
-          .json(
-            generateResponse(
-              resCode.HTTP_BAD_REQUEST,
-              errors,
-              MESSAGES.errorTypes.OAUTH_EXCEPTION
-            )
-          );
-      }
-      if (!foundItem) {
-        const item = await Feedback.create(createObj);
-        return res.status(resCode.HTTP_OK).json(
-          generateResponse(resCode.HTTP_OK, {
-            message: MESSAGES.apiSuccessStrings.ADDED(
-              `This Feedback Details is`
-            ),
-            id: item.id,
-          })
-        );
-      }
+createFeedback: async (req, res) => {
+  try {
+    var createObj = req.body;
+    const item = await Feedback.create(createObj);
+    
+    return res.status(resCode.HTTP_OK).json(
+      generateResponse(resCode.HTTP_OK, {
+        message: MESSAGES.apiSuccessStrings.ADDED(
+          `This Feedback Details is`
+        ),
+        id: item.id,
+      })
+    );
+  } catch (e) {
+    const errors = MESSAGES.apiErrorStrings.SERVER_ERROR;
+    res
+      .status(resCode.HTTP_INTERNAL_SERVER_ERROR)
+      .json(generateResponse(resCode.HTTP_INTERNAL_SERVER_ERROR, errors));
+    throw new Error(e);
+  }
+},
 
-      const item = await Feedback.update(createObj, {
-        where: {
-          [Op.and]: [{ email: req.body.email }],
-        },
-      });
-      return res.status(resCode.HTTP_OK).json(
-        generateResponse(resCode.HTTP_OK, {
-          message: MESSAGES.apiSuccessStrings.ADDED(
-            `The Feedback ${createObj.name} Details is`
-          ),
-          id: item.id,
-        })
-      );
-    } catch (e) {
-      const errors = MESSAGES.apiErrorStrings.SERVER_ERROR;
-      res
-        .status(resCode.HTTP_INTERNAL_SERVER_ERROR)
-        .json(generateResponse(resCode.HTTP_INTERNAL_SERVER_ERROR, errors));
-      throw new Error(e);
-    }
-  },
 
   getFeedback: async (req, res) => {
     try {

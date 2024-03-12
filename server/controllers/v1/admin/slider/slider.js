@@ -58,7 +58,7 @@ const sliderObj = {
       let offset = req.query.page || 1;
       offset = offset - 1;
       offset = offset * req.query.pagesize || 0;
-      let limit = req.query.pagesize || 10;
+      let limit = req.query.pagesize || 500;
       let whereQuery;
       if (req.query.search) {
         whereQuery = {
