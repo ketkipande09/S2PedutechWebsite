@@ -70,7 +70,9 @@
 
     .card-text {
       font-size: 13px;
-      color: #924c06;
+      // color: #924c06;
+      color: #ff8a00;
+      text-align: justify;
       padding: 0;
     }
   }
@@ -99,8 +101,15 @@
 }
 
 .modal-body {
-  padding: 20px;
-  background-color: #fdf0e0;
+  // padding: 20px;
+  // background-color: #fdf0e0;
+  background: linear-gradient(
+    120deg,
+    #FFC107 50%,
+    #FD7E14 78%,
+    #FD7E14 30%,
+    #FFC107 80%
+  );
   height: max-content;
 
   p {
@@ -283,7 +292,6 @@
   margin-bottom: 20px;
   color: #f0710a;
   text-align: center;
-  // padding-right: 100px;
 }
 
 // <---Client CSS--->
@@ -403,7 +411,8 @@ $animationSpeed: 15s;
 
 // step
 .stepcontainer {
-  background-color: #1e2c7c;
+  // background-color: #1e2c7c;
+  background-color: #ff8a00;
   border-radius: 0 250px 0 250px;
   margin-top: 7rem;
   margin-bottom: 3rem;
@@ -412,7 +421,7 @@ $animationSpeed: 15s;
 .heading1 {
   padding: 10px 150px;
   font: 50px poppins;
-  color: #669fff;
+  color: rgb(0, 0, 0)d0d;
 }
 
 .heading2 {

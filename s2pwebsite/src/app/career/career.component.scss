@@ -1,28 +1,15 @@
 .parts {
-  background-color: #fdf0e0;
+  // background-color: #fdf0e0;
+  background: linear-gradient(
+    120deg,
+    #f8e076 50%,
+    #febb83 78%,
+    #febb83 30%,
+    #f5e2a8 88%
+  );
   margin-top: 10px;
   margin-bottom: 10px;
 
-  // .card {
-  //   border-radius: 15px;
-  //   border-top: 3px solid #ff8a00;
-  //   border-bottom: 5px solid #ff8a00;
-  //   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.4);
-  //   width: 15rem;
-  //   height: 20rem;
-
-  //   .card-body {
-  //     flex-direction: column;
-  //     //   padding: 0;
-  //     padding: 0px 20px;
-
-  //     .btn {
-  //       background-color: #1338be;
-  //       border-radius: 25px;
-  //       color: #fff;
-  //     }
-  //   }
-  // }
   .card {
     border-radius: 15px;
     border-top: 3px solid #ff8a00;
@@ -33,13 +20,13 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    margin-top: 1rem;
-  
+    margin-top: 3rem;
+
     &:hover {
       transform: rotate(0deg);
       box-shadow: 0px 0px 20px 0px rgba(183, 67, 67, 0.4);
     }
-  
+
     .card-body {
       flex-direction: column;
       padding: 0px 20px;
@@ -48,18 +35,19 @@
         padding: 0%;
       }
       .brochure {
-       padding-bottom: 10px;
+        padding-bottom: 10px;
         .btn {
-          background-color: #1338be;
+          // background-color: #1338be;
+          background-color: #FFC107;
           border-radius: 25px;
-          color: #fff;
+          color: #000000;
+          font: 16px poppin;
         }
       }
-
     }
-  
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: -50%;
@@ -72,7 +60,7 @@
       z-index: -1;
     }
   }
-  
+
   @keyframes shadowRoll {
     0% {
       transform: translate(-50%, -50%) rotate(0deg);
@@ -86,7 +74,7 @@
       opacity: 0;
     }
   }
-  
+
   .center {
     display: flex;
     justify-content: center;
@@ -95,7 +83,7 @@
 
 .section-heading1 {
   font: 50px poppin;
-  color: #f79521;
+  color: #ff8c00;
   // margin-bottom: 5px;
   // margin-left: 20px;
   margin-top: 1rem;
@@ -442,7 +430,7 @@
     z-index: 2;
     background-color: #fdf0e0;
     backdrop-filter: blur(24px);
-    .card-img-top{
+    .card-img-top {
       justify-content: center;
       height: 15rem;
     }
@@ -458,10 +446,10 @@
       color: #834200;
       font: 22px poppin;
     }
-    .text{
+    .text {
       text-align: center;
       font: 25px poppin;
-      margin:2rem;
+      margin: 2rem;
       color: #010101;
     }
   }
@@ -502,4 +490,3 @@
     }
   }
 }
-
