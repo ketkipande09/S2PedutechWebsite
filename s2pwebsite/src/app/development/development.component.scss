@@ -1,6 +1,21 @@
 .development {
-  background-color: #fafafad7;
+  // background-color: #fafafad7;
+  // background-color: #FFC107;
+  background: linear-gradient(
+    120deg,
+    #f8e076 50%,
+    #febb83 78%,
+    #febb83 30%,
+    #f5e2a8 88%
+  );
 
+  .mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+  
+  }
   .card01 {
     border-radius: 13px;
     box-shadow: 0px 4px 4px 0px #ff8a00;
@@ -8,7 +23,7 @@
     border: 2px solid #ff8a00;
     width: 206px;
     height: 240px;
-
+  
     .image {
       width: 98px;
       height: 70px;
@@ -412,7 +427,7 @@ $animationSpeed: 15s;
 // step
 .stepcontainer {
   // background-color: #1e2c7c;
-  background-color: #ff8a00;
+  background-color: #ffa034;
   border-radius: 0 250px 0 250px;
   margin-top: 7rem;
   margin-bottom: 3rem;

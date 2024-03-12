@@ -1,14 +1,19 @@
 // placementcontainer
 .placementcontainer {
-  background-color: #dfe1b5;
-  background-image: url('../../assets/backkkk.jpeg');
   padding-bottom: 3rem;
 
   .container {
     .card {
       height: 200px;
       // background-color: #ffe0b8;
-      background-image: url('../../assets/backkkk.jpeg');
+      // background-image: url('../../assets/backkkk.jpeg');
+       background: linear-gradient(
+    175deg,
+    #f8e076 50%,
+    #febb83 78%,
+    #febb83 10%,
+    #f8e076 88%
+  );
       border-radius: 30px;
       margin-top: -5rem;
 
@@ -97,16 +102,14 @@
 // event
 .event {
   padding-top: 2rem;
-  padding-bottom: 2rem;
-  // background-color: #dfe1b5;
-  // background-image: url('../../assets/backkkk.jpeg');
-  // background-image: url('../../assets/saffron.avif');
-  background: linear-gradient(120deg,
-      #f8e076 50%,
-      #febb83 78%,
-      #febb83 30%,
-      #f5e2a8 88%);
-     
+  padding-bottom: 2rem;  
+  background: linear-gradient(
+    120deg,
+    #f8e076 50%,
+    #febb83 78%,
+    #febb83 30%,
+    #f5e2a8 88%
+  ); 
 }
 
 .section-heading1 {
@@ -178,8 +181,8 @@
 
 .eventcard {
   border: 1px solid #363636;
-  // background-image: url("../../assets/backevent.png");
-  background-image: url('../../assets/backkkk.jpeg');
+  // background-color: #e1e1e1f2;
+  background-image: url('../../assets/backevent.png');
   color: #834200;
   .eventimage {
     height: 20rem;
