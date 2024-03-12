@@ -19,14 +19,13 @@
     </div>
   </div>
 </div>
-
 <!-- event -->
 <div>
   <div>
     <div class="container-fluid event">
       <div class="row" *ngIf="checkEvent">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-          <div class="section-heading1 mb-3">Our Latest Event</div>
+          <div class="section-heading1 mb-3" style="color:#FD7E14;">Our Latest Event</div>
         </div>
       </div>
 
@@ -40,7 +39,7 @@
               <div class="card-body">
                 <div class="center">
                   <h2 class="text">{{ event.eventName }}</h2>
-                  <h5 class="description">
+                  <h5 class="description" style="color:#FD7E14;">
                     {{ event.description }}
                   </h5>
 
@@ -49,14 +48,14 @@
                       <h4 class="text-center">Start Date:</h4>
                       <img src="../../assets/calendar.png" class="startcalendar" alt="image" />
                       <div class="overlay-text">
-                        <h3>{{ event.startDate | date }}</h3>
+                        <h3  style="color:#FD7E14;">{{ event.startDate | date }}</h3>
                       </div>
                     </div>
                     <div class="image-container left">
                       <h4 class="text-center">End Date:</h4>
                       <img src="../../assets/calendar.png" class="startcalendar" alt="image" />
                       <div class="overlay-text">
-                        <h3>{{ event.endDate | date }}</h3>
+                        <h3  style="color:#FD7E14;">{{ event.endDate | date }}</h3>
                       </div>
                     </div>
                   </div>
@@ -69,7 +68,7 @@
                           </div>
                           <div class="col-md-6 modal-text">
                             <p class="text">Scan Code</p>
-                            <h5 class="description">
+                            <h5 class="description" style="color:#FD7E14;">
                               Register yourself by scanning the QR code.
                             </h5>
 
@@ -98,7 +97,7 @@
                           </div>
                           <div class="col-md-6 modal-text">
                             <p class="text">Scan Code</p>
-                            <h5 class="description">
+                            <h5 class="description" style="color:#FD7E14;">
                               Please Share your valuable Feedback.
                             </h5>
                             <h1 class="mt-5">OR</h1>
