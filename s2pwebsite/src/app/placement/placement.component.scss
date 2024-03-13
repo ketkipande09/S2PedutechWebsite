@@ -16,6 +16,7 @@
   );
       border-radius: 30px;
       margin-top: -5rem;
+      color: black;
 
       .card-body {
         margin-top: 40px;
@@ -182,7 +183,14 @@
 .eventcard {
   border: 1px solid #363636;
   // background-color: #e1e1e1f2;
-  background-image: url('../../assets/backevent.png');
+  // background-image: url('../../assets/backevent.png');
+  background: linear-gradient(
+    120deg, 
+    #b1cbf7 50%, /* Deep blue */
+    #b6afeb 78%, /* Purple */
+    #b6afeb 30%, /* Purple */
+    #b1cbf7 88% /* Lighter blue */
+  );
   color: #834200;
   .eventimage {
     height: 20rem;
@@ -192,8 +200,6 @@
 
 .code {
   background-image: url('../../assets/backkkk.jpeg');
-
-  // background-color: #fdf0e0;
   .modal-body {
     padding: 20px;
 
@@ -215,7 +221,8 @@
       }
 
       .description {
-        font: 20px poppin;
+        font: 20px;
+        font-family: Arial, Helvetica, sans-serif;
         margin-top: 10px;
         color: #834200;
         text-align: justify;
@@ -326,7 +333,8 @@
           width: max-content;
           padding: 5px;
           position: relative;
-          //  right: rem;
+           right: 3rem;
+           display: flex;
         }
       }
     }
@@ -375,6 +383,35 @@
 }
 
 @media (max-width: 426px) {
+  .eventcontainer {
+    .eventcard {
+      .eventimage {
+        height: 8rem;
+        width: 20rem;
+        margin-top: 10px;
+      }
+      .center {
+        .text {
+          font-size: 18px;
+        }
+
+        .description {
+          font-size: 12px;
+        }
+
+        .text-center {
+          font-size: 15px;
+          padding: 0px;
+        }
+
+        .knowbutton {
+          font-size: 10px;
+          position: relative;
+          right: 6rem;
+        }
+      }
+    }
+  }
   .code {
     .modal-body {
       padding: 10px;
@@ -426,7 +463,37 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
+
+  .eventcontainer {
+    .eventcard {
+      .eventimage {
+        height: 5rem;
+        width: 16rem;
+        margin-top: 10px;
+      }
+      .center {
+        .text {
+          font-size: 15px;
+          margin: 0;
+        }
+        .description {
+          font-size: 10px;
+          margin: 0;
+        }
+        .text-center {
+          font-size: 12px;
+          padding: 0px;
+        }
+
+        .knowbutton {
+          font-size: 10px;
+          position: relative;
+          right: 9rem;
+        }
+      }
+    }
+  }
   .section-heading1 {
     font-size: 25px;
     text-align: center;
@@ -480,6 +547,10 @@
     }
   }
 }
+
+
+
+
 
 .placement {
   .placementclass {

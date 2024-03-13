@@ -13,6 +13,7 @@ export class GalleryComponent implements OnInit {
   maindata: any = [];
   imageArr: any = []
   videoArr: any = []
+  
 
   constructor(private user: UserService, private router: Router, private sanitizer: DomSanitizer) {
   }

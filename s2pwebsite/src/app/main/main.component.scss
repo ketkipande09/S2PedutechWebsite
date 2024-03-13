@@ -7,8 +7,6 @@
   font: 20px poppins;
   color: #212529;
   background-color: #ffe058c4;
-  // background-color: #fdf0e0;
-  // background-image: url("../../assets/backkkk.jpg");
 }
 
 
@@ -42,10 +40,18 @@
   .img-fluid{
     height: 15rem;
   }
+  .bullet{
+    font: 15px poppins;
+  }
 }
-@media(max-width:375px){
+@media(max-width:376px){
   .img-fluid{
     height: 12rem;
+  }
+  .bullet{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font: 12px poppins;
   }
 }
 
