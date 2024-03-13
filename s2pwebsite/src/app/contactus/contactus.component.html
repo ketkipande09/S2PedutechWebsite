@@ -65,7 +65,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-        <div class="section-heading">Contact Form</div>
+        <div class="section-heading" style="color:#FD7E14;">Contact Form</div>
       </div>
     </div>
   </div>
@@ -109,7 +109,7 @@
                     (contactForm.get('name')!.dirty ||
                       contactForm.get('name')!.touched)
                   "
-                  style="color: red"
+                  style="color: #212529"
                 >
                   <div *ngIf="contactForm.get('name')!.errors?.['required']">
                     Name is required.
@@ -134,7 +134,7 @@
                     (contactForm.get('email')!.dirty ||
                       contactForm.get('email')!.touched)
                   "
-                  style="color: red"
+                  style="color: #212529"
                 >
                   <div *ngIf="contactForm.get('email')!.errors?.['required']">
                     Email is required.
@@ -159,7 +159,7 @@
                     (contactForm.get('contact')!.dirty ||
                       contactForm.get('contact')!.touched)
                   "
-                  style="color: red"
+                  style="color: #212529"
                 >
                   <div *ngIf="contactForm.get('contact')!.errors?.['required']">
                     Mobile number is required.
