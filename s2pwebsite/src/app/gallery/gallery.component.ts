@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/gallery-services/user.service';
 import { Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-gallery',
@@ -11,11 +12,13 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class GalleryComponent implements OnInit {
   selectedTab: any;
   maindata: any = [];
-  imageArr: any = []
-  videoArr: any = []
+  imageArr: any = [];
+  videoArr: any = [];
+  currentImageIndex:any;
+  
   
 
-  constructor(private user: UserService, private router: Router, private sanitizer: DomSanitizer) {
+  constructor(private user: UserService, private router: Router, private sanitizer: DomSanitizer, private modalService: NgbModal) {
   }
 
   showPhoto() {
@@ -55,7 +58,19 @@ export class GalleryComponent implements OnInit {
 
     });
   }
-  openImage(imageUrl: string) {
-    window.open(imageUrl, '_blank');
+ 
+
+  openVerticallyCentered(content: any, index: number) {
+    this.currentImageIndex = index;
+    this.modalService.open(content,  {centered:true, size: 'lg' });
+  }
+
+  // openModal(content: any, index: number) {
+  //   this.currentImageIndex = index;
+  //   this.modalService.open(content);
+  // }
+
+  carouselSlide(slideEvent: any) {
+    this.currentImageIndex = slideEvent.current;
   }
 }
