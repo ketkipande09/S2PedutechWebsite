@@ -60,9 +60,6 @@
               </button>
             </td>
             <td>
-              <!-- <div class="form-check form-switch">
-                <input [(ngModel)]="r.eventStatus" class="form-check-input" type="checkbox" (change)="eventStatus(r)" />
-              </div> -->
             </td>
           </tr>
         </tbody>
@@ -73,15 +70,15 @@
         <ngb-pagination [collectionSize]="collection" [(page)]="page" [pageSize]="pagesize" [maxSize]="5"
           [rotate]="true" [boundaryLinks]="true" (pageChange)="onChangePage($event)">
           <ng-template ngbPaginationFirst>
-            << </ng-template>
-              <ng-template ngbPaginationLast>>></ng-template>
-              <ng-template ngbPaginationPrevious>
-                < </ng-template>
-                  <ng-template ngbPaginationNext>></ng-template>
-                  <ng-template ngbPaginationEllipsis>...</ng-template>
-                  <ng-template ngbPaginationNumber class="custompage" let-page>
-                    {{ page }}
-                  </ng-template>
+          </ng-template>
+          <ng-template ngbPaginationLast>>></ng-template>
+          <ng-template ngbPaginationPrevious>
+          </ng-template>
+          <ng-template ngbPaginationNext>></ng-template>
+          <ng-template ngbPaginationEllipsis>...</ng-template>
+          <ng-template ngbPaginationNumber class="custompage" let-page>
+            {{ page }}
+          </ng-template>
         </ngb-pagination>
       </div>
       <div class="col-md-6 text-right pr-0">

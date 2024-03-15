@@ -68,7 +68,6 @@ export class PlacementComponent implements OnInit {
     this.PlacementService.getLLPlacement(obj).subscribe((res) => {
       this.readList = res.result.placement;
       this.collection = res.result.count;
-      console.log(this.readList);
     });
   }
 
@@ -79,7 +78,6 @@ export class PlacementComponent implements OnInit {
       search: this.search,
     };
     this.service.getAllEvents(obj).subscribe((res) => {
-      console.log(res, "<=getAll");
       this.readLists = res?.result?.events;
       if (this.readLists.length > 0) {
         this.checkEvent = this.readLists?.some((item: any) => item.eventStatus == true)

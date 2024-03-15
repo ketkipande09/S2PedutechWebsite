@@ -92,7 +92,6 @@ export class CareerComponent {
     }
     this.enquiryForm.enable();
     const formValues = this.enquiryForm.value;
-    console.log('Form values:', formValues);
 
     this.restService.createEnquiry(formValues).subscribe(
       (successResponse: any) => {

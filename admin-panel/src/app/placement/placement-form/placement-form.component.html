@@ -19,21 +19,39 @@
                         <div class="row">
                             <div class="col mb-4">
                                 <label class="form-lable fw-bold ">Name<span class="text-danger">*</span></label>
-                                <input formControlName="studentName" placeholder="" type="text" class="form-control">
+                                <input formControlName="studentName" placeholder="" type="text" class="form-control"
+                                    [ngClass]="{'is-invalid':placementForm.controls['studentName'].invalid && submitted && (f['studentName'].errors
+                   || f['studentName'].touched || f['studentName'].dirty)}">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['studentName']">
+                                    </validation-messages>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col mb-4">
                                 <label class="form-lable fw-bold ">Collage<span class="text-danger">*</span></label>
-                                <input formControlName="collage" placeholder="" type="text" class="form-control">
+                                <input formControlName="collage" placeholder="" type="text" class="form-control"
+                                    [ngClass]="{'is-invalid':placementForm.controls['collage'].invalid && submitted && (f['collage'].errors
+                   || f['collage'].touched || f['collage'].dirty)}">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['collage']">
+                                    </validation-messages>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col mb-4">
                                 <label class="form-lable fw-bold ">Company<span class="text-danger">*</span></label>
-                                <input formControlName="company" placeholder="" type="text" class="form-control">
+                                <input formControlName="company" placeholder="" type="text" class="form-control"
+                                    [ngClass]="{'is-invalid':placementForm.controls['company'].invalid && submitted && (f['company'].errors
+                   || f['company'].touched || f['company'].dirty)}">
+                                <div>
+                                    <validation-messages style="text-align: left" [control]=" f['company']">
+                                    </validation-messages>
+                                </div>
                             </div>
                         </div>
 

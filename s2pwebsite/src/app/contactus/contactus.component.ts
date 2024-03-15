@@ -53,28 +53,7 @@ export class ContactusComponent {
     message: new FormControl(),
   });
 
-  // onSubmit(): void {
-  //   console.log('Submit button clicked');
-  //   if (this.contactForm.invalid) {
-  //     return;
-  //   }
-  //   const formValues = this.contactForm.value;
-  //   console.log('Form values:', formValues);
-  //   this.restService.createContact(formValues).subscribe(
-      
-  //     (successResponse: any) => {
-  //       console.log('contactform created successfully:', successResponse);
-  //   this.toastr.success('Message send successfully');
-
-  //     },
-  //     (errorResponse: any) => {
-  //       console.error('Error creating contactform:', errorResponse);
-  //   this.toastr.error('Please Check Credential');
-
-  //     }
-  //   );
-    
-  // }
+  
   onSubmit(): void {
     if (this.contactForm.invalid) {
       this.toastr.error('Please Check Credential');

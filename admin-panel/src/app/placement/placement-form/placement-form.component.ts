@@ -52,9 +52,9 @@ export class PlacementFormComponent implements OnInit {
   placementForm = new FormGroup({
     id: new FormControl(),
     image: new FormControl(''),
-    studentName: new FormControl(''),
-    collage: new FormControl(''),
-    company: new FormControl(''),
+    studentName: new FormControl('', [Validators.required]),
+    collage: new FormControl('', [Validators.required]),
+    company: new FormControl('', [Validators.required]),
   });
 
 
@@ -125,7 +125,7 @@ export class PlacementFormComponent implements OnInit {
     if (this.images) {
       fd.append('key', 'placement')
       fd.append('image', this.images, this.images.name);
-    } 
+    }
     console.log("this.images", this.images);
 
     this.PlacementService

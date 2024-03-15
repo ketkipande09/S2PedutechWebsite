@@ -39,7 +39,6 @@ export class DevelopmentComponent implements OnInit {
   getAllClient() {
     this.clientService.getAllClient().subscribe((data: any) => {
       this.clientiterate = data.result.client;
-      console.log('aara', this.clientiterate);
     });
   }
 }

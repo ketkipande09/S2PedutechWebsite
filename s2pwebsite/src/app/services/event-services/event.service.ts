@@ -31,7 +31,6 @@ export class EventService {
 
   }
   EventById(id:any){
-    console.log(id);
     
     return this.http.get(environment.apiEndpoint+`/feedback/getEventsById/${id}`);
  }
