@@ -29,7 +29,7 @@
             <Strong style="text-align: center">OUR VIDEOS</Strong>
           </div>
 
-          <div class="tab-content" *ngIf="selectedTab == 'photo'">
+          <!-- <div class="tab-content" *ngIf="selectedTab == 'photo'">
             <div class="container gallery-container">
               <div class="tz-gallery">
                 <div class="row">
@@ -45,7 +45,44 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+
+
+
+<div class="tab-content" *ngIf="selectedTab == 'photo'">
+  <div class="container gallery-container">
+    <div class="tz-gallery">
+      <div class="row">
+        <div class="col-sm-12 col-md-4" *ngFor="let item of imageArr; let i = index">
+          <a class="lightbox" (click)="openVerticallyCentered(content, i)">
+            <img *ngIf="item.image" [src]="item.image" alt="placeholder">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          <ng-template #content let-modal>
+            <div class="header">
+              <button type="button" class="btn-close" aria-label="Close"
+            (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            
+            <div class="modal-body">
+              <ngb-carousel #carousel [activeId]="currentImageIndex" (slide)="carouselSlide($event)">
+                <ng-template ngbSlide *ngFor="let item of imageArr; let i = index">
+                  <img src="{{ item.image }}" class="d-block w-100" alt="Image {{i+1}}">
+                </ng-template>
+              </ngb-carousel>
+            </div>
+          </ng-template>
+
+
+
+
+
+
+
 
           <div class="tab-content" *ngIf="selectedTab == 'video'">
             <div class="container gallery-container">
