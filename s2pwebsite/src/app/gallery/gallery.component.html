@@ -54,7 +54,7 @@
     <div class="tz-gallery">
       <div class="row">
         <div class="col-sm-12 col-md-4" *ngFor="let item of imageArr; let i = index">
-          <a class="lightbox" (click)="openVerticallyCentered(content, i)">
+          <a class="lightbox" (click)="openVerticallyCentered(content, i,item)">
             <img *ngIf="item.image" [src]="item.image" alt="placeholder">
           </a>
         </div>
@@ -70,7 +70,7 @@
               </div>
               <div class="modal-body">
                 <ngb-carousel #carousel [activeId]="currentImageIndex" (slide)="carouselSlide($event)">
-                  <ng-template ngbSlide *ngFor="let item of imageArr; let i = index">
+                  <ng-template ngbSlide *ngFor="let item of sliderArray; let i = index">
                     <img src="{{ item.image }}" class="img d-block w-100" alt="Image {{i+1}}">
                   </ng-template>
                 </ngb-carousel>

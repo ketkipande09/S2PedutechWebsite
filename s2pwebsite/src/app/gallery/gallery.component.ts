@@ -7,19 +7,22 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss']
+  styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
   selectedTab: any;
   maindata: any = [];
   imageArr: any = [];
   videoArr: any = [];
-  currentImageIndex:any;
-  
-  
+  currentImageIndex: any;
+  sliderArray: any = [];
 
-  constructor(private user: UserService, private router: Router, private sanitizer: DomSanitizer, private modalService: NgbModal) {
-  }
+  constructor(
+    private user: UserService,
+    private router: Router,
+    private sanitizer: DomSanitizer,
+    private modalService: NgbModal
+  ) {}
 
   showPhoto() {
     this.selectedTab = 'photo';
@@ -28,45 +31,47 @@ export class GalleryComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-
   showVideo() {
     this.selectedTab = 'video';
   }
 
   ngOnInit(): void {
     this.selectedTab = 'photo';
-    this.getAll()
+    this.getAll();
   }
   getAll() {
     this.user.getAllSliders().subscribe((data: any) => {
-      this.maindata = data.result.slider
-      this.imageArr = this.maindata.map((x: any) => {
-        return {
-          image: x.image
-        }
-        return
-      }).filter((y: any) => y.image)
+      this.maindata = data.result.slider;
+      this.imageArr = this.maindata
+        .map((x: any) => {
+          return {
+            image: x.image,
+            id: x.id,
+          };
+          return;
+        })
+        .filter((y: any) => y.image);
 
-
-      this.videoArr = this.maindata.map((x: any) => {
-        return {
-          videoUrl: x.videoUrl
-        }
-        return
-      }).filter((y: any) => y.videoUrl)
-
-
+      this.videoArr = this.maindata
+        .map((x: any) => {
+          return {
+            videoUrl: x.videoUrl,
+          };
+          return;
+        })
+        .filter((y: any) => y.videoUrl);
     });
   }
- 
 
-  openVerticallyCentered(content: any, index: number) {
+  openVerticallyCentered(content: any, index: number, item: any) {
+    this.sliderArray =[]
     this.currentImageIndex = index;
-    this.modalService.open(content,  {centered:true, size: 'lg' });
+    this.sliderArray = this.imageArr.filter((x: any) => x.id != item.id);
+    this.sliderArray.unshift(item);
+    this.modalService.open(content, { centered: true, size: 'lg' });
   }
 
   carouselSlide(slideEvent: any) {
-    
     this.currentImageIndex = slideEvent.current;
   }
 }
