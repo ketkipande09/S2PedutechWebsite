@@ -21,19 +21,19 @@ export class SliderListComponent implements OnInit {
   // sliderForm: FormGroup | any;
   sliderList: any = [];
   page = 1;
-  pagesize = 25;
+  pagesize = 500;
   search: any = '';
   imageArr: any = [];
   collection: any;
-  selectedRow:any = {};
+  selectedRow: any = {};
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     // private courseModuleService: CourseModuleService,
-    private userSer:UserService,
+    private userSer: UserService,
     private modalService: NgbModal,
-    private toastService : ToastrService,
-    private spinner:NgxSpinnerService,
+    private toastService: ToastrService,
+    private spinner: NgxSpinnerService,
   ) { }
 
   ngOnInit(): void {
@@ -48,15 +48,15 @@ export class SliderListComponent implements OnInit {
     };
     console.log(obj);
     this.userSer.getAllSliders(obj).subscribe((success: any) => {
-        console.log(success);
-        this.imageArr = success.result.slider;
-        this.collection = success;
-        console.log(this.imageArr);
-        this.spinner.hide();
-       
-  
-      },
-      (error:any) => {
+      console.log(success);
+      this.imageArr = success.result.slider;
+      this.collection = success;
+      console.log(this.imageArr);
+      this.spinner.hide();
+
+
+    },
+      (error: any) => {
         console.log(error);
         this.spinner.hide();
       }
@@ -72,20 +72,20 @@ export class SliderListComponent implements OnInit {
   //   });
   // }
 
-  open(s: any, content: any){
+  open(s: any, content: any) {
     this.selectedRow = s;
     console.log(s);
-    this.modalService.open(content, {centered: true})
-    
+    this.modalService.open(content, { centered: true })
+
   }
 
   deleteSlider(id: any) {
     this.spinner.show();
     console.log("id...", id)
     this.userSer.deleteSlider(id).subscribe(
-      (success:any) => {
+      (success: any) => {
         this.toastService.success("Gallery Deleted Successfully!");
-        console.log(success,"deleted successfully");
+        console.log(success, "deleted successfully");
         this.modalService.dismissAll();
         this.spinner.hide();
         this.getAllSliders();
@@ -97,7 +97,7 @@ export class SliderListComponent implements OnInit {
     );
   }
 
-  add(){
+  add() {
     this.router.navigate(['/user/slider'])
   }
 

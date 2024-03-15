@@ -59,7 +59,8 @@ export class SliderComponent implements OnInit {
     id: new FormControl(),
     image: new FormControl(''),
     name: new FormControl(''),
-    videoUrl: new FormControl('')
+    videoUrl: new FormControl(''),
+    imageTitle: new FormControl('')
   });
 
   fileChoosen(event: any) {
