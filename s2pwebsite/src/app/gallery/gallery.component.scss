@@ -1,6 +1,7 @@
 .container-fluid {
   .heading {
     font: 40px poppins;
+    color: #FD7E14;
   }
   .page-content {
     max-width: 100%;
@@ -63,10 +64,27 @@
   }
 }
 
+
+.imgmodel{
+  background: linear-gradient(
+    120deg,
+    #FFC107 30%,
+    #FD7E14 88%,
+    #FD7E14 40%,
+    #FFC107 78%
+  );
+  .modal-body{
+    .img{
+      height: 35rem;
+    }
+  }
+}
+
 .btn-close{
   position: relative;
   left: 48rem;
   font-size: 10px;
+  margin-top: 1rem;
   cursor: pointer;
 }
 @media (max-width: 1000px){
