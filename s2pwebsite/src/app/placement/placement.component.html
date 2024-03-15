@@ -143,9 +143,8 @@
                 'second-background': i % 2 !== 0
               }">
               <div class="circle-container">
-                <img *ngIf="place.image" src="{{ place.image }}" class="img-fluid rounded-circle" alt="..." />
-                <img *ngIf="!place.image" src="../../assets/placeholder.jpg" class="img-fluid rounded-circle"
-                  alt="..." />
+                <!-- <img *ngIf="place.image" src="{{ place.image }}" class="img-fluid rounded-circle" alt="..." /> -->
+                <img [src]="place.image || 'assets/placeholder.jpg'" class="img-fluid rounded-circle" alt="..." />
               </div>
               <div class="card-body ">
                 <div class="row bodyrow">

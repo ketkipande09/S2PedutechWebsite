@@ -42,13 +42,14 @@ const placementObj = {
 
             if (req.file) {
                 placementObj.image = req.file.filename;
+                createObj.image = placementObj.image;
+
             }
             // else {
                 
             //     placementObj.image = 'placeholder.jpg';
             // }
 
-            createObj.image = placementObj.image;
 
             let course = await createObj.save();
 
