@@ -43,10 +43,10 @@ export class HomeComponent implements OnInit {
 
 
   homeForm = new FormGroup({
-    bulletPoint: new FormControl(''),
-    placementCount: new FormControl(0),
-    OurEMPLOYEE: new FormControl(0),
-    YearsExperience: new FormControl(0),
+    bulletPoint: new FormControl('', [Validators.required]),
+    placementCount: new FormControl('', [Validators.required]),
+    OurEMPLOYEE: new FormControl('', [Validators.required]),
+    YearsExperience: new FormControl('', [Validators.required]),
     // image: new FormControl(''),
   });
 
@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit {
 
     const homeData = {
       OurEMPLOYEE: this.homeForm.value.OurEMPLOYEE,
-        YearsExperience: this.homeForm.value.YearsExperience,
+      YearsExperience: this.homeForm.value.YearsExperience,
       bulletPoint: this.homeForm.value.bulletPoint,
       placementCount: this.homeForm.value.placementCount
     };
