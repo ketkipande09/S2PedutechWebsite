@@ -15,7 +15,7 @@ export class PlacementListComponent implements OnInit {
   selectedRow: any;
   search: any = '';
   page = 1;
-  pagesize = 10;
+  pagesize = 500;
   ap: any;
   readList: any;
   disabled: boolean = false;
@@ -27,7 +27,7 @@ export class PlacementListComponent implements OnInit {
     { value: 20 },
     { value: 25 },
     { value: 50 },
-    { value: 100 },
+    { value: 500 },
   ];
   collection: any;
 

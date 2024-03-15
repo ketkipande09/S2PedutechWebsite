@@ -12,19 +12,19 @@ module.exports = (sequelize, DataTypes) => {
       },
       bulletPoint: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       OurEMPLOYEE: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
       },
       YearsExperience: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
       },
       placementCount: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
       },
     },
     {

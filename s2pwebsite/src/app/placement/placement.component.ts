@@ -25,7 +25,7 @@ export class PlacementComponent implements OnInit {
   employeeNumber: number = 0;
   employee: any;
   private subscription: Subscription;
-  pagesize = 10;
+  pagesize = 500;
   ap: any;
   readList: any;
   readLists: any;

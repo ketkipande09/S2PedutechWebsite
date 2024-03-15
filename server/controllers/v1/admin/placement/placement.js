@@ -42,13 +42,14 @@ const placementObj = {
 
             if (req.file) {
                 placementObj.image = req.file.filename;
+                createObj.image = placementObj.image;
+
             }
             // else {
                 
             //     placementObj.image = 'placeholder.jpg';
             // }
 
-            createObj.image = placementObj.image;
 
             let course = await createObj.save();
 
@@ -71,7 +72,7 @@ const placementObj = {
             let offset = req.query.page || 1;
             offset = offset - 1;
             offset = offset * req.query.pagesize || 0;
-            let limit = req.query.pagesize || 10;
+            let limit = req.query.pagesize || 500;
             let whereQuery;
             if (req.query.search) {
                 whereQuery = {
