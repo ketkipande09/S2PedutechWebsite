@@ -183,14 +183,14 @@
 .eventcard {
   border: 1px solid #363636;
   // background-color: #e1e1e1f2;
-  // background-image: url('../../assets/backevent.png');
-  background: linear-gradient(
-    120deg, 
-    #b1cbf7 50%, /* Deep blue */
-    #b6afeb 78%, /* Purple */
-    #b6afeb 30%, /* Purple */
-    #b1cbf7 88% /* Lighter blue */
-  );
+  background-image: url('../../assets/eventbg.jpg');
+  // background: linear-gradient(
+  //   120deg, 
+  //   #b1cbf7 50%, /* Deep blue */
+  //   #b6afeb 78%, /* Purple */
+  //   #b6afeb 30%, /* Purple */
+  //   #b1cbf7 88% /* Lighter blue */
+  // );
   color: #834200;
   .eventimage {
     height: 20rem;

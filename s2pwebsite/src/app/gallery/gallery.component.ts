@@ -65,12 +65,8 @@ export class GalleryComponent implements OnInit {
     this.modalService.open(content,  {centered:true, size: 'lg' });
   }
 
-  // openModal(content: any, index: number) {
-  //   this.currentImageIndex = index;
-  //   this.modalService.open(content);
-  // }
-
   carouselSlide(slideEvent: any) {
+    
     this.currentImageIndex = slideEvent.current;
   }
 }
