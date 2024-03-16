@@ -73,6 +73,7 @@
               <div class="modal-body">
                 <ngb-carousel #carousel [activeId]="currentImageIndex" (slide)="carouselSlide($event)">
                   <ng-template ngbSlide *ngFor="let item of sliderArray; let i = index">
+                    <div class="text-center heading">{{item.imageTitle}}</div>
                     <img src="{{ item.image }}" class="img d-block w-100" alt="Image {{i+1}}">
                   </ng-template>
                 </ngb-carousel>
