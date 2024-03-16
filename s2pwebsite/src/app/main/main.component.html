@@ -55,15 +55,20 @@
 </div> -->
 
 <ngb-carousel #carousel [interval]="3000" [showNavigationIndicators]="false">
+	<!-- <ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img src="../../assets/slider/new banner1.gif" class="img-fluid"/>
+		</div>
+	</ng-template> -->
 	<ng-template ngbSlide>
 		<div class="picsum-img-wrapper">
-			<img src="../../assets/slider/Banner1.gif" class="img-fluid"/>
+			<img src="../../assets/slider/new banner2.jpg" class="img-fluid"/>
+      <div *ngIf="showLine1; else line2Content" class="line1" [@slideInOut]>“Where creativity meets functionality.”</div>
+      <ng-template #line2Content>
+      <div class="line2" [@slideInOut]>“Empowering businesses through digital transformation.”</div>
+      </ng-template>
 		</div>
-	</ng-template>
-	<ng-template ngbSlide>
-		<div class="picsum-img-wrapper">
-			<img src="../../assets/slider/banner2.gif" class="img-fluid"/>
-		</div>
+   
 	</ng-template>
 	<!-- <ng-template ngbSlide>
 		<div class="picsum-img-wrapper">

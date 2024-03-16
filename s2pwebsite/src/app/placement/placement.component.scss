@@ -1,21 +1,19 @@
 // placementcontainer
 .placementcontainer {
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
 
   .container {
     .card {
       height: 200px;
-      // background-color: #ffe0b8;
-      // background-image: url('../../assets/backkkk.jpeg');
-       background: linear-gradient(
-    175deg,
-    #f8e076 50%,
-    #febb83 78%,
-    #febb83 10%,
-    #f8e076 88%
-  );
+      background: linear-gradient(
+        175deg,
+        #f8e076 50%,
+        #febb83 78%,
+        #febb83 10%,
+        #f8e076 88%
+      );
       border-radius: 30px;
-      margin-top: -5rem;
+      margin-top: -6rem;
       color: black;
 
       .card-body {
@@ -38,9 +36,9 @@
     .container {
       .card {
         height: 180px;
-
+        margin-top: -4rem;
         .card-body {
-          margin-top: 50px;
+          margin-top: 40px;
 
           .text-center {
             font: 35px poppin;
@@ -60,7 +58,7 @@
     .container {
       .card {
         height: 120px;
-
+        margin-top: -3rem;
         .card-body {
           margin-top: 10px;
 
@@ -81,7 +79,7 @@
   .placementcontainer {
     .container {
       .card {
-        margin-top: -3rem;
+        margin-top: -2.5rem;
         height: 100px;
 
         .card-body {
@@ -103,14 +101,14 @@
 // event
 .event {
   padding-top: 2rem;
-  padding-bottom: 2rem;  
+  padding-bottom: 2rem;
   background: linear-gradient(
     120deg,
     #f8e076 50%,
     #febb83 78%,
     #febb83 30%,
     #f5e2a8 88%
-  ); 
+  );
 }
 
 .section-heading1 {
@@ -183,15 +181,15 @@
 .eventcard {
   border: 1px solid #363636;
   // background-color: #e1e1e1f2;
-  background-image: url('../../assets/eventbg.jpg');
+  background-image: url("../../assets/eventbg.jpg");
   // background: linear-gradient(
-  //   120deg, 
+  //   120deg,
   //   #b1cbf7 50%, /* Deep blue */
   //   #b6afeb 78%, /* Purple */
   //   #b6afeb 30%, /* Purple */
   //   #b1cbf7 88% /* Lighter blue */
   // );
-  color: #834200;
+  color: #020202;
   .eventimage {
     height: 20rem;
     width: 30rem;
@@ -199,7 +197,7 @@
 }
 
 .code {
-  background-image: url('../../assets/backkkk.jpeg');
+  background-image: url("../../assets/backkkk.jpeg");
   .modal-body {
     padding: 20px;
 
@@ -292,7 +290,7 @@
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  border: 2px solid #FD7E14;
+  border: 2px solid #fd7e14;
   color: #212529;
   background-color: transparent;
   border-radius: 5px;
@@ -301,7 +299,7 @@
 }
 
 .knowbutton:hover {
-  background-color: #FD7E14;
+  background-color: #fd7e14;
   color: #fff;
 }
 
@@ -333,8 +331,8 @@
           width: max-content;
           padding: 5px;
           position: relative;
-           right: 3rem;
-           display: flex;
+          right: 3rem;
+          display: flex;
         }
       }
     }
@@ -464,7 +462,6 @@
 }
 
 @media (max-width: 376px) {
-
   .eventcontainer {
     .eventcard {
       .eventimage {
@@ -548,10 +545,6 @@
   }
 }
 
-
-
-
-
 .placement {
   .placementclass {
     width: 15rem;
@@ -604,24 +597,23 @@
       color: #212529;
       background: linear-gradient(
         120deg,
-        #FFC107 30%,
-        #FD7E14 88%,
-        #FD7E14 40%,
-        #FFC107 78%
+        #ffc107 30%,
+        #fd7e14 88%,
+        #fd7e14 40%,
+        #ffc107 78%
       );
     }
-    
+
     &.second-background {
       color: #212529;
       background: linear-gradient(
         120deg,
-        #FD7E14 30%,
-        #FFC107 88%,
-        #FFC107 40%,
-        #FD7E14 78%
+        #fd7e14 30%,
+        #ffc107 88%,
+        #ffc107 40%,
+        #fd7e14 78%
       );
     }
-    
   }
 
   .card:hover {

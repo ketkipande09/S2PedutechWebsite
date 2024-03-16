@@ -22,6 +22,19 @@ import { interval, Subscription } from 'rxjs';
         animate('2000ms ease-in-out', style({ transform: 'translateX(0)' })),
       ]),
     ]),
+    trigger('fadeInOut', [
+      state('void', style({ opacity: 0 })),
+      transition(':enter, :leave', [
+        animate(500)
+      ])
+    ]),
+    trigger('slideInOut', [
+      state('void', style({ transform: 'translatey(100%)' })),
+      transition(':enter', [
+        animate('1s ease-in-out')
+        
+      ])
+    ]),
   ],
 })
 export class MainComponent implements OnInit, OnDestroy {
@@ -33,18 +46,13 @@ export class MainComponent implements OnInit, OnDestroy {
   yearExperience: any;
   employeeNumber: number = 0;
   employee: any;
-  
+  showLine1: boolean = true;
+
   private subscription: Subscription;
   
   constructor(private restService: RestService, private router: Router, ) {
     this.subscription = new Subscription();
   } 
-  
-  // img :any = {
-  //   img1: "../",
-  //   img2: "../../assets/landing.gif",
-  //   img3: "../../assets/WELCOME TO.gif"
-  // }
   
   ngOnInit(): void {
     this.getall();
@@ -55,6 +63,12 @@ export class MainComponent implements OnInit, OnDestroy {
       this.incrementNumberEmployee();
       this.incrementNumberYearExperience();
     });
+    setInterval(() => {
+      this.toggleLines();
+    }, 3000);
+  }
+  toggleLines() {
+    this.showLine1 = !this.showLine1;
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
