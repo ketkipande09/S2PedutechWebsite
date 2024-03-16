@@ -86,32 +86,47 @@ export class SliderComponent implements OnInit {
     }
   }
 
-  // createImage() {
-  //   console.log(this.images);
-  //   this.submitted = true;
-
-  //   const fd = new FormData();
-  //   if (this.images) {
+  //   createImage() {
+  //     this.submitted = true;
   //     this.spinner.show();
+
+  //     const fd = new FormData();
   //     fd.append('key', 'slider');
-  //     fd.append('image', this.images, this.images.name);
-  //     fd.append('videoUrl', this.sliderForm.value.videoUrl);
 
-  //     // fd.append('studentName', this.sliderForm.value.studentName);
-  //     // fd.append('companyName', this.sliderForm.value.companyName);
-  //     // fd.append('collegeName', this.sliderForm.value.collegeName);
-  //     console.log('fd,,,,', fd);
+  //     // if (typeof this.images == 'object') {
+  //     //   fd.append('image', this.images, this.images.name);
+  //     // } else {
+  //     //   const videoUrl = this.sliderForm.value.videoUrl;
+  //     //   if (videoUrl) {
+  //     //     fd.append('videoUrl', videoUrl);
+  //     //   } else {
+  //     //     this.toastService.error('Please provide either a image or videoUrl');
+  //     //     this.spinner.hide();
+  //     //     return;
+  //     //   }
+  //     // }
 
-  //     this.userSer.createImage(fd).subscribe((data) => {
-  //       console.log(data);
-  //       this.router.navigate(['/user/slider-list']);
-  //       this.toastService.success('Gallery Created Successfully!');
-  //       this.spinner.hide();
-  //     });
-  //   } else {
-  //     this.toastService.warning('Please upload images');
-  //   }
+  // if(this.images){
+  //   fd.append('image', this.images, this.images.name);
+  //   fd.append('imageTitle',this.sliderForm.controls['imageTitle'].value);
+  // }else{
+  //   fd.append('videoUrl',this.sliderForm.controls['videoUrl'].value);
+
   // }
+  //     this.userSer.createImage(fd).subscribe(
+  //       (data) => {
+  //         console.log('API Response:', data);
+  //         this.router.navigate(['/user/slider-list']);
+  //         this.toastService.success('Gallery Created Successfully!');
+  //         this.spinner.hide();
+  //       },
+  //       (error) => {
+  //         console.error('API Error:', error);
+  //         this.toastService.error('Failed to create gallery');
+  //         this.spinner.hide();
+  //       }
+  //     );
+  //   }
 
   createImage() {
     this.submitted = true;
@@ -120,17 +135,15 @@ export class SliderComponent implements OnInit {
     const fd = new FormData();
     fd.append('key', 'slider');
 
-    if (typeof this.images == 'object') {
+    if (this.images && this.images.name && this.sliderForm.controls['imageTitle'].value) {
       fd.append('image', this.images, this.images.name);
+      fd.append('imageTitle', this.sliderForm.controls['imageTitle'].value);
+    } else if (this.sliderForm.controls['videoUrl'].value) {
+      fd.append('videoUrl', this.sliderForm.controls['videoUrl'].value);
     } else {
-      const videoUrl = this.sliderForm.value.videoUrl;
-      if (videoUrl) {
-        fd.append('videoUrl', videoUrl);
-      } else {
-        this.toastService.error('Please provide either a image or videoUrl');
-        this.spinner.hide();
-        return;
-      }
+      this.spinner.hide();
+      this.toastService.error('Please provide either an image with title or a video URL.');
+      return;
     }
     this.userSer.createImage(fd).subscribe(
       (data) => {
@@ -146,12 +159,6 @@ export class SliderComponent implements OnInit {
       }
     );
   }
-
-
-
-
-
-
 
   // updateImage() {
   //   this.submitted = true;

@@ -56,7 +56,9 @@
         <div class="col-sm-12 col-md-4" *ngFor="let item of imageArr; let i = index">
           <a class="lightbox" (click)="openVerticallyCentered(content, i,item)">
             <img *ngIf="item.image" [src]="item.image" alt="placeholder">
+            <!-- <div class="text-center">{{item.imageTitle}}</div> -->
           </a>
+          <div class="text-center heading">{{item.imageTitle}}</div>
         </div>
       </div>
     </div>
@@ -76,7 +78,6 @@
                 </ngb-carousel>
               </div>
             </div>
-          
           </ng-template>
 
 
