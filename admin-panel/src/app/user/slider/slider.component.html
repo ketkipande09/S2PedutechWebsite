@@ -24,6 +24,13 @@
             </div>
 
             <div class="row">
+              <div class="col mb-4">
+                <label class="form-lable fw-bold ">Image Title<span class="text-danger">*</span></label>
+                <input formControlName="imageTitle" placeholder="Image Title" type="text" class="form-control">
+              </div>
+            </div>
+
+            <div class="row">
               <div class="col-md-6 mb-2">
                 <label class="form-lable fw-bold">Upload Image <span class="text-danger">*</span></label><br>
                 <input (input)="fileChoosen($event)" type="file" class="form-control-file" id="file-multiple-input"
@@ -39,21 +46,12 @@
 
               <!-- <button *ngIf="this.id" type="submit" class="btn btn-success  shadow rounded rounded-3"
                 (click)="updateImage()">Update</button> -->
-
               &nbsp;
               <button (click)="add()" type="submit" class="btn btn-primary  shadow rounded rounded-3">Cancel</button>
             </div>
-
-
-
-
           </form>
-
         </div>
-
-
       </div>
     </div>
-
   </div>
 </div>

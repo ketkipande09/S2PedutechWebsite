@@ -22,7 +22,7 @@ export class GalleryComponent implements OnInit {
     private router: Router,
     private sanitizer: DomSanitizer,
     private modalService: NgbModal
-  ) {}
+  ) { }
 
   showPhoto() {
     this.selectedTab = 'photo';
@@ -47,8 +47,9 @@ export class GalleryComponent implements OnInit {
           return {
             image: x.image,
             id: x.id,
+            imageTitle:x.imageTitle
           };
-          return;
+          // return;
         })
         .filter((y: any) => y.image);
 
@@ -57,14 +58,14 @@ export class GalleryComponent implements OnInit {
           return {
             videoUrl: x.videoUrl,
           };
-          return;
+          // return;
         })
         .filter((y: any) => y.videoUrl);
     });
   }
 
   openVerticallyCentered(content: any, index: number, item: any) {
-    this.sliderArray =[]
+    this.sliderArray = []
     this.currentImageIndex = index;
     this.sliderArray = this.imageArr.filter((x: any) => x.id != item.id);
     this.sliderArray.unshift(item);
