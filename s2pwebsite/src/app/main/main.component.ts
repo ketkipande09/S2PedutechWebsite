@@ -65,7 +65,7 @@ export class MainComponent implements OnInit, OnDestroy {
     });
     setInterval(() => {
       this.toggleLines();
-    }, 3000);
+    }, 2000);
   }
   toggleLines() {
     this.showLine1 = !this.showLine1;
