@@ -5,11 +5,13 @@
     padding: 0%;
     margin-bottom: 10px;
   }
+
   .page-content {
     max-width: 100%;
     margin-left: 32px auto;
     margin-right: 32px auto;
     background: #fff;
+
     .tab {
       .gallery {
         list-style: none;
@@ -17,6 +19,7 @@
         margin: 0;
         display: flex;
       }
+
       .gallery li {
         cursor: pointer;
         padding: 10px;
@@ -26,20 +29,24 @@
         border-radius: 5px;
         font: 25px poppins;
       }
+
       .gallery li.active {
         background-color: #ff8a00;
         color: black;
       }
+
       .tab-content {
         .gallery-container {
           background-image: url("../../assets/gallery.jpg");
           color: #ffffff;
           padding: 30px 50px;
           width: 100%;
+
           .lightbox img {
             width: 100%;
             border-radius: 0;
             position: relative;
+
             height: 15rem;
             padding-bottom: 24px;
             cursor: pointer;
@@ -67,55 +74,59 @@
 }
 
 
-.imgmodel{
-  background: linear-gradient(
-    120deg,
-    #FFC107 30%,
-    #FD7E14 88%,
-    #FD7E14 40%,
-    #FFC107 78%
-  );
-  .modal-body{
+.imgmodel {
+  background: linear-gradient(120deg,
+      #FFC107 30%,
+      #FD7E14 88%,
+      #FD7E14 40%,
+      #FFC107 78%);
+
+  .modal-body {
     .heading {
       font: 40px poppins;
       color: #201f1d;
       padding: 0%;
       margin-bottom: 10px;
     }
-    .img{
+
+    .img {
       height: 35rem;
     }
   }
 }
 
-.btn-close{
+.btn-close {
   position: relative;
   left: 48rem;
   font-size: 10px;
   margin-top: 1rem;
   cursor: pointer;
 }
-@media (max-width: 1000px){
-  .btn-close{
+
+@media (max-width: 1000px) {
+  .btn-close {
     position: relative;
     left: 29.5rem;
   }
 }
-@media (max-width: 500px){
-  .btn-close{
+
+@media (max-width: 500px) {
+  .btn-close {
     position: relative;
     left: 24rem;
     font-size: 8px;
   }
 }
-@media (max-width: 376px){
-  .btn-close{
+
+@media (max-width: 376px) {
+  .btn-close {
     position: relative;
     left: 21rem;
   }
 }
-@media (max-width: 321px){
-  .btn-close{
+
+@media (max-width: 321px) {
+  .btn-close {
     position: relative;
     left: 18rem;
     font-size: 6px;

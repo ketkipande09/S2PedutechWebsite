@@ -1,0 +1,78 @@
+<!-- bullet -->
+<div class="col-md-12 bulletin">
+  <marquee
+    onmouseover="this.stop()"
+    onmouseout="this.start()"
+    class="bullet"
+    *ngFor="let data of mainData"
+  >
+    {{ data.bulletPoint }}
+  </marquee>
+</div>
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-12 backimg">
+      <img
+        src="../../assets/yellowhome.gif"
+        class="img-fluid"
+        alt=" currentNumber +"
+      />
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="row top-row">
+  <div class="row center mt-3 my-5">
+    <div
+      class="tophead col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center"
+    >
+      <h2>
+        <strong>Learn to build software with S2P Edutech.</strong>
+      </h2>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="text" [@textAnimation]="animationState">
+      <h1 class="text text-center">
+        Your Placement <br />
+        Our <br />
+        Responsibility
+      </h1>
+    </div>
+  </div>
+
+  <div class="col-md-4 img">
+    <img src="../../assets/home.png" alt="" class="img-fluid" />
+  </div>
+
+  <div class="col-md-4 right">
+    <h2 class="text text-center">Our Placement Till Now</h2>
+    <br />
+    <h1 class="placement-counter">{{ currentNumber }}+</h1>
+  </div>
+</div> -->
+
+<ngb-carousel #carousel [interval]="3000" [showNavigationIndicators]="false">
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img src="../../assets/slider/new banner1.gif" class="img-fluid"/>
+		</div>
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img src="../../assets/slider/new banner2.jpg" class="img-fluid"/>
+      <div *ngIf="showLine1; else line2Content" class="line1" [@slideInOut]>“Where creativity meets functionality.”</div>
+      <ng-template #line2Content>
+      <div class="line2" [@slideInOut]>“Empowering businesses through digital transformation.”</div>
+      </ng-template>
+		</div>
+   
+	</ng-template>
+	<!-- <ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img src="../../assets/slider/3D Gradient Digital Marketing Course Blog Banner3.png" class="img-fluid"/>
+		</div>
+	</ng-template> -->
+</ngb-carousel>
