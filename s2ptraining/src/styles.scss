@@ -6,7 +6,8 @@
 *{
     margin: 0;
     padding: 0;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    // font-family: "Champion Gothic";
+    // font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -14,3 +15,11 @@ section{
 
    padding-top: 20px;
 }
+
+@font-face {
+    font-family: 'Champion Gothic';
+    src: url('../src/assets/font/ChampionGothic-Featherweight.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

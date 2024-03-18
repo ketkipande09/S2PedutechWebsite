@@ -42,7 +42,10 @@ nav {
       text-decoration: none;
       cursor: pointer;
       padding: 18px;
-      font: 18px poppin;
+      font-size: 20px ;
+      
+        // font-family: 'Champion Gothic', sans-serif;
+      
     }
     a:hover {
       color: #fd7e14;
@@ -78,7 +81,7 @@ nav {
   }
   .offcanvas-body {
     .text-center {
-      font: 20px poppin;
+      font: 20px;
       padding: 5px;
       cursor: pointer;
     }
@@ -127,7 +130,7 @@ nav {
     }
     .offcanvas-body {
       .text-center {
-        font: 15px poppin;
+        font: 15px;
       }
       .text-center:hover {
         color: #fd7e14;

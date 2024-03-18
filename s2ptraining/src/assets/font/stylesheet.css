@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Champion Gothic Featherweight';
+    src: url('ChampionGothic-Featherweight.eot');
+    src: local('Champion Gothic Featherweight'), local('ChampionGothic-Featherweight'),
+        url('ChampionGothic-Featherweight.eot?#iefix') format('embedded-opentype'),
+        url('ChampionGothic-Featherweight.woff2') format('woff2'),
+        url('ChampionGothic-Featherweight.woff') format('woff'),
+        url('ChampionGothic-Featherweight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Champion Gothic Welterweight';
+    src: url('ChampionGothic-Welterweight.eot');
+    src: local('Champion Gothic Welterweight'), local('ChampionGothic-Welterweight'),
+        url('ChampionGothic-Welterweight.eot?#iefix') format('embedded-opentype'),
+        url('ChampionGothic-Welterweight.woff2') format('woff2'),
+        url('ChampionGothic-Welterweight.woff') format('woff'),
+        url('ChampionGothic-Welterweight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Champion Gothic Heavyweight';
+    src: url('ChampionGothic-Heavyweight.eot');
+    src: local('Champion Gothic Heavyweight'), local('ChampionGothic-Heavyweight'),
+        url('ChampionGothic-Heavyweight.eot?#iefix') format('embedded-opentype'),
+        url('ChampionGothic-Heavyweight.woff2') format('woff2'),
+        url('ChampionGothic-Heavyweight.woff') format('woff'),
+        url('ChampionGothic-Heavyweight.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Champion Gothic Middleweight';
+    src: url('ChampionGothic-Middleweight.eot');
+    src: local('Champion Gothic Middleweight'), local('ChampionGothic-Middleweight'),
+        url('ChampionGothic-Middleweight.eot?#iefix') format('embedded-opentype'),
+        url('ChampionGothic-Middleweight.woff2') format('woff2'),
+        url('ChampionGothic-Middleweight.woff') format('woff'),
+        url('ChampionGothic-Middleweight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Champion Gothic Bantamweight';
+    src: url('ChampionGothic-Bantamweight.eot');
+    src: local('Champion Gothic Bantamweight'), local('ChampionGothic-Bantamweight'),
+        url('ChampionGothic-Bantamweight.eot?#iefix') format('embedded-opentype'),
+        url('ChampionGothic-Bantamweight.woff2') format('woff2'),
+        url('ChampionGothic-Bantamweight.woff') format('woff'),
+        url('ChampionGothic-Bantamweight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Champion Gothic Lightweight';
+    src: url('ChampionGothic-Lightweight.eot');
+    src: local('Champion Gothic Lightweight'), local('ChampionGothic-Lightweight'),
+        url('ChampionGothic-Lightweight.eot?#iefix') format('embedded-opentype'),
+        url('ChampionGothic-Lightweight.woff2') format('woff2'),
+        url('ChampionGothic-Lightweight.woff') format('woff'),
+        url('ChampionGothic-Lightweight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
