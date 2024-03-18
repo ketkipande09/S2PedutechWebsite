@@ -1,9 +1,8 @@
-
 // @import '~bootstrap/scss/bootstrap';
 @import "ngx-toastr/toastr";
 // @import "/node_modules/ngx-spinner/animations/ball-scale-multiple.css";
 
-*{
+* {
     margin: 0;
     padding: 0;
     // font-family: "Champion Gothic";
@@ -11,9 +10,9 @@
 }
 
 
-section{
+section {
 
-   padding-top: 20px;
+    padding-top: 20px;
 }
 
 @font-face {
@@ -21,5 +20,11 @@ section{
     src: url('../src/assets/font/ChampionGothic-Featherweight.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-  }
-  
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../src/assets/fontSs/Helvetica-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

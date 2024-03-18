@@ -32,12 +32,15 @@
                 "glob": "**/*",
                 "input": "./src/assets/fonts/",
                 "output": "/assets/fonts/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./src/assets/fontSs/",
+                "output": "/assets/fontSs/"
               }
             ],
             "styles": [
               "src/styles.scss"
-
-              
             ],
             "scripts": []
           },
