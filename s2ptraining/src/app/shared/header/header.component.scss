@@ -1,58 +1,60 @@
-.navbar-brand img {
-    margin-right: 20px;
+.navbar {
+    margin-right: 50px;
+    margin-left: 10px;
+  .navbar-brand img {
+    width: 81px;
+    height: 70px;
+  }
+  .collapse {
+    .navbar-nav {
+      margin-left: 20px;
+      .nav-item {
+        margin-left: 70px;
+        .nav-link {
+          color: #000000;
+          font-family: "Helvetica";
+          height: 18px;
+          font-size: 18px;
+          line-height: 18.04px;
+          &:hover {
+            color: #f26522;
+          }
+        }
+      }
+    }
 
-}
+    .btn-primary {
+      background-color: #ffffff;
+      border-color: #f26522;
+      color: #f26522;
+    //   border-width: 1.9px;
+      &:hover {
+        background-color: #f26522;
+        border-color: #f26522;
+        color: #ffffff;
+        border-radius: 10px;
+      }
+    }
+    .btn-secondary {
+      background-color: #ffffff;
+      border-color: #f26522;
+      color: #f26522;
 
-.navbar-nav {
-    margin-left: 20px;
-}
+      &:hover {
+        background-color: #f26522;
+        border-color: #f26522;
+        color: #ffffff;
+        border-radius: 10px;
 
-.navbar-nav .nav-item {
-    margin-right: 65px;
+      }
+    }
+  }
 }
 
 .navbar-nav .nav-item:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
-.navbar-nav .nav-item .nav-link {
-    color: #000000;
-    font-family: 'Helvetica';
-    Width: 76px;
-    Height: 18px;
-    Top: 48px;
-    Left: 304px;
-
-    &:hover {
-        color: #F26522;
-    }
-}
-
-.btn-primary {
-    background-color: #ffffff; // Default background color
-    border-color: #F26522; // Default border color
-    color: #F26522; // Default text color
-    border-width: 1.9px; // Border width
-
-    &:hover {
-        background-color: #F26522; // Hover background color
-        border-color: #F26522; // Hover border color
-        color: #ffffff; // Hover text color
-    }
-}
-
-.btn-secondary {
-    background-color: #ffffff; // Default background color
-    border-color: #F26522; // Default border color
-    color: #F26522; // Default text color
-    border-radius: 7;
-
-    &:hover {
-        background-color: #F26522; // Hover background color
-        border-color: #F26522; // Hover border color
-        color: #ffffff; // Hover text color
-    }
-}
 // .ellipse {
 //     position: absolute;
 //     width: 207px;
