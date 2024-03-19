@@ -1,6 +1,5 @@
 .navbar {
-    margin-right: 50px;
-    margin-left: 10px;
+  padding: 0px 16px;
   .navbar-brand img {
     width: 81px;
     height: 70px;
@@ -22,32 +21,35 @@
         }
       }
     }
+.form-inline{
+    margin-right: 50px;
 
-    .btn-primary {
-      background-color: #ffffff;
+  .btn-primary {
+    background-color: #ffffff;
+    border-color: #f26522;
+    color: #f26522;
+    &:hover {
+      background-color: #f26522;
       border-color: #f26522;
-      color: #f26522;
-    //   border-width: 1.9px;
-      &:hover {
-        background-color: #f26522;
-        border-color: #f26522;
-        color: #ffffff;
-        border-radius: 10px;
-      }
+      color: #ffffff;
+      border-radius: 10px;
     }
-    .btn-secondary {
-      background-color: #ffffff;
+  }
+  .btn-secondary {
+    background-color: #ffffff;
+    border-color: #f26522;
+    color: #f26522;
+
+    &:hover {
+      background-color: #f26522;
       border-color: #f26522;
-      color: #f26522;
+      color: #ffffff;
+      border-radius: 10px;
 
-      &:hover {
-        background-color: #f26522;
-        border-color: #f26522;
-        color: #ffffff;
-        border-radius: 10px;
-
-      }
     }
+  }
+}
+
   }
 }
 
