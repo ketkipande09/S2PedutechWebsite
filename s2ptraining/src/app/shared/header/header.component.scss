@@ -1,57 +1,60 @@
 .navbar {
   padding: 0px 16px;
-
   z-index: 1111;
+
   .navbar-brand img {
     width: 81px;
     height: 70px;
   }
+
   .collapse {
     z-index: 2;
+
     .navbar-nav {
       margin-left: 20px;
+
       .nav-item {
         margin-left: 70px;
+
         .nav-link {
           color: #000000;
           font-family: "Helvetica";
           height: 18px;
           font-size: 18px;
           line-height: 18.04px;
+
           &:hover {
             color: #f26522;
           }
         }
       }
     }
-.form-inline{
-    margin-right: 50px;
 
-  .btn-primary {
-    background-color: #ffffff;
-    border-color: #f26522;
-    color: #f26522;
-    // &:hover {
-    //   background-color: #f26522;
-    //   border-color: #f26522;
-    //   color: #ffffff;
-    //   border-radius: 10px;
-    // }
-  }
-  .btn-secondary {
-    background-color: #f26522;
-      border-color: #f26522;
-      color: #ffffff;
-      border-radius: 7px;
+    .form-inline {
+      margin-right: 20px;
+
+      .btn-primary {
+        background-color: #ffffff;
+        border-color: #f26522;
+        color: #f26522;
+        font-family: "Helvetica";
+        font-size: 18px;
+      }
+
+      .btn-secondary {
+        background-color: #f26522;
+        border-color: #f26522;
+        color: #ffffff;
+        border-radius: 7px;
+        font-family: "Helvetica";
+        font-size: 18px;
+      }
+    }
+
   }
 }
 
-  }
-}
 
-.navbar-nav .nav-item:last-child {
-  margin-right: 0;
-}
 
 
 .blob {
@@ -66,4 +69,93 @@
 
   opacity: 1;
   filter: blur(180px);
+}
+
+@media(max-width:1255px) {
+  .navbar {
+    padding: 0px 16px;
+
+    .navbar-brand img {
+      width: 81px;
+      height: 70px;
+    }
+
+    .collapse {
+
+      .navbar-nav {
+        margin-left: 10px;
+
+        .nav-item {
+          margin-left: 30px;
+
+          .nav-link {
+
+            height: 16px;
+            font-size: 14px;
+            line-height: 16.04px;
+
+          }
+        }
+      }
+
+      .form-inline {
+        margin-right: 30px;
+
+        .btn-primary {
+
+          font-size: 14px;
+        }
+
+        .btn-secondary {
+
+          font-size: 14px;
+        }
+      }
+
+    }
+  }
+}
+@media(max-width:913px) {
+  .navbar {
+    padding: 0px 14px;
+
+    .navbar-brand img {
+      width: 61px;
+      height: 50px;
+    }
+
+    .collapse {
+
+      .navbar-nav {
+        margin-left: 8px;
+
+        .nav-item {
+          margin-left: 10px;
+
+          .nav-link {
+
+            height: 14px;
+            font-size: 12px;
+            line-height: 14.04px;
+
+          }
+        }
+      }
+
+      .form-inline {
+        margin-right: 1rem;
+
+        .btn-primary {
+
+          font-size: 12px;
+        }
+
+        .btn-secondary {
+
+          font-size: 12px;
+        }
+      }
+
+    }
+  }
 }

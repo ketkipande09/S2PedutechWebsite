@@ -1,5 +1,5 @@
-import { Component,EventEmitter,HostListener, Output } from '@angular/core';
-import { Router,RouterModule, Routes } from '@angular/router';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { PlacementComponent } from 'src/app/placement/placement.component';
 
 @Component({
@@ -9,46 +9,44 @@ import { PlacementComponent } from 'src/app/placement/placement.component';
 })
 
 
-export class HeaderComponent { 
+export class HeaderComponent {
   headerVisible = true;
   text: any = '';
   active: any = '';
 
   isCollapsed = false;
   isScroll: boolean = false;
-  
-    @Output() navigate = new EventEmitter();
-  
+
+  @Output() navigate = new EventEmitter();
+
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
-  }  
-  
-  constructor(private router: Router) {}
+  }
 
-  navigateTo(path:any){
+  constructor(private router: Router) { }
+
+  navigateTo(path: any) {
     this.router.navigate([path])
   }
-  
+  scrollTo(section: any) {
+    let element: any = document.getElementById(section);
 
-scrollTo(section:any){
-  let element:any = document.getElementById(section);
+    element.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'nearest',
+      block: 'start'
+    })
 
-  element.scrollIntoView({
-    behavior : 'smooth',
-    inline : 'nearest',
-    block : 'start'
-  })
-  
-}
-routeTo(section:any){
-  setTimeout(() => {
-    this.scrollTo(section)
-  }, 300);
-}
+  }
+  routeTo(section: any) {
+    setTimeout(() => {
+      this.scrollTo(section)
+    }, 300);
+  }
 
-  
+
   ngOnInit(): void {
-    
+
     this.navigate.emit('Home')
   }
 
@@ -60,7 +58,7 @@ routeTo(section:any){
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
     if (currentScroll > this.lastScrollTop) {
       // Scrolling down
       this.headerVisible = true;
@@ -70,15 +68,10 @@ routeTo(section:any){
     }
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
-  tabChange(key:any){
+  tabChange(key: any) {
     if (key === 'gallery' || key === 'contact') {
       this.scrollToTop();
     }
     this.navigate.emit(key);
   }
-  
-
-  
-
-  
 }
