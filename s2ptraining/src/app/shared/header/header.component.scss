@@ -28,25 +28,25 @@
     background-color: #ffffff;
     border-color: #f26522;
     color: #f26522;
-    &:hover {
-      background-color: #f26522;
-      border-color: #f26522;
-      color: #ffffff;
-      border-radius: 10px;
-    }
+    // &:hover {
+    //   background-color: #f26522;
+    //   border-color: #f26522;
+    //   color: #ffffff;
+    //   border-radius: 10px;
+    // }
   }
   .btn-secondary {
-    background-color: #ffffff;
-    border-color: #f26522;
-    color: #f26522;
-
-    &:hover {
-      background-color: #f26522;
+    background-color: #f26522;
       border-color: #f26522;
       color: #ffffff;
-      border-radius: 10px;
+      border-radius: 7px;
+    // &:hover {
+    //   background-color: #f26522;
+    //   border-color: #f26522;
+    //   color: #ffffff;
+    //   border-radius: 10px;
 
-    }
+    // }
   }
 }
 
