@@ -71,12 +71,31 @@
     height: 23rem;
     justify-content: center;
     margin-top: -3.5rem;
- .container-fluid{
-    .picsum-img-wrapper{
-        .img-fluid{
-            height: 18rem;
-            width: 5rem;
+    .container-fluid {
+      .picsum-img-wrapper {
+        .img-fluid {
+          height: 20rem;
         }
+      }
+      .card {
+        padding: 10px;
+        height: 22rem;
+        border-radius: 12px;
+        .img-fluid {
+          height: 4rem;
+        }
+        .card-body {
+          .heading {
+            font-family: "Helvetica";
+            font-size: 20px;
+            text-align: center;
+          }
+        }
+        .text {
+          font-family: "Helvetica";
+          font-size: 12px;
+        }
+      }
     }
     .card{
       height: 22rem;
@@ -85,7 +104,7 @@
       height: 5rem;
     }
  }
-  }
+  
   .childcard {
     position: absolute;
     width: 20rem;
@@ -95,10 +114,9 @@
     bottom: 22.9rem;
     height: 3rem;
     border-top-left-radius: 30rem;
-    border-top-right-radius:30rem;
+    border-top-right-radius: 30rem;
     border-bottom: 0px;
   }
-  
 }
 
 
