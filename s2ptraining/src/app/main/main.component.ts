@@ -38,6 +38,7 @@ import { interval, Subscription } from 'rxjs';
   ],
 })
 export class MainComponent implements OnInit, OnDestroy {
+  selectedTab: any;
   mainData: any = [];
   animationState: string = 'in';
   currentNumber: number = 0;
@@ -53,15 +54,28 @@ export class MainComponent implements OnInit, OnDestroy {
   constructor(private restService: RestService, private router: Router, ) {
     this.subscription = new Subscription();
   } 
+  showOne() {
+    this.selectedTab = 'one';
+  }
+  showTwo() {
+    this.selectedTab = 'two';
+  }
+  showThree() {
+    this.selectedTab = 'three';
+  }
+  showFour() {
+    this.selectedTab = 'four';
+  }
   
   ngOnInit(): void {
+    this.selectedTab = 'one';
     this.getall();
-    this.getalldata();
+    // this.getalldata();
     this.animationState = 'in';
     this.subscription = interval(10).subscribe(() => {
       this.incrementNumber();
-      this.incrementNumberEmployee();
-      this.incrementNumberYearExperience();
+      // this.incrementNumberEmployee();
+      // this.incrementNumberYearExperience();
     });
     setInterval(() => {
       this.toggleLines();
@@ -79,16 +93,16 @@ export class MainComponent implements OnInit, OnDestroy {
     }
   }
 
-  incrementNumberYearExperience() {
-    if (this.yearExperienceNumber < this.yearExperience) {
-      this.yearExperienceNumber++;
-    }
-  }
-  incrementNumberEmployee() {
-    if (this.employeeNumber < this.employee) {
-      this.employeeNumber++;
-    }
-  }
+  // incrementNumberYearExperience() {
+  //   if (this.yearExperienceNumber < this.yearExperience) {
+  //     this.yearExperienceNumber++;
+  //   }
+  // }
+  // incrementNumberEmployee() {
+  //   if (this.employeeNumber < this.employee) {
+  //     this.employeeNumber++;
+  //   }
+  // }
   incrementNumberOne(){
 
   }
@@ -99,14 +113,14 @@ export class MainComponent implements OnInit, OnDestroy {
       this.targetNumber = this.mainData[0]?.placementCount 
     });
   }
-  getalldata() {
-    this.restService.getbulletin().subscribe((data: any) => {
-      this.mainData = data.result.Home;
-      this.targetNumber = this.mainData[0]?.placementCount
-      this.yearExperience = this.mainData[0]?.YearsExperience;
-      this.employee = this.mainData[0]?.OurEMPLOYEE;
-    });
-  }
+  // getalldata() {
+  //   this.restService.getbulletin().subscribe((data: any) => {
+  //     this.mainData = data.result.Home;
+  //     this.targetNumber = this.mainData[0]?.placementCount
+  //     this.yearExperience = this.mainData[0]?.YearsExperience;
+  //     this.employee = this.mainData[0]?.OurEMPLOYEE;
+  //   });
+  // }
 
 }
 

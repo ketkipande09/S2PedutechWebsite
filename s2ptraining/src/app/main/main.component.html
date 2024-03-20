@@ -29,33 +29,64 @@
         <div class="col-12">
             <div class="card parentcard">
                 <div class="card childcard">
-                    <h5></h5>
+                    <ul class="select justify-content-center">
+                        <li
+                          [ngClass]="{ active: selectedTab == 'one' }"
+                          (click)="showOne()">
+                          <p class="text-center">1</p>
+                        </li>
+                        <li
+                          [ngClass]="{ active: selectedTab == 'two' }"
+                          (click)="showTwo()">
+                          <p class="text-center">2</p>
+                        </li>
+                        <li
+                        [ngClass]="{ active: selectedTab == 'three' }"
+                        (click)="showThree()">
+                        <p class="text-center">3</p>
+                      </li>
+                      <li
+                      [ngClass]="{ active: selectedTab == 'four' }"
+                      (click)="showFour()">
+                      <p class="text-center">4</p>
+                    </li>
+                      </ul>
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-7">
-                            <ngb-carousel #carousel [interval]="3000" [showNavigationIndicators]="false">
-                                <ng-template ngbSlide>
-                                    <div class="picsum-img-wrapper">
-                                        <img src="../../assets/gallery/IMG20230408141048.jpg" class="img-fluid w-100" />
+                        <div class="col-10">
+                            <!-- <ngb-carousel #carousel [interval]="3000" [showNavigationIndicators]="false"> -->
+                                <!-- <ng-template ngbSlide> -->
+                                    <div class="picsum-img-wrapper" *ngIf="selectedTab == 'one'">
+                                        <img src="../../assets/gallery/IMG20230408141048.jpg" class="img-fluid w-100"/>
                                     </div>
-                                </ng-template>
-                                <ng-template ngbSlide>
-                                    <div class="picsum-img-wrapper">
-                                        <img src="../../assets/gallery/IMG20230323170530.jpg" class="img-fluid w-100" />
+                                <!-- </ng-template> -->
+                                <!-- <ng-template ngbSlide> -->
+                                    <div class="picsum-img-wrapper" *ngIf="selectedTab == 'two'">
+                                        <img src="../../assets/gallery/IMG20230323170530.jpg" class="img-fluid w-100"/>
                                     </div>
-
-                                </ng-template>
-                            </ngb-carousel>
+                                <!-- </ng-template> -->
+                            <!-- </ngb-carousel> -->
                         </div>
-                        <div class="col-3">
+                        <div class="col-2">
                             <div class="card">
-                                <img src="../../assets/s2p landing.png" class="img-fluid">
-                                <div class="card-body">
-                                  <p class="heading">Celebrating over</p>
+                                <div class="card imgcard">
+                                    <img src="../../assets/s2p landing.png" class="img-fluid">
                                 </div>
-                                <p class="text">Students successfully placed in leading tech roles, our track record speaks for itself.</p>
+                                <div class="card-body">
+                                  <p class="heading">Celebrating over </p>
+                                  <img src="../../assets/landing/1.png" class="img-fluid">
+                                  <h1 class="text-center">{{ currentNumber }}+</h1>
+                                  <h6 class="bottomtext">Students successfully placed in leading tech roles, Our track record speaks for itself.</h6>
+                                </div>
+                                <div class="footer">
+                                    <img src="../../assets/landing/Mask group.png" class="img1">
+                                    <img src="../../assets/landing/Mask group (1).png" class="img2">
+                                    <img src="../../assets/landing/Mask group (2).png" class="img3">
+                                    <img src="../../assets/landing/Ellipse 15.png" class="Ellipse">
+                                    <img src="../../assets/landing/Vector.png" class="vector">
+
+                                </div>
 
                               </div>
                         </div>
@@ -65,3 +96,5 @@
         </div>
     </div>
 </div>
+
+
