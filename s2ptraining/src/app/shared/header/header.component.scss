@@ -1,10 +1,13 @@
 .navbar {
   padding: 0px 16px;
+
+  z-index: 1111;
   .navbar-brand img {
     width: 81px;
     height: 70px;
   }
   .collapse {
+    z-index: 2;
     .navbar-nav {
       margin-left: 20px;
       .nav-item {
@@ -40,13 +43,6 @@
       border-color: #f26522;
       color: #ffffff;
       border-radius: 7px;
-    // &:hover {
-    //   background-color: #f26522;
-    //   border-color: #f26522;
-    //   color: #ffffff;
-    //   border-radius: 10px;
-
-    // }
   }
 }
 
@@ -57,13 +53,17 @@
   margin-right: 0;
 }
 
-// .ellipse {
-//     position: absolute;
-//     width: 207px;
-//     height: 207px;
-//     top: -115px;
-//     left: 1005px;
-//     background-color: #e0551505; /* Change color as needed */
-//     border-radius: 50%; /* To make it a circle */
-//     margin-right: 150px;
-//   }
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: -50%;
+  left: 60%;
+  width: 400px;
+  height: 150px;
+  border-radius: 70%;
+  background: rgba(247, 149, 33, 1);
+
+  opacity: 1;
+  filter: blur(180px);
+}
