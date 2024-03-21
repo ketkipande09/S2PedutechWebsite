@@ -155,8 +155,8 @@
           }
 
           .vector {
-            position: absolute;
-            right: 24px;
+            position: relative;
+            right: 26px;
             height: 1rem;
             margin-top: 0.7rem;
           }
@@ -386,108 +386,95 @@
 @media (max-width: 1000px) {
   .slider-container {
     .parentcard {
-      position: relative;
-      border-radius: 20px;
-      border-top-left-radius: 40px;
-      height: 23rem;
-      margin-top: -3.5rem;
-
+      height: 20rem;
+      margin-top: -2rem;
       .container-fluid {
+        padding: 1rem;
         .picsum-img-wrapper {
           .img-fluid {
-            margin-top: 1rem;
-            height: 20rem;
-            border-radius: 5px;
+            height: 17rem;
           }
         }
-
         .card {
-          padding: 10px;
-          height: 22rem;
-          border-radius: 12px;
+        height: 19rem;
+        .imgcard {
+          height: 8rem;
 
-          .imgcard {
-            border-radius: 1rem;
-            height: 8rem;
-
-            .img-fluid {
-              height: 3rem;
-            }
+          .img-fluid {
+            height: 3rem;
           }
-
+        }
           .card-body {
             .heading {
-              font-size: 17px;
+              font-size: 15px;
             }
-
             .img-fluid {
-              height: 25px;
-              margin-top: -2rem;
-              left: 9rem;
+              height: 20px;
+              margin-top: -3rem;
+              left: 8.5rem;
             }
-
             .text-center {
               margin-top: -2.5rem;
-              font-size: 50px;
+              font-size: 45px;
             }
 
             .bottomtext {
-              font-size: 10px;
+              font-size: 11px;
             }
           }
 
           .footer {
             .img1 {
-              height: 2rem;
+              margin-top: 1.5rem;
+              height: 1.8rem;
             }
 
             .img2 {
+              margin-top: 1.5rem;
+              height: 1.8rem;
               right: 1rem;
-              height: 2rem;
             }
 
             .img3 {
-              height: 2rem;
+              margin-top: 1.5rem;
+              height: 1.8rem;
               right: 2rem;
             }
 
             .Ellipse {
-              position: relative;
-              margin-left: 3.8rem;
-              height: 2.5rem;
+              margin-top: 1.2rem;
+              margin-left: 4.2rem;
+              height: 2.2rem;
             }
 
             .vector {
-              position: absolute;
-              right: 20px;
+              margin-top: 1.8rem;
+              right: 24px;
               height: 1rem;
-              margin-top: 0.7rem;
             }
           }
         }
       }
     }
-
     .childcard {
-      width: 15rem;
-      height: 2.5rem;
-
-      .select {
-        padding: 8px;
-      }
-
+      width: 17rem;
+      bottom: 19.8rem;
+      height: 2.5rem; 
       .select li {
+        margin-top: 10px;
+        margin-right: 12px;
         height: 35px;
         width: 35px;
-
+  
         .text-center {
-          font: 15px "Helvetica";
-          margin-top: 4px;
+          font: 14px "Helvetica";
         }
       }
     }
   }
 }
+
+
 
 @media (max-width: 1346px) {
   .container-fluid {
