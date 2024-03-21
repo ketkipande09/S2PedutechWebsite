@@ -71,6 +71,7 @@
     height: 23rem;
     justify-content: center;
     margin-top: -3.5rem;
+    border: 0;
     .container-fluid {
       .picsum-img-wrapper {
         .img-fluid {
@@ -156,7 +157,7 @@
     height: 3rem;
     border-top-left-radius: 30rem;
     border-top-right-radius: 30rem;
-    border-bottom: 0px;
+    border: 0px;
     .select {
       list-style: none;
       padding: 10px;
