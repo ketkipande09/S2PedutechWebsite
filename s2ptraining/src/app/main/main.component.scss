@@ -459,7 +459,7 @@
       margin-left: 7px;
 
       .head1 {
-        font-size: 110px;
+        font-size: 105px;
         font-weight: 275;
         margin-right: 16px;
         line-height: 15rem;
@@ -467,7 +467,7 @@
       }
 
       .head2 {
-        font-size: 110px;
+        font-size: 105px;
         font-weight: 275;
         margin-right: 16px;
         line-height: 15rem;
@@ -493,25 +493,27 @@
       .head1 {
         font-size: 95px;
         font-weight: 275;
-        margin-left: -4rem;
+        margin-left: -3rem;
         margin-top: -1.5rem;
 
         .img1 {
-          margin-left: 8rem;
-          margin-bottom: 3rem;
+          margin-left: 5rem;
+          margin-bottom: 2rem;
+          height:4rem ;
+          width: 4rem ;
         }
       }
 
       .head2 {
         font-size: 95px;
         font-weight: 275;
-        margin-top: -5rem;
-        margin-left: -4rem;
+        margin-top: -4.5rem;
+        margin-left: -3rem;
       }   
 
       .img2 {
         margin-top: -7rem;
-        margin-left: -5.9rem;
+        margin-left: -5rem;
       }
     }
   }
