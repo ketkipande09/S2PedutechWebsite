@@ -1,6 +1,7 @@
 .container-fluid {
   .heading {
     margin-left: 15px;
+
     .head1 {
       font-family: Champion Gothic;
       font-size: 145px;
@@ -10,6 +11,7 @@
       margin-top: -2rem;
       color: #f79521;
     }
+
     .head2 {
       font-family: Champion Gothic;
       font-size: 145px;
@@ -20,6 +22,7 @@
       color: #f26522;
     }
   }
+
   .text {
     margin-top: -3.5rem;
     margin-left: 15px;
@@ -28,11 +31,13 @@
     font-weight: 400;
     line-height: 24.64px;
   }
+
   .vertical-line {
     border-left: 1.5px solid #000000;
     height: 80%;
     margin-top: 5px;
   }
+
   .right {
     .head1 {
       font-family: Champion Gothic;
@@ -47,6 +52,7 @@
         margin-bottom: 3rem;
       }
     }
+
     .head2 {
       font-family: Champion Gothic;
       font-size: 133px;
@@ -55,6 +61,7 @@
       margin-top: -6rem;
       margin-left: -4rem;
     }
+
     .img2 {
       margin-top: -9rem;
       margin-left: -6rem;
@@ -79,14 +86,17 @@
           height: 20rem;
         }
       }
+
       .card {
         padding: 10px;
         height: 22rem;
         border-radius: 12px;
+
         .imgcard {
           border-radius: 1rem;
           height: 8rem;
           background-color: #fef7ee;
+
           .img-fluid {
             height: 3rem;
           }
@@ -99,44 +109,52 @@
             margin-top: -1rem;
             text-align: center;
           }
+
           .img-fluid {
             height: 30px;
             margin-top: -2rem;
             position: relative;
             left: 8rem;
           }
+
           .text-center {
             margin-top: -2rem;
             font-size: 50px;
             font-weight: 700;
             font-family: "Helvetica";
           }
+
           .bottomtext {
             font-family: "Helvetica";
             font-size: 10px;
             text-align: justify;
           }
         }
+
         .footer {
           .img1 {
             position: relative;
             height: 2rem;
           }
+
           .img2 {
             position: relative;
             right: 1rem;
             height: 2rem;
           }
+
           .img3 {
             position: relative;
             height: 2rem;
             right: 2rem;
           }
+
           .Ellipse {
             position: relative;
             margin-left: 3.8rem;
             height: 2.5rem;
           }
+
           .vector {
             position: absolute;
             right: 24px;
@@ -147,6 +165,7 @@
       }
     }
   }
+
   .childcard {
     position: absolute;
     width: 20rem;
@@ -174,6 +193,7 @@
       border-radius: 11px;
       height: 40px;
       width: 40px;
+
       .text-center {
         font: 16px "Helvetica";
         line-height: 19.04px;
@@ -185,6 +205,7 @@
     .select li.active {
       // background-color:  rgba(242, 101, 34, 1);
       background: rgba(243, 228, 221, 1);
+
       .text-center {
         color: rgba(242, 101, 34, 1);
       }
@@ -202,17 +223,20 @@
               font-family: "Helvetica";
               font-size: 15px;
             }
+
             .img-fluid {
               height: 30px;
               margin-top: -2.5rem;
               left: 7.5rem;
             }
           }
+
           .footer {
             .Ellipse {
               margin-left: 2.8rem;
               height: 2.5rem;
             }
+
             .vector {
               right: 24px;
               height: 1rem;
@@ -224,6 +248,7 @@
     }
   }
 }
+
 @media (max-width: 1350px) {
   .slider-container {
     .parentcard {
@@ -234,20 +259,24 @@
               font-family: "Helvetica";
               font-size: 14px;
             }
+
             .img-fluid {
               height: 28px;
               margin-top: -3rem;
               left: 7.2rem;
             }
+
             .text-center {
               font-size: 45px;
             }
           }
+
           .footer {
             .Ellipse {
               margin-left: 2rem;
               height: 2.5rem;
             }
+
             .vector {
               right: 24px;
               height: 1rem;
@@ -259,6 +288,7 @@
     }
   }
 }
+
 @media (max-width: 1200px) {
   .slider-container {
     .parentcard {
@@ -269,34 +299,42 @@
               font-family: "Helvetica";
               font-size: 15px;
             }
+
             .img-fluid {
               height: 20px;
               margin-top: -3rem;
               left: 9rem;
             }
+
             .text-center {
               font-size: 50px;
             }
+
             .bottomtext {
               font-size: 12px;
             }
           }
+
           .footer {
             .img1 {
               height: 1.8rem;
             }
+
             .img2 {
               height: 1.8rem;
               right: 1rem;
             }
+
             .img3 {
               height: 1.8rem;
               right: 2rem;
             }
+
             .Ellipse {
               margin-left: 4.5rem;
               height: 2.2rem;
             }
+
             .vector {
               right: 24px;
               height: 1rem;
@@ -308,6 +346,7 @@
     }
   }
 }
+
 @media (max-width: 1000px) {
   .slider-container {
     .parentcard {
@@ -316,6 +355,7 @@
       border-top-left-radius: 40px;
       height: 23rem;
       margin-top: -3.5rem;
+
       .container-fluid {
         .picsum-img-wrapper {
           .img-fluid {
@@ -324,52 +364,63 @@
             border-radius: 5px;
           }
         }
+
         .card {
           padding: 10px;
           height: 22rem;
           border-radius: 12px;
+
           .imgcard {
             border-radius: 1rem;
             height: 8rem;
+
             .img-fluid {
               height: 3rem;
             }
           }
-  
+
           .card-body {
             .heading {
               font-size: 17px;
             }
+
             .img-fluid {
               height: 25px;
               margin-top: -2rem;
               left: 9rem;
             }
+
             .text-center {
               margin-top: -2.5rem;
               font-size: 50px;
             }
+
             .bottomtext {
               font-size: 10px;
             }
           }
+
           .footer {
             .img1 {
               height: 2rem;
             }
+
             .img2 {
               right: 1rem;
               height: 2rem;
             }
+
             .img3 {
               height: 2rem;
               right: 2rem;
             }
+
             .Ellipse {
               position: relative;
               margin-left: 3.8rem;
               height: 2.5rem;
             }
+
             .vector {
               position: absolute;
               right: 20px;
@@ -380,19 +431,87 @@
         }
       }
     }
+
     .childcard {
       width: 15rem;
       height: 2.5rem;
+
       .select {
         padding: 8px;
       }
+
       .select li {
         height: 35px;
         width: 35px;
+
         .text-center {
           font: 15px "Helvetica";
           margin-top: 4px;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1346px) {
+  .container-fluid {
+    .heading {
+      margin-left: 7px;
+
+      .head1 {
+        font-size: 110px;
+        font-weight: 275;
+        margin-right: 16px;
+        line-height: 15rem;
+        margin-top: -4rem;
+      }
+
+      .head2 {
+        font-size: 110px;
+        font-weight: 275;
+        margin-right: 16px;
+        line-height: 15rem;
+        margin-top: -4rem;
+      }
+    }
+
+    .text {
+      margin-top: -5rem;
+      margin-left: 15px;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 24.64px;
+    }
+
+    .vertical-line {
+      border-left: 1.5px solid #000000;
+      height: 80%;
+      margin-top: 5px;
+    }
+
+    .right {
+      .head1 {
+        font-size: 95px;
+        font-weight: 275;
+        margin-left: -4rem;
+        margin-top: -1.5rem;
+
+        .img1 {
+          margin-left: 8rem;
+          margin-bottom: 3rem;
+        }
+      }
+
+      .head2 {
+        font-size: 95px;
+        font-weight: 275;
+        margin-top: -5rem;
+        margin-left: -4rem;
+      }   
+
+      .img2 {
+        margin-top: -7rem;
+        margin-left: -5.9rem;
       }
     }
   }
