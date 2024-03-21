@@ -92,8 +92,8 @@
 
             height: 16px;
             font-size: 14px;
-            line-height: 16.04px;
-
+            line-height: 18.04px;
+            font-weight: 500px;
           }
         }
       }
@@ -115,6 +115,7 @@
     }
   }
 }
+
 @media(max-width:913px) {
   .navbar {
     padding: 0px 14px;
