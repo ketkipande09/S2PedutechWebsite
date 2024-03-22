@@ -190,13 +190,13 @@
       margin-top: 10px;
       padding: 5px;
       margin-right: 10px;
-      background: rgba(217, 217, 217, 1);
+      background: #FFFFFF;
       border-radius: 11px;
       height: 40px;
       width: 40px;
 
       .text-center {
-        font: 16px "Helvetica";
+        font: 12px "Helvetica";
         line-height: 19.04px;
         color: rgba(166, 160, 160, 1);
         margin-top: 6px;
@@ -205,7 +205,7 @@
 
     .select li.active {
       // background-color:  rgba(242, 101, 34, 1);
-      background: rgba(243, 228, 221, 1);
+      background: #FFFFFF;
 
       .text-center {
         color: rgba(242, 101, 34, 1);
