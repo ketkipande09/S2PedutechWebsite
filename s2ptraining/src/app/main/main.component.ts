@@ -41,7 +41,7 @@ export class MainComponent implements OnInit, OnDestroy {
   selectedTab: any;
   mainData: any = [];
   animationState: string = 'in';
-  currentNumber: number = 0;
+  currentNumber: number = 200;
   targetNumber: any;
   yearExperienceNumber: number = 0
   yearExperience: any;
