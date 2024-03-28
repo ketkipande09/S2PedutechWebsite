@@ -75,7 +75,7 @@
     border-radius: 20px;
     border-top-left-radius: 40px;
     background-color: #fef7ee;
-    height: 23rem;
+    height: 29rem;
     justify-content: center;
     margin-top: -2.5rem;
     border: 0;
@@ -84,20 +84,20 @@
         padding-left: 10px;
         .img-fluid {
           margin-top: 1rem;
-          height: 20rem;
+          height: 26rem;
           border-radius: 10px;
         }
       }
       .card {
         padding: 10px;
-        height: 22rem;
+        height: 26rem;
+        margin-top: 1rem;
         border-radius: 12px;
-
         .imgcard {
           border-radius: 1rem;
-          height: 8rem;
+          height: 16rem;
           background-color: #fef7ee;
-
+          margin-top: 0rem;
           .img-fluid {
             height: 3rem;
           }
@@ -107,7 +107,6 @@
           .heading {
             font-family: "Helvetica";
             font-size: 17px;
-            margin-top: -1rem;
             text-align: center;
           }
 
@@ -127,7 +126,7 @@
 
           .bottomtext {
             font-family: "Helvetica";
-            font-size: 10px;
+            font-size: 11px;
             text-align: justify;
           }
         }
@@ -136,31 +135,35 @@
           .img1 {
             position: relative;
             height: 2rem;
+            margin-top: 4rem;
           }
 
           .img2 {
             position: relative;
             right: 1rem;
             height: 2rem;
+            margin-top: 4rem;
           }
 
           .img3 {
             position: relative;
             height: 2rem;
             right: 2rem;
+            margin-top: 4rem;
           }
 
           .Ellipse {
             position: relative;
             margin-left: 3.8rem;
             height: 2.5rem;
+            margin-top: 4rem;
           }
 
           .vector {
             position: relative;
             right: 26px;
             height: 1rem;
-            margin-top: 0.7rem;
+            margin-top: 4.6rem;
           }
         }
       }
@@ -173,7 +176,7 @@
     justify-content: center;
     background-color: #fef7ee;
     left: 2.5rem;
-    bottom: 22.9rem;
+    bottom: 28.9rem;
     height: 3rem;
     border-top-left-radius: 30rem;
     border-top-right-radius: 30rem;
@@ -183,6 +186,7 @@
       padding: 10px;
       margin: 0;
       display: flex;
+      margin-top: 1rem;
     }
 
     .select li {
